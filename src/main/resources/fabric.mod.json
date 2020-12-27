@@ -1,28 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "fettlol",
+  "id": "fettlol_util",
   "version": "${version}",
-
   "name": "Fettlol UtilMod",
   "description": "Tweaks minor details for use on the fett.lol server.",
-  "authors": ["Breki Tomasson"],
+  "authors": [
+    "Breki Tomasson"
+  ],
   "contact": {
     "homepage": "https://github.com/BrekiTomasson/FettLolUtilMod",
     "sources": "https://github.com/BrekiTomasson/FettLolUtilMod"
   },
-
-  "license": "CC0-1.0",
-  "icon": "assets/fettlol/icon.png",
-
+  "license": "MIT",
+  "icon": "assets/fettlol_util/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["net.fettlol_util.UtilMod"],
-    "modmenu": ["net.fettlol_util.ModMenuIntegration"]
+    "main": [
+      "net.fettlol_util.UtilMod"
+    ]
   },
-  "mixins": ["fettlol_util.mixins.json"],
-
+  "mixins": [
+    "fettlol_util.mixins.json"
+  ],
   "depends": {
-    "fabricloader": ">=0.7.4",
+    "fabricloader": ">=0.10.6",
     "fabric": "*",
     "minecraft": "1.16.x"
   },

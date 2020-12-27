@@ -20,16 +20,13 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	// Dependency: Cloth Config 2
-	modImplementation "me.shedaniel.cloth:config-2:${project.cloth_version}"
-	include "me.shedaniel.cloth:config-2:${project.cloth_version}"
+	implementation "com.moandjiezana.toml:toml4j:${project.toml4j_version}"
+	implementation "com.electronwill.night-config:core:${project.tomlnc_version}"
+	implementation "com.electronwill.night-config:toml:${project.tomlnc_version}"
 
-	// Dependency: AutoConfig1u
-	modImplementation "me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}"
-	include "me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig_version}"
-
-	// Compatibility / Peer Dependency: ModMenu
-	modImplementation "io.github.prospector:modmenu:${project.modmenu_version}"
+	include "com.moandjiezana.toml:toml4j:${project.toml4j_version}"
+	include "com.electronwill.night-config:core:${project.tomlnc_version}"
+	include "com.electronwill.night-config:toml:${project.tomlnc_version}"
 }
 
 processResources {

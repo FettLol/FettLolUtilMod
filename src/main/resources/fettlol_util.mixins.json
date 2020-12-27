@@ -4,8 +4,11 @@
   "package": "net.fettlol_util.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-  ],
-  "client": [
+    "ChickenEntityMixin",
+    "CustomWorldsMixin",
+    "InfinityBowMixin",
+    "FarmlandBlockMixin",
+    "PlayerManagerMixin",
     "VillagerGoalMixin"
   ],
   "injectors": {
