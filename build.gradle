@@ -1,83 +1,100 @@
 plugins {
-	id 'fabric-loom' version '0.5-SNAPSHOT'
-	id 'maven-publish'
+    id 'fabric-loom' version '0.5-SNAPSHOT'
+    id 'maven-publish'
 }
 
 repositories {
-	jcenter()
+    jcenter()
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-archivesBaseName = project.archives_base_name
+mod_id = project.mod_id
 version = "${project.mod_version}+${project.minecraft_version}"
 group = project.maven_group
 
 dependencies {
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    // Minecraft and its related mappings.
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 
-	implementation "com.moandjiezana.toml:toml4j:${project.toml4j_version}"
-	implementation "com.electronwill.night-config:core:${project.tomlnc_version}"
-	implementation "com.electronwill.night-config:toml:${project.tomlnc_version}"
+    // Fabric API and Fabric Loader
+    modImplementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	include "com.moandjiezana.toml:toml4j:${project.toml4j_version}"
-	include "com.electronwill.night-config:core:${project.tomlnc_version}"
-	include "com.electronwill.night-config:toml:${project.tomlnc_version}"
+    // Dependencies etc.
+    modApi("me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig1u_version}") { exclude module: 'fabric-api' }
+    modApi("me.shedaniel.cloth:config-2:${project.cloth_config_2_version}") { exclude module: 'fabric-api' }
+    modImplementation("io.github.prospector:modmenu:${project.modmenu_version}") { exclude module: 'fabric-api' }
+    implementation "com.moandjiezana.toml:toml4j:${project.toml4j_version}"
+    implementation "com.electronwill.night-config:core:${project.tomlnc_version}"
+    implementation "com.electronwill.night-config:toml:${project.tomlnc_version}"
+
+    include "me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig1u_version}"
+    include "me.shedaniel.cloth:config-2:${project.cloth_config_2_version}"
+    include "com.moandjiezana.toml:toml4j:${project.toml4j_version}"
+    include "com.electronwill.night-config:core:${project.tomlnc_version}"
+    include "com.electronwill.night-config:toml:${project.tomlnc_version}"
 }
 
 processResources {
-	inputs.property "version", project.version
-	inputs.property "name", project.name
+    inputs.property "version", project.version
+    inputs.property "name", project.name
 
-	from(sourceSets.main.resources.srcDirs) {
-		include "fabric.mod.json"
-		expand "version": project.version, "name": project.name
-	}
+    from(sourceSets.main.resources.srcDirs) {
+        include "fabric.mod.json"
+        expand(
+                "version": project.version,
+                "minecraft_version": project.minecraft_version,
+                "maven_group": project.maven_group,
+                "name": project.name,
+                "loader_version": project.fabric_loader_version,
+                "mod_id": project.mod_id,
+                "init_class": project.init_class,
+                "author": project.author,
+                "fabric_api_version": project.fabric_api_version
+        )
+    }
 
-	from(sourceSets.main.resources.srcDirs) {
-		exclude "fabric.mod.json"
-	}
+    from(sourceSets.main.resources.srcDirs) {
+        exclude "fabric.mod.json"
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.encoding = "UTF-8"
-	def targetVersion = 8
-	if (JavaVersion.current().isJava9Compatible()) {
-		 it.options.release = targetVersion
-	}
+    it.options.encoding = "UTF-8"
+    def targetVersion = 8
+    if (JavaVersion.current().isJava9Compatible()) {
+        it.options.release = targetVersion
+    }
 }
 
 java {
-	withSourcesJar()
+    withSourcesJar()
 }
 
 jar {
-	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}"}
-	}
+    from("LICENSE") {
+        rename { "${it}_${project.mod_id}" }
+    }
 }
 
 // configure the maven publication
 publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			// add all the jars that should be included when publishing to maven
-			artifact(remapJar) {
-				builtBy remapJar
-			}
-			artifact(sourcesJar) {
-				builtBy remapSourcesJar
-			}
-		}
-	}
+    publications {
+        mavenJava(MavenPublication) {
+            artifact(remapJar) {
+                builtBy remapJar
+            }
+            artifact(sourcesJar) {
+                builtBy remapSourcesJar
+            }
+        }
+    }
 
-	// Select the repositories you want to publish to
-	// To publish to maven local, no extra repositories are necessary. Just use the task `publishToMavenLocal`.
-	repositories {
-		// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	}
+    // Select the repositories you want to publish to
+    repositories {
+        // mavenLocal()
+    }
 }

@@ -1,13 +1,14 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fettlol_util.mixin",
+  "package": "net.brekitomasson.fettlol_util.mixin",
   "compatibilityLevel": "JAVA_8",
+  "plugin": "net.brekitomasson.fettlol_util.base.ConfigurationMixinConditions",
   "mixins": [
     "ChickenEntityMixin",
     "CustomWorldsMixin",
-    "InfinityBowMixin",
     "FarmlandBlockMixin",
+    "InfinityBowMixin",
     "PlayerManagerMixin",
     "VillagerGoalMixin"
   ],

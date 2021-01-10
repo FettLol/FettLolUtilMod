@@ -5,22 +5,25 @@
   "name": "Fettlol UtilMod",
   "description": "Tweaks minor details for use on the fett.lol server.",
   "authors": [
-    "Breki Tomasson"
+    "${author}"
   ],
   "contact": {
     "homepage": "https://github.com/BrekiTomasson/FettLolUtilMod",
     "sources": "https://github.com/BrekiTomasson/FettLolUtilMod"
   },
   "license": "MIT",
-  "icon": "assets/fettlol_util/icon.png",
+  "icon": "assets/${mod_id}/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fettlol_util.UtilMod"
+      "${maven_group}.${mod_id}.${init_class}"
+    ],
+    "modmenu": [
+      "${maven_group}.${mod_id}.UtilModModMenuIntegration"
     ]
   },
   "mixins": [
-    "fettlol_util.mixins.json"
+    "${mod_id}.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.10.6",
