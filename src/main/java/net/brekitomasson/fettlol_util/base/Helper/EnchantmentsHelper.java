@@ -35,4 +35,5 @@ public class EnchantmentsHelper {
         Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(stack);
         return enchantments.containsKey(enchantment);
     }
+
 }

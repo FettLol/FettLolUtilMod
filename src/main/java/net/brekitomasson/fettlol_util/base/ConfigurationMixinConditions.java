@@ -35,12 +35,16 @@ public class ConfigurationMixinConditions implements IMixinConfigPlugin {
             return CONFIG.doSkipCustomWorldsWarning();
         } else if (mixinClassName.contains("FarmlandBlockMixin")) {
             return CONFIG.doesFeatherFallingNotBreakFarmland();
-        } else if (mixinClassName.contains("InfinityBowMixin")) {
+        } else if (mixinClassName.contains("InfinityBowArrowMixin")) {
             return CONFIG.doesInfinityWorkWithoutArrows();
         } else if (mixinClassName.contains("VillagerGoalMixin")) {
             return CONFIG.doVillagersFollowEmeraldBlocks();
         } else if (mixinClassName.contains("PlayerManagerMixin")) {
             return CONFIG.doAllRecipiesUnlockByDefault();
+        } else if (mixinClassName.contains("InfinityBowMendingMixin")) {
+            return CONFIG.canInfinityMixWithMending();
+        } else if (mixinClassName.contains("EggCollectorMixin")) {
+            return CONFIG.isEggCollectorEnchantmentAvailable();
         }
 
         // If all else fails, return false.

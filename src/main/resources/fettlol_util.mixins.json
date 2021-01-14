@@ -8,7 +8,9 @@
     "ChickenEntityMixin",
     "CustomWorldsMixin",
     "FarmlandBlockMixin",
-    "InfinityBowMixin",
+    "InfinityBowArrowMixin",
+    "InfinityBowMendingMixin",
+    "EggCollectorMixin",
     "PlayerManagerMixin",
     "VillagerGoalMixin"
   ],

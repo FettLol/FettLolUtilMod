@@ -21,6 +21,7 @@ public class UtilMod implements ModInitializer {
 
         // Register all the modules we're loading.
         ModuleHandler.INSTANCE.registerFabricMod(MOD_ID, Arrays.asList(
+            AddEggCollection.class,
             ChickensDropFeathers.class,
             CompostablePoisonousPotato.class,
             FeatherFallingCrops.class,
