@@ -10,9 +10,10 @@
     "FarmlandBlockMixin",
     "InfinityBowArrowMixin",
     "InfinityBowMendingMixin",
-    "EggCollectorMixin",
     "PlayerManagerMixin",
-    "VillagerGoalMixin"
+    "VillagerGoalMixin",
+    "EggCollectorMixin",
+    "accessor.SpawnEggItemAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

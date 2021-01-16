@@ -45,6 +45,8 @@ public class ConfigurationMixinConditions implements IMixinConfigPlugin {
             return CONFIG.canInfinityMixWithMending();
         } else if (mixinClassName.contains("EggCollectorMixin")) {
             return CONFIG.isEggCollectorEnchantmentAvailable();
+        } else if (mixinClassName.contains("SpawnEggItemAccessor")) {
+            return CONFIG.isEggCollectorEnchantmentAvailable();
         }
 
         // If all else fails, return false.
