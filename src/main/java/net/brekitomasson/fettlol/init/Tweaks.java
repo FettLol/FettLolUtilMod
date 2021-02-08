@@ -16,6 +16,7 @@ public class Tweaks {
         if (UtilMod.CONFIG.doesPoisonousPotatoCompost()) {
             CompostingChanceRegistry.INSTANCE.add(Items.POISONOUS_POTATO, 0.85f);
         }
+
     }
 
 }

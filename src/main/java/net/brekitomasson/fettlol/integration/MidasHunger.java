@@ -42,7 +42,6 @@ public class MidasHunger {
                     LootTableHelper.addToLootTable(supplier, 5, 0.05F, ModIntegrations.MIDAS_HUNGER, "golden_beetroot");
                 }
 
-                // TODO
                 // cooked_golden_chicken    - slow falling              - villager butcher chests?
                 // sweet_golden_berries     - speed                     - add to berry loot tables?
 

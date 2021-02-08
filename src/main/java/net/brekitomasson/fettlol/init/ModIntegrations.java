@@ -19,18 +19,20 @@ public class ModIntegrations {
     final public static String BETTER_END = "betterend";
     final public static String BYG = "byg";
     final public static String CINDERSCAPES = "cinderscapes";
-    final public static String GILDEDNETHERITE = "gildednetherite";
     final public static String CROPTOPIA = "croptopia";
+    final public static String GILDEDNETHERITE = "gildednetherite";
     final public static String MIDAS_HUNGER = "midashunger";
+    final public static String RING_OF_ATTRACTION = "ring_of_attraction";
     final public static String WINGED = "winged";
 
     // Helper methods to test if specific mods are loaded.
     public static boolean isBetterEndLoaded = FabricLoader.getInstance().isModLoaded(BETTER_END);
     public static boolean isBygLoaded = FabricLoader.getInstance().isModLoaded(BYG);
-    public static boolean isGildedNetheriteLoaded = FabricLoader.getInstance().isModLoaded(GILDEDNETHERITE);
     public static boolean isCinderscapesLoaded = FabricLoader.getInstance().isModLoaded(CINDERSCAPES);
     public static boolean isCroptopiaLoaded = FabricLoader.getInstance().isModLoaded(CROPTOPIA);
+    public static boolean isGildedNetheriteLoaded = FabricLoader.getInstance().isModLoaded(GILDEDNETHERITE);
     public static boolean isMidasHungerLoaded = FabricLoader.getInstance().isModLoaded(MIDAS_HUNGER);
+    public static boolean isRingOfAttractionLoaded = FabricLoader.getInstance().isModLoaded(RING_OF_ATTRACTION);
     public static boolean isWingedLoaded = FabricLoader.getInstance().isModLoaded(WINGED);
 
     public static void init() {
@@ -39,6 +41,7 @@ public class ModIntegrations {
         Cinderscapes.init();
         Croptopia.init();
         MidasHunger.init();
+        RingOfAttraction.init();
         Winged.init();
     }
 
