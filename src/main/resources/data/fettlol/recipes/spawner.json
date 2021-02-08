@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "INI",
+    "IGI",
+    "IOI"
+  ],
+  "key": {
+    "N": { "item": "minecraft:nether_star" },
+    "I": { "item": "minecraft:iron_bars" },
+    "G": { "item": "fettlol:soul_gem" },
+    "O": { "item": "minecraft:obsidian" }
+  },
+  "result": {
+    "item": "minecraft:spawner"
+  }
+}

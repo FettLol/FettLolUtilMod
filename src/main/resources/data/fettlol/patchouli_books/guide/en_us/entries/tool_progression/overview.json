@@ -1,0 +1,91 @@
+{
+  "name": "New Tools - An Overview",
+  "icon": "minecraft:diamond_pickaxe",
+  "category": "fettlol:tool_progression",
+  "pages": [
+    {
+      "sortnum": 0,
+      "type": "text",
+      "title": "Your New Tools",
+      "text": "In Minecraft, the progression usually goes Wood -> Iron -> Diamond -> Netherite, with gold thrown in there somewhere along the way. In the Fettlol Modpack, things are a little bit more complicated, and Netherite is no longer King. In the following pages, we explain everything you need to know about the new tiers of tools you can create and use!"
+    },
+    {
+      "sortnum": 1,
+      "type": "text",
+      "text": "More information about each of the following tool types can be found in their own separate sections of this book. This chapter will mainly serve as an introduction to the new materials and where they fit into the bigger picture."
+    },
+    {
+      "sortnum": 2,
+      "type": "spotlight",
+      "item": "betterend:terminite_pickaxe",
+      "title": "Terminite",
+      "text": "Wood, Stone and Iron are the same as ever, and Diamond is still the most natural progression from there - but it is not the only one! If you're low on Diamonds, try combining an $(item)[Iron Ingot]$() with some $(item)[Ender Dust]$(). Use the resulting $(item)[Terminite Ingot]$() to craft your tools as per usual."
+    },
+    {
+      "sortnum": 3,
+      "type": "text",
+      "text": "Stats-wise, Terminite items are very close to their Diamond equivalents. The durability of Terminite tools tends to be slightly lower than that of a Diamond tool, but they make up for it by being far easier to obtain. $(ln2)After all - both Endermen and $(item)[Iron Ore]$() can be found without digging down into the depths."
+    },
+    {
+      "sortnum": 4,
+      "type": "spotlight",
+      "item": "lonsdaleite:lonsdaleite_pickaxe",
+      "title": "Lonsdaleite",
+      "text": "After Terminite or Diamond, the next steps are Lonsdaleite and its upgraded version, Perfect Lonsdaleite. These are made by combining a large amount of Diamonds and Obsidian in a Crafting Table and hardened into Lonsdaleite in a Furnace. Lonsdaleite Items are slightly better than their Diamond counterparts."
+    },
+    {
+      "sortnum": 5,
+      "type": "text",
+      "text": "Lonsdaleite also introduces something brand new to the mix - the Omnitool! It's a pickaxe, axe and shovel - all in one! $(ln2)Don't be surprised if you find yourself holding on to this one for quite some time, it's really convenient!"
+    },
+    {
+      "sortnum": 6,
+      "type": "spotlight",
+      "item": "lonsdaleite:perfect_lonsdaleite_pickaxe",
+      "title": "Perfect Lonsdaleite",
+      "text": "Hardening the raw materials for your Lonsdaleite tools further will give you the ingredients you need to make Perfect Lonsdaleite tools. These are equivalent to Netherite in terms of durability, efficiency and power - but look out, as they are still vulnerable to fire."
+    },
+    {
+      "sortnum": 7,
+      "type": "text",
+      "text": "Note that Perfect Lonsdaleite will most likely become harder to get in the future. $(ln2)At the moment, the only extra cost is time, no additional materials or grinding ... so get it while it's hot!"
+    },
+    {
+      "sortnum": 8,
+      "type": "spotlight",
+      "item": "gildednetherite:gilded_pickaxe",
+      "title": "Gilded Netherite",
+      "text": "After Perfect Lonsdaleite, we have Netherite as per usual, obtained by putting a Diamond tool into a Smithing Table with a $(item)[Netherite Ingot]$(). $(ln2)But hey; if that's not good enough for you, you can upgrade it into Gilded Netherite instead!"
+    },
+    {
+      "sortnum": 9,
+      "type": "crafting",
+      "recipe": "gildednetherite:gilded_netherite_ingot",
+      "text": "If you're getting ready to upgrade your gear to Netherite, there is no reason not to go for Gilded Netherite gear instead. Just upgrade that $(item)[Netherite Ingot]$() into a $(item)[Gilded Netherite Ingot]$() instead!"
+    },
+    {
+      "sortnum": 10,
+      "type": "spotlight",
+      "item": "byg:pendorite_pickaxe",
+      "title": "Pendorite",
+      "text": "Just like Netherite and Gilded Netherite are upgrades from Diamond, Pendorite is an upgrade from either of these Netherite tools. To craft them, just slot your Netherite-based tool into a Smithing Table alongside a $(item)[Pendorite Scrap]$()."
+    },
+    {
+      "sortnum": 11,
+      "type": "text",
+      "text": "Pendorite tools are a considerable upgrade from Netherite and Gilded Netherite. It also provides you with the ability to combine two $(item)[Pendorite Axe]$() in a Smithing Table and create a $(item)[Pendorite Battleaxe]$()!$(ln2)Now; if you could only figure out where those elusive $(item)[Pendorite Scrap]$() drop..."
+    },
+    {
+      "sortnum": 12,
+      "type": "spotlight",
+      "item": "betterend:aeternium_pickaxe",
+      "title": "Aeternium",
+      "text": "Aeternium is the best tier of tools in the game - but they'll cost you! You'll need $(item)[Aeternium Ingots]$(), which you get by combining $(item)[Netherite Ingot]$() with $(item)[Terminite Ingot]$(). That means 12 $(item)[Netherite Scrap]$(), 12 $(item)[Gold Ingot]$(), 3 $(item)[Iron Ingot]$(), 3 $(item)[Ender Dust]$() and two $(item)[Stick]$() to make $(bold)one$() $(item)[Aeternium Pickaxe]$()."
+    },
+    {
+      "sortnum": 13,
+      "type": "text",
+      "text": "That said, if you've got the time to spare and grind your way through the Nether for so long that you manage to find all the Netherite you need for this kind of thing, you've definitely deserved decking yourself out in the best possible gear that the game has to offer.$(ln2)But before you do so, maybe ask yourself if it's really worth the time - maybe Pendorite is good enough, eh?"
+    }
+  ]
+}

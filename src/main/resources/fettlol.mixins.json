@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.brekitomasson.fettlol.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "plugin": "net.brekitomasson.fettlol.base.ConfigurationMixinConditions",
+  "mixins": [
+    "InfinityBowArrowMixin",
+    "InfinityBowMendingMixin",
+    "PlayerManagerMixin",
+    "EggCollectorMixin",
+    "RecipeManagerMixin",
+    "accessor.SpawnEggItemAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

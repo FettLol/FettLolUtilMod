@@ -1,0 +1,23 @@
+{
+  "enchantment.fettlol.egg_collector": "Egg Collector",
+  "entity.fettlol.wandering_head_hunter": "Wandering Headhunter",
+  "item.fettlol.headhunter_spawn_egg": "Wandering Headhunter Spawn Egg",
+  "item.fettlol.knightfall": "Knightfall",
+  "item.fettlol.knightfall.tooltip": "Legends are told about this sword.",
+  "item.fettlol.peacekeeper": "Peacekeeper",
+  "item.fettlol.peacekeeper.tooltip": "It's lighter than it looks, and hums as you swing it.",
+  "item.fettlol.soul_gem": "Soul Gem",
+  "item.fettlol.soul_shard": "Soul Shard",
+  "itemGroup.fettlol.fettlol": "Fett Lol!",
+  "text.autoconfig.fettlol.option.addEggCollectorEnchantment": "Add Egg Collector Enchantment?",
+  "text.autoconfig.fettlol.option.allRecipiesUnlockedByDefault": "Should all recipies be unlocked by default?",
+  "text.autoconfig.fettlol.option.chickensDropFeathers": "Should Chicken randomly drop feathers?",
+  "text.autoconfig.fettlol.option.displayDebugData":  "Display debug data?",
+  "text.autoconfig.fettlol.option.featherFallingDoesNotBreakFarmland": "Should Feather Falling not break farmland?",
+  "text.autoconfig.fettlol.option.infinityCanMixWithMending": "Can Infinity and Mending enchants coexist?",
+  "text.autoconfig.fettlol.option.infinityDoesNotRequireArrow": "Should the Infinity Enchant works even without arrows?",
+  "text.autoconfig.fettlol.option.poisonousPotatoIsCompostable": "Should Poisonous Potatoes be compostable?",
+  "text.autoconfig.fettlol.option.skipCustomWorldsWarning":  "Skip Custom Worlds Warning?",
+  "text.autoconfig.fettlol.option.anvilUsageHasNoUpperCost":  "Should anvil use costs be more reasonable?",
+  "text.autoconfig.fettlol.option.villagersFollowEmeraldBlocks": "Should Villagers follow players carrying Emerald Blocks?"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": { "item": "fettlol:soul_shard" }
+  },
+  "result": {
+    "item": "fettlol:soul_gem"
+  }
+}
