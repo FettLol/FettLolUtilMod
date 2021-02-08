@@ -20,43 +20,35 @@ public class RecipeHelper {
     }
 
     public static JsonObject createSmithingRecipe(Identifier baseItem, Identifier additionItem, Identifier resultItem) {
-        // Define the various objects and arrays we'll be using.
-        JsonObject jsonObject = new JsonObject();
         JsonObject base = new JsonObject();
-        JsonObject addition = new JsonObject();
-        JsonObject result = new JsonObject();
-
-        // Populate the objects!
         base.addProperty("item", baseItem.toString());
+
+        JsonObject addition = new JsonObject();
         addition.addProperty("item", additionItem.toString());
+
+        JsonObject result = new JsonObject();
         result.addProperty("item", resultItem.toString());
 
-        // Put it all together!
+        JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("type", "minecraft:smithing");
         jsonObject.add("base", base);
         jsonObject.add("addition", addition);
         jsonObject.add("result", result);
 
-        // And return it!
         return jsonObject;
     }
 
     public static JsonObject createSmeltingRecipe(Identifier inputIdentifier, String inputType, Identifier output, Float experience, int time) {
-        // Define the various objects we'll be using.
-        JsonObject jsonObject = new JsonObject();
-        JsonArray ingredientArray = new JsonArray();
         JsonObject ingredientObject = new JsonObject();
-        JsonObject result = new JsonObject();
-
-        // Define the ingredient
+        JsonArray ingredientArray = new JsonArray();
         ingredientObject.addProperty(inputType, inputIdentifier.toString());
         ingredientArray.add(ingredientObject);
 
-        // Define the Result
+        JsonObject result = new JsonObject();
         result.addProperty("item", output.toString());
         result.addProperty("count", 1);
 
-        // Put it all together
+        JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("type", "minecraft:smelting");
         jsonObject.add("ingredient", ingredientArray);
         jsonObject.add("result", result);
@@ -67,13 +59,8 @@ public class RecipeHelper {
     }
 
     public static JsonObject createShapelessRecipe(ArrayList<Identifier> items, ArrayList<String> type, Identifier output) {
-        // Define the various objects and arrays we'll be using.
-        JsonObject jsonObject = new JsonObject();
         JsonObject individualIngredient;
         JsonArray ingredientArray = new JsonArray();
-        JsonObject result = new JsonObject();
-
-        // Define the ingredients.
         for (int i = 0; i < items.size(); ++i) {
             individualIngredient = new JsonObject();
             individualIngredient.addProperty(type.get(i), items.get(i).toString());
@@ -81,10 +68,11 @@ public class RecipeHelper {
             ingredientArray.add(individualIngredient);
         }
 
-        // Define the result.
+        JsonObject result = new JsonObject();
         result.addProperty("item", output.toString());
         result.addProperty("count", 1);
 
+        JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("type", "minecraft:crafting_shapeless");
         jsonObject.add("ingredients", ingredientArray);
         jsonObject.add("result", result);
@@ -93,37 +81,29 @@ public class RecipeHelper {
     }
 
     public static JsonObject createShapedRecipe(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output) {
-
-        // Define the various objects and arrays we'll be using.
-        JsonObject jsonObject = new JsonObject();
         JsonArray jsonArray = new JsonArray();
-        JsonObject individualKey;
-        JsonObject keyList = new JsonObject();
-        JsonObject result = new JsonObject();
-
-        // Define the crafting pattern for this recipe.
         jsonArray.add(pattern.get(0));
         jsonArray.add(pattern.get(1));
         jsonArray.add(pattern.get(2));
 
-        // Define the keys and their definitions, as used in the crafting pattern.
+        JsonObject individualKey;
+        JsonObject keyList = new JsonObject();
         for (int i = 0; i < keys.size(); ++i) {
             individualKey = new JsonObject();
             individualKey.addProperty(type.get(i), items.get(i).toString());
             keyList.add(keys.get(i) + "", individualKey);
         }
 
-        // Define the result object.
+        JsonObject result = new JsonObject();
         result.addProperty("item", output.toString());
         result.addProperty("count", 1);
 
-        // Put it all together into the original JSON Object!
+        JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("type", "minecraft:crafting_shaped");
         jsonObject.add("pattern", jsonArray);
         jsonObject.add("key", keyList);
         jsonObject.add("result", result);
 
-        // And return it!
         return jsonObject;
     }
 

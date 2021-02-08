@@ -9,6 +9,17 @@ import net.minecraft.util.registry.Registry;
 
 public class LootTableHelper {
 
+    // A couple of class constants to speed things up.
+    static final Identifier DIAMOND_ORE = new Identifier("minecraft", "blocks/diamond_ore");
+    static final Identifier ENDERMAN = new Identifier("minecraft", "entities/enderman");
+    static final Identifier SHULKER = new Identifier("minecraft", "entities/shulker");
+    static final Identifier ENDER_DRAGON = new Identifier("minecraft", "entities/ender_dragon");
+    static final Identifier BLAZE = new Identifier("minecraft", "entities/blaze");
+    static final Identifier GUARDIAN = new Identifier("minecraft", "entities/guardian");
+    static final Identifier HUSK = new Identifier("minecraft", "entities/husk");
+    static final Identifier STRAY = new Identifier("minecraft", "entities/stray");
+    static final Identifier ZOMBIE = new Identifier("minecraft", "entities/zombie");
+
     // = Chests =
 
     public static boolean isVillageHouseChest(Identifier identifier) {
@@ -161,25 +172,41 @@ public class LootTableHelper {
     // = Blocks =
 
     public static boolean isDiamondOre(Identifier identifier) {
-        return "minecraft:blocks/diamond_ore".equals(identifier.toString());
-    }
-
-    public static boolean isAncientDebris(Identifier identifier) {
-        return "minecraft:blocks/ancient_debris".equals(identifier.toString());
+        return identifier == DIAMOND_ORE;
     }
 
     // = Mobs and Entities =
 
     public static boolean isEnderman(Identifier identifier) {
-        return "minecraft:entities/enderman".equals(identifier.toString());
+        return identifier == ENDERMAN;
     }
 
     public static boolean isShulker(Identifier identifier) {
-        return "minecraft:entities/shulker".equals(identifier.toString());
+        return identifier == SHULKER;
     }
 
     public static boolean isEnderDragon(Identifier identifier) {
-        return "minecraft:entities/ender_dragon".equals(identifier.toString());
+        return identifier == ENDER_DRAGON;
+    }
+
+    public static boolean isBlaze(Identifier identifier) {
+        return identifier == BLAZE;
+    }
+
+    public static boolean isGuardian(Identifier identifier) {
+        return identifier == GUARDIAN;
+    }
+
+    public static boolean isHusk(Identifier identifier) {
+        return identifier == HUSK;
+    }
+
+    public static boolean isStray(Identifier identifier) {
+        return identifier == STRAY;
+    }
+
+    public static boolean isZombie(Identifier identifier) {
+        return identifier == ZOMBIE;
     }
 
     /**

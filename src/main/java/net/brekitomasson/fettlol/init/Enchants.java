@@ -12,7 +12,7 @@ public class Enchants {
     public static final Enchantment EGG_COLLECTOR = new EggCollectorEnchantment(Enchantment.Rarity.VERY_RARE, EquipmentSlot.values());
 
     public static void init() {
-        if (!UtilMod.CONFIG.isEggCollectorEnchantmentAvailable()) {
+        if (UtilMod.CONFIG.isEggCollectorEnchantmentAvailable()) {
             RegistryHelper.register(Registry.ENCHANTMENT, Enchantment.class, Enchants.class);
         }
     }
