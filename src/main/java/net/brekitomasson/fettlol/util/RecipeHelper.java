@@ -10,9 +10,7 @@ import java.util.ArrayList;
  * These methods help us create various types of crafting recipes via code.
  * Down the line, this file will need to be expanded in multiple ways, including:
  *
- * - Allowing tags to be used instead of just items.
- * - Allowing multiple outputs in shaped recipes.
- * - Allowing for unshaped recipes.
+ * - Allowing multiple outputs in recipes.
  * - Adding support for recipes for some of the specialized recipe types in the modpack.
  */
 public class RecipeHelper {
