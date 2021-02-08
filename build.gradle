@@ -22,7 +22,7 @@ mod_id = project.mod_id
 version = "${project.mod_version}+${project.minecraft_version}"
 group = project.maven_group
 
-minecraft {
+loom {
     accessWidener "src/main/resources/fettlol.accesswidener"
 }
 
