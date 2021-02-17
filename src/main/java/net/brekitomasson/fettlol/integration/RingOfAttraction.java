@@ -9,7 +9,7 @@ public class RingOfAttraction {
 
     public static void init() {
         if (ModIntegrations.isRingOfAttractionLoaded) {
-            UtilMod.LOGGER.info("Ring of Attraction detected! Modifying loot tables.");
+            UtilMod.LOGGER.info("Ring of Attraction detected! Applying integrations!");
 
             LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
                 // The Ring of Attraction has a tiny chance to appear in End City chests.
@@ -18,8 +18,6 @@ public class RingOfAttraction {
                 }
             });
 
-        } else {
-            UtilMod.LOGGER.info("Ring of Attraction not detected! Not adding mod interactions.");
         }
     }
 

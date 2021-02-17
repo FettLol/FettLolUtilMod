@@ -1,13 +1,11 @@
 package net.brekitomasson.fettlol.integration;
 
-import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
 import net.brekitomasson.fettlol.UtilMod;
 import net.brekitomasson.fettlol.init.ModIntegrations;
 import net.brekitomasson.fettlol.util.LootTableHelper;
 import net.brekitomasson.fettlol.util.RecipeHelper;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
-import net.minecraft.util.Identifier;
 
 public class BiomesYoullGo {
 
@@ -21,21 +19,17 @@ public class BiomesYoullGo {
     public static JsonObject PENDORITE_PICKAXE_RECIPE = null;
     public static JsonObject PENDORITE_SHOVEL_RECIPE = null;
     public static JsonObject PENDORITE_SWORD_RECIPE = null;
-    public static JsonObject BLACK_SANDSTONE_RECIPE = null;
-    public static JsonObject BLACK_GLASS_RECIPE = null;
 
     /**
      * Initialize the Biomes You'll Go mod integrations!
      */
     public static void init() {
         if (ModIntegrations.isBygLoaded) {
-            UtilMod.LOGGER.info("Biomes You'll Go detected! Modifying loot tables.");
+            UtilMod.LOGGER.info("Biomes You'll Go detected! Applying integrations.");
 
             updateLootTablesForByg();
             defineRecipesForByg();
 
-        } else {
-            UtilMod.LOGGER.info("Biomes You'll Go not detected! Not adding mod interactions.");
         }
     }
 
@@ -59,23 +53,6 @@ public class BiomesYoullGo {
             PENDORITE_PICKAXE_RECIPE = RecipeHelper.createSmithingRecipe("gildednetherite:gilded_pickaxe", "byg:pendorite_scraps", "byg:pendorite_pickaxe");
             PENDORITE_SHOVEL_RECIPE = RecipeHelper.createSmithingRecipe("gildednetherite:gilded_shovel", "byg:pendorite_scraps", "byg:pendorite_shovel");
             PENDORITE_SWORD_RECIPE = RecipeHelper.createSmithingRecipe("gildednetherite:gilded_sword", "byg:pendorite_scraps", "byg:pendorite_sword");
-
-            // Other stuff.
-            BLACK_SANDSTONE_RECIPE = RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('S'),
-                Lists.newArrayList(new Identifier("c", "black_sand")),
-                Lists.newArrayList("tag"),
-                Lists.newArrayList("SS ", "SS ", "   "),
-                new Identifier("byg", "black_sandstone")
-            );
-
-            BLACK_GLASS_RECIPE = RecipeHelper.createSmeltingRecipe(
-                new Identifier("c", "black_sand"),
-                "tag",
-                new Identifier("minecraft", "black_stained_glass"),
-                0.1F,
-                200
-            );
 
         }
 

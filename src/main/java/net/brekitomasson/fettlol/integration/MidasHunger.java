@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 public class MidasHunger {
     public static void init() {
         if (ModIntegrations.isMidasHungerLoaded) {
-            UtilMod.LOGGER.info("Midas Hunger detected! Modifying loot tables.");
+            UtilMod.LOGGER.info("Midas Hunger detected! Applying integrations!");
 
             LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
 
@@ -46,8 +46,6 @@ public class MidasHunger {
                 // sweet_golden_berries     - speed                     - add to berry loot tables?
 
             });
-        } else {
-            UtilMod.LOGGER.info("Midas Hunger not detected! Not adding mod interactions.");
         }
     }
 }

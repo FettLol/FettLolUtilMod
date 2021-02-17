@@ -18,6 +18,7 @@ public class ModIntegrations {
     // Namespaces used by various mods.
     final public static String BETTER_END = "betterend";
     final public static String BYG = "byg";
+    final public static String BATTLETOWERS = "battletowers";
     final public static String CINDERSCAPES = "cinderscapes";
     final public static String CROPTOPIA = "croptopia";
     final public static String GILDEDNETHERITE = "gildednetherite";
@@ -28,6 +29,7 @@ public class ModIntegrations {
     // Helper methods to test if specific mods are loaded.
     public static boolean isBetterEndLoaded = FabricLoader.getInstance().isModLoaded(BETTER_END);
     public static boolean isBygLoaded = FabricLoader.getInstance().isModLoaded(BYG);
+    public static boolean isBattletowersLoaded = FabricLoader.getInstance().isModLoaded(BATTLETOWERS);
     public static boolean isCinderscapesLoaded = FabricLoader.getInstance().isModLoaded(CINDERSCAPES);
     public static boolean isCroptopiaLoaded = FabricLoader.getInstance().isModLoaded(CROPTOPIA);
     public static boolean isGildedNetheriteLoaded = FabricLoader.getInstance().isModLoaded(GILDEDNETHERITE);
@@ -38,6 +40,7 @@ public class ModIntegrations {
     public static void init() {
         BetterEnd.init();
         BiomesYoullGo.init();
+        Battletowers.init();
         Cinderscapes.init();
         Croptopia.init();
         MidasHunger.init();

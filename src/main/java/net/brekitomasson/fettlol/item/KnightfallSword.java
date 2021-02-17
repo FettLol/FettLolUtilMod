@@ -17,7 +17,7 @@ public class KnightfallSword extends SwordItem {
             ToolMaterials.NETHERITE,
             4,
             -2.4F,
-            new Item.Settings().group(UtilMod.ITEMGROUP).fireproof().rarity(Rarity.RARE)
+            new Settings().group(UtilMod.ITEMGROUP).fireproof().rarity(Rarity.RARE)
         );
     }
 

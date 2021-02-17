@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.text.Text;
+import net.minecraft.text.LiteralText;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 
@@ -25,7 +25,7 @@ public class HeadHelper {
         }
 
         playerHead.setTag(tag);
-        playerHead.setCustomName(Text.of(playerName));
+        playerHead.setCustomName(new LiteralText(playerName));
 
         return playerHead;
     }

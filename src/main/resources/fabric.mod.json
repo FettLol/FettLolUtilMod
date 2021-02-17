@@ -35,5 +35,13 @@
     "minecraft": "1.16.x"
   },
   "suggests": {
+    "betterend": "*",
+    "byg": "*",
+    "cinderscapes": "*",
+    "croptopia": "*",
+    "gildednetherite": "*",
+    "midashunger": "*",
+    "ring_of_attraction": "*",
+    "winged": "*"
   }
 }

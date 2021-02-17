@@ -32,10 +32,6 @@ public class RecipeManagerMixin {
         addCustomRecipe(map, "byg/pendorite_shovel", BiomesYoullGo.PENDORITE_SHOVEL_RECIPE);
         addCustomRecipe(map, "byg/pendorite_sword", BiomesYoullGo.PENDORITE_SWORD_RECIPE);
 
-        // Recipes related to: Biomes You'll Go, Other.
-        addCustomRecipe(map, "byg/black_sandstone", BiomesYoullGo.BLACK_SANDSTONE_RECIPE);
-        addCustomRecipe(map, "byg/black_stained_glass", BiomesYoullGo.BLACK_GLASS_RECIPE);
-
         // Recipes related to: Better End, Armor & Tools
         addCustomRecipe(map, "betterend/aeternium_axe", BetterEnd.AETERNIUM_AXE_RECIPE);
         addCustomRecipe(map, "betterend/aeternium_boots", BetterEnd.AETERNIUM_BOOTS_RECIPE);

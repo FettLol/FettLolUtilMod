@@ -38,13 +38,18 @@ public class ConfigurationMixinConditions implements IMixinConfigPlugin {
             return CONFIG.canInfinityMixWithMending();
         } else if (mixinClassName.contains("EggCollector")) {
             return CONFIG.isEggCollectorEnchantmentAvailable();
-        } else if (mixinClassName.contains("SpawnEggItemAccessor")) {
-            return CONFIG.isEggCollectorEnchantmentAvailable();
+        } else if (mixinClassName.contains("VillagerGoal")) {
+            return CONFIG.doVillagersFollowEmeraldBlocks();
         } else if (mixinClassName.contains("TraderOffers")) {
-            // TODO - Add a configuration for the Wandering Headhunter.
+            return CONFIG.shouldWanderingHeadhunterExist();
+        } else if (mixinClassName.contains("FarmerVillagerTask")) {
+            // Used in Croptopia integration.
             return true;
-        } else if (mixinClassName.contains("RecipeManagerMixin")) {
-            // Always return true for the recipe modifications
+        } else if (mixinClassName.contains("Accessor")) {
+            // Always return true for Accessors.
+            return true;
+        } else if (mixinClassName.contains("RecipeManager")) {
+            // Always return true for recipe modifications.
             return true;
         } else {
             // If the mixin is not detected above, we reject it.

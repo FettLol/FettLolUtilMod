@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 public class Winged {
     public static void init() {
         if (ModIntegrations.isWingedLoaded) {
-            UtilMod.LOGGER.info("Winged detected! Modifying loot tables.");
+            UtilMod.LOGGER.info("Winged detected! Applying integrations!");
 
             LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
 
@@ -19,8 +19,6 @@ public class Winged {
 
             });
 
-        } else {
-            UtilMod.LOGGER.info("Winged not detected! Not adding mod interactions.");
         }
     }
 }

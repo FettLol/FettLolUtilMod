@@ -209,6 +209,10 @@ public class LootTableHelper {
         return identifier == ZOMBIE;
     }
 
+    public static boolean isTowerChest(Identifier identifier) {
+        return identifier.toString().equals("battletowers:default");
+    }
+
     /**
      * Helper method to add things to a loot table.
      *
@@ -218,13 +222,24 @@ public class LootTableHelper {
      * @param supplier    The Supplier field from LootTableLoadingCallback.EVENT.register.
      * @param count       How many times to try to add this item to the loot table.
      * @param probability How large probability that the item is added per try.
-     * @param namespace   The namespace of the item in the registry.
-     * @param item        The name of the item in the registry without the namespace portion.
+     * @param identifier  The Minecraft Registry Identifier of the item to add.
      */
-    public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
+    public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
         FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
             .rolls(new BinomialLootTableRange(count, probability))
-            .with(ItemEntry.builder(Registry.ITEM.get(new Identifier(namespace, item)).asItem()));
+            .with(ItemEntry.builder(Registry.ITEM.get(identifier).asItem()));
         supplier.withPool(poolBuilder.build());
     }
+
+    // Same method as above, but called using two Strings for namespace and item name instead of an Identifier.
+    // For example: "minecraft", "poisonous_potato"
+    public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
+        addToLootTable(supplier, count, probability, new Identifier(namespace, item));
+    }
+
+    // Same method as above, but using one String to identify the item instead of using an Identifier.
+    public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String item) {
+        addToLootTable(supplier, count, probability, new Identifier(item));
+    }
+
 }

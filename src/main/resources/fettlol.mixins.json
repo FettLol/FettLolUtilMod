@@ -9,8 +9,11 @@
     "InfinityBowMendingMixin",
     "PlayerManagerMixin",
     "EggCollectorMixin",
+    "FarmerVillagerTaskMixin",
     "RecipeManagerMixin",
-    "accessor.SpawnEggItemAccessor"
+    "VillagerGoalMixin",
+    "accessor.SpawnEggItemAccessor",
+    "accessor.VillagerEntityAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

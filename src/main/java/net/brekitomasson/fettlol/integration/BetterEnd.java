@@ -26,12 +26,10 @@ public class BetterEnd {
 
     public static void init() {
         if (ModIntegrations.isBetterEndLoaded) {
-            UtilMod.LOGGER.info("Better End detected! Modifying loot tables.");
+            UtilMod.LOGGER.info("Better End detected! Applying integrations.");
 
             defineLootTablesForBetterEnd();
             defineRecipesForBetterEnd();
-        } else {
-            UtilMod.LOGGER.info("Better End not detected! Not adding mod interactions.");
         }
     }
 

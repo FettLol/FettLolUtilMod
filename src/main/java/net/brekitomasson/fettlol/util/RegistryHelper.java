@@ -1,6 +1,8 @@
 package net.brekitomasson.fettlol.util;
 
 import net.brekitomasson.fettlol.UtilMod;
+import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -39,6 +41,18 @@ public class RegistryHelper {
 
     public static Identifier makeId(String name) {
         return new Identifier(UtilMod.MOD_ID, name);
+    }
+
+    public static void makeCompostable(Item item, float value) {
+        CompostingChanceRegistry.INSTANCE.add(item, value);
+    }
+
+    public static void makeCompostable(Identifier identifier, float value) {
+        makeCompostable(Registry.ITEM.getOrEmpty(identifier).get(), value);
+    }
+
+    public static void makeCompostable(String namespace, String itemName, float value) {
+        makeCompostable(Registry.ITEM.getOrEmpty(new Identifier(namespace, itemName)).get(), value);
     }
 
     public interface RegistryCallBack<T> {

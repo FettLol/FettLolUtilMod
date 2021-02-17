@@ -27,9 +27,9 @@ public class LootTables {
                 LootTableHelper.addToLootTable(supplier, 2, 0.03F, "fettlol", "soul_shard");
             }
 
-            // Add Soul Shards to Stronghold chests (3 separate 2% rolls)
+            // Add Soul Shards to Stronghold chests (3 separate 12% rolls)
             if (LootTableHelper.isStronghold(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 3, 0.2F, "fettlol", "soul_shard");
+                LootTableHelper.addToLootTable(supplier, 3, 0.12F, "fettlol", "soul_shard");
             }
 
             // Shulkers have a guaranteed drop of at least one Shulker Shell in addition to what they drop randomly.
@@ -43,29 +43,29 @@ public class LootTables {
                 LootTableHelper.addToLootTable(supplier, 1, 1, "minecraft", "dragon_egg");
             }
 
-            // Blaze can drop Quartz (2 separate 10% rolls)
+            // Blaze can drop Quartz (2 separate 6% rolls)
             if (LootTableHelper.isBlaze(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.1F, "minecraft", "quartz");
+                LootTableHelper.addToLootTable(supplier, 2, 0.06F, "minecraft", "quartz");
             }
 
-            // Husk can drop Sand (2 separate 10% rolls)
+            // Husk can drop Sand (2 separate 5% rolls)
             if (LootTableHelper.isHusk(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.1F, "minecraft", "sand");
+                LootTableHelper.addToLootTable(supplier, 2, 0.05F, "minecraft", "sand");
             }
 
-            // Stray can drop Blue Ice (2 separate 10% rolls)
+            // Stray can drop Blue Ice (2 separate 9% rolls)
             if (LootTableHelper.isStray(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.1F, "minecraft", "blue_ice");
+                LootTableHelper.addToLootTable(supplier, 2, 0.09F, "minecraft", "blue_ice");
             }
 
-            // Zombies can drop Gravel (2 separate 10% rolls)
+            // Zombies can drop Gravel (2 separate 8% rolls)
             if (LootTableHelper.isZombie(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.1F, "minecraft", "gravel");
+                LootTableHelper.addToLootTable(supplier, 2, 0.08F, "minecraft", "gravel");
             }
 
-            // Guardians can drop Lapis Lazuli (2 separate 10% rolls)
+            // Guardians can drop Lapis Lazuli (2 separate 8% rolls)
             if (LootTableHelper.isGuardian(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.1F, "minecraft", "lapis_lazuli");
+                LootTableHelper.addToLootTable(supplier, 2, 0.08F, "minecraft", "lapis_lazuli");
             }
         });
     }
