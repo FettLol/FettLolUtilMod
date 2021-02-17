@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "cinderscapes:block/ores/sulfur_quartz/ore_normal" }
+    }
+}

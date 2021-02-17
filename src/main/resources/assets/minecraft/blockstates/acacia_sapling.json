@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      { "model": "block/acacia_sapling" },
+      { "model": "block/acacia_sapling1" },
+      { "model": "block/acacia_sapling2" },
+      { "model": "block/acacia_sapling3" },
+      { "model": "block/acacia_sapling4" },
+      { "model": "block/acacia_sapling5" }
+    ]
+  }
+}

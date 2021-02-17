@@ -1,0 +1,57 @@
+{
+	"__comment": "Made by Mickey Joe Alpha",
+	"parent": "block/block",
+	"ambientocclusion": false,
+	"textures": {
+		"particle": "#wall"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Center post",
+			"from": [ 4, 0, 12 ],
+			"to": [ 12, 16, 20 ],
+			"faces": {
+				"down": { "uv": [ 4, 4, 12, 12 ], "texture": "#wall", "cullface": "down" },
+				"up": { "uv": [ 4, 4, 12, 12 ], "texture": "#wall" },
+				"north": { "uv": [ 4, 0, 12, 16 ], "texture": "#wall" },
+				"south": { "uv": [ 4, 0, 12, 16 ], "texture": "#wall" },
+				"west": { "uv": [ 4, 0, 12, 16 ], "texture": "#wall" },
+				"east": { "uv": [ 4, 0, 12, 16 ], "texture": "#wall" }
+			}
+		},
+		{
+			"__comment": "Full wall",
+			"from": [ 5, 0, 4 ],
+			"to": [ 11, 13, 12 ],
+			"faces": {
+				"down": { "uv": [ 5, 4, 11, 12 ], "texture": "#wall", "cullface": "down" },
+				"up": { "uv": [ 5, 4, 11, 12 ], "texture": "#wall" },
+				"west": { "uv": [ 4, 3, 12, 16 ], "texture": "#wall" },
+				"east": { "uv": [ 4, 3, 12, 16 ], "texture": "#wall" }
+			}
+		},
+		{
+			"__comment": "Center post",
+			"from": [ 4, 0, -4 ],
+			"to": [ 12, 16, 4 ],
+			"faces": {
+				"down": { "uv": [ 4, 4, 12, 12 ], "texture": "#wall", "cullface": "down" },
+				"up": { "uv": [ 4, 4, 12, 12 ], "texture": "#wall" },
+				"north": { "uv": [ 4, 0, 12, 16 ], "texture": "#wall" },
+				"south": { "uv": [ 4, 0, 12, 16 ], "texture": "#wall" },
+				"west": { "uv": [ 4, 0, 12, 16 ], "texture": "#wall" },
+				"east": { "uv": [ 4, 0, 12, 16 ], "texture": "#wall" }
+			}
+		}
+	],
+	"display": {
+		"gui": {
+			"rotation":  [ 30, 135, 0 ],
+			"scale":  [ 0.625, 0.625, 0.625 ]
+		},
+		"fixed": {
+			"rotation":  [ 0, 90, 0 ],
+			"scale":  [ 0.5, 0.5, 0.5 ]
+		}
+	}
+}

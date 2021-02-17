@@ -1,0 +1,8 @@
+{
+  "parent": "cinderscapes:block/ores/parent/normal/normal_ore",
+  "textures": {
+    "netherrack": "block/netherrack",
+    "ore": "cinderscapes:block/ores/sulfur/ore",
+    "particle": "block/netherrack"
+  }
+}

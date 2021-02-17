@@ -1,0 +1,7 @@
+{
+	"__comment": "Made by Mickey Joe Alpha",
+    "parent": "block/blast_furnace",
+    "textures": {
+        "front": "block/blast_furnace_front_on"
+    }
+}

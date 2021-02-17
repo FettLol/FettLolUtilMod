@@ -1,0 +1,9 @@
+{
+	"__comment": "Written by Mickey Joe Alpha",
+    "variants": {
+        "": [
+            { "model": "block/cactus", "weight": 85 },
+            { "model": "block/cactus_0", "weight": 15 }
+        ]
+    }
+}

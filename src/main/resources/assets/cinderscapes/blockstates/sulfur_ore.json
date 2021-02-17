@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "cinderscapes:block/ores/sulfur/ore_normal" }
+    }
+}

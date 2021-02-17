@@ -1,0 +1,11 @@
+{
+	"__comment": "Written by Mickey Joe Alpha",
+    "variants": {
+        "facing=down":  { "model": "block/dropper_vertical_fd" },
+        "facing=up":    { "model": "block/dropper_vertical" },
+        "facing=north": { "model": "block/dropper" },
+        "facing=south": { "model": "block/dropper", "y": 180 },
+        "facing=west":  { "model": "block/dropper", "y": 270 },
+        "facing=east":  { "model": "block/dropper", "y": 90 }
+    }
+}

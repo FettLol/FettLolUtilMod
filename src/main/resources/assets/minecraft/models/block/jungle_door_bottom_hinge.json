@@ -1,0 +1,24 @@
+{
+	"__comment": "Made by Mickey Joe Alpha",
+	"textures": {
+		"particle": "block/jungle_door_bottom",
+		"front": "block/jungle_door_bottom",
+		"hinged": "block/door_side_hinged_bottom_0",
+		"side": "block/door_side_bottom_0",
+		"bottom": "block/door_bottom_0"
+	},
+	"elements": [ 	 
+		{
+			"__comment": "Box9",
+			"from": [ 0, 0, 0 ],
+			"to": [ 3, 16, 16 ],
+			"faces": {
+				"down": { "uv": [ 0, 12, 16, 15 ], "texture": "#bottom", "cullface": "down", "rotation": 90 },
+				"north": { "uv": [ 12, 0, 15, 16 ], "texture": "#side", "cullface": "north" },
+				"south": { "uv": [ 12, 0, 15, 16 ], "texture": "#hinged", "cullface": "south" },
+				"west": { "uv": [ 16, 0, 0, 16 ], "texture": "#front", "cullface": "west" },
+				"east": { "uv": [ 0, 0, 16, 16 ], "texture": "#front" }
+			}
+		}
+	]
+}
