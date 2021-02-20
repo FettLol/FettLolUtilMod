@@ -1,11 +1,11 @@
 package net.brekitomasson.fettlol.init;
 
-import net.brekitomasson.fettlol.item.*;
+import net.brekitomasson.fettlol.items.*;
 import net.brekitomasson.fettlol.util.RegistryHelper;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
 
-public class Items {
+public class FettlolItems {
 
     // Weapons - Swords
     public static final Item KNIGHTFALL = new KnightfallSword();
@@ -20,7 +20,7 @@ public class Items {
 
     // Init & Settings
     public static void init() {
-        RegistryHelper.register(Registry.ITEM, Item.class, Items.class);
+        RegistryHelper.register(Registry.ITEM, Item.class, FettlolItems.class);
     }
 
 }

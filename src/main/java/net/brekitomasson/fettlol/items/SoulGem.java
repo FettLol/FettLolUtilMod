@@ -1,4 +1,4 @@
-package net.brekitomasson.fettlol.item;
+package net.brekitomasson.fettlol.items;
 
 import net.brekitomasson.fettlol.UtilMod;
 import net.minecraft.item.Item;

@@ -1,4 +1,4 @@
-package net.brekitomasson.fettlol.enchantment;
+package net.brekitomasson.fettlol.enchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;

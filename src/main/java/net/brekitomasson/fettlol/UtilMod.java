@@ -28,13 +28,13 @@ public class UtilMod implements ModInitializer {
         LOGGER.info("Starting FettLol Utility Mod.");
 
         // Initialize our entites!
-        Entities.init();
+        FettlolEntities.init();
 
         // Initialize our enchantments!
-        Enchants.init();
+        FettlolEnchants.init();
 
         // Initialize our items!
-        Items.init();
+        FettlolItems.init();
 
         // Initialize our loot tables!
         LootTables.init();

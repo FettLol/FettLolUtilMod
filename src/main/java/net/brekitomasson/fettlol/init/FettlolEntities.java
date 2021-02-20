@@ -15,7 +15,7 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.registry.Registry;
 
-public class Entities {
+public class FettlolEntities {
 
     public static final EntityType<WanderingHeadHunterEntity> WANDERING_HEAD_HUNTER =
         Registry.register(

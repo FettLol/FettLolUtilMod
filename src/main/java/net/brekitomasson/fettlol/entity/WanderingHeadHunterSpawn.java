@@ -1,6 +1,6 @@
 package net.brekitomasson.fettlol.entity;
 
-import net.brekitomasson.fettlol.init.Entities;
+import net.brekitomasson.fettlol.init.FettlolEntities;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.SpawnRestriction;
@@ -42,7 +42,7 @@ public class WanderingHeadHunterSpawn {
             BlockPos blockPos3 = getLlamaSpawnPosition(serverWorld, blockPos2, 48);
 
             if (blockPos3 != null && wontSuffocateAt(serverWorld, blockPos3)) {
-                WanderingHeadHunterEntity traderEntity = Entities.WANDERING_HEAD_HUNTER.spawn(serverWorld, (CompoundTag) null, (Text) null, (PlayerEntity) null, blockPos3, SpawnReason.EVENT, false, false);
+                WanderingHeadHunterEntity traderEntity = FettlolEntities.WANDERING_HEAD_HUNTER.spawn(serverWorld, (CompoundTag) null, (Text) null, (PlayerEntity) null, blockPos3, SpawnReason.EVENT, false, false);
 
                 if (traderEntity != null) {
                     serverWorldProperties.setWanderingTraderId(traderEntity.getUuid());

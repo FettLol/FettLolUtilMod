@@ -1,4 +1,4 @@
-package net.brekitomasson.fettlol.event;
+package net.brekitomasson.fettlol.events;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
