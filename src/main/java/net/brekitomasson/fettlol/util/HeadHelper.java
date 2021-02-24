@@ -11,43 +11,50 @@ import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 
 import java.util.Random;
+import java.util.UUID;
 
 public class HeadHelper {
 
+    public static ItemStack getPlayerHead(String playerName, UUID skullOwner) {
+        ItemStack playerHead = new ItemStack(Items.PLAYER_HEAD, 1);
+
+        CompoundTag tag = playerHead.getOrCreateTag();
+        tag.putUuid("SkullOwner", skullOwner);
+        playerHead.setTag(tag);
+
+        playerHead.setCustomName(new LiteralText(playerName));
+
+        return playerHead;
+    }
+
     public static ItemStack getPlayerHead(String playerName, String skullOwner) {
         ItemStack playerHead = new ItemStack(Items.PLAYER_HEAD, 1);
+
         CompoundTag tag = playerHead.getOrCreateTag();
-
-        if (skullOwner != null) {
-            tag.putString("SkullOwner", skullOwner);
-        } else {
-            tag.putString("SkullOwner", playerName);
-        }
-
+        tag.putString("SkullOwner", skullOwner);
         playerHead.setTag(tag);
+
         playerHead.setCustomName(new LiteralText(playerName));
 
         return playerHead;
     }
 
     public static TradeOffers.Factory playerHeadForSale(String playerName) {
-        return new SellHeadFactory(
-            getPlayerHead(playerName, playerName),
-            1,
-            3,
-            10
-        );
+        return new SellHeadFactory(getPlayerHead(playerName, playerName), 1, 3, 10);
+    }
+
+    public static TradeOffers.Factory playerHeadForSale(String playerName, UUID skullOwner) {
+        return new SellHeadFactory(getPlayerHead(playerName, skullOwner), 1, 3, 10);
     }
 
     public static TradeOffers.Factory playerHeadForSale(String playerName, String skullOwner) {
-        return new SellHeadFactory(
-            getPlayerHead(playerName, skullOwner),
-            1,
-            3,
-            10
-        );
+        return new SellHeadFactory(getPlayerHead(playerName, skullOwner), 1, 3, 10);
     }
 
+    /**
+     * Static Factory class extending the standard TradeOffers factory and tuned specifically
+     * for use when selling player heads using the "Wandering Headhunter" trader.
+     */
     public static class SellHeadFactory implements TradeOffers.Factory {
         private final ItemStack sell;
         private final int price;

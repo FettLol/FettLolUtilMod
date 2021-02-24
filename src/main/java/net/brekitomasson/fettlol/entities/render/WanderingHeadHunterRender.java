@@ -1,7 +1,7 @@
-package net.brekitomasson.fettlol.entity.render;
+package net.brekitomasson.fettlol.entities.render;
 
-import net.brekitomasson.fettlol.entity.WanderingHeadHunterEntity;
-import net.brekitomasson.fettlol.entity.render.feature.WanderingHeadHunterFeatureRenderer;
+import net.brekitomasson.fettlol.entities.WanderingHeadHunterEntity;
+import net.brekitomasson.fettlol.entities.render.feature.WanderingHeadHunterFeatureRenderer;
 import net.brekitomasson.fettlol.util.RegistryHelper;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.MobEntityRenderer;

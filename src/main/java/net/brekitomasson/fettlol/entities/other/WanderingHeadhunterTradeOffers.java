@@ -1,10 +1,12 @@
-package net.brekitomasson.fettlol.entity;
+package net.brekitomasson.fettlol.entities.other;
 
 import com.google.common.collect.ImmutableMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.brekitomasson.fettlol.util.HeadHelper;
 import net.minecraft.village.TradeOffers;
+
+import java.util.UUID;
 
 public class WanderingHeadhunterTradeOffers {
     public static final Int2ObjectMap<TradeOffers.Factory[]> WANDERING_HEADHUNTER_TRADES;
@@ -22,10 +24,9 @@ public class WanderingHeadhunterTradeOffers {
             HeadHelper.playerHeadForSale("Captain America", "KawaiSenpai"),
             HeadHelper.playerHeadForSale("Chipmunk", "hiiamcoco"),
             HeadHelper.playerHeadForSale("Darth Vader", "Darth_Vader_One"),
-            HeadHelper.playerHeadForSale("Deadpool", "michael5671"),
+            HeadHelper.playerHeadForSale("Deadpool", UUID.fromString("dda66c42-fd6f-4eab-b604-8357091a582a")),
             HeadHelper.playerHeadForSale("Docm77"),
-            HeadHelper.playerHeadForSale("Doge", "Doggy"),
-            HeadHelper.playerHeadForSale("Donald Duck", "jimskott"),
+            HeadHelper.playerHeadForSale("Doge", UUID.fromString("c5a68449-6e6a-4c16-8ab4-032208d2ff44")),
             HeadHelper.playerHeadForSale("Donald Duck", "po_ro"),
             HeadHelper.playerHeadForSale("Ducky", "Hacking"),
             HeadHelper.playerHeadForSale("Elffairy"),

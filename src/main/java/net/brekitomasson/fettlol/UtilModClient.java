@@ -1,6 +1,6 @@
 package net.brekitomasson.fettlol;
 
-import net.brekitomasson.fettlol.entity.render.WanderingHeadHunterRender;
+import net.brekitomasson.fettlol.entities.render.WanderingHeadHunterRender;
 import net.brekitomasson.fettlol.init.FettlolEntities;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;

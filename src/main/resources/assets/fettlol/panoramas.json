@@ -1,0 +1,9 @@
+{
+  "default": {
+    "name": "fettlol:v11",
+    "panoramaId": "fettlol:textures/gui/panoramas/v11/panorama",
+    "musicSound": {
+      "sound": "music_disc.pigstep"
+    }
+  }
+}

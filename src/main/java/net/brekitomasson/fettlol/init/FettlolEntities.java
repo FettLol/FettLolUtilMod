@@ -1,8 +1,8 @@
 package net.brekitomasson.fettlol.init;
 
 import net.brekitomasson.fettlol.UtilMod;
-import net.brekitomasson.fettlol.entity.WanderingHeadHunterEntity;
-import net.brekitomasson.fettlol.entity.WanderingHeadHunterSpawn;
+import net.brekitomasson.fettlol.entities.WanderingHeadHunterEntity;
+import net.brekitomasson.fettlol.entities.spawn.WanderingHeadHunterSpawn;
 import net.brekitomasson.fettlol.util.RegistryHelper;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;

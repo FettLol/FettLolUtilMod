@@ -47,7 +47,7 @@ public class Croptopia {
 
             // Randomly add a selection of Croptopia foods to villager chests.
             if (LootTableHelper.isVillageHouseChest(identifier)) {
-                VILLAGER_FOOD.forEach(food -> LootTableHelper.addToLootTable(supplier, 3, 0.1F, cropIdentifier(food)));
+                VILLAGER_FOOD.forEach(food -> LootTableHelper.addToLootTable(supplier, 3, 0.02F, cropIdentifier(food)));
             }
 
             // This is a temporary workaround in order to allow Farmer villagers to harvest and replant

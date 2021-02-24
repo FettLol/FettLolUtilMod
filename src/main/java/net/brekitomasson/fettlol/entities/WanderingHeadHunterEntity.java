@@ -1,5 +1,6 @@
-package net.brekitomasson.fettlol.entity;
+package net.brekitomasson.fettlol.entities;
 
+import net.brekitomasson.fettlol.entities.other.WanderingHeadhunterTradeOffers;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.passive.WanderingTraderEntity;

@@ -1,5 +1,6 @@
-package net.brekitomasson.fettlol.entity;
+package net.brekitomasson.fettlol.entities.spawn;
 
+import net.brekitomasson.fettlol.entities.WanderingHeadHunterEntity;
 import net.brekitomasson.fettlol.init.FettlolEntities;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;

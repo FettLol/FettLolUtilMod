@@ -1,6 +1,6 @@
-package net.brekitomasson.fettlol.entity.render.feature;
+package net.brekitomasson.fettlol.entities.render.feature;
 
-import net.brekitomasson.fettlol.entity.WanderingHeadHunterEntity;
+import net.brekitomasson.fettlol.entities.WanderingHeadHunterEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
