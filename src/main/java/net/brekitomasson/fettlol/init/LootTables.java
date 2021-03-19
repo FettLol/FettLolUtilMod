@@ -12,14 +12,24 @@ public class LootTables {
     public static void init() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
 
-            // Add Knightfall to various Nether locations. (7%)
+            // Add Knightfall to various Nether locations. (3%)
             if (LootTableHelper.isNetherEndgame(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.07F, "fettlol", "knightfall");
+                LootTableHelper.addToLootTableWithRandomEnchantment(supplier, 1, 0.03F, "fettlol", "knightfall");
             }
 
-            // Add Peacekeeper to various End locations. (8%)
+            // Add Peacekeeper to various End locations. (4%)
             if (LootTableHelper.isEndEndgame(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.08F, "fettlol", "peacekeeper");
+                LootTableHelper.addToLootTableWithRandomEnchantment(supplier, 1, 0.04F, "fettlol", "peacekeeper");
+            }
+
+            // Add Aquamarine Gem to hostile underwater mobs (2%)
+            if (LootTableHelper.isHostileWaterMob(identifier)) {
+                LootTableHelper.addToLootTable(supplier, 1, 0.02F, "fettlol", "aquamarine_gem");
+            }
+
+            // Add Aquamarine Gem to Lapis Lazuli ore (2%)
+            if (LootTableHelper.isLapisOre(identifier)) {
+                LootTableHelper.addToLootTable(supplier, 1, 0.02F, "fettlol", "aquamarine_gem");
             }
 
             // Add Soul Shards to Diamond Ore (2 separate 3% rolls)
@@ -43,9 +53,9 @@ public class LootTables {
                 LootTableHelper.addToLootTable(supplier, 1, 1, "minecraft", "dragon_egg");
             }
 
-            // Blaze can drop Quartz (2 separate 6% rolls)
-            if (LootTableHelper.isBlaze(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.06F, "minecraft", "quartz");
+            // Drowned can drop Clay (2 separate 6% rolls)
+            if (LootTableHelper.isDrowned(identifier)) {
+                LootTableHelper.addToLootTable(supplier, 2, 0.06F, "minecraft", "clay");
             }
 
             // Husk can drop Sand (2 separate 5% rolls)

@@ -1,0 +1,15 @@
+{
+  "type": "dankstorage:upgrade",
+  "pattern": [
+    " D ",
+    "DSD",
+    " D "
+  ],
+  "key": {
+    "D": { "item": "minecraft:nether_star" },
+    "S": { "item": "dankstorage:dank_6" }
+  },
+  "result": {
+    "item": "dankstorage:dank_7"
+  }
+}

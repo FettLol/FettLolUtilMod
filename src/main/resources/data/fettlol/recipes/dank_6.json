@@ -1,0 +1,16 @@
+{
+  "type": "dankstorage:upgrade",
+  "pattern": [
+    "ADA",
+    "DSD",
+    "ADA"
+  ],
+  "key": {
+    "A": { "item": "minecraft:netherite_scrap" },
+    "D": { "item": "minecraft:obsidian" },
+    "S": { "item": "dankstorage:dank_5" }
+  },
+  "result": {
+    "item": "dankstorage:dank_6"
+  }
+}

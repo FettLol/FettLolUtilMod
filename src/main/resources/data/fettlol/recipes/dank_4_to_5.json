@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ADA",
+    "DSD",
+    "ADA"
+  ],
+  "key": {
+    "A": { "item": "fettlol:aquamarine_gem" },
+    "D": { "item": "minecraft:diamond_block" },
+    "S": { "item": "minecraft:stick" }
+  },
+  "result": {
+    "item": "dankstorage:4_to_5"
+  }
+}

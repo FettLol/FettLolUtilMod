@@ -21,6 +21,7 @@ public class ModIntegrations {
     final public static String BATTLETOWERS = "battletowers";
     final public static String CINDERSCAPES = "cinderscapes";
     final public static String CROPTOPIA = "croptopia";
+    final public static String DANKSTORAGE = "dankstorage";
     final public static String GILDEDNETHERITE = "gildednetherite";
     final public static String MIDAS_HUNGER = "midashunger";
     final public static String RING_OF_ATTRACTION = "ring_of_attraction";
@@ -32,17 +33,19 @@ public class ModIntegrations {
     public static boolean isBattletowersLoaded = FabricLoader.getInstance().isModLoaded(BATTLETOWERS);
     public static boolean isCinderscapesLoaded = FabricLoader.getInstance().isModLoaded(CINDERSCAPES);
     public static boolean isCroptopiaLoaded = FabricLoader.getInstance().isModLoaded(CROPTOPIA);
+    public static boolean isDankStorageLoaded = FabricLoader.getInstance().isModLoaded(DANKSTORAGE);
     public static boolean isGildedNetheriteLoaded = FabricLoader.getInstance().isModLoaded(GILDEDNETHERITE);
     public static boolean isMidasHungerLoaded = FabricLoader.getInstance().isModLoaded(MIDAS_HUNGER);
     public static boolean isRingOfAttractionLoaded = FabricLoader.getInstance().isModLoaded(RING_OF_ATTRACTION);
     public static boolean isWingedLoaded = FabricLoader.getInstance().isModLoaded(WINGED);
 
     public static void init() {
+        Battletowers.init();
         BetterEnd.init();
         BiomesYoullGo.init();
-        Battletowers.init();
         Cinderscapes.init();
         Croptopia.init();
+        DankStorage.init();
         MidasHunger.init();
         RingOfAttraction.init();
         Winged.init();

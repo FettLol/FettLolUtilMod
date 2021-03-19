@@ -18,7 +18,6 @@ betterend:eternal_crystal <-- recipe?
 - TODO: add more uses for fettlol:soul_shard and/or fettlol:soul_gem
 - TODO: Maybe add byg:quartzite_sand as a possible replacement for byg:white_sand
 - TODO: Add crafting table-recipes for byg:rocky_stone instead of just Stonecutter Recipes.
-- TODO: Create custom recipe or add drops for ring_of_attraction:ring_of_attraction.
 
 - betterend:ender_dust
 - appliedenergistics2:ender_dust

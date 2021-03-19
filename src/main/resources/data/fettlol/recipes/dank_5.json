@@ -1,0 +1,16 @@
+{
+  "type": "dankstorage:upgrade",
+  "pattern": [
+    "ADA",
+    "DSD",
+    "ADA"
+  ],
+  "key": {
+    "A": { "item": "fettlol:aquamarine_gem" },
+    "D": { "item": "minecraft:diamond_block" },
+    "S": { "item": "dankstorage:dank_4" }
+  },
+  "result": {
+    "item": "dankstorage:dank_5"
+  }
+}

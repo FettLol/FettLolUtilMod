@@ -15,6 +15,7 @@ public class FettlolItems {
     public static final Item HEADHUNTER_SPAWN_EGG = new HeadhunterSpawnEgg();
 
     // Gems and Special Items
+    public static final Item AQUAMARINE_GEM = new AquamarineGem();
     public static final Item SOUL_SHARD = new SoulShard();
     public static final Item SOUL_GEM = new SoulGem();
 

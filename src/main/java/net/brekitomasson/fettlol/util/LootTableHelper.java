@@ -3,19 +3,19 @@ package net.brekitomasson.fettlol.util;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.FabricLootSupplierBuilder;
 import net.minecraft.loot.BinomialLootTableRange;
+import net.minecraft.loot.UniformLootTableRange;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.EnchantWithLevelsLootFunction;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class LootTableHelper {
 
     // A couple of class constants to speed things up.
-    static final Identifier DIAMOND_ORE = new Identifier("minecraft", "blocks/diamond_ore");
     static final Identifier ENDERMAN = new Identifier("minecraft", "entities/enderman");
     static final Identifier SHULKER = new Identifier("minecraft", "entities/shulker");
     static final Identifier ENDER_DRAGON = new Identifier("minecraft", "entities/ender_dragon");
-    static final Identifier BLAZE = new Identifier("minecraft", "entities/blaze");
-    static final Identifier GUARDIAN = new Identifier("minecraft", "entities/guardian");
+    static final Identifier DROWNED = new Identifier("minecraft", "entities/drowned");
     static final Identifier HUSK = new Identifier("minecraft", "entities/husk");
     static final Identifier STRAY = new Identifier("minecraft", "entities/stray");
     static final Identifier ZOMBIE = new Identifier("minecraft", "entities/zombie");
@@ -172,7 +172,11 @@ public class LootTableHelper {
     // = Blocks =
 
     public static boolean isDiamondOre(Identifier identifier) {
-        return identifier == DIAMOND_ORE;
+        return identifier.toString().equals("minecraft:blocks/diamond_ore");
+    }
+
+    public static boolean isLapisOre(Identifier identifier) {
+        return identifier.toString().equals("minecraft:blocks/lapis_ore");
     }
 
     // = Mobs and Entities =
@@ -189,12 +193,9 @@ public class LootTableHelper {
         return identifier == ENDER_DRAGON;
     }
 
-    public static boolean isBlaze(Identifier identifier) {
-        return identifier == BLAZE;
-    }
-
     public static boolean isGuardian(Identifier identifier) {
-        return identifier == GUARDIAN;
+        return identifier.toString().equals("minecraft:entities/guardian")
+            || identifier.toString().equals("minecraft:entities/elder_guardian");
     }
 
     public static boolean isHusk(Identifier identifier) {
@@ -205,12 +206,29 @@ public class LootTableHelper {
         return identifier == STRAY;
     }
 
+    public static boolean isDrowned(Identifier identifier) {
+        return identifier == DROWNED;
+    }
+
     public static boolean isZombie(Identifier identifier) {
         return identifier == ZOMBIE;
     }
 
     public static boolean isTowerChest(Identifier identifier) {
         return identifier.toString().equals("battletowers:default");
+    }
+
+    public static boolean isHostileWaterMob(Identifier identifier) {
+        switch (identifier.toString()) {
+            case "minecraft:entities/drowned":
+            case "minecraft:entities/guardian":
+            case "minecraft:entities/elder_guardian":
+            case "biomemakeover:entities/decayed":
+                return true;
+
+            default:
+                return false;
+        }
     }
 
     /**
@@ -231,15 +249,31 @@ public class LootTableHelper {
         supplier.withPool(poolBuilder.build());
     }
 
+    public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
+        FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
+            .rolls(new BinomialLootTableRange(count, probability))
+            .withFunction(EnchantWithLevelsLootFunction.builder(UniformLootTableRange.between(20.0f, 39.0f)).allowTreasureEnchantments().build())
+            .with(ItemEntry.builder(Registry.ITEM.get(identifier).asItem()));
+        supplier.withPool(poolBuilder.build());
+    }
+
     // Same method as above, but called using two Strings for namespace and item name instead of an Identifier.
     // For example: "minecraft", "poisonous_potato"
     public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
         addToLootTable(supplier, count, probability, new Identifier(namespace, item));
     }
 
+    public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
+        addToLootTableWithRandomEnchantment(supplier, count, probability, new Identifier(namespace, item));
+    }
+
     // Same method as above, but using one String to identify the item instead of using an Identifier.
     public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String item) {
         addToLootTable(supplier, count, probability, new Identifier(item));
+    }
+
+    public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, String item) {
+        addToLootTableWithRandomEnchantment(supplier, count, probability, new Identifier(item));
     }
 
 }

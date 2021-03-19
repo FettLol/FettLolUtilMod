@@ -18,14 +18,14 @@ public class PeacekeeperSword extends SwordItem {
         super(
             ToolMaterials.DIAMOND,
             3,
-            -2.2F,
+            -1.8F,
             (new Settings()).group(UtilMod.ITEMGROUP).rarity(Rarity.RARE)
         );
     }
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
-        tooltip.add(new TranslatableText("item.fettlol.knightfall.tooltip"));
+        tooltip.add(new TranslatableText("item.fettlol.peacekeeper.tooltip"));
     }
 
 }

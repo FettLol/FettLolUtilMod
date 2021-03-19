@@ -18,6 +18,14 @@ public class WanderingHeadHunterEntity extends WanderingTraderEntity {
         this.teleporting = true;
     }
 
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.ENTITY_PANDA_AMBIENT;
+    }
+
+    protected SoundEvent getTradingSound(boolean sold) {
+        return SoundEvents.ENTITY_PANDA_SNEEZE;
+    }
+
     protected SoundEvent getHurtSound(DamageSource damageSource) {
         return SoundEvents.ENTITY_OCELOT_HURT;
     }

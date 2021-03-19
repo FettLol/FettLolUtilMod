@@ -1,25 +1,39 @@
 package net.brekitomasson.fettlol.util;
 
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.IntArrayTag;
+import net.minecraft.nbt.StringNbtReader;
 import net.minecraft.text.LiteralText;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 
 import java.util.Random;
-import java.util.UUID;
 
 public class HeadHelper {
 
-    public static ItemStack getPlayerHead(String playerName, UUID skullOwner) {
+    private static String getIntArray(int[] idArray) {
+        return new IntArrayTag(idArray).toString();
+    }
+
+    public static ItemStack getPlayerHeadWithTexture(String playerName, int[] idArray, String texture) {
         ItemStack playerHead = new ItemStack(Items.PLAYER_HEAD, 1);
 
-        CompoundTag tag = playerHead.getOrCreateTag();
-        tag.putUuid("SkullOwner", skullOwner);
+        CompoundTag tag = null;
+
+        try {
+            tag = StringNbtReader.parse(
+                "{SkullOwner:{Id:" + getIntArray(idArray) + ",Properties:{textures:[{Value:\"" + texture + "\"}]}}}"
+            );
+        } catch (CommandSyntaxException e) {
+            e.printStackTrace();
+        }
+
         playerHead.setTag(tag);
 
         playerHead.setCustomName(new LiteralText(playerName));
@@ -39,16 +53,35 @@ public class HeadHelper {
         return playerHead;
     }
 
+    /**
+     * Get a head where the name and profile is the same.
+     *
+     * @param playerName String Name and Profile
+     * @return SellHeadFactory
+     */
     public static TradeOffers.Factory playerHeadForSale(String playerName) {
         return new SellHeadFactory(getPlayerHead(playerName, playerName), 1, 3, 10);
     }
 
-    public static TradeOffers.Factory playerHeadForSale(String playerName, UUID skullOwner) {
+    /**
+     * Get a head where the name and profile are different.
+     *
+     * @param playerName String Name
+     * @param skullOwner String Profile
+     * @return SellHeadFactory
+     */
+    public static TradeOffers.Factory playerHeadForSale(String playerName, String skullOwner) {
         return new SellHeadFactory(getPlayerHead(playerName, skullOwner), 1, 3, 10);
     }
 
-    public static TradeOffers.Factory playerHeadForSale(String playerName, String skullOwner) {
-        return new SellHeadFactory(getPlayerHead(playerName, skullOwner), 1, 3, 10);
+    /**
+     * @param playerName String The player's name.
+     * @param idArray    int[] The unique ID for this head.
+     * @param texture    String The Texture ID
+     * @return SellHeadFactory
+     */
+    public static TradeOffers.Factory playerTextureForSale(String playerName, int[] idArray, String texture) {
+        return new SellHeadFactory(getPlayerHeadWithTexture(playerName, idArray, texture), 1, 3, 10);
     }
 
     /**
@@ -67,7 +100,7 @@ public class HeadHelper {
         }
 
         public SellHeadFactory(Item item, int price, int experience) {
-            this((ItemStack)(new ItemStack(item)), price, 12, experience);
+            this((ItemStack) (new ItemStack(item)), price, 12, experience);
         }
 
         public SellHeadFactory(Item item, int price, int maxUses, int experience) {

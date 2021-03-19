@@ -19,6 +19,10 @@ public class Battletowers {
                         LootTableHelper.addToLootTable(supplier, 5, 0.02F, ModIntegrations.BETTER_END, "ender_dust");
                     }
 
+                    if (ModIntegrations.isDankStorageLoaded) {
+                        LootTableHelper.addToLootTable(supplier, 1, 0.05F, ModIntegrations.DANKSTORAGE, "dank_3");
+                    }
+
                     if (ModIntegrations.isMidasHungerLoaded) {
                         LootTableHelper.addToLootTable(supplier, 8, 0.03F, ModIntegrations.MIDAS_HUNGER, "baked_golden_potato");
                         LootTableHelper.addToLootTable(supplier, 8, 0.03F, ModIntegrations.MIDAS_HUNGER, "cooked_golden_beef");
