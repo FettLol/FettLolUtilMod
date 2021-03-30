@@ -8,8 +8,8 @@
     "${author}"
   ],
   "contact": {
-    "homepage": "https://github.com/BrekiTomasson/FettLolUtilMod",
-    "sources": "https://github.com/BrekiTomasson/FettLolUtilMod"
+    "homepage": "https://github.com/FettLol/FettLolUtilMod",
+    "sources": "https://github.com/FettLol/FettLolUtilMod"
   },
   "license": "MIT",
   "icon": "assets/fettlol/icon.png",
@@ -17,13 +17,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.brekitomasson.fettlol.UtilMod"
+      "net.fettlol.UtilMod"
     ],
     "client": [
-      "net.brekitomasson.fettlol.UtilModClient"
+      "net.fettlol.UtilModClient"
     ],
     "modmenu": [
-      "net.brekitomasson.fettlol.config.UtilModModMenuIntegration"
+      "net.fettlol.config.UtilModModMenuIntegration"
     ]
   },
   "mixins": [

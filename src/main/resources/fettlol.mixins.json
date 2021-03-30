@@ -1,9 +1,9 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.brekitomasson.fettlol.mixin",
+  "package": "net.fettlol.mixin",
   "compatibilityLevel": "JAVA_8",
-  "plugin": "net.brekitomasson.fettlol.base.ConfigurationMixinConditions",
+  "plugin": "net.fettlol.base.ConfigurationMixinConditions",
   "mixins": [
     "InfinityBowArrowMixin",
     "InfinityBowMendingMixin",
