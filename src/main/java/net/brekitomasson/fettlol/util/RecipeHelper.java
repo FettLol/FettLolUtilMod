@@ -2,9 +2,13 @@ package net.brekitomasson.fettlol.util;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeManager;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * These methods help us create various types of crafting recipes via code.
@@ -15,6 +19,14 @@ import java.util.ArrayList;
  */
 public class RecipeHelper {
 
+    public static void unlockAllRecipes(ServerPlayerEntity serverPlayerEntity) {
+        if (serverPlayerEntity != null) {
+            RecipeManager recipeManager = serverPlayerEntity.world.getRecipeManager();
+            Collection<Recipe<?>> allRecipes = recipeManager.values();
+
+            serverPlayerEntity.unlockRecipes(allRecipes);
+        }
+    }
     public static JsonObject createSmithingRecipe(String baseItem, String additionItem, String resultItem) {
         return createSmithingRecipe(new Identifier(baseItem), new Identifier(additionItem), new Identifier(resultItem));
     }

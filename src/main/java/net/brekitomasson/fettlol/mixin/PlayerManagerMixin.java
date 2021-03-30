@@ -1,5 +1,6 @@
 package net.brekitomasson.fettlol.mixin;
 
+import net.brekitomasson.fettlol.util.RecipeHelper;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.server.PlayerManager;
@@ -19,19 +20,16 @@ public class PlayerManagerMixin {
     @Final
     private WorldSaveHandler saveHandler;
 
-    // ==== Hook on Player connect ====
     @Inject(method = "onPlayerConnect", at = @At("RETURN"))
     private void hookOnPlayerConnect(ClientConnection connection, ServerPlayerEntity player, CallbackInfo ci) {
-        // Nothing here yet.
+        RecipeHelper.unlockAllRecipes(player);
     }
 
-    // ==== Hook on loading Player data ====
     @Inject(method = "loadPlayerData", at = @At("HEAD"))
     private void hookLoadPlayerData(ServerPlayerEntity player, CallbackInfoReturnable<CompoundTag> cir) {
         // Nothing here yet.
     }
 
-    // ==== Hook on saving Player data ====
     @Inject(method = "savePlayerData", at = @At("RETURN"))
     private void hookSavePlayerData(ServerPlayerEntity player, CallbackInfo ci) {
         // Nothing here yet.

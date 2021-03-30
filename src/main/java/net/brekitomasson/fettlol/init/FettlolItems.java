@@ -16,6 +16,7 @@ public class FettlolItems {
 
     // Gems and Special Items
     public static final Item AQUAMARINE_GEM = new AquamarineGem();
+    public static final Item JADE_GEM = new JadeGem();
     public static final Item SOUL_SHARD = new SoulShard();
     public static final Item SOUL_GEM = new SoulGem();
 

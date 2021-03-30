@@ -1,0 +1,42 @@
+{
+    "display": {
+        "title": {
+            "text": "Stone of the Ways!",
+            "color": "gold",
+            "bold": false
+        },
+        "description": {
+            "text": "You've crafted your first Waystone! Here, have another one!",
+            "color": "white"
+        },
+        "icon": {
+            "item": "waystones:waystone"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "criteria": {
+        "c1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "waystones:waystone",
+                        "count": {
+                            "min": 1,
+                            "max": 1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "loot": [
+            "waystones:blocks/waystone"
+        ]
+    }
+}

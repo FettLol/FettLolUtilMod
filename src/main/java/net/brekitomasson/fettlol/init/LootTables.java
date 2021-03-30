@@ -27,6 +27,18 @@ public class LootTables {
                 LootTableHelper.addToLootTable(supplier, 1, 0.02F, "fettlol", "aquamarine_gem");
             }
 
+            // Add Aquamarine Gem and Jade Gem to shipwreck (2 separate 1% rolls each)
+            if (LootTableHelper.isShipwreckTreasure(identifier)) {
+                LootTableHelper.addToLootTable(supplier, 2, 0.01F, "fettlol", "aquamarine_gem");
+                LootTableHelper.addToLootTable(supplier, 2, 0.01F, "fettlol", "jade_gem");
+            }
+
+            // Add Aquamarine Gem and Jade Gem to buried treasure (2 separate 2% rolls each)
+            if (LootTableHelper.isBuriedTreasure(identifier)) {
+                LootTableHelper.addToLootTable(supplier, 2, 0.02F, "fettlol", "aquamarine_gem");
+                LootTableHelper.addToLootTable(supplier, 2, 0.02F, "fettlol", "jade_gem");
+            }
+
             // Add Aquamarine Gem to Lapis Lazuli ore (2%)
             if (LootTableHelper.isLapisOre(identifier)) {
                 LootTableHelper.addToLootTable(supplier, 1, 0.02F, "fettlol", "aquamarine_gem");

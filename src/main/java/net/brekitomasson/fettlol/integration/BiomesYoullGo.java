@@ -29,13 +29,13 @@ public class BiomesYoullGo {
 
             updateLootTablesForByg();
             defineRecipesForByg();
-
         }
     }
 
     /**
      * Biomes You'll Go have a couple of recipes we want to change/update. While defined here, the
-     * injection is done in the
+     * injection is done in the RecipeManagerMixin.
+     *
      */
     private static void defineRecipesForByg() {
         // The "Gilded Netherite" mod adds an additional tier of Netherite gear. We want to make it available for

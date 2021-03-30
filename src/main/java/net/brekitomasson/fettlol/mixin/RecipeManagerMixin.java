@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.brekitomasson.fettlol.integration.BetterEnd;
 import net.brekitomasson.fettlol.integration.BiomesYoullGo;
+import net.brekitomasson.fettlol.integration.Winged;
 import net.brekitomasson.fettlol.util.RegistryHelper;
 import net.minecraft.recipe.RecipeManager;
 import net.minecraft.resource.ResourceManager;
@@ -34,6 +35,7 @@ public class RecipeManagerMixin {
 
         // Recipes related to: Better End, Armor & Tools
         addCustomRecipe(map, "betterend/aeternium_axe", BetterEnd.AETERNIUM_AXE_RECIPE);
+        addCustomRecipe(map, "betterend/aeternium_axe", BetterEnd.AETERNIUM_AXE_RECIPE);
         addCustomRecipe(map, "betterend/aeternium_boots", BetterEnd.AETERNIUM_BOOTS_RECIPE);
         addCustomRecipe(map, "betterend/aeternium_chestplate", BetterEnd.AETERNIUM_CHESTPLATE_RECIPE);
         addCustomRecipe(map, "betterend/aeternium_helmet", BetterEnd.AETERNIUM_HELMET_RECIPE);
@@ -42,10 +44,23 @@ public class RecipeManagerMixin {
         addCustomRecipe(map, "betterend/aeternium_pickaxe", BetterEnd.AETERNIUM_PICKAXE_RECIPE);
         addCustomRecipe(map, "betterend/aeternium_shovel", BetterEnd.AETERNIUM_SHOVEL_RECIPE);
         addCustomRecipe(map, "betterend/aeternium_sword", BetterEnd.AETERNIUM_SWORD_RECIPE);
+        addCustomRecipe(map, "betterend/terminite_axe", BetterEnd.TERMINITE_AXE_RECIPE);
+        addCustomRecipe(map, "betterend/terminite_hoe", BetterEnd.TERMINITE_HOE_RECIPE);
+        addCustomRecipe(map, "betterend/terminite_pickaxe", BetterEnd.TERMINITE_PICKAXE_RECIPE);
+        addCustomRecipe(map, "betterend/terminite_shovel", BetterEnd.TERMINITE_SHOVEL_RECIPE);
+        addCustomRecipe(map, "betterend/terminite_sword", BetterEnd.TERMINITE_SWORD_RECIPE);
+        addCustomRecipe(map, "betterend/thallasium_axe", BetterEnd.THALLASIUM_AXE_RECIPE);
+        addCustomRecipe(map, "betterend/thallasium_hoe", BetterEnd.THALLASIUM_HOE_RECIPE);
+        addCustomRecipe(map, "betterend/thallasium_pickaxe", BetterEnd.THALLASIUM_PICKAXE_RECIPE);
+        addCustomRecipe(map, "betterend/thallasium_shovel", BetterEnd.THALLASIUM_SHOVEL_RECIPE);
+        addCustomRecipe(map, "betterend/thallasium_sword", BetterEnd.THALLASIUM_SWORD_RECIPE);
 
         // Recipes related to: Better End, Ingots
         addCustomRecipe(map, "betterend/aeternium_ingot", BetterEnd.AETERNIUM_INGOT_RECIPE);
         addCustomRecipe(map, "betterend/terminite_ingot", BetterEnd.TERMINITE_INGOT_RECIPE);
+
+        // Recipes related to: Winged
+        addCustomRecipe(map, "winged/core_of_flight", Winged.CORE_OF_FLIGHT);
     }
 
     private void addCustomRecipe(Map<Identifier, JsonElement> map, String recipeName, JsonObject definition) {

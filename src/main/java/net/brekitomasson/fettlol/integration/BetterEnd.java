@@ -22,7 +22,17 @@ public class BetterEnd {
     public static JsonObject AETERNIUM_PICKAXE_RECIPE = null;
     public static JsonObject AETERNIUM_SHOVEL_RECIPE = null;
     public static JsonObject AETERNIUM_SWORD_RECIPE = null;
+    public static JsonObject TERMINITE_AXE_RECIPE = null;
+    public static JsonObject TERMINITE_HOE_RECIPE = null;
     public static JsonObject TERMINITE_INGOT_RECIPE = null;
+    public static JsonObject TERMINITE_PICKAXE_RECIPE = null;
+    public static JsonObject TERMINITE_SHOVEL_RECIPE = null;
+    public static JsonObject TERMINITE_SWORD_RECIPE = null;
+    public static JsonObject THALLASIUM_AXE_RECIPE = null;
+    public static JsonObject THALLASIUM_HOE_RECIPE = null;
+    public static JsonObject THALLASIUM_PICKAXE_RECIPE = null;
+    public static JsonObject THALLASIUM_SHOVEL_RECIPE = null;
+    public static JsonObject THALLASIUM_SWORD_RECIPE = null;
 
     public static void init() {
         if (ModIntegrations.isBetterEndLoaded) {
@@ -37,14 +47,6 @@ public class BetterEnd {
         // The Aeternium armor and tools added by Better End have a very roundabout acquisition process which
         // does not feel native to the overall Minecraft experience. To make things easier for everybody,
         // we'll also add all the standard recipes using sticks and/or Aeternium Ingots.
-        AETERNIUM_AXE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" II", " SI", " S "),
-            new Identifier("betterend", "aeternium_axe")
-        );
-
         AETERNIUM_BOOTS_RECIPE = RecipeHelper.createShapedRecipe(
             Lists.newArrayList('I'),
             Lists.newArrayList(new Identifier("betterend", "aeternium_ingot")),
@@ -69,20 +71,28 @@ public class BetterEnd {
             new Identifier("betterend", "aeternium_helmet")
         );
 
-        AETERNIUM_HOE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" II", " S ", " S "),
-            new Identifier("betterend", "aeternium_hoe")
-        );
-
         AETERNIUM_LEGGINGS_RECIPE = RecipeHelper.createShapedRecipe(
             Lists.newArrayList('I'),
             Lists.newArrayList(new Identifier("betterend", "aeternium_ingot")),
             Lists.newArrayList("item"),
             Lists.newArrayList("III", "I I", "I I"),
             new Identifier("betterend", "aeternium_leggings")
+        );
+
+        AETERNIUM_AXE_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList(" II", " SI", " S "),
+            new Identifier("betterend", "aeternium_axe")
+        );
+
+        AETERNIUM_HOE_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList(" II", " S ", " S "),
+            new Identifier("betterend", "aeternium_hoe")
         );
 
         AETERNIUM_PICKAXE_RECIPE = RecipeHelper.createShapedRecipe(
@@ -107,6 +117,89 @@ public class BetterEnd {
             Lists.newArrayList("item", "item"),
             Lists.newArrayList(" I ", " I ", " S "),
             new Identifier("betterend", "aeternium_sword")
+        );
+
+        // Terminite tools need proper recipies too.
+        TERMINITE_AXE_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList(" II", " SI", " S "),
+            new Identifier("betterend", "terminite_axe")
+        );
+
+        TERMINITE_HOE_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList(" II", " S ", " S "),
+            new Identifier("betterend", "terminite_hoe")
+        );
+
+        TERMINITE_PICKAXE_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList("III", " S ", " S "),
+            new Identifier("betterend", "terminite_pickaxe")
+        );
+
+        TERMINITE_SHOVEL_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList(" I ", " S ", " S "),
+            new Identifier("betterend", "terminite_shovel")
+        );
+
+        // Thallasium tools need proper recipies too.
+        THALLASIUM_AXE_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "thallasium_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList(" II", " SI", " S "),
+            new Identifier("betterend", "thallasium_axe")
+        );
+
+        THALLASIUM_HOE_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "thallasium_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList(" II", " S ", " S "),
+            new Identifier("betterend", "thallasium_hoe")
+        );
+
+        THALLASIUM_PICKAXE_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "thallasium_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList("III", " S ", " S "),
+            new Identifier("betterend", "thallasium_pickaxe")
+        );
+
+        THALLASIUM_SHOVEL_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "thallasium_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList(" I ", " S ", " S "),
+            new Identifier("betterend", "thallasium_shovel")
+        );
+
+        THALLASIUM_SWORD_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "thallasium_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList(" I ", " I ", " S "),
+            new Identifier("betterend", "thallasium_sword")
+        );
+
+
+        TERMINITE_SWORD_RECIPE = RecipeHelper.createShapedRecipe(
+            Lists.newArrayList('I', 'S'),
+            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "stick")),
+            Lists.newArrayList("item", "item"),
+            Lists.newArrayList(" I ", " I ", " S "),
+            new Identifier("betterend", "terminite_sword")
         );
 
         // We'll also create a custom recipe for the Aeternium Ingot itself, as the intended way of getting it

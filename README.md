@@ -8,16 +8,14 @@ Note that this mod does not currently have any configuration associated with it.
 
 - A new "Egg Collector" enchant for weapons adds a 3% chance for mobs to drop their spawn eggs when killed.
 - Bows with "Infinity" enchant no longer require an arrow in the inventory.
-- Diamond Ore can drop "Soul Shards", nine of which combine to make a "Soul Gem". Soul gems are one of the ingredients used to build Spawners.
+- Diamond Ore can drop "Soul Shards", nine of which combine to make a "Soul Gem".
+- All recipes are unlocked from the beginning, except certain recipes which are gated behind progression.
 - Multiple changes to various chest and mob loot tables.
 - Poisoned Potatoes can be composted.
 - Spawners have a recipe which includes, amongst other things, A Soul Gem, a Nether Star and a Totem of Undying.
 - The "Infinity" and "Mending" enchantments can coexist on bows.
-
-## Tweak(s) Currently Being Worked On
-
 - Large collection of Player Heads for sale at a new type of Wandering Trader called "Wandering Headhunter".
-- Various interactions with other mods - if detected - manipulating their drops, recipes and creating new ways in which these mods can interact with each other.
+- When building your first Waystone, get a second one for free!
 
 ## An Assorted List of Ideas for Future Tweaks
 

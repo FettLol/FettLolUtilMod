@@ -40,19 +40,13 @@ public class ConfigurationMixinConditions implements IMixinConfigPlugin {
             return CONFIG.isEggCollectorEnchantmentAvailable();
         } else if (mixinClassName.contains("VillagerGoal")) {
             return CONFIG.doVillagersFollowEmeraldBlocks();
-        } else if (mixinClassName.contains("TraderOffers")) {
-            return CONFIG.shouldWanderingHeadhunterExist();
-        } else if (mixinClassName.contains("FarmerVillagerTask")) {
-            // Used in Croptopia integration.
-            return true;
         } else if (mixinClassName.contains("Accessor")) {
             // Always return true for Accessors.
             return true;
-        } else if (mixinClassName.contains("RecipeManager")) {
-            // Always return true for recipe modifications.
+        } else if (mixinClassName.contains("Manager")) {
+            // Always return true for PlayerManager and RecipeManager.
             return true;
-        } else {
-            // If the mixin is not detected above, we reject it.
+        } else { // If the mixin is not detected above, we reject it.
             return false;
         }
     }
