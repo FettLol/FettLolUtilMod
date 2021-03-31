@@ -1,6 +1,7 @@
 package net.fettlol.util;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.fettlol.UtilMod;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
@@ -14,6 +15,8 @@ import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
 
 import java.util.Random;
+
+import static net.fettlol.UtilMod.LOGGER;
 
 public class HeadHelper {
 
@@ -31,7 +34,7 @@ public class HeadHelper {
                 "{SkullOwner:{Id:" + getIntArray(idArray) + ",Properties:{textures:[{Value:\"" + texture + "\"}]}}}"
             );
         } catch (CommandSyntaxException e) {
-            e.printStackTrace();
+            LOGGER.error(e);
         }
 
         playerHead.setTag(tag);
