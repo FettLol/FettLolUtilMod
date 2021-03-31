@@ -179,18 +179,29 @@ public class LootTableHelper {
         return identifier.toString().equals("minecraft:blocks/lapis_ore");
     }
 
+    // = Gameplay =
+
+    public static boolean isFishingTreasure(Identifier identifier) {
+        return identifier.toString().equals("minecraft:gameplay/fishing/treasure");
+    }
+
     // = Mobs and Entities =
 
     public static boolean isEnderman(Identifier identifier) {
-        return identifier == ENDERMAN;
+        return identifier.toString().equals("minecraft:entities/enderman");
+    }
+
+    public static boolean isEvoker(Identifier identifier) {
+        return identifier.toString().equals("minecraft:entities/evoker");
     }
 
     public static boolean isShulker(Identifier identifier) {
-        return identifier == SHULKER;
+        return identifier.toString().equals("minecraft:entities/shulker");
     }
 
     public static boolean isEnderDragon(Identifier identifier) {
-        return identifier == ENDER_DRAGON;
+        return identifier.toString().equals("minecraft:entities/ender_dragon");
+
     }
 
     public static boolean isGuardian(Identifier identifier) {
@@ -199,19 +210,23 @@ public class LootTableHelper {
     }
 
     public static boolean isHusk(Identifier identifier) {
-        return identifier == HUSK;
+        return identifier.toString().equals("minecraft:entities/husk");
     }
 
     public static boolean isStray(Identifier identifier) {
-        return identifier == STRAY;
+        return identifier.toString().equals("minecraft:entities/stray");
     }
 
     public static boolean isDrowned(Identifier identifier) {
-        return identifier == DROWNED;
+        return identifier.toString().equals("minecraft:entities/drowned");
     }
 
     public static boolean isZombie(Identifier identifier) {
-        return identifier == ZOMBIE;
+        return identifier.toString().equals("minecraft:entities/zombie");
+    }
+
+    public static boolean isPhantom(Identifier identifier) {
+        return identifier.toString().equals("minecraft:entities/phantom");
     }
 
     public static boolean isTowerChest(Identifier identifier) {

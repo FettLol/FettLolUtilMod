@@ -27,10 +27,21 @@ public class LootTables {
                 LootTableHelper.addToLootTable(supplier, 1, 0.02F, "fettlol", "aquamarine_gem");
             }
 
-            // Add Aquamarine Gem and Jade Gem to shipwreck (2 separate 1% rolls each)
+            // Add Aquamarine Gem and Jade Gem to shipwreck (2 separate 6% rolls each)
             if (LootTableHelper.isShipwreckTreasure(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.01F, "fettlol", "aquamarine_gem");
-                LootTableHelper.addToLootTable(supplier, 2, 0.01F, "fettlol", "jade_gem");
+                LootTableHelper.addToLootTable(supplier, 2, 0.06F, "fettlol", "aquamarine_gem");
+                LootTableHelper.addToLootTable(supplier, 2, 0.06F, "fettlol", "jade_gem");
+            }
+
+            // Add Aquamarine Gem and Jade Gem to fishing treasure (3%)
+            if (LootTableHelper.isShipwreckTreasure(identifier)) {
+                LootTableHelper.addToLootTable(supplier, 1, 0.03F, "fettlol", "aquamarine_gem");
+                LootTableHelper.addToLootTable(supplier, 1, 0.03F, "fettlol", "jade_gem");
+            }
+
+            // Add Jade Gem to Evokers (15%)
+            if (LootTableHelper.isEvoker(identifier)) {
+                LootTableHelper.addToLootTable(supplier, 1, 0.15F, "fettlol", "aquamarine_gem");
             }
 
             // Add Aquamarine Gem and Jade Gem to buried treasure (2 separate 2% rolls each)
@@ -54,6 +65,16 @@ public class LootTables {
                 LootTableHelper.addToLootTable(supplier, 3, 0.12F, "fettlol", "soul_shard");
             }
 
+            // Add Soul Shards to Endermen (3%)
+            if (LootTableHelper.isEnderman(identifier)) {
+                LootTableHelper.addToLootTable(supplier, 1, 0.03F, "fettlol", "soul_shard");
+            }
+
+            // Add Soul Shards to Phantoms (10%)
+            if (LootTableHelper.isEnderman(identifier)) {
+                LootTableHelper.addToLootTable(supplier, 1, 0.1F, "fettlol", "soul_shard");
+            }
+
             // Shulkers have a guaranteed drop of at least one Shulker Shell in addition to what they drop randomly.
             if (LootTableHelper.isShulker(identifier)) {
                 LootTableHelper.addToLootTable(supplier, 1, 1, "minecraft", "shulker_shell");
@@ -65,24 +86,24 @@ public class LootTables {
                 LootTableHelper.addToLootTable(supplier, 1, 1, "minecraft", "dragon_egg");
             }
 
-            // Drowned can drop Clay (2 separate 6% rolls)
+            // Drowned can drop Clay (2 separate 15% rolls)
             if (LootTableHelper.isDrowned(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.06F, "minecraft", "clay");
+                LootTableHelper.addToLootTable(supplier, 2, 0.15F, "minecraft", "clay");
             }
 
-            // Husk can drop Sand (2 separate 5% rolls)
+            // Husk can drop Sand (2 separate 15% rolls)
             if (LootTableHelper.isHusk(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.05F, "minecraft", "sand");
+                LootTableHelper.addToLootTable(supplier, 2, 0.15F, "minecraft", "sand");
             }
 
-            // Stray can drop Blue Ice (2 separate 9% rolls)
+            // Stray can drop Blue Ice (2 separate 10% rolls)
             if (LootTableHelper.isStray(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.09F, "minecraft", "blue_ice");
+                LootTableHelper.addToLootTable(supplier, 2, 0.10F, "minecraft", "blue_ice");
             }
 
-            // Zombies can drop Gravel (2 separate 8% rolls)
+            // Zombies can drop Gravel (2 separate 10% rolls)
             if (LootTableHelper.isZombie(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.08F, "minecraft", "gravel");
+                LootTableHelper.addToLootTable(supplier, 2, 0.10F, "minecraft", "gravel");
             }
 
             // Guardians can drop Lapis Lazuli (2 separate 8% rolls)
