@@ -14,17 +14,17 @@ public class FettlolTags {
     public static final Tag.Identified<Item> GEMS = TagHelper.makeItemTag("fettlol", "gems");
 
     public static final Tag.Identified<Item> FABRIC_AXES = TagHelper.makeItemTag("fabric", "axes");
+    public static final Tag.Identified<Item> FABRIC_BOOTS = TagHelper.makeItemTag("fabric", "boots");
     public static final Tag.Identified<Item> FABRIC_BOWS = TagHelper.makeItemTag("fabric", "bows");
+    public static final Tag.Identified<Item> FABRIC_CHESTPLATES = TagHelper.makeItemTag("fabric", "chestplates");
     public static final Tag.Identified<Item> FABRIC_CROSSBOWS = TagHelper.makeItemTag("fabric", "crossbows");
+    public static final Tag.Identified<Item> FABRIC_HELMETS = TagHelper.makeItemTag("fabric", "helmets");
     public static final Tag.Identified<Item> FABRIC_HOES = TagHelper.makeItemTag("fabric", "hoes");
+    public static final Tag.Identified<Item> FABRIC_LEGGINGS = TagHelper.makeItemTag("fabric", "leggings");
     public static final Tag.Identified<Item> FABRIC_PICKAXES = TagHelper.makeItemTag("fabric", "pickaxes");
     public static final Tag.Identified<Item> FABRIC_SHIELDS = TagHelper.makeItemTag("fabric", "shields");
     public static final Tag.Identified<Item> FABRIC_SHOVELS = TagHelper.makeItemTag("fabric", "shovels");
     public static final Tag.Identified<Item> FABRIC_SWORDS = TagHelper.makeItemTag("fabric", "swords");
-    public static final Tag.Identified<Item> FABRIC_HELMETS = TagHelper.makeItemTag("fabric", "helmets");
-    public static final Tag.Identified<Item> FABRIC_CHESTPLATES = TagHelper.makeItemTag("fabric", "chestplates");
-    public static final Tag.Identified<Item> FABRIC_LEGGINGS = TagHelper.makeItemTag("fabric", "leggings");
-    public static final Tag.Identified<Item> FABRIC_BOOTS = TagHelper.makeItemTag("fabric", "boots");
 
     public static final Tag.Identified<Item> AE2_DUSTS = TagHelper.makeItemTag("appliedenergistics2", "dusts");
 
@@ -33,6 +33,7 @@ public class FettlolTags {
     public static final Tag.Identified<Item> C_BOOKSHELVES = TagHelper.makeItemTag("c", "bookshelves");
     public static final Tag.Identified<Item> C_ENDER_PEARL_DUSTS = TagHelper.makeItemTag("c", "ender_pearl_dusts");
     public static final Tag.Identified<Item> C_WOODEN_CHESTS = TagHelper.makeItemTag("c", "wooden_chests");
+    public static final Tag.Identified<Item> C_VANILLAS = TagHelper.makeItemTag("c", "vanillas");
 
     public static final Tag.Identified<Item> TINYTWEAKS_SHOWS_GRASS_HITBOXES = TagHelper.makeItemTag("tinytweaks", "shows_grass_hitboxes");
 
@@ -48,10 +49,10 @@ public class FettlolTags {
         }
 
         // Vanilla Items
+        TagHelper.addTag(BLOCKUS_BARRELS, Items.BARREL);
         TagHelper.addTag(C_BOOKSHELVES, Items.BOOKSHELF);
         TagHelper.addTag(C_WOODEN_CHESTS, Items.CHEST);
         TagHelper.addTag(C_WOODEN_CHESTS, Items.TRAPPED_CHEST);
-        TagHelper.addTag(BLOCKUS_BARRELS, Items.BARREL);
 
         // Applied Energistics & Better End
         if (ModIntegrations.isAppliedEnergisticsLoaded && ModIntegrations.isBetterEndLoaded) {
@@ -68,54 +69,51 @@ public class FettlolTags {
         // Battle Towers
         if (ModIntegrations.isBattletowersLoaded) {
             TagHelper.addTag(FABRIC_AXES, getItemFromRegistry("battletowers:key_axe"));
+            TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("battletowers:key_boots"));
+            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("battletowers:key_helmet"));
             TagHelper.addTag(FABRIC_HOES, getItemFromRegistry("battletowers:key_hoe"));
+            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("battletowers:key_leggings"));
+            TagHelper.addTag(FABRIC_PICKAXES, getItemFromRegistry("battletowers:key_pickaxe"));
             TagHelper.addTag(FABRIC_SHOVELS, getItemFromRegistry("battletowers:key_shovel"));
             TagHelper.addTag(FABRIC_SWORDS, getItemFromRegistry("battletowers:key_sword"));
-            TagHelper.addTag(FABRIC_PICKAXES, getItemFromRegistry("battletowers:key_pickaxe"));
-            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("battletowers:key_helmet"));
-            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("battletowers:key_leggings"));
-            TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("battletowers:key_boots"));
         }
 
         // Gilded Netherite
         if (ModIntegrations.isGildedNetheriteLoaded) {
             TagHelper.addTag(FABRIC_AXES, getItemFromRegistry("gildednetherite:gilded_axe"));
+            TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("gildednetherite:gilded_boots"));
+            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("gildednetherite:gilded_chestplate"));
+            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("gildednetherite:gilded_helmet"));
             TagHelper.addTag(FABRIC_HOES, getItemFromRegistry("gildednetherite:gilded_hoe"));
-            TagHelper.addTag(FABRIC_SHOVELS, getItemFromRegistry("gildednetherite:gilded_shovel"));
-            TagHelper.addTag(FABRIC_SWORDS, getItemFromRegistry("gildednetherite:gilded_sword"));
+            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("gildednetherite:gilded_leggings"));
             TagHelper.addTag(FABRIC_PICKAXES, getItemFromRegistry("gildednetherite:gilded_pickaxe"));
             TagHelper.addTag(FABRIC_SHIELDS, getItemFromRegistry("gildednetherite:gilded_shield"));
-            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("gildednetherite:gilded_helmet"));
-            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("gildednetherite:gilded_chestplate"));
-            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("gildednetherite:gilded_leggings"));
-            TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("gildednetherite:gilded_boots"));
+            TagHelper.addTag(FABRIC_SHOVELS, getItemFromRegistry("gildednetherite:gilded_shovel"));
+            TagHelper.addTag(FABRIC_SWORDS, getItemFromRegistry("gildednetherite:gilded_sword"));
         }
 
         // Tech Reborn
         if (ModIntegrations.isTechRebornLoaded) {
-            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("techreborn:sapphire_helmet"));
-            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("techreborn:peridot_helmet"));
-            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("techreborn:quantum_helmet"));
-            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("techreborn:bronze_helmet"));
-            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("techreborn:ruby_helmet"));
-
-            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("techreborn:sapphire_chestplate"));
-            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("techreborn:peridot_chestplate"));
-            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("techreborn:quantum_chestplate"));
-            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("techreborn:bronze_chestplate"));
-            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("techreborn:ruby_chestplate"));
-
-            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("techreborn:sapphire_leggings"));
-            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("techreborn:peridot_leggings"));
-            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("techreborn:quantum_leggings"));
-            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("techreborn:bronze_leggings"));
-            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("techreborn:ruby_leggings"));
-
-            TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("techreborn:sapphire_boots"));
+            TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("techreborn:bronze_boots"));
             TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("techreborn:peridot_boots"));
             TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("techreborn:quantum_boots"));
-            TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("techreborn:bronze_boots"));
             TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("techreborn:ruby_boots"));
+            TagHelper.addTag(FABRIC_BOOTS, getItemFromRegistry("techreborn:sapphire_boots"));
+            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("techreborn:bronze_chestplate"));
+            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("techreborn:peridot_chestplate"));
+            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("techreborn:quantum_chestplate"));
+            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("techreborn:ruby_chestplate"));
+            TagHelper.addTag(FABRIC_CHESTPLATES, getItemFromRegistry("techreborn:sapphire_chestplate"));
+            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("techreborn:bronze_helmet"));
+            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("techreborn:peridot_helmet"));
+            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("techreborn:quantum_helmet"));
+            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("techreborn:ruby_helmet"));
+            TagHelper.addTag(FABRIC_HELMETS, getItemFromRegistry("techreborn:sapphire_helmet"));
+            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("techreborn:bronze_leggings"));
+            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("techreborn:peridot_leggings"));
+            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("techreborn:quantum_leggings"));
+            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("techreborn:ruby_leggings"));
+            TagHelper.addTag(FABRIC_LEGGINGS, getItemFromRegistry("techreborn:sapphire_leggings"));
         }
 
         // MCDA
@@ -157,6 +155,11 @@ public class FettlolTags {
             for (String swordItem : Arrays.asList("mcdw:dagger_chill_gale_knife", "mcdw:dagger_dagger", "mcdw:dagger_eternal_knife", "mcdw:dagger_fangs_of_frost", "mcdw:dagger_moon", "mcdw:dagger_resolute_tempest_knife", "mcdw:dagger_shear_dagger", "mcdw:dagger_soul_knife", "mcdw:dagger_tempest_knife", "mcdw:gauntlet_gauntlet", "mcdw:gauntlet_maulers", "mcdw:gauntlet_soul_fists", "mcdw:sickle_frost_scythe", "mcdw:sickle_jailors_scythe", "mcdw:sickle_last_laugh_gold", "mcdw:sickle_last_laugh_silver", "mcdw:sickle_nightmares_bite", "mcdw:sickle_sickle", "mcdw:sickle_soul_scythe", "mcdw:spear_fortune", "mcdw:spear_glaive", "mcdw:spear_grave_bane", "mcdw:spear_spear", "mcdw:spear_venom_glaive", "mcdw:spear_whispering_spear", "mcdw:staff_battlestaff", "mcdw:staff_battlestaff_of_terror", "mcdw:staff_growing_staff", "mcdw:sword_beestinger", "mcdw:sword_broadsword", "mcdw:sword_broken_sawblade", "mcdw:sword_claymore", "mcdw:sword_cutlass", "mcdw:sword_dancers_sword", "mcdw:sword_dark_katana", "mcdw:sword_diamond_sword_var", "mcdw:sword_freezing_foil", "mcdw:sword_frost_slayer", "mcdw:sword_great_axeblade", "mcdw:sword_hawkbrand", "mcdw:sword_heartstealer", "mcdw:sword_iron_sword_var", "mcdw:sword_katana", "mcdw:sword_masters_katana", "mcdw:sword_mechanized_sawblade", "mcdw:sword_nameless_blade", "mcdw:sword_rapier", "mcdw:sword_truthseeker", "mcdw:whip_vine_whip", "mcdw:whip_whip")) {
                 TagHelper.addTag(FABRIC_SWORDS, getItemFromRegistry(swordItem));
             }
+        }
+
+        // Croptopia
+        if (ModIntegrations.isCroptopiaLoaded) {
+            TagHelper.addTag(C_VANILLAS, getItemFromRegistry("croptopia:vanilla"));
         }
 
         // Crimson Moon
