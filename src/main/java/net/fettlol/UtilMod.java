@@ -36,6 +36,9 @@ public class UtilMod implements ModInitializer {
         // Initialize our items!
         FettlolItems.init();
 
+        // Initialize our tags!
+        FettlolTags.init();
+
         // Initialize our loot tables!
         LootTables.init();
 

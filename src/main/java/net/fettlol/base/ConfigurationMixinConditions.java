@@ -40,6 +40,18 @@ public class ConfigurationMixinConditions implements IMixinConfigPlugin {
             return CONFIG.isEggCollectorEnchantmentAvailable();
         } else if (mixinClassName.contains("VillagerGoal")) {
             return CONFIG.doVillagersFollowEmeraldBlocks();
+        } else if (mixinClassName.contains("TagGroupLoaderMixin")) {
+            // No config for this yet.
+            return true;
+        } else if (mixinClassName.contains("BiomeFeaturesMixin")) {
+            // No config for this yet.
+            return true;
+        } else if (mixinClassName.contains("WitherSkeletonMixin")) {
+            // No config for this yet.
+            return true;
+        } else if (mixinClassName.contains("WitchMixin")) {
+            // No config for this yet.
+            return true;
         } else if (mixinClassName.contains("Accessor")) {
             // Always return true for Accessors.
             return true;

@@ -7,9 +7,13 @@
   "mixins": [
     "InfinityBowArrowMixin",
     "InfinityBowMendingMixin",
+    "WitchMixin",
     "PlayerManagerMixin",
     "EggCollectorMixin",
     "RecipeManagerMixin",
+    "BiomeFeaturesMixin",
+    "TagGroupLoaderMixin",
+    "WitherSkeletonMixin",
     "VillagerGoalMixin",
     "accessor.SpawnEggItemAccessor",
     "accessor.VillagerEntityAccessor"
