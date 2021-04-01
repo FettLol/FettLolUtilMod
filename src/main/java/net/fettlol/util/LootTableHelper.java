@@ -11,15 +11,6 @@ import net.minecraft.util.registry.Registry;
 
 public class LootTableHelper {
 
-    // A couple of class constants to speed things up.
-    static final Identifier ENDERMAN = new Identifier("minecraft", "entities/enderman");
-    static final Identifier SHULKER = new Identifier("minecraft", "entities/shulker");
-    static final Identifier ENDER_DRAGON = new Identifier("minecraft", "entities/ender_dragon");
-    static final Identifier DROWNED = new Identifier("minecraft", "entities/drowned");
-    static final Identifier HUSK = new Identifier("minecraft", "entities/husk");
-    static final Identifier STRAY = new Identifier("minecraft", "entities/stray");
-    static final Identifier ZOMBIE = new Identifier("minecraft", "entities/zombie");
-
     // = Chests =
 
     public static boolean isVillageHouseChest(Identifier identifier) {
@@ -234,16 +225,9 @@ public class LootTableHelper {
     }
 
     public static boolean isHostileWaterMob(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "minecraft:entities/drowned":
-            case "minecraft:entities/guardian":
-            case "minecraft:entities/elder_guardian":
-            case "biomemakeover:entities/decayed":
-                return true;
-
-            default:
-                return false;
-        }
+        return isDrowned(identifier)
+            || isGuardian(identifier)
+            || identifier.toString().equals("biomemakeover:entities/decayed");
     }
 
     /**

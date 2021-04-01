@@ -17,10 +17,10 @@ public class WanderingHeadHunterRender extends MobEntityRenderer<WanderingHeadHu
     private static final Identifier TEXTURE = RegistryHelper.makeId("textures/entity/headhunter.png");
 
     public WanderingHeadHunterRender(EntityRenderDispatcher entityRenderDispatcher) {
-        super(entityRenderDispatcher, new VillagerResemblingModel(0.0F), 0.5F);
-        this.addFeature(new HeadFeatureRenderer(this));
-        this.addFeature(new VillagerHeldItemFeatureRenderer(this));
-        this.addFeature(new WanderingHeadHunterFeatureRenderer(this));
+        super(entityRenderDispatcher, new VillagerResemblingModel<>(0.0F), 0.5F);
+        this.addFeature(new HeadFeatureRenderer<>(this));
+        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this));
+        this.addFeature(new WanderingHeadHunterFeatureRenderer<>(this));
     }
 
     @Override

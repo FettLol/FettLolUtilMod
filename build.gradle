@@ -1,10 +1,9 @@
 plugins {
-    id 'fabric-loom' version '0.5-SNAPSHOT'
+    id 'fabric-loom' version '0.6-SNAPSHOT'
     id 'maven-publish'
 }
 
 repositories {
-    jcenter()
     maven {
         name = "Blame Jared"
         url  = "https://maven.blamejared.com"
@@ -13,10 +12,13 @@ repositories {
         name = "TerraformersMC"
         url  = "https://maven.terraformersmc.com/releases"
     }
+    maven {
+        name = "Shedaniel"
+        url  = "https://maven.shedaniel.me/"
+    }
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
 mod_id = project.mod_id
 version = "${project.mod_version}+${project.minecraft_version}"
@@ -36,29 +38,21 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
     // Dependencies etc.
-    modApi("me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig1u_version}") { exclude module: 'fabric-api' }
-    modApi("me.shedaniel.cloth:config-2:${project.cloth_config_2_version}") { exclude module: 'fabric-api' }
+    include modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") { exclude(group: "net.fabricmc.fabric-api") }
 
     modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") { exclude module: 'fabric-api' }
     modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
 
-    implementation "com.moandjiezana.toml:toml4j:${project.toml4j_version}"
-    implementation "com.electronwill.night-config:core:${project.tomlnc_version}"
-    implementation "com.electronwill.night-config:toml:${project.tomlnc_version}"
-
-    include "me.sargunvohra.mcmods:autoconfig1u:${project.autoconfig1u_version}"
-    include "me.shedaniel.cloth:config-2:${project.cloth_config_2_version}"
-    include "com.moandjiezana.toml:toml4j:${project.toml4j_version}"
-    include "com.electronwill.night-config:core:${project.tomlnc_version}"
-    include "com.electronwill.night-config:toml:${project.tomlnc_version}"
+    include implementation("com.moandjiezana.toml:toml4j:${project.toml4j_version}")
+    include implementation("com.electronwill.night-config:core:${project.tomlnc_version}")
+    include implementation("com.electronwill.night-config:toml:${project.tomlnc_version}")
 }
 
 processResources {
     inputs.property "version", project.version
     inputs.property "name", project.name
 
-    from(sourceSets.main.resources.srcDirs) {
-        include "fabric.mod.json"
+    filesMatching("fabric.mod.json") {
         expand(
                 "version": project.version,
                 "minecraft_version": project.minecraft_version,
@@ -70,10 +64,6 @@ processResources {
                 "author": project.author,
                 "fabric_api_version": project.fabric_api_version
         )
-    }
-
-    from(sourceSets.main.resources.srcDirs) {
-        exclude "fabric.mod.json"
     }
 }
 

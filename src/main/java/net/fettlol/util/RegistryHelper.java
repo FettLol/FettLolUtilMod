@@ -9,15 +9,17 @@ import net.minecraft.util.registry.Registry;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Locale;
+import java.util.Optional;
+
+import static net.fettlol.UtilMod.LOGGER;
 
 public class RegistryHelper {
 
     @SafeVarargs
-    public static <T> void register(Registry<T> registry, Class typeClass, Class from, RegistryCallBack<T>... callbacks) {
+    @SuppressWarnings("unchecked")
+    public static <T> void register(Registry<T> registry, Class<T> typeClass, Class<?> from, RegistryCallBack<T>... callbacks) {
         try {
-            Field[] fields = from.getDeclaredFields();
-
-            for (Field field : fields) {
+            for (Field field : from.getDeclaredFields()) {
                 if (
                     typeClass.isAssignableFrom(field.getType())
                         && Modifier.isStatic(field.getModifiers())
@@ -34,8 +36,8 @@ public class RegistryHelper {
                     }
                 }
             }
-        } catch (Exception exception) {
-            exception.printStackTrace();
+        } catch (Exception e) {
+            LOGGER.error(e);
         }
     }
 
@@ -48,11 +50,16 @@ public class RegistryHelper {
     }
 
     public static void makeCompostable(Identifier identifier, float value) {
-        makeCompostable(Registry.ITEM.getOrEmpty(identifier).get(), value);
+        Optional<Item> maybeItem = Registry.ITEM.getOrEmpty(identifier);
+        if (!maybeItem.isPresent()) {
+            LOGGER.warn("couldn't make {} compostable", identifier);
+        } else {
+            makeCompostable(maybeItem.get(), value);
+        }
     }
 
     public static void makeCompostable(String namespace, String itemName, float value) {
-        makeCompostable(Registry.ITEM.getOrEmpty(new Identifier(namespace, itemName)).get(), value);
+        makeCompostable(new Identifier(namespace, itemName), value);
     }
 
     public interface RegistryCallBack<T> {
