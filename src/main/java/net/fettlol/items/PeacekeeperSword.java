@@ -1,9 +1,8 @@
 package net.fettlol.items;
 
-import net.fettlol.UtilMod;
+import net.fettlol.items.base.FettlolSwordItem;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
@@ -12,14 +11,14 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class PeacekeeperSword extends SwordItem {
+public class PeacekeeperSword extends FettlolSwordItem {
 
     public PeacekeeperSword() {
         super(
             ToolMaterials.DIAMOND,
             3,
             -1.8F,
-            (new Settings()).group(UtilMod.ITEMGROUP).rarity(Rarity.RARE)
+            new Settings().rarity(Rarity.RARE)
         );
     }
 
