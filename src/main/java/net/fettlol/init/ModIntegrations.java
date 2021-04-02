@@ -18,12 +18,14 @@ public class ModIntegrations {
     // Namespaces used by various mods.
     final public static String APPLIED_ENERGISTICS = "appliedenergistics2";
     final public static String BETTER_END = "betterend";
+    final public static String BETTER_NETHER = "betternether";
     final public static String BYG = "byg";
     final public static String BATTLETOWERS = "battletowers";
     final public static String CINDERSCAPES = "cinderscapes";
     final public static String CRIMSON_MOON = "crimsonmoon";
     final public static String CROPTOPIA = "croptopia";
     final public static String DANKSTORAGE = "dankstorage";
+    final public static String EXPANDEDSTORAGE = "expandedstorage";
     final public static String GILDEDNETHERITE = "gildednetherite";
     final public static String MCDA = "mcda";
     final public static String MCDW = "mcdw";
@@ -37,8 +39,10 @@ public class ModIntegrations {
     public static boolean isAppliedEnergisticsLoaded = FabricLoader.getInstance().isModLoaded(APPLIED_ENERGISTICS);
     public static boolean isBattletowersLoaded = FabricLoader.getInstance().isModLoaded(BATTLETOWERS);
     public static boolean isBetterEndLoaded = FabricLoader.getInstance().isModLoaded(BETTER_END);
+    public static boolean isBetterNetherLoaded = FabricLoader.getInstance().isModLoaded(BETTER_NETHER);
     public static boolean isBygLoaded = FabricLoader.getInstance().isModLoaded(BYG);
     public static boolean isCinderscapesLoaded = FabricLoader.getInstance().isModLoaded(CINDERSCAPES);
+    public static boolean isExpandedStorageLoaded = FabricLoader.getInstance().isModLoaded(EXPANDEDSTORAGE);
     public static boolean isCrimsonMoonLoaded = FabricLoader.getInstance().isModLoaded(CRIMSON_MOON);
     public static boolean isTechRebornLoaded = FabricLoader.getInstance().isModLoaded(TECH_REBORN);
     public static boolean isCroptopiaLoaded = FabricLoader.getInstance().isModLoaded(CROPTOPIA);

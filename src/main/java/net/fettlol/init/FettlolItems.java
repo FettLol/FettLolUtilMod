@@ -1,5 +1,6 @@
 package net.fettlol.init;
 
+import net.fettlol.items.base.FettlolGemItem;
 import net.fettlol.items.*;
 import net.fettlol.util.RegistryHelper;
 import net.minecraft.item.Item;
@@ -15,12 +16,11 @@ public class FettlolItems {
     public static final Item HEADHUNTER_SPAWN_EGG = new HeadhunterSpawnEgg();
 
     // Gems and Special Items
-    public static final Item AQUAMARINE_GEM = new AquamarineGem();
-    public static final Item JADE_GEM = new JadeGem();
-    public static final Item SOUL_SHARD = new SoulShard();
-    public static final Item SOUL_GEM = new SoulGem();
+    public static final Item AQUAMARINE_GEM = new FettlolGemItem();
+    public static final Item JADE_GEM = new FettlolGemItem();
+    public static final Item SOUL_SHARD = new FettlolGemItem();
+    public static final Item SOUL_GEM = new FettlolGemItem();
 
-    // Init & Settings
     public static void init() {
         RegistryHelper.register(Registry.ITEM, Item.class, FettlolItems.class);
     }

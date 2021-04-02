@@ -62,6 +62,14 @@ public class RegistryHelper {
         makeCompostable(new Identifier(namespace, itemName), value);
     }
 
+    public static Item getItemFromRegistry(String itemName) {
+        return Registry.ITEM.get(new Identifier(itemName)).asItem();
+    }
+
+    public static Item getItemFromRegistry(String namespace, String item) {
+        return getItemFromRegistry(namespace + ":" + item);
+    }
+
     public interface RegistryCallBack<T> {
         void callback(Registry<T> registry, T registryObject, Identifier identifier);
     }

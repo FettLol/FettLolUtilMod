@@ -1,8 +1,7 @@
-package net.fettlol.base;
+package net.fettlol.config;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
-import net.fettlol.config.UtilModConfig;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -10,9 +9,8 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import java.util.List;
 import java.util.Set;
 
-public class ConfigurationMixinConditions implements IMixinConfigPlugin {
+public class MixinConditions implements IMixinConfigPlugin {
 
-    // I'd prefer not to have to register it here, but it won't be available in shouldApplyMixin otherwise.
     public static final UtilModConfig CONFIG;
 
     static {
@@ -40,27 +38,22 @@ public class ConfigurationMixinConditions implements IMixinConfigPlugin {
             return CONFIG.isEggCollectorEnchantmentAvailable();
         } else if (mixinClassName.contains("VillagerGoal")) {
             return CONFIG.doVillagersFollowEmeraldBlocks();
-        } else if (mixinClassName.contains("TagGroupLoaderMixin")) {
-            // No config for this yet.
-            return true;
-        } else if (mixinClassName.contains("BiomeFeaturesMixin")) {
-            // No config for this yet.
-            return true;
         } else if (mixinClassName.contains("WitherSkeletonMixin")) {
-            // No config for this yet.
-            return true;
+            return CONFIG.doBabyWitherSkeletonsSpawn();
         } else if (mixinClassName.contains("WitchMixin")) {
-            // No config for this yet.
-            return true;
+            return CONFIG.doWitchesKeepTheirDistance();
         } else if (mixinClassName.contains("Accessor")) {
-            // Always return true for Accessors.
-            return true;
+            return true; // Always return true for Accessors.
+        } else if (mixinClassName.contains("TagGroupLoaderMixin")) {
+            return true; // Always return true for the TagGroupLoader.
+        } else if (mixinClassName.contains("BiomeFeaturesMixin")) {
+            return true; // No config for this yet.
         } else if (mixinClassName.contains("Manager")) {
-            // Always return true for PlayerManager and RecipeManager.
-            return true;
-        } else { // If the mixin is not detected above, we reject it.
+            return true; // Always return true for PlayerManager and RecipeManager.
+        } else {
             return false;
         }
+
     }
 
     @Override
