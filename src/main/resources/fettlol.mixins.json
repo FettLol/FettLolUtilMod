@@ -9,6 +9,8 @@
     "EggCollectorMixin",
     "InfinityBowArrowMixin",
     "InfinityBowMendingMixin",
+    "MobSpawnerBlockEntityMixin",
+    "SpawnerBlockMixin",
     "PlayerManagerMixin",
     "RecipeManagerMixin",
     "TagGroupLoaderMixin",

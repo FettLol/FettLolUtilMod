@@ -5,8 +5,8 @@ plugins {
 
 repositories {
     maven {
-        name = "Blame Jared"
-        url  = "https://maven.blamejared.com"
+        name = "Siphalor's Maven"
+        url  = "https://maven.siphalor.de"
     }
     maven {
         name = "TerraformersMC"
@@ -41,7 +41,7 @@ dependencies {
     include modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") { exclude(group: "net.fabricmc.fabric-api") }
 
     modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") { exclude module: 'fabric-api' }
-    modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
+    modImplementation "de.siphalor:nbtcrafting-${project.nbtcrafting_version}"
 
     include implementation("com.moandjiezana.toml:toml4j:${project.toml4j_version}")
     include implementation("com.electronwill.night-config:core:${project.tomlnc_version}")

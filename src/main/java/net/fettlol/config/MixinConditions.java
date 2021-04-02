@@ -42,6 +42,8 @@ public class MixinConditions implements IMixinConfigPlugin {
             return CONFIG.doBabyWitherSkeletonsSpawn();
         } else if (mixinClassName.contains("WitchMixin")) {
             return CONFIG.doWitchesKeepTheirDistance();
+        } else if (mixinClassName.contains("Spawner")) {
+            return true; // No config for this yet.
         } else if (mixinClassName.contains("Accessor")) {
             return true; // Always return true for Accessors.
         } else if (mixinClassName.contains("TagGroupLoaderMixin")) {
