@@ -34,7 +34,7 @@ public class LootTables {
             }
 
             // Add Aquamarine Gem and Jade Gem to fishing treasure (3%)
-            if (LootTableHelper.isShipwreckTreasure(identifier)) {
+            if (LootTableHelper.isFishingTreasure(identifier)) {
                 LootTableHelper.addToLootTable(supplier, 1, 0.03F, "fettlol", "aquamarine_gem");
                 LootTableHelper.addToLootTable(supplier, 1, 0.03F, "fettlol", "jade_gem");
             }
@@ -71,7 +71,7 @@ public class LootTables {
             }
 
             // Add Soul Shards to Phantoms (10%)
-            if (LootTableHelper.isEnderman(identifier)) {
+            if (LootTableHelper.isPhantom(identifier)) {
                 LootTableHelper.addToLootTable(supplier, 1, 0.1F, "fettlol", "soul_shard");
             }
 
