@@ -1,9 +1,14 @@
 package net.fettlol.mixin.accessor;
 
+import com.google.common.collect.Lists;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.MobSpawnerEntry;
 import net.minecraft.world.MobSpawnerLogic;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 import java.util.List;
@@ -11,55 +16,58 @@ import java.util.List;
 @Mixin(MobSpawnerLogic.class)
 public interface MobSpawnerLogicAccessor {
 
-    @Accessor
+    @Accessor("spawnEntry")
+    MobSpawnerEntry getSpawnEntry();
+
+    @Accessor("spawnPotentials")
     List<MobSpawnerEntry> getSpawnPotentials();
 
     @Accessor("spawnPotentials")
-    public void setSpawnPotentials(List<MobSpawnerEntry> spawnPotentials);
+    void setSpawnPotentials(List<MobSpawnerEntry> spawnPotentials);
 
     @Accessor("renderedEntity")
-    public void setRenderedEntity(Entity entity);
+    void setRenderedEntity(Entity entity);
 
-    @Accessor
+    @Accessor("spawnDelay")
     int getSpawnDelay();
 
     @Accessor("spawnDelay")
-    public void setSpawnDelay(int spawnDelay);
+    void setSpawnDelay(int spawnDelay);
 
-    @Accessor
+    @Accessor("minSpawnDelay")
     int getMinSpawnDelay();
 
     @Accessor("minSpawnDelay")
-    public void setMinSpawnDelay(int minSpawnDelay);
+    void setMinSpawnDelay(int minSpawnDelay);
 
-    @Accessor
+    @Accessor("maxSpawnDelay")
     int getMaxSpawnDelay();
 
     @Accessor("maxSpawnDelay")
-    public void setMaxSpawnDelay(int maxSpawnDelay);
+    void setMaxSpawnDelay(int maxSpawnDelay);
 
-    @Accessor
+    @Accessor("spawnCount")
     int getSpawnCount();
 
     @Accessor("spawnCount")
-    public void setSpawnCount(int spawnCount);
+    void setSpawnCount(int spawnCount);
 
-    @Accessor
+    @Accessor("requiredPlayerRange")
     int getRequiredPlayerRange();
 
     @Accessor("requiredPlayerRange")
-    public void setRequiredPlayerRange(int requiredPlayerRange);
+    void setRequiredPlayerRange(int requiredPlayerRange);
 
-    @Accessor
+    @Accessor("maxNearbyEntities")
     int getMaxNearbyEntities();
 
     @Accessor("maxNearbyEntities")
-    public void setMaxNearbyEntities(int maxNearbyEntities);
+    void setMaxNearbyEntities(int maxNearbyEntities);
 
-    @Accessor
+    @Accessor("spawnRange")
     int getSpawnRange();
 
     @Accessor("spawnRange")
-    public void setSpawnRange(int spawnRange);
+    void setSpawnRange(int spawnRange);
 
 }
