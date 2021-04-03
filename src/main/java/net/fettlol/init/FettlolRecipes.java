@@ -7,7 +7,6 @@ import net.minecraft.util.Identifier;
 
 public class FettlolRecipes {
 
-
     public static JsonObject PISTON_RECIPE = null;
     public static JsonObject DROPPER_RECIPE = null;
     public static JsonObject DISPENSER_RECIPE = null;
@@ -15,7 +14,6 @@ public class FettlolRecipes {
     public static JsonObject OBSERVER_RECIPE = null;
     public static JsonObject REPEATER = null;
     public static JsonObject CHEST_MINECART = null;
-
 
     public static void init() {
         reduceCobblestoneDependency();

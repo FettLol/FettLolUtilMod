@@ -1,5 +1,6 @@
 package net.fettlol.mixin;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SpawnerBlock;
 import net.minecraft.block.entity.BlockEntity;
@@ -12,8 +13,13 @@ import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(SpawnerBlock.class)
-public class SpawnerBlockMixin {
+public class SpawnerBlockMixin extends Block {
 
+    public SpawnerBlockMixin(Settings settings) {
+        super(settings);
+    }
+
+    @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
 

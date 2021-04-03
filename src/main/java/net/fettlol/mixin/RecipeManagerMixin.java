@@ -2,6 +2,7 @@ package net.fettlol.mixin;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.fettlol.init.FettlolRecipes;
 import net.fettlol.integration.BetterEnd;
 import net.fettlol.integration.BiomesYoullGo;
 import net.fettlol.integration.Winged;
@@ -22,6 +23,16 @@ public class RecipeManagerMixin {
 
     @Inject(method = "apply", at = @At("HEAD"))
     public void applyFettLolCustomRecipes(Map<Identifier, JsonElement> map, ResourceManager resourceManager, Profiler profiler, CallbackInfo ci) {
+
+        // Recipes related to: Tweaks and Simplifications
+        addCustomRecipe(map, "tweaks/chest_minecart", FettlolRecipes.CHEST_MINECART);
+        addCustomRecipe(map, "tweaks/dispenser", FettlolRecipes.DISPENSER_RECIPE);
+        addCustomRecipe(map, "tweaks/dropper", FettlolRecipes.DROPPER_RECIPE);
+        addCustomRecipe(map, "tweaks/furnace", FettlolRecipes.FURNACE_RECIPE);
+        addCustomRecipe(map, "tweaks/observer", FettlolRecipes.OBSERVER_RECIPE);
+        addCustomRecipe(map, "tweaks/piston", FettlolRecipes.PISTON_RECIPE);
+        addCustomRecipe(map, "tweaks/repeater", FettlolRecipes.REPEATER);
+
         // Recipes related to: Biomes You'll Go, Armor & Tools
         addCustomRecipe(map, "byg/ametrine_boots", BiomesYoullGo.AMETRINE_BOOTS_RECIPE);
         addCustomRecipe(map, "byg/ametrine_chestplate", BiomesYoullGo.AMETRINE_CHESTPLATE_RECIPE);

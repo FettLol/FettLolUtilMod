@@ -260,8 +260,6 @@ public class LootTableHelper {
         supplier.withPool(poolBuilder.build());
     }
 
-    // Same method as above, but called using two Strings for namespace and item name instead of an Identifier.
-    // For example: "minecraft", "poisonous_potato"
     public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
         addToLootTable(supplier, count, probability, new Identifier(namespace, item));
     }
@@ -270,7 +268,6 @@ public class LootTableHelper {
         addToLootTableWithRandomEnchantment(supplier, count, probability, new Identifier(namespace, item));
     }
 
-    // Same method as above, but using one String to identify the item instead of using an Identifier.
     public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String item) {
         addToLootTable(supplier, count, probability, new Identifier(item));
     }
