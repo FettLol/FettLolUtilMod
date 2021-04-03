@@ -1,16 +1,36 @@
 package net.fettlol.init;
 
-import net.fettlol.util.LootTableHelper;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import net.fettlol.util.LootTableHelper;
+import net.fettlol.util.PlayerPlacedLootCondition;
+import net.minecraft.item.Items;
+import net.minecraft.loot.ConstantLootTableRange;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.CopyNbtLootFunction;
 
-/**
- * Far more modifications of the loot tables are performed as part of the integrations we set up with other mods.
- * More details on those integrations can be found in init/ModIntegrations.java.
- */
 public class LootTables {
 
     public static void init() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
+
+            // Add custom handling to Player-placed Spawners
+            if (LootTableHelper.isSpawner(identifier)) {
+                setter.set(LootTable.builder()
+                    .pool(LootPool.builder()
+                        .rolls(ConstantLootTableRange.create(1))
+                        .conditionally(PlayerPlacedLootCondition::new)
+                        .with(ItemEntry.builder(Items.SPAWNER)
+                            .apply(CopyNbtLootFunction.builder(CopyNbtLootFunction.Source.BLOCK_ENTITY)
+                                .withOperation("SpawnPotentials", "SpawnPotentials")
+                                .withOperation("SpawnData", "SpawnData")
+                                .withOperation("IsPlayerPlaced", "IsPlayerPlaced")
+                            )
+                        )
+                    ).build()
+                );
+            }
 
             // Add Knightfall to various Nether locations. (3%)
             if (LootTableHelper.isNetherEndgame(identifier)) {

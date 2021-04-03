@@ -36,7 +36,8 @@ public class PlayerPlacedLootCondition implements LootCondition {
 	public boolean test(LootContext lootContext) {
 		BlockEntity blockEntity = lootContext.get(LootContextParameters.BLOCK_ENTITY);
 		CompoundTag nbt = blockEntity.toTag(new CompoundTag());
-		return nbt.contains("IsPlayerPlaced");
+
+		return nbt.getBoolean("IsPlayerPlaced");
 	}
 
 	public static class Builder implements LootCondition.Builder {

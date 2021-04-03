@@ -170,6 +170,10 @@ public class LootTableHelper {
         return identifier.toString().equals("minecraft:blocks/lapis_ore");
     }
 
+    public static boolean isSpawner(Identifier identifier) {
+        return identifier.toString().equals("minecraft:blocks/spawner");
+    }
+
     // = Gameplay =
 
     public static boolean isFishingTreasure(Identifier identifier) {

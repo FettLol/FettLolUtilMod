@@ -35,8 +35,6 @@
         }
     },
     "rewards": {
-        "loot": [
-            "waystones:blocks/waystone"
-        ]
+        "function": "fettlol:waystones"
     }
 }
