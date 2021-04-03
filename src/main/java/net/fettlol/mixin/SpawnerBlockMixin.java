@@ -1,9 +1,11 @@
 package net.fettlol.mixin;
 
+import net.fettlol.mixin.accessor.MobSpawnerLogicAccessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SpawnerBlock;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.MobSpawnerBlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
@@ -17,6 +19,25 @@ public class SpawnerBlockMixin extends Block {
 
     public SpawnerBlockMixin(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public void neighborUpdate(BlockState blockState, World world, BlockPos pos, Block blockIn, BlockPos blockOut, boolean bool) {
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        assert blockEntity != null;
+
+        MobSpawnerLogicAccessor accessor = getMobSpawnerLogicAccessor((MobSpawnerBlockEntity) blockEntity);
+
+        if (world.isReceivingRedstonePower(pos)) {
+            accessor.getSpawnPotentials().clear();
+            accessor.setRequiredPlayerRange(0);
+        } else {
+            accessor.setRequiredPlayerRange(16);
+        }
+    }
+
+    private MobSpawnerLogicAccessor getMobSpawnerLogicAccessor(MobSpawnerBlockEntity blockEntity) {
+        return (MobSpawnerLogicAccessor) blockEntity.getLogic();
     }
 
     @Override
