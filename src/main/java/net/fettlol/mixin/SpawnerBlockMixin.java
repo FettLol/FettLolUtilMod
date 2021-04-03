@@ -1,5 +1,6 @@
 package net.fettlol.mixin;
 
+import net.fettlol.UtilMod;
 import net.fettlol.mixin.accessor.MobSpawnerLogicAccessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -9,7 +10,10 @@ import net.minecraft.block.entity.MobSpawnerBlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.collection.WeightedPicker;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.MobSpawnerEntry;
+import net.minecraft.world.MobSpawnerLogic;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,23 +25,20 @@ public class SpawnerBlockMixin extends Block {
         super(settings);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void neighborUpdate(BlockState blockState, World world, BlockPos pos, Block blockIn, BlockPos blockOut, boolean bool) {
-        BlockEntity blockEntity = world.getBlockEntity(pos);
-        assert blockEntity != null;
-
-        MobSpawnerLogicAccessor accessor = getMobSpawnerLogicAccessor((MobSpawnerBlockEntity) blockEntity);
+        MobSpawnerLogic logic = ((MobSpawnerBlockEntity)world.getBlockEntity(pos)).getLogic();
+        MobSpawnerLogicAccessor accessor = (MobSpawnerLogicAccessor) logic;
 
         if (world.isReceivingRedstonePower(pos)) {
-            accessor.getSpawnPotentials().clear();
             accessor.setRequiredPlayerRange(0);
         } else {
             accessor.setRequiredPlayerRange(16);
         }
-    }
 
-    private MobSpawnerLogicAccessor getMobSpawnerLogicAccessor(MobSpawnerBlockEntity blockEntity) {
-        return (MobSpawnerLogicAccessor) blockEntity.getLogic();
+        // update block state
+        logic.setSpawnEntry(accessor.getSpawnEntry());
     }
 
     @Override
