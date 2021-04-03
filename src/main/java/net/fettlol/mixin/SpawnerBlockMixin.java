@@ -1,6 +1,5 @@
 package net.fettlol.mixin;
 
-import net.fettlol.UtilMod;
 import net.fettlol.mixin.accessor.MobSpawnerLogicAccessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -10,9 +9,7 @@ import net.minecraft.block.entity.MobSpawnerBlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.util.collection.WeightedPicker;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.MobSpawnerEntry;
 import net.minecraft.world.MobSpawnerLogic;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -37,7 +34,6 @@ public class SpawnerBlockMixin extends Block {
             accessor.setRequiredPlayerRange(16);
         }
 
-        // update block state
         logic.setSpawnEntry(accessor.getSpawnEntry());
     }
 
