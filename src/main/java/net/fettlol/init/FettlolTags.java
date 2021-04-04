@@ -27,6 +27,9 @@ public class FettlolTags {
     public static final Tag.Identified<Item> FABRIC_SHOVELS = TagHelper.makeItemTag("fabric", "shovels");
     public static final Tag.Identified<Item> FABRIC_SWORDS = TagHelper.makeItemTag("fabric", "swords");
 
+    // Vanilla Tags
+    public static final Tag.Identified<Item> STONE_CRAFTING_MATERIALS = TagHelper.makeItemTag("minecraft", "stone_crafting_materials");
+
     // AE2 Tags
     public static final Tag.Identified<Item> AE2_DUSTS = TagHelper.makeItemTag("appliedenergistics2", "dusts");
 
@@ -41,9 +44,6 @@ public class FettlolTags {
     public static final Tag.Identified<Item> C_CHESTS = TagHelper.makeItemTag("c", "chests");
     public static final Tag.Identified<Item> C_WOODEN_CHESTS = TagHelper.makeItemTag("c", "wooden_chests");
     public static final Tag.Identified<Item> C_VANILLAS = TagHelper.makeItemTag("c", "vanillas");
-    public static final Tag.Identified<Item> C_STONE_CRAFTING_MATERIALS = TagHelper.makeItemTag(
-        "minecraft", "stone_crafting_materials"
-    );
 
     // Tiny Tweaks tags
     public static final Tag.Identified<Item> TINYTWEAKS_SHOWS_GRASS_HITBOXES = TagHelper.makeItemTag("tinytweaks", "shows_grass_hitboxes");
@@ -70,12 +70,11 @@ public class FettlolTags {
         TagHelper.addTag(FABRIC_BOWS, Items.BOW);
 
         // Make "stone" tools and items easier to get.
-        TagHelper.addTag(C_STONE_CRAFTING_MATERIALS, Items.STONE);
-        TagHelper.addTag(C_STONE_CRAFTING_MATERIALS, Items.ANDESITE);
-        TagHelper.addTag(C_STONE_CRAFTING_MATERIALS, Items.DIORITE);
-        TagHelper.addTag(C_STONE_CRAFTING_MATERIALS, Items.MOSSY_COBBLESTONE);
-        TagHelper.addTag(C_STONE_CRAFTING_MATERIALS, Items.GRANITE);
-        addItemToItemTag(C_STONE_CRAFTING_MATERIALS, ModIntegrations.BYG, "rocky_stone");
+        TagHelper.addTag(STONE_CRAFTING_MATERIALS, Items.STONE);
+        TagHelper.addTag(STONE_CRAFTING_MATERIALS, Items.ANDESITE);
+        TagHelper.addTag(STONE_CRAFTING_MATERIALS, Items.DIORITE);
+        TagHelper.addTag(STONE_CRAFTING_MATERIALS, Items.MOSSY_COBBLESTONE);
+        TagHelper.addTag(STONE_CRAFTING_MATERIALS, Items.GRANITE);
 
         // Applied Energistics & Better End
         if (ModIntegrations.isAppliedEnergisticsLoaded && ModIntegrations.isBetterEndLoaded) {
@@ -157,6 +156,11 @@ public class FettlolTags {
                 addItemToItemTag(C_WOODEN_CHESTS, ModIntegrations.EXPANDEDSTORAGE, chestItem);
                 addItemToItemTag(C_CHESTS, ModIntegrations.EXPANDEDSTORAGE, chestItem);
             }
+        }
+
+        // Biomes You'll Go
+        if (ModIntegrations.isBygLoaded) {
+            addItemToItemTag(STONE_CRAFTING_MATERIALS, ModIntegrations.BYG, "rocky_stone");
         }
 
         // Tech Reborn

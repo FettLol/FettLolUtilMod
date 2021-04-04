@@ -31,7 +31,7 @@ public class FettlolRecipes {
             Lists.newArrayList('P', 'S', 'R', 'I'),
             Lists.newArrayList(
                 new Identifier("minecraft", "planks"),
-                new Identifier("c", "stone_crafting_materials"),
+                new Identifier("minecraft", "stone_crafting_materials"),
                 new Identifier("minecraft", "redstone"),
                 new Identifier("c", "iron_ingots")
             ),
@@ -43,7 +43,7 @@ public class FettlolRecipes {
         DROPPER_RECIPE = RecipeHelper.createShapedRecipe(
             Lists.newArrayList('S', 'R'),
             Lists.newArrayList(
-                new Identifier("c", "stone_crafting_materials"),
+                new Identifier("minecraft", "stone_crafting_materials"),
                 new Identifier("minecraft", "redstone")
             ),
             Lists.newArrayList("tag", "item"),
@@ -54,7 +54,7 @@ public class FettlolRecipes {
         DISPENSER_RECIPE = RecipeHelper.createShapedRecipe(
             Lists.newArrayList('S', 'R', 'B'),
             Lists.newArrayList(
-                new Identifier("c", "stone_crafting_materials"),
+                new Identifier("minecraft", "stone_crafting_materials"),
                 new Identifier("minecraft", "redstone"),
                 new Identifier("c", "bows")
             ),
@@ -66,7 +66,7 @@ public class FettlolRecipes {
         OBSERVER_RECIPE = RecipeHelper.createShapedRecipe(
             Lists.newArrayList('S', 'R', 'Q'),
             Lists.newArrayList(
-                new Identifier("c", "stone_crafting_materials"),
+                new Identifier("minecraft", "stone_crafting_materials"),
                 new Identifier("minecraft", "redstone"),
                 new Identifier("c", "quartz")
             ),
@@ -78,7 +78,7 @@ public class FettlolRecipes {
         FURNACE_RECIPE = RecipeHelper.createShapedRecipe(
             Lists.newArrayList('S'),
             Lists.newArrayList(
-                new Identifier("c", "stone_crafting_materials")
+                new Identifier("minecraft", "stone_crafting_materials")
             ),
             Lists.newArrayList("tag"),
             Lists.newArrayList("SSS", "S S", "SSS"),
@@ -95,7 +95,7 @@ public class FettlolRecipes {
         REPEATER = RecipeHelper.createShapedRecipe(
             Lists.newArrayList('S', 'R', 'T'),
             Lists.newArrayList(
-                new Identifier("c", "stone_crafting_materials"),
+                new Identifier("minecraft", "stone_crafting_materials"),
                 new Identifier("minecraft", "redstone"),
                 new Identifier("minecraft", "stick")
             ),
