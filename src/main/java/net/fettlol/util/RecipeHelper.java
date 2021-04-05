@@ -106,7 +106,7 @@ public class RecipeHelper {
     }
 
     public static JsonObject createShapedRecipe(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output) {
-        return createShapedRecipeOfType("minecraft:shaped_recipe", keys, items, type, pattern, output);
+        return createShapedRecipeOfType("minecraft:crafting_shaped", keys, items, type, pattern, output);
     }
 
     public static JsonObject createShapedRecipeOfType(String recipeType, ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output) {

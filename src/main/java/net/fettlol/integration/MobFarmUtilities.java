@@ -15,7 +15,6 @@ public class MobFarmUtilities {
         if (ModIntegrations.isMobFarmUtilitiesLoaded) {
             UtilMod.LOGGER.info("Mob Farm Utilities detected! Applying integrations!");
 
-
             if (ModIntegrations.isTechRebornLoaded) {
                 RecipeHelper.removeRecipe(ModIntegrations.MOB_FARM_UTILITIES, "experience_collector");
 
