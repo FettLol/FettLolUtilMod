@@ -1,222 +1,309 @@
 package net.fettlol.integration;
 
 import com.google.common.collect.Lists;
-import com.google.gson.JsonObject;
+import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fettlol.UtilMod;
+import net.fettlol.init.FettlolRecipes;
 import net.fettlol.init.ModIntegrations;
 import net.fettlol.util.LootTableHelper;
 import net.fettlol.util.RecipeHelper;
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.minecraft.util.Identifier;
 
 public class BetterEnd {
-
-    // Null definitions for custom recipes that may be applied if this mod is available.
-    public static JsonObject AETERNIUM_AXE_RECIPE = null;
-    public static JsonObject AETERNIUM_BOOTS_RECIPE = null;
-    public static JsonObject AETERNIUM_CHESTPLATE_RECIPE = null;
-    public static JsonObject AETERNIUM_HELMET_RECIPE = null;
-    public static JsonObject AETERNIUM_HOE_RECIPE = null;
-    public static JsonObject AETERNIUM_INGOT_RECIPE = null;
-    public static JsonObject AETERNIUM_LEGGINGS_RECIPE = null;
-    public static JsonObject AETERNIUM_PICKAXE_RECIPE = null;
-    public static JsonObject AETERNIUM_SHOVEL_RECIPE = null;
-    public static JsonObject AETERNIUM_SWORD_RECIPE = null;
-    public static JsonObject TERMINITE_AXE_RECIPE = null;
-    public static JsonObject TERMINITE_HOE_RECIPE = null;
-    public static JsonObject TERMINITE_INGOT_RECIPE = null;
-    public static JsonObject TERMINITE_PICKAXE_RECIPE = null;
-    public static JsonObject TERMINITE_SHOVEL_RECIPE = null;
-    public static JsonObject TERMINITE_SWORD_RECIPE = null;
-    public static JsonObject THALLASIUM_AXE_RECIPE = null;
-    public static JsonObject THALLASIUM_HOE_RECIPE = null;
-    public static JsonObject THALLASIUM_PICKAXE_RECIPE = null;
-    public static JsonObject THALLASIUM_SHOVEL_RECIPE = null;
-    public static JsonObject THALLASIUM_SWORD_RECIPE = null;
 
     public static void init() {
         if (ModIntegrations.isBetterEndLoaded) {
             UtilMod.LOGGER.info("Better End detected! Applying integrations.");
 
             defineLootTablesForBetterEnd();
+
             defineRecipesForBetterEnd();
         }
     }
 
+    /**
+     * There are a lot of weird recipes introduced in Better End, many of which introduce new ways of
+     * crafting armor and tools. Since we want to have consistency in how these are made, these recipes
+     * add the "normal" way of crafting armor and tools back for Aeternium, Thallasium and Terminite.
+     */
     public static void defineRecipesForBetterEnd() {
-        // The Aeternium armor and tools added by Better End have a very roundabout acquisition process which
-        // does not feel native to the overall Minecraft experience. To make things easier for everybody,
-        // we'll also add all the standard recipes using sticks and/or Aeternium Ingots.
-        AETERNIUM_BOOTS_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot")),
-            Lists.newArrayList("item"),
-            Lists.newArrayList("   ", "I I", "I I"),
-            new Identifier("betterend", "aeternium_boots")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/aeternium_boots",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I'),
+                Lists.newArrayList(new Identifier(ModIntegrations.BETTER_END, "aeternium_ingot")),
+                Lists.newArrayList("item"),
+                Lists.newArrayList("   ", "I I", "I I"),
+                new Identifier(ModIntegrations.BETTER_END, "aeternium_boots")
+            )
         );
 
-        AETERNIUM_CHESTPLATE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot")),
-            Lists.newArrayList("item"),
-            Lists.newArrayList("I I", "III", "III"),
-            new Identifier("betterend", "aeternium_chestplate")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/aeternium_chestplate",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I'),
+                Lists.newArrayList(new Identifier(ModIntegrations.BETTER_END, "aeternium_ingot")),
+                Lists.newArrayList("item"),
+                Lists.newArrayList("I I", "III", "III"),
+                new Identifier(ModIntegrations.BETTER_END, "aeternium_chestplate")
+            )
         );
 
-        AETERNIUM_HELMET_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot")),
-            Lists.newArrayList("item"),
-            Lists.newArrayList("   ", "III", "I I"),
-            new Identifier("betterend", "aeternium_helmet")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/aeternium_helmet",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I'),
+                Lists.newArrayList(new Identifier(ModIntegrations.BETTER_END, "aeternium_ingot")),
+                Lists.newArrayList("item"),
+                Lists.newArrayList("   ", "III", "I I"),
+                new Identifier(ModIntegrations.BETTER_END, "aeternium_helmet")
+            )
         );
 
-        AETERNIUM_LEGGINGS_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot")),
-            Lists.newArrayList("item"),
-            Lists.newArrayList("III", "I I", "I I"),
-            new Identifier("betterend", "aeternium_leggings")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/aeternium_leggings",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I'),
+                Lists.newArrayList(new Identifier(ModIntegrations.BETTER_END, "aeternium_ingot")),
+                Lists.newArrayList("item"),
+                Lists.newArrayList("III", "I I", "I I"),
+                new Identifier(ModIntegrations.BETTER_END, "aeternium_leggings")
+            )
         );
 
-        AETERNIUM_AXE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" II", " SI", " S "),
-            new Identifier("betterend", "aeternium_axe")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/aeternium_axe",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "aeternium_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" II", " SI", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "aeternium_axe")
+            )
         );
 
-        AETERNIUM_HOE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" II", " S ", " S "),
-            new Identifier("betterend", "aeternium_hoe")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/aeternium_hoe",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "aeternium_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" II", " S ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "aeternium_hoe")
+            )
         );
 
-        AETERNIUM_PICKAXE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList("III", " S ", " S "),
-            new Identifier("betterend", "aeternium_pickaxe")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/aeternium_pickaxe",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "aeternium_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList("III", " S ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "aeternium_pickaxe")
+            )
         );
 
-        AETERNIUM_SHOVEL_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" I ", " S ", " S "),
-            new Identifier("betterend", "aeternium_shovel")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/aeternium_shovel",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "aeternium_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" I ", " S ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "aeternium_shovel")
+            )
         );
 
-        AETERNIUM_SWORD_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "aeternium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" I ", " I ", " S "),
-            new Identifier("betterend", "aeternium_sword")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/aeternium_sword",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "aeternium_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" I ", " I ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "aeternium_sword")
+            )
         );
 
-        // Terminite tools need proper recipies too.
-        TERMINITE_AXE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" II", " SI", " S "),
-            new Identifier("betterend", "terminite_axe")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/terminite_axe",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "terminite_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" II", " SI", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "terminite_axe")
+            )
         );
 
-        TERMINITE_HOE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" II", " S ", " S "),
-            new Identifier("betterend", "terminite_hoe")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/terminite_hoe",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "terminite_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" II", " S ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "terminite_hoe")
+            )
         );
 
-        TERMINITE_PICKAXE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList("III", " S ", " S "),
-            new Identifier("betterend", "terminite_pickaxe")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/terminite_pickaxe",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "terminite_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList("III", " S ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "terminite_pickaxe")
+            )
         );
 
-        TERMINITE_SHOVEL_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" I ", " S ", " S "),
-            new Identifier("betterend", "terminite_shovel")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/terminite_shovel",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "terminite_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" I ", " S ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "terminite_shovel")
+            )
         );
 
-        // Thallasium tools need proper recipies too.
-        THALLASIUM_AXE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "thallasium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" II", " SI", " S "),
-            new Identifier("betterend", "thallasium_axe")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/thallasium_axe",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "thallasium_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" II", " SI", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "thallasium_axe")
+            )
         );
 
-        THALLASIUM_HOE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "thallasium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" II", " S ", " S "),
-            new Identifier("betterend", "thallasium_hoe")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/thallasium_hoe",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "thallasium_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" II", " S ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "thallasium_hoe")
+            )
         );
 
-        THALLASIUM_PICKAXE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "thallasium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList("III", " S ", " S "),
-            new Identifier("betterend", "thallasium_pickaxe")
-        );
-
-        THALLASIUM_SHOVEL_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "thallasium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" I ", " S ", " S "),
-            new Identifier("betterend", "thallasium_shovel")
-        );
-
-        THALLASIUM_SWORD_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "thallasium_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" I ", " I ", " S "),
-            new Identifier("betterend", "thallasium_sword")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/thallasium_pickaxe",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "thallasium_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList("III", " S ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "thallasium_pickaxe")
+            )
         );
 
 
-        TERMINITE_SWORD_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('I', 'S'),
-            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "stick")),
-            Lists.newArrayList("item", "item"),
-            Lists.newArrayList(" I ", " I ", " S "),
-            new Identifier("betterend", "terminite_sword")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/thallasium_shovel",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "thallasium_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" I ", " S ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "thallasium_shovel")
+            )
         );
 
-        // We'll also create a custom recipe for the Aeternium Ingot itself, as the intended way of getting it
-        // is also fairly roundabout and confusing.
-        AETERNIUM_INGOT_RECIPE = RecipeHelper.createShapelessRecipe(
-            Lists.newArrayList(new Identifier("betterend", "terminite_ingot"), new Identifier("minecraft", "netherite_ingot")),
-            Lists.newArrayList("item", "item"),
-            new Identifier("betterend", "aeternium_ingot")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/thallasium_sword",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "thallasium_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" I ", " I ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "thallasium_sword")
+            )
         );
 
-        // Finally, an alternative way for the Terminite Ingot, so we don't have to worry about Better End's
-        // custom Anvil-types of recipes at all. This will also allow us to use all the Ender Dusts added by
-        // Applied Energistics and TechReborn instead of just Better End's own Ender Dust item.
-        TERMINITE_INGOT_RECIPE = RecipeHelper.createShapelessRecipe(
-            Lists.newArrayList(new Identifier("c", "ender_pearl_dusts"), new Identifier("minecraft", "iron_ingot")),
-            Lists.newArrayList("tag", "item"),
-            new Identifier("betterend", "terminite_ingot")
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/terminite_sword",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'S'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "terminite_ingot"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" I ", " I ", " S "),
+                new Identifier(ModIntegrations.BETTER_END, "terminite_sword")
+            )
+        );
+
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/aeternium_ingot",
+            RecipeHelper.createShapelessRecipe(
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BETTER_END, "terminite_ingot"),
+                    new Identifier("minecraft", "netherite_ingot")
+                ),
+                Lists.newArrayList("item", "item"),
+                new Identifier(ModIntegrations.BETTER_END, "aeternium_ingot")
+            )
+        );
+
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "betterend/terminite_ingot",
+            RecipeHelper.createShapelessRecipe(
+                Lists.newArrayList(
+                    new Identifier("c", "ender_pearl_dusts"),
+                    new Identifier("minecraft", "iron_ingot")
+                ),
+                Lists.newArrayList("tag", "item"),
+                new Identifier(ModIntegrations.BETTER_END, "terminite_ingot")
+            )
         );
     }
 
@@ -227,10 +314,10 @@ public class BetterEnd {
     private static void defineLootTablesForBetterEnd() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
 
-            // Endermen drop one Ender Dust 10% of the time.
+            // Endermen drop one Ender Dust 5% of the time.
             // TODO - Consider changing this to the Ender Dust from Applied Energistics?
             if (LootTableHelper.isEnderman(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.1F, ModIntegrations.BETTER_END, "ender_dust");
+                LootTableHelper.addToLootTable(supplier, 1, 0.05F, ModIntegrations.BETTER_END, "ender_dust");
             }
 
             // Buried treasure has a 10% chance of containing one Raw Amber.

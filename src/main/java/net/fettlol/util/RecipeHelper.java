@@ -2,6 +2,7 @@ package net.fettlol.util;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import io.github.cottonmc.cotton.datapack.recipe.RecipeUtil;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeManager;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -18,6 +19,18 @@ import java.util.Collection;
  * - Adding support for recipes for some of the specialized recipe types in the modpack.
  */
 public class RecipeHelper {
+
+    public static void removeRecipe(String recipe) {
+        RecipeUtil.removeRecipe(recipe);
+    }
+
+    public static void removeRecipe(String namespace, String recipe) {
+        removeRecipe(namespace + ":" + recipe);
+    }
+
+    public static void removeRecipe(Identifier recipe) {
+        RecipeUtil.removeRecipe(recipe);
+    }
 
     public static void unlockAllRecipes(ServerPlayerEntity serverPlayerEntity) {
         if (serverPlayerEntity != null) {
@@ -93,6 +106,10 @@ public class RecipeHelper {
     }
 
     public static JsonObject createShapedRecipe(ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output) {
+        return createShapedRecipeOfType("minecraft:shaped_recipe", keys, items, type, pattern, output);
+    }
+
+    public static JsonObject createShapedRecipeOfType(String recipeType, ArrayList<Character> keys, ArrayList<Identifier> items, ArrayList<String> type, ArrayList<String> pattern, Identifier output) {
         JsonArray jsonArray = new JsonArray();
         jsonArray.add(pattern.get(0));
         jsonArray.add(pattern.get(1));
@@ -111,7 +128,7 @@ public class RecipeHelper {
         result.addProperty("count", 1);
 
         JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("type", "minecraft:crafting_shaped");
+        jsonObject.addProperty("type", recipeType);
         jsonObject.add("pattern", jsonArray);
         jsonObject.add("key", keyList);
         jsonObject.add("result", result);

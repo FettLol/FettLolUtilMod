@@ -41,10 +41,6 @@ public class MidasHunger {
                 if (LootTableHelper.isNetherEndgame(identifier)) {
                     LootTableHelper.addToLootTable(supplier, 5, 0.05F, ModIntegrations.MIDAS_HUNGER, "golden_beetroot");
                 }
-
-                // cooked_golden_chicken    - slow falling              - villager butcher chests?
-                // sweet_golden_berries     - speed                     - add to berry loot tables?
-
             });
         }
     }

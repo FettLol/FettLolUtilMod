@@ -5,115 +5,135 @@ import com.google.gson.JsonObject;
 import net.fettlol.util.RecipeHelper;
 import net.minecraft.util.Identifier;
 
+import java.util.HashMap;
+
 public class FettlolRecipes {
 
-    public static JsonObject PISTON_RECIPE = null;
-    public static JsonObject DROPPER_RECIPE = null;
-    public static JsonObject DISPENSER_RECIPE = null;
-    public static JsonObject FURNACE_RECIPE = null;
-    public static JsonObject OBSERVER_RECIPE = null;
-    public static JsonObject REPEATER = null;
-    public static JsonObject CHEST_MINECART = null;
+    public static HashMap<String, JsonObject> CUSTOM_RECIPES = new HashMap<>();
 
     public static void init() {
-        reduceCobblestoneDependency();
-
-        addSimplifiedRecipes();
+        addSimplifiedChestMinecartRecipe();
+        addSimplifiedDispenserRecipe();
+        addSimplifiedDropperRecipe();
+        addSimplifiedFurnaceRecipe();
+        addSimplifiedObserverRecipe();
+        addSimplifiedPistonRecipe();
+        addSimplifiedRepeaterRecipe();
     }
 
-
-    /**
-     * Add recipes using the `minecraft:stone_crafting_materials` in place of Cobblestone
-     */
-    public static void reduceCobblestoneDependency() {
-
-        PISTON_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('P', 'S', 'R', 'I'),
-            Lists.newArrayList(
-                new Identifier("minecraft", "planks"),
-                new Identifier("minecraft", "stone_crafting_materials"),
-                new Identifier("minecraft", "redstone"),
-                new Identifier("c", "iron_ingots")
-            ),
-            Lists.newArrayList("tag", "tag", "item", "tag"),
-            Lists.newArrayList("PPP", "SIS", "SRS"),
-            new Identifier("minecraft", "piston")
+    private static void addSimplifiedDispenserRecipe() {
+        CUSTOM_RECIPES.put(
+            "cobblestone/dispenser",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('S', 'R', 'B'),
+                Lists.newArrayList(
+                    new Identifier("minecraft", "stone_crafting_materials"),
+                    new Identifier("minecraft", "redstone"),
+                    new Identifier("fabric", "bows")
+                ),
+                Lists.newArrayList("tag", "item", "tag"),
+                Lists.newArrayList("SSS", "SBS", "SRS"),
+                new Identifier("minecraft", "dispenser")
+            )
         );
-
-        DROPPER_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('S', 'R'),
-            Lists.newArrayList(
-                new Identifier("minecraft", "stone_crafting_materials"),
-                new Identifier("minecraft", "redstone")
-            ),
-            Lists.newArrayList("tag", "item"),
-            Lists.newArrayList("SSS", "S S", "SRS"),
-            new Identifier("minecraft", "dropper")
-        );
-
-        DISPENSER_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('S', 'R', 'B'),
-            Lists.newArrayList(
-                new Identifier("minecraft", "stone_crafting_materials"),
-                new Identifier("minecraft", "redstone"),
-                new Identifier("fabric", "bows")
-            ),
-            Lists.newArrayList("tag", "item", "tag"),
-            Lists.newArrayList("SSS", "SBS", "SRS"),
-            new Identifier("minecraft", "dispenser")
-        );
-
-        OBSERVER_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('S', 'R', 'Q'),
-            Lists.newArrayList(
-                new Identifier("minecraft", "stone_crafting_materials"),
-                new Identifier("minecraft", "redstone"),
-                new Identifier("c", "quartz")
-            ),
-            Lists.newArrayList("tag", "item", "tag"),
-            Lists.newArrayList("SSS", "RRQ", "SSS"),
-            new Identifier("minecraft", "observer")
-        );
-
-        FURNACE_RECIPE = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('S'),
-            Lists.newArrayList(
-                new Identifier("minecraft", "stone_crafting_materials")
-            ),
-            Lists.newArrayList("tag"),
-            Lists.newArrayList("SSS", "S S", "SSS"),
-            new Identifier("minecraft", "furnace")
-        );
-
     }
 
-    /**
-     * Simpler versions of recipes, allowing you to skip a step.
-     */
-    public static void addSimplifiedRecipes() {
-        // Craft repeaters without redstone torches.
-        REPEATER = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('S', 'R', 'T'),
-            Lists.newArrayList(
-                new Identifier("minecraft", "stone_crafting_materials"),
-                new Identifier("minecraft", "redstone"),
-                new Identifier("minecraft", "stick")
-            ),
-            Lists.newArrayList("tag", "item", "item"),
-            Lists.newArrayList("R R", "TRT", "SSS"),
-            new Identifier("minecraft", "repeater")
+    private static void addSimplifiedDropperRecipe() {
+        CUSTOM_RECIPES.put(
+            "cobblestone/dropper",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('S', 'R'),
+                Lists.newArrayList(
+                    new Identifier("minecraft", "stone_crafting_materials"),
+                    new Identifier("minecraft", "redstone")
+                ),
+                Lists.newArrayList("tag", "item"),
+                Lists.newArrayList("SSS", "S S", "SRS"),
+                new Identifier("minecraft", "dropper")
+            )
         );
+    }
 
-        // Craft Chest Minecarts without having to build the minecarts first.
-        CHEST_MINECART = RecipeHelper.createShapedRecipe(
-            Lists.newArrayList('C', 'I'),
-            Lists.newArrayList(
-                new Identifier("c", "wooden_chests"),
-                new Identifier("c", "iron_ingots")
-            ),
-            Lists.newArrayList("tag", "tag"),
-            Lists.newArrayList("   ", "ICI", "III"),
-            new Identifier("minecraft", "chest_minecart")
+    private static void addSimplifiedObserverRecipe() {
+        CUSTOM_RECIPES.put(
+            "cobblestone/observer",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('S', 'R', 'Q'),
+                Lists.newArrayList(
+                    new Identifier("minecraft", "stone_crafting_materials"),
+                    new Identifier("minecraft", "redstone"),
+                    new Identifier("c", "quartz")
+                ),
+                Lists.newArrayList("tag", "item", "tag"),
+                Lists.newArrayList("SSS", "RRQ", "SSS"),
+                new Identifier("minecraft", "observer")
+            )
+        );
+    }
+
+    private static void addSimplifiedFurnaceRecipe() {
+        CUSTOM_RECIPES.put(
+            "cobblestone/furnace",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('S'),
+                Lists.newArrayList(
+                    new Identifier("minecraft", "stone_crafting_materials")
+                ),
+                Lists.newArrayList("tag"),
+                Lists.newArrayList("SSS", "S S", "SSS"),
+                new Identifier("minecraft", "furnace")
+            )
+        );
+    }
+
+    private static void addSimplifiedPistonRecipe() {
+        CUSTOM_RECIPES.put(
+            "cobblestone/piston",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('P', 'S', 'R', 'I'),
+                Lists.newArrayList(
+                    new Identifier("minecraft", "planks"),
+                    new Identifier("minecraft", "stone_crafting_materials"),
+                    new Identifier("minecraft", "redstone"),
+                    new Identifier("c", "iron_ingots")
+                ),
+                Lists.newArrayList("tag", "tag", "item", "tag"),
+                Lists.newArrayList("PPP", "SIS", "SRS"),
+                new Identifier("minecraft", "piston")
+            )
+        );
+    }
+
+    public static void addSimplifiedRepeaterRecipe() {
+        CUSTOM_RECIPES.put(
+            "simplified/repeater",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('S', 'R', 'T'),
+                Lists.newArrayList(
+                    new Identifier("minecraft", "stone_crafting_materials"),
+                    new Identifier("minecraft", "redstone"),
+                    new Identifier("minecraft", "stick")
+                ),
+                Lists.newArrayList("tag", "item", "item"),
+                Lists.newArrayList("R R", "TRT", "SSS"),
+                new Identifier("minecraft", "repeater")
+            )
+        );
+    }
+
+    public static void addSimplifiedChestMinecartRecipe() {
+        CUSTOM_RECIPES.put(
+            "simplified/chestminecart",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('C', 'I'),
+                Lists.newArrayList(
+                    new Identifier("c", "wooden_chests"),
+                    new Identifier("c", "iron_ingots")
+                ),
+                Lists.newArrayList("tag", "tag"),
+                Lists.newArrayList("   ", "ICI", "III"),
+                new Identifier("minecraft", "chest_minecart")
+            )
         );
     }
 

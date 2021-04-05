@@ -21,6 +21,7 @@ public class ModIntegrations {
     final public static String BETTER_NETHER = "betternether";
     final public static String BYG = "byg";
     final public static String BATTLETOWERS = "battletowers";
+    final public static String MOB_FARM_UTILITIES = "mobfarmutilities";
     final public static String CINDERSCAPES = "cinderscapes";
     final public static String CRIMSON_MOON = "crimsonmoon";
     final public static String CROPTOPIA = "croptopia";
@@ -44,6 +45,7 @@ public class ModIntegrations {
     public static boolean isCinderscapesLoaded = FabricLoader.getInstance().isModLoaded(CINDERSCAPES);
     public static boolean isExpandedStorageLoaded = FabricLoader.getInstance().isModLoaded(EXPANDEDSTORAGE);
     public static boolean isCrimsonMoonLoaded = FabricLoader.getInstance().isModLoaded(CRIMSON_MOON);
+    public static boolean isMobFarmUtilitiesLoaded = FabricLoader.getInstance().isModLoaded(MOB_FARM_UTILITIES);
     public static boolean isTechRebornLoaded = FabricLoader.getInstance().isModLoaded(TECH_REBORN);
     public static boolean isCroptopiaLoaded = FabricLoader.getInstance().isModLoaded(CROPTOPIA);
     public static boolean isDankStorageLoaded = FabricLoader.getInstance().isModLoaded(DANKSTORAGE);
@@ -63,6 +65,7 @@ public class ModIntegrations {
         Croptopia.init();
         DankStorage.init();
         MidasHunger.init();
+        MobFarmUtilities.init();
         RingOfAttraction.init();
         Winged.init();
     }

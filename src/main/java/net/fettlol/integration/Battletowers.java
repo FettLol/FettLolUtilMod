@@ -43,13 +43,8 @@ public class Battletowers {
                     if (ModIntegrations.isWingedLoaded) {
                         LootTableHelper.addToLootTable(supplier, 1, 0.02F, ModIntegrations.WINGED, "wing_random");
                     }
-
                 }
-
-
             });
-
-
         }
     }
 
