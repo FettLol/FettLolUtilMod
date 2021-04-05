@@ -56,7 +56,7 @@ public class FettlolRecipes {
             Lists.newArrayList(
                 new Identifier("minecraft", "stone_crafting_materials"),
                 new Identifier("minecraft", "redstone"),
-                new Identifier("c", "bows")
+                new Identifier("fabric", "bows")
             ),
             Lists.newArrayList("tag", "item", "tag"),
             Lists.newArrayList("SSS", "SBS", "SRS"),
@@ -99,7 +99,7 @@ public class FettlolRecipes {
                 new Identifier("minecraft", "redstone"),
                 new Identifier("minecraft", "stick")
             ),
-            Lists.newArrayList("tag", "item", "tag"),
+            Lists.newArrayList("tag", "item", "item"),
             Lists.newArrayList("R R", "TRT", "SSS"),
             new Identifier("minecraft", "repeater")
         );
