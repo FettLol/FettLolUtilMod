@@ -179,25 +179,6 @@ public class FettlolTags {
             }
         }
 
-        // MCDA
-        if (ModIntegrations.isMcdaLoaded) {
-            for (String helmetItem : Arrays.asList("beenest_armor_helmet", "beehive_armor_helmet", "champions_armor_helmet", "heros_armor_helmet", "dark_armor_helmet", "titans_shroud_helmet", "ghostly_armor_helmet", "ghost_kindler_helmet", "grim_armor_helmet", "wither_armor_helmet", "guards_armor_helmet", "curious_armor_helmet", "mercenary_armor_helmet", "renegade_armor_helmet", "hungry_horror_helmet", "white_mystery_armor_helmet", "blue_mystery_armor_helmet", "green_mystery_armor_helmet", "purple_mystery_armor_helmet", "red_mystery_armor_helmet", "ocelot_armor_helmet", "shadow_walker_armor_helmet", "phantom_armor_helmet", "frost_bite_armor_helmet", "plate_armor_helmet", "full_metal_armor_helmet", "reinforced_mail_helmet", "stalwart_armor_helmet", "highland_armor_helmet", "snow_armor_helmet", "frost_armor_helmet", "spelunker_armor_helmet", "cave_crawler_armor_helmet", "emerald_gear_helmet", "opulent_armor_helmet", "gilded_glory_helmet")) {
-                addItemToItemTag(FABRIC_HELMETS, ModIntegrations.MCDA, helmetItem);
-            }
-
-            for (String chestItem : Arrays.asList("beenest_armor_chestplate", "beehive_armor_chestplate", "champions_armor_chestplate", "heros_armor_chestplate", "dark_armor_chestplate", "titans_shroud_chestplate", "ghostly_armor_chestplate", "ghost_kindler_chestplate", "grim_armor_chestplate", "hunters_chestplate", "wither_armor_chestplate", "guards_armor_chestplate", "curious_armor_chestplate", "mercenary_armor_chestplate", "renegade_armor_chestplate", "hungry_horror_chestplate", "white_mystery_armor_chestplate", "blue_mystery_armor_chestplate", "green_mystery_armor_chestplate", "purple_mystery_armor_chestplate", "red_mystery_armor_chestplate", "ocelot_armor_chestplate", "shadow_walker_armor_chestplate", "phantom_armor_chestplate", "frost_bite_armor_chestplate", "plate_armor_chestplate", "full_metal_armor_chestplate", "reinforced_mail_chestplate", "stalwart_armor_chestplate", "highland_armor_chestplate", "snow_armor_chestplate", "frost_armor_chestplate", "spelunker_armor_chestplate", "cave_crawler_armor_chestplate", "emerald_gear_chestplate", "opulent_armor_chestplate", "gilded_glory_chestplate")) {
-                addItemToItemTag(FABRIC_CHESTPLATES, ModIntegrations.MCDA, chestItem);
-            }
-
-            for (String legItem : Arrays.asList("beenest_armor_leggings", "beehive_armor_leggings", "champions_armor_leggings", "heros_armor_leggings", "dark_armor_leggings", "titans_shroud_leggings", "ghostly_armor_leggings", "ghost_kindler_leggings", "grim_armor_leggings", "wither_armor_leggings", "guards_armor_leggings", "curious_armor_leggings", "mercenary_armor_leggings", "renegade_armor_leggings", "hungry_horror_leggings", "white_mystery_armor_leggings", "blue_mystery_armor_leggings", "green_mystery_armor_leggings", "purple_mystery_armor_leggings", "red_mystery_armor_leggings", "ocelot_armor_leggings", "shadow_walker_armor_leggings", "phantom_armor_leggings", "frost_bite_armor_leggings", "plate_armor_leggings", "full_metal_armor_leggings", "reinforced_mail_leggings", "stalwart_armor_leggings", "highland_armor_leggings", "snow_armor_leggings", "frost_armor_leggings", "spelunker_armor_leggings", "cave_crawler_armor_leggings", "emerald_gear_leggings", "opulent_armor_leggings", "gilded_glory_leggings")) {
-                addItemToItemTag(FABRIC_CHESTPLATES, ModIntegrations.MCDA, legItem);
-            }
-
-            for (String bootItem : Arrays.asList("beenest_armor_boots", "beehive_armor_boots", "champions_armor_boots", "heros_armor_boots", "dark_armor_boots", "titans_shroud_boots", "ghostly_armor_boots", "ghost_kindler_boots", "grim_armor_boots", "wither_armor_boots", "guards_armor_boots", "curious_armor_boots", "mercenary_armor_boots", "renegade_armor_boots", "hungry_horror_boots", "white_mystery_armor_boots", "blue_mystery_armor_boots", "green_mystery_armor_boots", "purple_mystery_armor_boots", "red_mystery_armor_boots", "ocelot_armor_boots", "shadow_walker_armor_boots", "phantom_armor_boots", "frost_bite_armor_boots", "plate_armor_boots", "full_metal_armor_boots", "reinforced_mail_boots", "stalwart_armor_boots", "highland_armor_boots", "snow_armor_boots", "frost_armor_boots", "spelunker_armor_boots", "cave_crawler_armor_boots", "emerald_gear_boots", "opulent_armor_boots", "gilded_glory_boots")) {
-                addItemToItemTag(FABRIC_CHESTPLATES, ModIntegrations.MCDA, bootItem);
-            }
-        }
-
         // Croptopia
         if (ModIntegrations.isCroptopiaLoaded) {
             addItemToItemTag(C_VANILLAS, ModIntegrations.CROPTOPIA, "vanilla");
