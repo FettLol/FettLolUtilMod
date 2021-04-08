@@ -12,6 +12,7 @@ public class FettlolRecipes {
     public static HashMap<String, JsonObject> CUSTOM_RECIPES = new HashMap<>();
 
     public static void init() {
+        // Simplified or alternate versions of existing recipes.
         addSimplifiedChestMinecartRecipe();
         addSimplifiedDispenserRecipe();
         addSimplifiedDropperRecipe();
@@ -19,6 +20,60 @@ public class FettlolRecipes {
         addSimplifiedObserverRecipe();
         addSimplifiedPistonRecipe();
         addSimplifiedRepeaterRecipe();
+
+        // Bonus recipes for previously uncraftable things.
+        addEnchantedGoldenAppleRecipe();
+        addHopperRecipe();
+        addSaddleRecipe();
+    }
+
+    private static void addSaddleRecipe() {
+        CUSTOM_RECIPES.put(
+            "extras/saddle",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('#', 'T', 'g'),
+                Lists.newArrayList(
+                    new Identifier("minecraft", "leather"),
+                    new Identifier("minecraft", "tripwire_hook"),
+                    new Identifier("minecraft", "gold_ingot")
+                ),
+                Lists.newArrayList("item", "item", "item"),
+                Lists.newArrayList("###", "T#T", " g "),
+                new Identifier("minecraft", "saddle")
+            )
+        );
+    }
+
+    private static void addHopperRecipe() {
+        CUSTOM_RECIPES.put(
+            "extras/hopper",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('I', 'C'),
+                Lists.newArrayList(
+                    new Identifier("c", "wooden_chest"),
+                    new Identifier("c", "iron_ingots")
+                ),
+                Lists.newArrayList("tag", "tag"),
+                Lists.newArrayList("I I", "ICI", " I "),
+                new Identifier("minecraft", "hopper")
+            )
+        );
+    }
+
+    private static void addEnchantedGoldenAppleRecipe() {
+        CUSTOM_RECIPES.put(
+            "extras/egapple",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('G', 'A'),
+                Lists.newArrayList(
+                    new Identifier("minecraft", "gold_block"),
+                    new Identifier("minecraft", "apple")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList("GGG", "GAG", "GGG"),
+                new Identifier("minecraft", "enchanted_golden_apple")
+            )
+        );
     }
 
     private static void addSimplifiedDispenserRecipe() {
