@@ -15,9 +15,49 @@ public class MobFarmUtilities {
 
             if (ModIntegrations.isTechRebornLoaded) {
                 replaceExperienceCollectorRecipe();
+                replaceFanBladeRecipe();
+                replaceFanRecipe();
             }
 
         }
+    }
+
+    private static void replaceFanBladeRecipe() {
+        RecipeHelper.removeRecipe(ModIntegrations.MOB_FARM_UTILITIES, "fan_blade");
+
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "mobfarmutilities/fan_blade",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('S', 'B'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.TECH_REBORN, "iron_plate"),
+                    new Identifier("minecraft", "iron_bars")
+                ),
+                Lists.newArrayList("item", "item"),
+                Lists.newArrayList(" S ", "SBS", " S "),
+                new Identifier(ModIntegrations.MOB_FARM_UTILITIES, "fan_blade")
+            )
+        );
+    }
+
+    private static void replaceFanRecipe() {
+        RecipeHelper.removeRecipe(ModIntegrations.MOB_FARM_UTILITIES, "fan");
+
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "mobfarmutilities/fan",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('B', 'C', 'S', 'R'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.MOB_FARM_UTILITIES, "fan_blade"),
+                    new Identifier(ModIntegrations.TECH_REBORN, "advanced_machine_casing"),
+                    new Identifier(ModIntegrations.TECH_REBORN, "steel_plate"),
+                    new Identifier("minecraft", "redstone")
+                ),
+                Lists.newArrayList("item", "item", "item", "item"),
+                Lists.newArrayList("SBS", "SRS", "SCS"),
+                new Identifier(ModIntegrations.MOB_FARM_UTILITIES, "fan")
+            )
+        );
     }
 
     private static void replaceExperienceCollectorRecipe() {
