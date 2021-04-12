@@ -61,7 +61,7 @@ public class LootTables {
 
             // Add Jade Gem to Evokers (15%)
             if (LootTableHelper.isEvoker(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.15F, "fettlol", "aquamarine_gem");
+                LootTableHelper.addToLootTable(supplier, 1, 0.15F, "fettlol", "jade_gem");
             }
 
             // Add Aquamarine Gem and Jade Gem to buried treasure (2 separate 2% rolls each)

@@ -2,6 +2,7 @@ package net.fettlol.init;
 
 import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
+import net.fettlol.UtilMod;
 import net.fettlol.util.RecipeHelper;
 import net.minecraft.util.Identifier;
 
@@ -24,7 +25,28 @@ public class FettlolRecipes {
         // Bonus recipes for previously uncraftable things.
         addEnchantedGoldenAppleRecipe();
         addHopperRecipe();
+        addTridentRecipe();
         addSaddleRecipe();
+    }
+
+    private static void addTridentRecipe() {
+        if (ModIntegrations.isAdornLoaded) {
+            CUSTOM_RECIPES.put(
+                "extras/trident",
+                RecipeHelper.createShapedRecipe(
+                    Lists.newArrayList('S', 'A', 'C', 'P'),
+                    Lists.newArrayList(
+                        new Identifier("minecraft", "prismarine_shard"),
+                        new Identifier(UtilMod.MOD_ID, "aquamarine_gem"),
+                        new Identifier("minecraft", "conduit"),
+                        new Identifier(ModIntegrations.ADORN, "prismarine_brick_post")
+                    ),
+                    Lists.newArrayList("item", "item", "item", "item"),
+                    Lists.newArrayList("SSS", "ACA", " P "),
+                    new Identifier("minecraft", "trident")
+                )
+            );
+        }
     }
 
     private static void addSaddleRecipe() {
