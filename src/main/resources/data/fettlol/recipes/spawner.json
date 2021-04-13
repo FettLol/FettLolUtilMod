@@ -12,9 +12,6 @@
     "O": { "item": "minecraft:obsidian" }
   },
   "result": {
-    "item": "minecraft:spawner",
-    "data": {
-      "IsPlayerPlaced": true
-    }
+    "item": "minecraft:spawner"
   }
 }
