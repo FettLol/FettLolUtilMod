@@ -1,11 +1,13 @@
 package net.fettlol.integration;
 
+import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fettlol.UtilMod;
 import net.fettlol.init.FettlolRecipes;
 import net.fettlol.init.ModIntegrations;
 import net.fettlol.util.LootTableHelper;
 import net.fettlol.util.RecipeHelper;
+import net.minecraft.util.Identifier;
 
 public class BiomesYoullGo {
 
@@ -19,6 +21,8 @@ public class BiomesYoullGo {
     }
 
     private static void defineRecipesForByg() {
+        addTheriumCrystalRecipe();
+
         if (ModIntegrations.isGildedNetheriteLoaded) {
             addGildedToAmetrineUpgrade("boots");
             addGildedToAmetrineUpgrade("chestplate");
@@ -30,6 +34,21 @@ public class BiomesYoullGo {
             addGildedToPendoriteUpgrade("shovel");
             addGildedToPendoriteUpgrade("sword");
         }
+    }
+
+    private static void addTheriumCrystalRecipe() {
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            ModIntegrations.BYG + "/therium_shard",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('T'),
+                Lists.newArrayList(
+                    new Identifier(ModIntegrations.BYG, "therium_shard")
+                ),
+                Lists.newArrayList("item"),
+                Lists.newArrayList("TT ", "TT ", "   "),
+                new Identifier(ModIntegrations.BYG, "therium_shard")
+            )
+        );
     }
 
     private static void addGildedToAmetrineUpgrade(String item) {
