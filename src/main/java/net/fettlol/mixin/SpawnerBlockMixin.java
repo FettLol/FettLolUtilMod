@@ -1,5 +1,6 @@
 package net.fettlol.mixin;
 
+import net.fettlol.api.SpawnerInterface;
 import net.fettlol.mixin.accessor.MobSpawnerLogicAccessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -41,10 +42,12 @@ public class SpawnerBlockMixin extends Block {
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
 
-        CompoundTag tag1 = blockEntity.toTag(new CompoundTag());
-        CompoundTag tag2 = itemStack.toTag(new CompoundTag()).getCompound("tag");
+        // Transfer item nbt to the block entity
+        CompoundTag blockTags = blockEntity.toTag(new CompoundTag());
+        CompoundTag itemTags = itemStack.toTag(new CompoundTag()).getCompound("tag");
+        blockEntity.fromTag(state, blockTags.copyFrom(itemTags));
 
-        blockEntity.fromTag(state, tag1.copyFrom(tag2));
+        ((SpawnerInterface) blockEntity).setPlayerPlaced(true);
     }
 
 }
