@@ -72,7 +72,7 @@ public class FettlolRecipes {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'C'),
                 Lists.newArrayList(
-                    new Identifier("c", "wooden_chest"),
+                    new Identifier("c", "wooden_chests"),
                     new Identifier("c", "iron_ingots")
                 ),
                 Lists.newArrayList("tag", "tag"),

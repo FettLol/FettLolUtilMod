@@ -17,6 +17,7 @@ public class MobFarmUtilities {
                 replaceExperienceCollectorRecipe();
                 replaceFanBladeRecipe();
                 replaceFanRecipe();
+                replaceItemCollectorRecipe();
             }
 
         }
@@ -56,6 +57,26 @@ public class MobFarmUtilities {
                 Lists.newArrayList("item", "item", "item", "item"),
                 Lists.newArrayList("SBS", "SRS", "SCS"),
                 new Identifier(ModIntegrations.MOB_FARM_UTILITIES, "fan")
+            )
+        );
+    }
+
+    private static void replaceItemCollectorRecipe() {
+        RecipeHelper.removeRecipe(ModIntegrations.MOB_FARM_UTILITIES, "item_collector");
+
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            "mobfarmutilities/item_collector",
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('J', 'H', 'M', 'R'),
+                Lists.newArrayList(
+                    new Identifier(UtilMod.MOD_ID, "jade_gem"),
+                    new Identifier("minecraft", "hopper"),
+                    new Identifier(ModIntegrations.TECH_REBORN, "industrial_machine_frame"),
+                    new Identifier(ModIntegrations.RING_OF_ATTRACTION, "ring_of_attraction")
+                ),
+                Lists.newArrayList("item", "item", "item", "item"),
+                Lists.newArrayList("JRJ", "HMH", "   "),
+                new Identifier(ModIntegrations.MOB_FARM_UTILITIES, "item_collector")
             )
         );
     }

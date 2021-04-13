@@ -46,7 +46,7 @@ public class BiomesYoullGo {
                 ),
                 Lists.newArrayList("item"),
                 Lists.newArrayList("TT ", "TT ", "   "),
-                new Identifier(ModIntegrations.BYG, "therium_shard")
+                new Identifier(ModIntegrations.BYG, "therium_crystal")
             )
         );
     }
