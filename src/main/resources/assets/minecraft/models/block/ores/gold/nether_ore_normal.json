@@ -1,8 +1,0 @@
-{
-  "parent": "block/ores/parent/normal/normal_netherrack_ore",
-  "textures": {
-    "netherrack": "block/netherrack",
-    "particle": "block/netherrack",
-    "ore": "block/ores/gold/nether_gold"
-  }
-}

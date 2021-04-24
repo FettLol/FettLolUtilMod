@@ -1,6 +1,0 @@
-{
-  "parent": "block/torch_parent",
-  "textures": {
-    "lit": "block/torch_lit"
-  }
-}

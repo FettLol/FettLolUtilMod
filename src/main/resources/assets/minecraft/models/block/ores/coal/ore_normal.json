@@ -1,6 +1,0 @@
-{
-	"parent": "block/ores/parent/normal/normal_ore",
-	"textures": {
-		"ore": "block/ores/coal/ore"
-	}
-}
