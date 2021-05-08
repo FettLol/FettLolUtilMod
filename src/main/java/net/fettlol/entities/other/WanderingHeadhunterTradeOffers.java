@@ -162,14 +162,14 @@ public class WanderingHeadhunterTradeOffers {
             HeadHelper.playerTextureForSale("Witch-King of Angmar", new int[] {1983828695,-1679144560,-1633127370,-449198007}, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE0NjU5M2YyNmY1MTgxZGI1MWQ1NDcyZDQ5NTg5NmQ4Mjc3N2UzMmRjZWFlMzgwYzA0NjY5YzlmYTdkNjZkIn19fQ=="),
             HeadHelper.playerTextureForSale("Wonder Woman", new int[] {-1240621274,-82948217,-1225467439,944110790}, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThlOGRmOWY0MDRhZGRjMjkxN2Q2ODFjZjZiMThmZGUxZDIwZjJjMWFhMzJmNjdkNTc2OTg2MWVlODA0MCJ9fX0="),
             HeadHelper.playerTextureForSale("Yosemite Sam", new int[] {-719559316,-1675082058,-1427988772,-2107041669}, "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2UxYWNkMzNlOTRmNjVmYzI1ZmFlYjlkYTczN2FiMWFlNDRjNTA0M2M0YTU5MTRkOTZmNmJjMWJiNzRjIn19fQ=="),
-            // Template for copy/paste.
-            // HeadHelper.playerTextureForSale("", new int[] {}, ""),
 
             // Fettlol VIPs
             HeadHelper.playerHeadForSale("BrekiT"),
             HeadHelper.playerHeadForSale("Elffairy"),
             HeadHelper.playerHeadForSale("Fourmisain"),
             HeadHelper.playerHeadForSale("GuardianMona"),
+            HeadHelper.playerHeadForSale("fiws"),
+            HeadHelper.playerHeadForSale("ciuryburie"),
 
             // Hermitcraft
             HeadHelper.playerHeadForSale("BdoubleO", "BdoubleO100"),
