@@ -14,6 +14,7 @@ public class FettlolItems {
 
     // Other
     public static final Item HEADHUNTER_SPAWN_EGG = new HeadhunterSpawnEgg();
+    public static final Item WITHER_BONE = new WitherBone();
 
     // Gems and Special Items
     public static final Item AQUAMARINE_GEM = new FettlolGemItem();

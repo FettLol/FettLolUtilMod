@@ -19,7 +19,7 @@ public class DankStorage {
 
             LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
                 if (LootTableHelper.isEnderDragon(identifier)) {
-                    LootTableHelper.addToLootTable(supplier, 1, 0.1F, ModIntegrations.DANKSTORAGE, "dank_4");
+                    LootTableHelper.addToLootTable(supplier, 1, 0.1F, ModIntegrations.DANKSTORAGE, "dank_5");
                 }
 
                 if (LootTableHelper.isNetherEndgame(identifier)) {
@@ -78,7 +78,7 @@ public class DankStorage {
     }
 
     /**
-     * After Dank5, it felt like 8 Obsidian was too cheap for the next level.
+     * After Dank 5, it felt like 8 Obsidian was too cheap for the next level.
      * This replaces 4 of those Obsidian with Netherite Scraps instead.
      */
     private static void replaceDank6() {
@@ -116,38 +116,53 @@ public class DankStorage {
     }
 
     /**
-     * Eight Nether Stars for Dank 7? Sure, it's great and all, but EIGHT?
-     * ... How about we make that four instead.
+     * Eight Nether Stars for Dank 7? ... EIGHT NETHER STARS?
+     * How about we use a couple of materials from various mods that fit the
+     * entire "rainbow"-like theme a little better instead?
      */
     private static void replaceDank7() {
-        RecipeHelper.removeRecipe(ModIntegrations.DANKSTORAGE, "6_to_7");
-        RecipeHelper.removeRecipe(ModIntegrations.DANKSTORAGE, "7");
+        if (
+            ModIntegrations.isEarth2JavaLoaded
+                && ModIntegrations.isTerrestriaLoaded
+                && ModIntegrations.isBygLoaded
+                && ModIntegrations.isBetterEndLoaded
+        ) {
+            RecipeHelper.removeRecipe(ModIntegrations.DANKSTORAGE, "6_to_7");
+            RecipeHelper.removeRecipe(ModIntegrations.DANKSTORAGE, "7");
 
-        FettlolRecipes.CUSTOM_RECIPES.put("dank/6_to_7",
-            RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('D', 'S'),
-                Lists.newArrayList(
-                    new Identifier("minecraft", "nether_star"),
-                    new Identifier("minecraft", "stick")
-                ),
-                Lists.newArrayList("item", "item", "item"),
-                Lists.newArrayList(" D ", "DSD", " D "),
-                new Identifier(ModIntegrations.DANKSTORAGE, "6_to_7")
-            )
-        );
+            FettlolRecipes.CUSTOM_RECIPES.put("dank/6_to_7",
+                RecipeHelper.createShapedRecipe(
+                    Lists.newArrayList('D', 'S'),
+                    Lists.newArrayList(
+                        new Identifier("minecraft", "nether_star"),
+                        new Identifier("minecraft", "stick")
+                    ),
+                    Lists.newArrayList("item", "item", "item"),
+                    Lists.newArrayList(" D ", "DSD", " D "),
+                    new Identifier(ModIntegrations.DANKSTORAGE, "6_to_7")
+                )
+            );
 
-        FettlolRecipes.CUSTOM_RECIPES.put("dank/7",
-            RecipeHelper.createShapedRecipeOfType(
-                "dankstorage:upgrade",
-                Lists.newArrayList('D', 'S'),
-                Lists.newArrayList(
-                    new Identifier("minecraft", "nether_star"),
-                    new Identifier(ModIntegrations.DANKSTORAGE, "dank_6")
-                ),
-                Lists.newArrayList("item", "item", "item"),
-                Lists.newArrayList(" D ", "DSD", " D "),
-                new Identifier(ModIntegrations.DANKSTORAGE, "dank_7")
-            )
-        );
+            FettlolRecipes.CUSTOM_RECIPES.put("dank/7",
+                RecipeHelper.createShapedRecipeOfType(
+                    "dankstorage:upgrade",
+                    Lists.newArrayList('W', 'S', 'E', 'J', 'D', 'A', 'a', 's', 'e'),
+                    Lists.newArrayList(
+                        new Identifier(ModIntegrations.EARTH2JAVA, "rainbow_wool"),
+                        new Identifier("minecraft", "nether_star"),
+                        new Identifier(ModIntegrations.TERRESTRIA, "rainbow_eucalyptus_sapling"),
+                        new Identifier("fettlol", "jade_gem"),
+                        new Identifier(ModIntegrations.DANKSTORAGE, "dank_6"),
+                        new Identifier("fettlol", "aquamarine_gem"),
+                        new Identifier(ModIntegrations.BYG, "ametrine_gems"),
+                        new Identifier("fettlol", "soul_gem"),
+                        new Identifier(ModIntegrations.BETTER_END, "eternal_crystal")
+                    ),
+                    Lists.newArrayList("item", "item", "item", "item", "item", "item", "item", "item", "item"),
+                    Lists.newArrayList("WSE", "JDA", "ase"),
+                    new Identifier(ModIntegrations.DANKSTORAGE, "dank_7")
+                )
+            );
+        }
     }
 }

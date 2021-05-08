@@ -10,6 +10,7 @@ public class UtilModConfig implements ConfigData {
     boolean infinityCanMixWithMending = true;
     boolean infinityDoesNotRequireArrow = true;
     boolean witchesKeepDistance = true;
+    boolean fettlandsBiome = false;
     boolean babyWitherSkeletons = true;
     boolean poisonousPotatoIsCompostable = true;
     boolean wanderingHeadHunter = true;
@@ -17,6 +18,7 @@ public class UtilModConfig implements ConfigData {
 
     // Helper methods to check current config values from other parts of the codebase.
     public boolean doVillagersFollowEmeraldBlocks() { return villagersFollowEmeraldBlocks; }
+    public boolean generateFettlandsBiome() { return fettlandsBiome; }
     public boolean doBabyWitherSkeletonsSpawn() { return babyWitherSkeletons; }
     public boolean doWitchesKeepTheirDistance() { return witchesKeepDistance; }
     public boolean canInfinityMixWithMending() { return infinityCanMixWithMending; }

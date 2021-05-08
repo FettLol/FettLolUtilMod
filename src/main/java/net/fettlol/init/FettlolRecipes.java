@@ -132,6 +132,8 @@ public class FettlolRecipes {
     }
 
     private static void addSimplifiedObserverRecipe() {
+        // c:quartz is defined in FettlolTags.java in case we're running in an environment
+        // that doesn't have this tag defined yet.
         CUSTOM_RECIPES.put(
             "cobblestone/observer",
             RecipeHelper.createShapedRecipe(
@@ -164,6 +166,8 @@ public class FettlolRecipes {
     }
 
     private static void addSimplifiedPistonRecipe() {
+        // c:iron_ingots is defined in FettlolTags.java in case we're running in an environment
+        // that doesn't have this tag defined yet.
         CUSTOM_RECIPES.put(
             "cobblestone/piston",
             RecipeHelper.createShapedRecipe(

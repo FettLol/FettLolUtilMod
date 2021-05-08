@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "":[ { "model": "block/spruce_sapling" },
-            { "model": "block/spruce_sapling1" }
-            ]
-    }
-}

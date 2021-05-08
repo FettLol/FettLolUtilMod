@@ -1,12 +1,7 @@
-import org.jetbrains.changelog.ExtensionsKt
-
 plugins {
     id 'fabric-loom' version '0.6-SNAPSHOT'
     id 'maven-publish'
-    id 'org.jetbrains.changelog' version '1.1.2'
 }
-
-apply plugin: 'org.jetbrains.changelog'
 
 repositories {
     maven {
@@ -107,15 +102,4 @@ publishing {
 
     repositories {
     }
-}
-
-changelog {
-    version = "${project.minecraft_version}-${project.version}"
-    path = "${project.projectDir}/CHANGELOG.md"
-    header = { "[${project.minecraft_version}-${project.version}] - ${ExtensionsKt.date("yyyy-MM-dd")}" }
-    headerParserRegex = ~/\d+\.\d+\.\d+-\d+\.\d+\.\d+/
-    itemPrefix = "-"
-    keepUnreleasedSection = true
-    unreleasedTerm = "[Unreleased]"
-    groups = ["Added", "Removed", "Changed"]
 }

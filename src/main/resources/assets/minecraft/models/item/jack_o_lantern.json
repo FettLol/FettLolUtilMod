@@ -1,7 +1,0 @@
-{
-	"__comment": "Made by Mickey Joe Alpha",
-    "parent": "item/carved_pumpkin",
-    "textures": {
-        "front": "block/jack_o_lantern"
-    }
-}

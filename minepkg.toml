@@ -1,0 +1,24 @@
+manifestVersion = 0
+
+[package]
+  type = "mod"
+  name = "fettlol-utilmod"
+  description = "Various tweaks and integrations for the fettlol modpack."
+  version = "1.0.12"
+  platform = "fabric"
+  license = "MIT"
+  source = "https://github.com/FettLol/FettLolUtilMod"
+  homepage = "https://github.com/FettLol/FettLolUtilMod"
+  author = "Breki Tomasson <breki.tomasson@gmail.com>"
+
+[requirements]
+  minecraft = "1.16.x"
+  fabric = ">=0.11.0"
+
+[dependencies]
+  fabric = "*"
+
+[dev]
+  buildCommand = "./gradlew build"
+  [dev.dependencies]
+    test-mansion = "*"

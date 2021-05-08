@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "BSB",
+    "BBB"
+  ],
+  "key": {
+    "S": { "item": "minecraft:skeleton_skull" },
+    "B": { "item": "fettlol:wither_bone" }
+  },
+  "result": {
+    "item": "minecraft:wither_skeleton_skull"
+  }
+}

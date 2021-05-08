@@ -25,7 +25,7 @@ public class WitherSkeletonMixin extends HostileEntity {
     @Inject(method = "initialize", at = @At("TAIL"))
     private void canSpawnBaby(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, EntityData entityData,
                               CompoundTag entityTag, CallbackInfoReturnable<EntityData> cir) {
-        this.setBaby(this.random.nextFloat() < 0.15F);
+        this.setBaby(this.random.nextFloat() < 0.1F);
     }
 
     @Override

@@ -1,7 +1,0 @@
-{
-	"__comment": "Written by Mickey Joe Alpha",
-    "variants": {
-        "snowy=false": { "model": "block/mycelium" },
-        "snowy=true": { "model": "block/mycelium_snow" }
-    }
-}

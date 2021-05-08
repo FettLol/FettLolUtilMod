@@ -12,7 +12,62 @@ import java.util.List;
 
 public class Croptopia {
 
-    private static List<String> PLANTED_CROPS = Arrays.asList("artichoke", "asparagus", "barley", "basil", "bellpepper", "blackbean", "blackberry", "blueberry", "broccoli", "cabbage", "cantaloupe", "cauliflower", "celery", "chile_pepper", "coffee", "corn", "cranberry", "cucumber", "currant", "eggplant", "elderberry", "garlic", "ginger", "grape", "greenbean", "greenonion", "honeydew", "hops", "kale", "kiwi", "leek", "lettuce", "mustard", "oat", "olive", "onion", "peanut", "pineapple", "radish", "raspberry", "rhubarb", "rice", "rutabaga", "saguaro", "soybean", "spinach", "squash", "strawberry", "sweetpotato", "tomatillo", "tomato", "turmeric", "turnip", "yam", "zucchini");
+    private static List<String> PLANTED_CROPS = Arrays.asList("artichoke",
+        "asparagus",
+        "barley",
+        "basil",
+        "bellpepper",
+        "blackbean",
+        "blackberry",
+        "blueberry",
+        "broccoli",
+        "cabbage",
+        "cantaloupe",
+        "cauliflower",
+        "celery",
+        "chile_pepper",
+        "coffee",
+        "corn",
+        "cranberry",
+        "cucumber",
+        "currant",
+        "eggplant",
+        "elderberry",
+        "garlic",
+        "ginger",
+        "grape",
+        "greenbean",
+        "greenonion",
+        "honeydew",
+        "hops",
+        "kale",
+        "kiwi",
+        "leek",
+        "lettuce",
+        "mustard",
+        "oat",
+        "olive",
+        "onion",
+        "peanut",
+        "pineapple",
+        "radish",
+        "raspberry",
+        "rhubarb",
+        "rice",
+        "rutabaga",
+        "saguaro",
+        "soybean",
+        "spinach",
+        "squash",
+        "strawberry",
+        "sweetpotato",
+        "tomatillo",
+        "tomato",
+        "turmeric",
+        "turnip",
+        "yam",
+        "zucchini"
+    );
 
     private static final List<String> VILLAGER_FOOD = Arrays.asList(
         "almond",
@@ -255,7 +310,7 @@ public class Croptopia {
             // Randomly add a selection of Croptopia foods to villager chests.
             if (LootTableHelper.isVillageHouseChest(identifier)) {
                 VILLAGER_FOOD.forEach(food -> LootTableHelper.addToLootTable(
-                    supplier, 4, 0.01F, cropIdentifier(food))
+                    supplier, 2, 0.01F, cropIdentifier(food))
                 );
             }
         });

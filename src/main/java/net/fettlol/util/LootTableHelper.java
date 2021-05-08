@@ -208,6 +208,10 @@ public class LootTableHelper {
         return identifier.toString().equals("minecraft:entities/husk");
     }
 
+    public static boolean isWitherSkeleton(Identifier identifier) {
+        return identifier.toString().equals("minecraft:entities/wither_skeleton");
+    }
+
     public static boolean isStray(Identifier identifier) {
         return identifier.toString().equals("minecraft:entities/stray");
     }

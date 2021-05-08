@@ -20,11 +20,9 @@ public class RecipeManagerMixin {
 
     @Inject(method = "apply", at = @At("HEAD"))
     public void applyFettLolCustomRecipes(Map<Identifier, JsonElement> map, ResourceManager resourceManager, Profiler profiler, CallbackInfo ci) {
-
         FettlolRecipes.CUSTOM_RECIPES.forEach((String name, JsonObject object) -> {
             addCustomRecipe(map, name, object);
         });
-
     }
 
     private void addCustomRecipe(Map<Identifier, JsonElement> map, String recipeName, JsonObject definition) {

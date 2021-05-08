@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "":[ { "model": "block/potted_fern" },
-            { "model": "block/potted_fern1" }
-            ]
-    }
-}

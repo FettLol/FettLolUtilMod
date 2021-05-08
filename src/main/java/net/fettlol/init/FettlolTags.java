@@ -53,6 +53,7 @@ public class FettlolTags {
     public static final Tag.Identified<Item> C_CHESTS = TagHelper.makeItemTag("c", "chests");
     public static final Tag.Identified<Item> C_WOODEN_CHESTS = TagHelper.makeItemTag("c", "wooden_chests");
     public static final Tag.Identified<Item> C_VANILLAS = TagHelper.makeItemTag("c", "vanillas");
+    public static final Tag.Identified<Item> C_QUARTZ = TagHelper.makeItemTag("c", "quartz");
 
     // Tiny Tweaks tags
     public static final Tag.Identified<Item> TINYTWEAKS_SHOWS_GRASS_HITBOXES = TagHelper.makeItemTag("tinytweaks", "shows_grass_hitboxes");
@@ -78,6 +79,8 @@ public class FettlolTags {
         builder.applyTag(C_SANDSTONE, Items.SANDSTONE);
         builder.applyTag(C_WOODEN_CHESTS, Items.CHEST);
         builder.applyTag(C_WOODEN_CHESTS, Items.TRAPPED_CHEST);
+        builder.applyTag(C_IRON_INGOTS, Items.IRON_INGOT);
+        builder.applyTag(C_QUARTZ, Items.QUARTZ);
         builder.applyTag(FABRIC_BOWS, Items.BOW);
 
         // Make "stone" tools and items easier to get.
