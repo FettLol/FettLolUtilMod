@@ -14,7 +14,6 @@ public class FettlolRecipes {
 
     public static void init() {
         // Simplified or alternate versions of existing recipes.
-        addSimplifiedChestMinecartRecipe();
         addSimplifiedDispenserRecipe();
         addSimplifiedDropperRecipe();
         addSimplifiedFurnaceRecipe();
@@ -202,20 +201,5 @@ public class FettlolRecipes {
         );
     }
 
-    public static void addSimplifiedChestMinecartRecipe() {
-        CUSTOM_RECIPES.put(
-            "simplified/chestminecart",
-            RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('C', 'I'),
-                Lists.newArrayList(
-                    new Identifier("c", "wooden_chests"),
-                    new Identifier("c", "iron_ingots")
-                ),
-                Lists.newArrayList("tag", "tag"),
-                Lists.newArrayList("   ", "ICI", "III"),
-                new Identifier("minecraft", "chest_minecart")
-            )
-        );
-    }
 
 }

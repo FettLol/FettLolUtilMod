@@ -12,6 +12,7 @@
     "MobSpawnerBlockEntityMixin",
     "PlayerManagerMixin",
     "RecipeManagerMixin",
+    "SplashTextResourceSupplierMixin",
     "SpawnerBlockMixin",
     "TagGroupLoaderMixin",
     "VillagerGoalMixin",

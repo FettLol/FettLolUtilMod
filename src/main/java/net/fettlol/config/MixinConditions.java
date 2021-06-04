@@ -48,6 +48,8 @@ public class MixinConditions implements IMixinConfigPlugin {
             return true; // Always return true for Accessors.
         } else if (mixinClassName.contains("TagGroupLoaderMixin")) {
             return true; // Always return true for the TagGroupLoader.
+        } else if (mixinClassName.contains("ResourceSupplier")) {
+            return true; // No config for this yet.
         } else if (mixinClassName.contains("BiomeFeaturesMixin")) {
             return true; // No config for this yet.
         } else if (mixinClassName.contains("Manager")) {

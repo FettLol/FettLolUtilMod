@@ -15,6 +15,8 @@ public class BetterEnd {
         if (ModIntegrations.isBetterEndLoaded) {
             UtilMod.LOGGER.info("Better End detected! Applying integrations.");
 
+            RecipeHelper.removeRecipe(ModIntegrations.BETTER_END, "tag_rail");
+
             defineLootTablesForBetterEnd();
 
             defineRecipesForBetterEnd();
