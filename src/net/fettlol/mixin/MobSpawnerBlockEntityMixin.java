@@ -1,8 +1,9 @@
 package net.fettlol.mixin;
 
 import net.fettlol.api.SpawnerInterface;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.MobSpawnerBlockEntity;
-import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.CompoundTag;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -14,14 +15,14 @@ public class MobSpawnerBlockEntityMixin implements SpawnerInterface {
 
     private boolean isPlayerPlaced = false;
 
-    @Inject(method = "writeNbt", at = @At("HEAD"))
-    private void writeNbt(NbtCompound nbt, CallbackInfoReturnable<NbtCompound> cir) {
-        nbt.putBoolean("IsPlayerPlaced", isPlayerPlaced);
+    @Inject(method = "toTag", at = @At("HEAD"))
+    private void toTag(CompoundTag tag, CallbackInfoReturnable<CompoundTag> cir) {
+        tag.putBoolean("IsPlayerPlaced", isPlayerPlaced);
     }
 
-    @Inject(method = "readNbt", at = @At("HEAD"))
-    private void readNbt(NbtCompound nbt, CallbackInfo ci) {
-        this.isPlayerPlaced = nbt.getBoolean("IsPlayerPlaced");
+    @Inject(method = "fromTag", at = @At("HEAD"))
+    private void fromTag(BlockState state, CompoundTag tag, CallbackInfo ci) {
+        this.isPlayerPlaced = tag.getBoolean("IsPlayerPlaced");
     }
 
     @Override
