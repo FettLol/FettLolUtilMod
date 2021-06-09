@@ -11,7 +11,7 @@ import net.minecraft.client.render.entity.feature.FeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.entity.model.VillagerResemblingModel;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.client.util.math.Vector3f;
+import net.minecraft.util.math.Vec3f;
 
 public class WanderingHeadHunterFeatureRenderer<T extends WanderingHeadHunterEntity> extends FeatureRenderer<T, VillagerResemblingModel<T>> {
 
@@ -30,7 +30,7 @@ public class WanderingHeadHunterFeatureRenderer<T extends WanderingHeadHunterEnt
             matrices.push();
             this.getContextModel().getHead().rotate(matrices);
             matrices.translate(0.0D, -1, 0);
-            matrices.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion(-80));
+            matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(-80));
             matrices.scale(-1.0F, -1.0F, 1.0F);
             matrices.translate(-0.5D, -0.5D, -0.5D);
             blockRenderManager.renderBlockAsEntity(zombieHead, matrices, vertexConsumers, light, overlay);
@@ -39,8 +39,8 @@ public class WanderingHeadHunterFeatureRenderer<T extends WanderingHeadHunterEnt
             matrices.push();
             this.getContextModel().getHead().rotate(matrices);
             matrices.translate(-0.5D, -0.25D, -0.5D);
-            matrices.multiply(Vector3f.POSITIVE_X.getDegreesQuaternion(75));
-            matrices.multiply(Vector3f.NEGATIVE_Z.getDegreesQuaternion(25));
+            matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(75));
+            matrices.multiply(Vec3f.NEGATIVE_Z.getDegreesQuaternion(25));
             matrices.scale(-1.0F, -1.0F, 1.0F);
             matrices.translate(-0.5D, -0.5D, -0.5D);
             blockRenderManager.renderBlockAsEntity(zombieHead, matrices, vertexConsumers, light, overlay);

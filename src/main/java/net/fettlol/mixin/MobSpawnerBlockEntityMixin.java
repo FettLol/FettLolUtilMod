@@ -3,7 +3,7 @@ package net.fettlol.mixin;
 import net.fettlol.api.SpawnerInterface;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.MobSpawnerBlockEntity;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -16,12 +16,12 @@ public class MobSpawnerBlockEntityMixin implements SpawnerInterface {
     private boolean isPlayerPlaced = false;
 
     @Inject(method = "toTag", at = @At("HEAD"))
-    private void toTag(CompoundTag tag, CallbackInfoReturnable<CompoundTag> cir) {
+    private void toTag(NbtCompound tag, CallbackInfoReturnable<NbtCompound> cir) {
         tag.putBoolean("IsPlayerPlaced", isPlayerPlaced);
     }
 
     @Inject(method = "fromTag", at = @At("HEAD"))
-    private void fromTag(BlockState state, CompoundTag tag, CallbackInfo ci) {
+    private void fromTag(BlockState state, NbtCompound tag, CallbackInfo ci) {
         this.isPlayerPlaced = tag.getBoolean("IsPlayerPlaced");
     }
 

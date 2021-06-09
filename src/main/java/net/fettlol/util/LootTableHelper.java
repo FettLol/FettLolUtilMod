@@ -2,10 +2,10 @@ package net.fettlol.util;
 
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.FabricLootSupplierBuilder;
-import net.minecraft.loot.BinomialLootTableRange;
-import net.minecraft.loot.UniformLootTableRange;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.EnchantWithLevelsLootFunction;
+import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -240,7 +240,7 @@ public class LootTableHelper {
 
     /**
      * Helper method to add things to a loot table.
-     *
+     * <p>
      * This should be called from within a LootTableLoadingCallback.EVENT.register callback method.
      * Uses the Binomial Loot Table Range method, as this seems to be the most appropriate in most cases.
      *
@@ -251,15 +251,15 @@ public class LootTableHelper {
      */
     public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
         FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-            .rolls(new BinomialLootTableRange(count, probability))
+            .rolls(BinomialLootNumberProvider.create(count, probability))
             .with(ItemEntry.builder(Registry.ITEM.get(identifier).asItem()));
         supplier.withPool(poolBuilder.build());
     }
 
     public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
         FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-            .rolls(new BinomialLootTableRange(count, probability))
-            .withFunction(EnchantWithLevelsLootFunction.builder(UniformLootTableRange.between(20.0f, 39.0f)).allowTreasureEnchantments().build())
+            .rolls(BinomialLootNumberProvider.create(count, probability))
+            .withFunction(EnchantWithLevelsLootFunction.builder(UniformLootNumberProvider.create(20.0f, 39.0f)).allowTreasureEnchantments().build())
             .with(ItemEntry.builder(Registry.ITEM.get(identifier).asItem()));
         supplier.withPool(poolBuilder.build());
     }

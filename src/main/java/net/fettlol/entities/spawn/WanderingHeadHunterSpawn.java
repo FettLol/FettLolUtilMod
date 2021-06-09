@@ -6,7 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
@@ -43,7 +43,7 @@ public class WanderingHeadHunterSpawn {
             BlockPos blockPos3 = getLlamaSpawnPosition(serverWorld, blockPos2, 48);
 
             if (blockPos3 != null && wontSuffocateAt(serverWorld, blockPos3)) {
-                WanderingHeadHunterEntity traderEntity = FettlolEntities.WANDERING_HEAD_HUNTER.spawn(serverWorld, (CompoundTag) null, (Text) null, (PlayerEntity) null, blockPos3, SpawnReason.EVENT, false, false);
+                WanderingHeadHunterEntity traderEntity = FettlolEntities.WANDERING_HEAD_HUNTER.spawn(serverWorld, (NbtCompound) null, (Text) null, (PlayerEntity) null, blockPos3, SpawnReason.EVENT, false, false);
 
                 if (traderEntity != null) {
                     serverWorldProperties.setWanderingTraderId(traderEntity.getUuid());

@@ -1,12 +1,11 @@
 package net.fettlol.mixin.accessor;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.collection.Pool;
 import net.minecraft.world.MobSpawnerEntry;
 import net.minecraft.world.MobSpawnerLogic;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
-
-import java.util.List;
 
 @Mixin(MobSpawnerLogic.class)
 public interface MobSpawnerLogicAccessor {
@@ -15,10 +14,10 @@ public interface MobSpawnerLogicAccessor {
     MobSpawnerEntry getSpawnEntry();
 
     @Accessor("spawnPotentials")
-    List<MobSpawnerEntry> getSpawnPotentials();
+    Pool<MobSpawnerEntry> getSpawnPotentials();
 
     @Accessor("spawnPotentials")
-    void setSpawnPotentials(List<MobSpawnerEntry> spawnPotentials);
+    void setSpawnPotentials(Pool<MobSpawnerEntry> spawnPotentials);
 
     @Accessor("renderedEntity")
     void setRenderedEntity(Entity entity);

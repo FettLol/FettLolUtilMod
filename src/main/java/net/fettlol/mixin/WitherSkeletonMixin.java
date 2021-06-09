@@ -5,7 +5,7 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.*;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
@@ -24,7 +24,7 @@ public class WitherSkeletonMixin extends HostileEntity {
 
     @Inject(method = "initialize", at = @At("TAIL"))
     private void canSpawnBaby(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, EntityData entityData,
-                              CompoundTag entityTag, CallbackInfoReturnable<EntityData> cir) {
+                              NbtCompound entityTag, CallbackInfoReturnable<EntityData> cir) {
         this.setBaby(this.random.nextFloat() < 0.1F);
     }
 
@@ -54,14 +54,14 @@ public class WitherSkeletonMixin extends HostileEntity {
     }
 
     @Override
-    public void readCustomDataFromTag(CompoundTag tag) {
-        super.readCustomDataFromTag(tag);
+    public void readCustomDataFromNbt(NbtCompound tag) {
+        super.readCustomDataFromNbt(tag);
         this.setBaby(tag.getBoolean("IsBaby"));
     }
 
     @Override
-    public void writeCustomDataToTag(CompoundTag tag) {
-        super.writeCustomDataToTag(tag);
+    public void writeCustomDataToNbt(NbtCompound tag) {
+        super.writeCustomDataToNbt(tag);
         tag.putBoolean("IsBaby", this.isBaby());
     }
 

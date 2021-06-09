@@ -18,8 +18,7 @@ import java.util.Map;
 @Mixin(TagGroupLoader.class)
 public class TagGroupLoaderMixin {
 
-    @Final
-    @Shadow
+    @Final @Shadow
     private String entryType;
 
     @Inject(

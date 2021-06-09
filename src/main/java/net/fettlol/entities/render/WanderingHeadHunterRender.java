@@ -4,9 +4,11 @@ import net.fettlol.entities.WanderingHeadHunterEntity;
 import net.fettlol.entities.render.feature.WanderingHeadHunterFeatureRenderer;
 import net.fettlol.util.RegistryHelper;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
+import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.feature.HeadFeatureRenderer;
 import net.minecraft.client.render.entity.feature.VillagerHeldItemFeatureRenderer;
+import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.render.entity.model.VillagerResemblingModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
@@ -16,9 +18,8 @@ public class WanderingHeadHunterRender extends MobEntityRenderer<WanderingHeadHu
 
     private static final Identifier TEXTURE = RegistryHelper.makeId("textures/entity/headhunter.png");
 
-    public WanderingHeadHunterRender(EntityRenderDispatcher entityRenderDispatcher) {
-        super(entityRenderDispatcher, new VillagerResemblingModel<>(0.0F), 0.5F);
-        this.addFeature(new HeadFeatureRenderer<>(this));
+    public WanderingHeadHunterRender(EntityRendererFactory.Context context) {
+        super(context, new VillagerResemblingModel<>(context.getPart(EntityModelLayers.WANDERING_TRADER)), 0.5F);
         this.addFeature(new VillagerHeldItemFeatureRenderer<>(this));
         this.addFeature(new WanderingHeadHunterFeatureRenderer<>(this));
     }

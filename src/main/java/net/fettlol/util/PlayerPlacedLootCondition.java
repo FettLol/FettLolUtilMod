@@ -11,7 +11,7 @@ import net.minecraft.loot.condition.LootConditionType;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextParameter;
 import net.minecraft.loot.context.LootContextParameters;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonSerializer;
 import net.minecraft.util.registry.Registry;
@@ -35,7 +35,7 @@ public class PlayerPlacedLootCondition implements LootCondition {
 	@Override
 	public boolean test(LootContext lootContext) {
 		BlockEntity blockEntity = lootContext.get(LootContextParameters.BLOCK_ENTITY);
-		CompoundTag nbt = blockEntity.toTag(new CompoundTag());
+		NbtCompound nbt = blockEntity.writeNbt(new NbtCompound());
 
 		return nbt.getBoolean("IsPlayerPlaced");
 	}

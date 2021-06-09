@@ -9,7 +9,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.MobSpawnerBlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.MobSpawnerLogic;
 import net.minecraft.world.World;
@@ -35,7 +35,7 @@ public class SpawnerBlockMixin extends Block {
             accessor.setRequiredPlayerRange(16);
         }
 
-        logic.setSpawnEntry(accessor.getSpawnEntry());
+        logic.setSpawnEntry(world, pos, accessor.getSpawnEntry());
     }
 
     @Override
@@ -43,9 +43,9 @@ public class SpawnerBlockMixin extends Block {
         BlockEntity blockEntity = world.getBlockEntity(pos);
 
         // Transfer item nbt to the block entity
-        CompoundTag blockTags = blockEntity.toTag(new CompoundTag());
-        CompoundTag itemTags = itemStack.toTag(new CompoundTag()).getCompound("tag");
-        blockEntity.fromTag(state, blockTags.copyFrom(itemTags));
+        NbtCompound blockTags = blockEntity.writeNbt(new NbtCompound());
+        NbtCompound itemTags = itemStack.writeNbt(new NbtCompound()).getCompound("tag");
+        blockEntity.writeNbt(blockTags.copyFrom(itemTags));
 
         ((SpawnerInterface) blockEntity).setPlayerPlaced(true);
     }

@@ -15,7 +15,8 @@ public class WanderingHeadHunterEntity extends WanderingTraderEntity {
 
     public WanderingHeadHunterEntity(EntityType<? extends WanderingTraderEntity> entityType, World world) {
         super(entityType, world);
-        this.teleporting = true;
+        // doesn't seem to exist in v1.17...
+        // this.teleporting = true;
     }
 
     protected SoundEvent getAmbientSound() {

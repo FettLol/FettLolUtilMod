@@ -4,13 +4,15 @@ import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fettlol.util.LootTableHelper;
 import net.fettlol.util.PlayerPlacedLootCondition;
 import net.minecraft.item.Items;
-import net.minecraft.loot.ConstantLootTableRange;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.CopyNbtLootFunction;
+import net.minecraft.loot.provider.nbt.ContextLootNbtProvider;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 
 public class FettlolLootTables {
+
 
     public static void init() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
@@ -19,10 +21,10 @@ public class FettlolLootTables {
             if (LootTableHelper.isSpawner(identifier)) {
                 setter.set(LootTable.builder()
                     .pool(LootPool.builder()
-                        .rolls(ConstantLootTableRange.create(1))
+                        .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(PlayerPlacedLootCondition::new)
                         .with(ItemEntry.builder(Items.SPAWNER)
-                            .apply(CopyNbtLootFunction.builder(CopyNbtLootFunction.Source.BLOCK_ENTITY)
+                            .apply(CopyNbtLootFunction.builder(ContextLootNbtProvider.BLOCK_ENTITY)
                                 .withOperation("SpawnPotentials", "SpawnPotentials")
                                 .withOperation("SpawnData", "SpawnData")
                                 .withOperation("IsPlayerPlaced", "IsPlayerPlaced")

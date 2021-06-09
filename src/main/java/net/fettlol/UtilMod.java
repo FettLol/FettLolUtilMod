@@ -45,9 +45,6 @@ public class UtilMod implements ModInitializer {
         // Register our commands!
         FettlolCommands.init();
 
-        // Register our biomes!
-        FettlolBiomes.init();
-
         // Register our loot tables!
         FettlolLootTables.init();
 

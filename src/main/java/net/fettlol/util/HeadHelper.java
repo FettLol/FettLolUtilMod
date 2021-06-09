@@ -1,14 +1,13 @@
 package net.fettlol.util;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import net.fettlol.UtilMod;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.IntArrayTag;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtIntArray;
 import net.minecraft.nbt.StringNbtReader;
 import net.minecraft.text.LiteralText;
 import net.minecraft.village.TradeOffer;
@@ -21,13 +20,13 @@ import static net.fettlol.UtilMod.LOGGER;
 public class HeadHelper {
 
     private static String getIntArray(int[] idArray) {
-        return new IntArrayTag(idArray).toString();
+        return new NbtIntArray(idArray).toString();
     }
 
     public static ItemStack getPlayerHeadWithTexture(String playerName, int[] idArray, String texture) {
         ItemStack playerHead = new ItemStack(Items.PLAYER_HEAD, 1);
 
-        CompoundTag tag = null;
+        NbtCompound tag = null;
 
         try {
             tag = StringNbtReader.parse(
@@ -47,7 +46,7 @@ public class HeadHelper {
     public static ItemStack getPlayerHead(String playerName, String skullOwner) {
         ItemStack playerHead = new ItemStack(Items.PLAYER_HEAD, 1);
 
-        CompoundTag tag = playerHead.getOrCreateTag();
+        NbtCompound tag = playerHead.getOrCreateTag();
         tag.putString("SkullOwner", skullOwner);
         playerHead.setTag(tag);
 
