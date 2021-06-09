@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fettlol.UtilMod;
 import net.fettlol.init.FettlolRecipes;
 import net.fettlol.init.ModIntegrations;
+import net.fettlol.lists.Integrations;
 import net.fettlol.util.LootTableHelper;
 import net.fettlol.util.RecipeHelper;
 import net.minecraft.util.Identifier;
@@ -38,37 +39,37 @@ public class BiomesYoullGo {
 
     private static void addTheriumCrystalRecipe() {
         FettlolRecipes.CUSTOM_RECIPES.put(
-            ModIntegrations.BYG + "/therium_shard",
+            Integrations.BYG + "/therium_shard",
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('T'),
                 Lists.newArrayList(
-                    new Identifier(ModIntegrations.BYG, "therium_shard")
+                    new Identifier(Integrations.BYG, "therium_shard")
                 ),
                 Lists.newArrayList("item"),
                 Lists.newArrayList("TT ", "TT ", "   "),
-                new Identifier(ModIntegrations.BYG, "therium_crystal")
+                new Identifier(Integrations.BYG, "therium_crystal")
             )
         );
     }
 
     private static void addGildedToAmetrineUpgrade(String item) {
         FettlolRecipes.CUSTOM_RECIPES.put(
-            ModIntegrations.BYG + "/ametrine_" + item + "_gilded",
+            Integrations.BYG + "/ametrine_" + item + "_gilded",
             RecipeHelper.createSmithingRecipe(
-                ModIntegrations.GILDEDNETHERITE + ":gilded_" + item,
-                ModIntegrations.BYG + ":ametrine_gems",
-                ModIntegrations.BYG + ":ametrine_" + item
+                Integrations.GILDEDNETHERITE + ":gilded_" + item,
+                Integrations.BYG + ":ametrine_gems",
+                Integrations.BYG + ":ametrine_" + item
             )
         );
     }
 
     private static void addGildedToPendoriteUpgrade(String item) {
         FettlolRecipes.CUSTOM_RECIPES.put(
-            ModIntegrations.BYG + "/pendorite_" + item + "_gilded",
+            Integrations.BYG + "/pendorite_" + item + "_gilded",
             RecipeHelper.createSmithingRecipe(
-                ModIntegrations.GILDEDNETHERITE + ":gilded_" + item,
-                ModIntegrations.BYG + ":pendorite_scraps",
-                ModIntegrations.BYG + ":pendorite_" + item
+                Integrations.GILDEDNETHERITE + ":gilded_" + item,
+                Integrations.BYG + ":pendorite_scraps",
+                Integrations.BYG + ":pendorite_" + item
             )
         );
     }
@@ -82,22 +83,22 @@ public class BiomesYoullGo {
 
             // Ametrine gems can drop when mining Diamond Ore.
             if (LootTableHelper.isDiamondOre(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.02F, ModIntegrations.BYG, "ametrine_gems");
+                LootTableHelper.addToLootTable(supplier, 1, 0.02F, Integrations.BYG, "ametrine_gems");
             }
 
             // Ametrine gems have a 3% chance of appearing in normal dungeon chests.
             if (LootTableHelper.isSimpleDungeonChest(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.03F, ModIntegrations.BYG, "ametrine_gems");
+                LootTableHelper.addToLootTable(supplier, 1, 0.03F, Integrations.BYG, "ametrine_gems");
             }
 
             // Ametrine gems can be found in End Cities.
             if (LootTableHelper.isEndEndgame(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.1F, ModIntegrations.BYG, "ametrine_gems");
+                LootTableHelper.addToLootTable(supplier, 2, 0.1F, Integrations.BYG, "ametrine_gems");
             }
 
             // Pendorite scraps can be found in various Nether chests (Bastions, mainly).
             if (LootTableHelper.isNetherEndgame(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 4, 0.02F, ModIntegrations.BYG, "pendorite_scraps");
+                LootTableHelper.addToLootTable(supplier, 4, 0.02F, Integrations.BYG, "pendorite_scraps");
             }
 
         });

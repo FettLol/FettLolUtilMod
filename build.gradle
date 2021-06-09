@@ -10,10 +10,6 @@ repositories {
         allowInsecureProtocol = true
     }
     maven {
-        name = "Siphalor's Maven"
-        url  = "https://maven.siphalor.de"
-    }
-    maven {
         name = "TerraformersMC"
         url  = "https://maven.terraformersmc.com/releases"
     }

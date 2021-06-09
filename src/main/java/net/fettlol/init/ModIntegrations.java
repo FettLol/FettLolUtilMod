@@ -2,6 +2,7 @@ package net.fettlol.init;
 
 import net.fettlol.integration.*;
 import net.fabricmc.loader.api.FabricLoader;
+import net.fettlol.lists.Integrations;
 
 /**
  * This class is responsible for creating all the integrations between the mods in the modpack.
@@ -15,55 +16,30 @@ import net.fabricmc.loader.api.FabricLoader;
  */
 public class ModIntegrations {
 
-    // Namespaces used by various mods.
-    final public static String ADORN = "adorn";
-    final public static String APPLIED_ENERGISTICS = "appliedenergistics2";
-    final public static String BATTLETOWERS = "battletowers";
-    final public static String BETTER_END = "betterend";
-    final public static String BETTER_NETHER = "betternether";
-    final public static String BYG = "byg";
-    final public static String CINDERSCAPES = "cinderscapes";
-    final public static String CRIMSON_MOON = "crimsonmoon";
-    final public static String CROPTOPIA = "croptopia";
-    final public static String DANKSTORAGE = "dankstorage";
-    final public static String EARTH2JAVA = "earthtojavamobs";
-    final public static String EXPANDEDSTORAGE = "expandedstorage";
-    final public static String GILDEDNETHERITE = "gildednetherite";
-    final public static String MCDA = "mcda";
-    final public static String MCDW = "mcdw";
-    final public static String MIDAS_HUNGER = "midashunger";
-    final public static String MOB_FARM_UTILITIES = "mobfarmutilities";
-    final public static String RING_OF_ATTRACTION = "ring_of_attraction";
-    final public static String TECH_REBORN = "techreborn";
-    final public static String TRAVERSE = "traverse";
-    final public static String TERRESTRIA = "terrestria";
-    final public static String TINY_TWEAKS = "tinytweaks";
-    final public static String WINGED = "winged";
-
     // Helper methods to test if specific mods are loaded.
-    public static boolean isAdornLoaded = FabricLoader.getInstance().isModLoaded(ADORN);
-    public static boolean isAppliedEnergisticsLoaded = FabricLoader.getInstance().isModLoaded(APPLIED_ENERGISTICS);
-    public static boolean isBattletowersLoaded = FabricLoader.getInstance().isModLoaded(BATTLETOWERS);
-    public static boolean isBetterEndLoaded = FabricLoader.getInstance().isModLoaded(BETTER_END);
-    public static boolean isBetterNetherLoaded = FabricLoader.getInstance().isModLoaded(BETTER_NETHER);
-    public static boolean isBygLoaded = FabricLoader.getInstance().isModLoaded(BYG);
-    public static boolean isCinderscapesLoaded = FabricLoader.getInstance().isModLoaded(CINDERSCAPES);
-    public static boolean isCrimsonMoonLoaded = FabricLoader.getInstance().isModLoaded(CRIMSON_MOON);
-    public static boolean isCroptopiaLoaded = FabricLoader.getInstance().isModLoaded(CROPTOPIA);
-    public static boolean isDankStorageLoaded = FabricLoader.getInstance().isModLoaded(DANKSTORAGE);
-    public static boolean isEarth2JavaLoaded = FabricLoader.getInstance().isModLoaded(EARTH2JAVA);
-    public static boolean isExpandedStorageLoaded = FabricLoader.getInstance().isModLoaded(EXPANDEDSTORAGE);
-    public static boolean isGildedNetheriteLoaded = FabricLoader.getInstance().isModLoaded(GILDEDNETHERITE);
-    public static boolean isMcdaLoaded = FabricLoader.getInstance().isModLoaded(MCDA);
-    public static boolean isMcdwLoaded = FabricLoader.getInstance().isModLoaded(MCDW);
-    public static boolean isTraverseLoaded = FabricLoader.getInstance().isModLoaded(TRAVERSE);
-    public static boolean isMidasHungerLoaded = FabricLoader.getInstance().isModLoaded(MIDAS_HUNGER);
-    public static boolean isMobFarmUtilitiesLoaded = FabricLoader.getInstance().isModLoaded(MOB_FARM_UTILITIES);
-    public static boolean isRingOfAttractionLoaded = FabricLoader.getInstance().isModLoaded(RING_OF_ATTRACTION);
-    public static boolean isTechRebornLoaded = FabricLoader.getInstance().isModLoaded(TECH_REBORN);
-    public static boolean isTerrestriaLoaded = FabricLoader.getInstance().isModLoaded(TERRESTRIA);
-    public static boolean isTinyTweaksLoaded = FabricLoader.getInstance().isModLoaded(TINY_TWEAKS);
-    public static boolean isWingedLoaded = FabricLoader.getInstance().isModLoaded(WINGED);
+    public static boolean isAdornLoaded = FabricLoader.getInstance().isModLoaded(Integrations.ADORN);
+    public static boolean isAppliedEnergisticsLoaded = FabricLoader.getInstance().isModLoaded(Integrations.APPLIED_ENERGISTICS);
+    public static boolean isBattletowersLoaded = FabricLoader.getInstance().isModLoaded(Integrations.BATTLETOWERS);
+    public static boolean isBetterEndLoaded = FabricLoader.getInstance().isModLoaded(Integrations.BETTER_END);
+    public static boolean isBetterNetherLoaded = FabricLoader.getInstance().isModLoaded(Integrations.BETTER_NETHER);
+    public static boolean isBygLoaded = FabricLoader.getInstance().isModLoaded(Integrations.BYG);
+    public static boolean isCinderscapesLoaded = FabricLoader.getInstance().isModLoaded(Integrations.CINDERSCAPES);
+    public static boolean isCrimsonMoonLoaded = FabricLoader.getInstance().isModLoaded(Integrations.CRIMSON_MOON);
+    public static boolean isCroptopiaLoaded = FabricLoader.getInstance().isModLoaded(Integrations.CROPTOPIA);
+    public static boolean isDankStorageLoaded = FabricLoader.getInstance().isModLoaded(Integrations.DANKSTORAGE);
+    public static boolean isEarth2JavaLoaded = FabricLoader.getInstance().isModLoaded(Integrations.EARTH2JAVA);
+    public static boolean isExpandedStorageLoaded = FabricLoader.getInstance().isModLoaded(Integrations.EXPANDEDSTORAGE);
+    public static boolean isGildedNetheriteLoaded = FabricLoader.getInstance().isModLoaded(Integrations.GILDEDNETHERITE);
+    public static boolean isMcdaLoaded = FabricLoader.getInstance().isModLoaded(Integrations.MCDA);
+    public static boolean isMcdwLoaded = FabricLoader.getInstance().isModLoaded(Integrations.MCDW);
+    public static boolean isTraverseLoaded = FabricLoader.getInstance().isModLoaded(Integrations.TRAVERSE);
+    public static boolean isMidasHungerLoaded = FabricLoader.getInstance().isModLoaded(Integrations.MIDAS_HUNGER);
+    public static boolean isMobFarmUtilitiesLoaded = FabricLoader.getInstance().isModLoaded(Integrations.MOB_FARM_UTILITIES);
+    public static boolean isRingOfAttractionLoaded = FabricLoader.getInstance().isModLoaded(Integrations.RING_OF_ATTRACTION);
+    public static boolean isTechRebornLoaded = FabricLoader.getInstance().isModLoaded(Integrations.TECH_REBORN);
+    public static boolean isTerrestriaLoaded = FabricLoader.getInstance().isModLoaded(Integrations.TERRESTRIA);
+    public static boolean isTinyTweaksLoaded = FabricLoader.getInstance().isModLoaded(Integrations.TINY_TWEAKS);
+    public static boolean isWingedLoaded = FabricLoader.getInstance().isModLoaded(Integrations.WINGED);
 
     public static void init() {
         Battletowers.init();

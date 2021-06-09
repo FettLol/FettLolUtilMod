@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Croptopia {
+
     public static final List<String> VILLAGER_FOOD = Arrays.asList(
         "almond",
         "almond_brittle",

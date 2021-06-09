@@ -1,6 +1,7 @@
 package net.fettlol.init;
 
 import com.google.common.collect.ImmutableMap;
+import net.fettlol.lists.*;
 import net.fettlol.util.TagHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -10,8 +11,6 @@ import net.minecraft.util.Identifier;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
-
-import static net.fettlol.init.ModIntegrations.*;
 
 public class FettlolTags {
 
@@ -92,118 +91,96 @@ public class FettlolTags {
 
         // Applied Energistics & Better End
         if (ModIntegrations.isAppliedEnergisticsLoaded && ModIntegrations.isBetterEndLoaded) {
-            builder.applyTag(AE2_DUSTS, BETTER_END, "ender_dust");
+            builder.applyTag(AE2_DUSTS, Integrations.BETTER_END, "ender_dust");
         }
 
         // Better End
         if (ModIntegrations.isBetterEndLoaded) {
-            for (String chestItem : Arrays.asList(
-                "dragon_tree_chest",
-                "end_lotus_chest",
-                "helix_tree_chest",
-                "jellyshroom_chest",
-                "lacugrove_chest",
-                "mossy_glowshroom_chest",
-                "pythadendron_chest",
-                "tenanea_chest",
-                "umbrella_tree_chest"
-            )) {
-                builder.applyTag(C_WOODEN_CHESTS, BETTER_END, chestItem);
-                builder.applyTag(C_CHESTS, BETTER_END, chestItem);
+            for (String chestItem : BetterEnd.WOODEN_CHESTS) {
+                builder.applyTag(C_WOODEN_CHESTS, Integrations.BETTER_END, chestItem);
+                builder.applyTag(C_CHESTS, Integrations.BETTER_END, chestItem);
             }
 
-            builder.applyTag(C_ENDER_PEARL_DUSTS, BETTER_END, "ender_dust");
+            builder.applyTag(C_ENDER_PEARL_DUSTS, Integrations.BETTER_END, "ender_dust");
         }
 
         // Better Nether
         if (ModIntegrations.isBetterNetherLoaded) {
-            builder.applyTag(C_IRON_INGOTS, BETTER_NETHER, "cincinnasite_ingot");
+            builder.applyTag(C_IRON_INGOTS, Integrations.BETTER_NETHER, "cincinnasite_ingot");
 
-            for (String chestItem : Arrays.asList(
-                "chest_anchor_tree",
-                "chest_nether_sakura",
-                "chest_crimson",
-                "chest_warped",
-                "chest_stalagnate",
-                "chest_reed",
-                "chest_willow",
-                "chest_wart",
-                "chest_rubeus",
-                "chest_mushroom",
-                "chest_fir"
-            )) {
-                builder.applyTag(C_WOODEN_CHESTS, BETTER_NETHER, chestItem);
-                builder.applyTag(C_CHESTS, BETTER_NETHER, chestItem);
+            for (String chestItem : BetterNether.WOODEN_CHESTS) {
+                builder.applyTag(C_WOODEN_CHESTS, Integrations.BETTER_NETHER, chestItem);
+                builder.applyTag(C_CHESTS, Integrations.BETTER_NETHER, chestItem);
             }
 
         }
 
         // Battle Towers
         if (ModIntegrations.isBattletowersLoaded) {
-            builder.applyTag(FABRIC_AXES, BATTLETOWERS, "key_axe");
-            builder.applyTag(FABRIC_BOOTS, BATTLETOWERS, "key_boots");
-            builder.applyTag(FABRIC_HELMETS, BATTLETOWERS, "key_helmet");
-            builder.applyTag(FABRIC_HOES, BATTLETOWERS, "key_hoe");
-            builder.applyTag(FABRIC_LEGGINGS, BATTLETOWERS, "key_leggings");
-            builder.applyTag(FABRIC_PICKAXES, BATTLETOWERS, "key_pickaxe");
-            builder.applyTag(FABRIC_SHOVELS, BATTLETOWERS, "key_shovel");
-            builder.applyTag(FABRIC_SWORDS, BATTLETOWERS, "key_sword");
+            builder.applyTag(FABRIC_AXES, Integrations.BATTLETOWERS, "key_axe");
+            builder.applyTag(FABRIC_BOOTS, Integrations.BATTLETOWERS, "key_boots");
+            builder.applyTag(FABRIC_HELMETS, Integrations.BATTLETOWERS, "key_helmet");
+            builder.applyTag(FABRIC_HOES, Integrations.BATTLETOWERS, "key_hoe");
+            builder.applyTag(FABRIC_LEGGINGS, Integrations.BATTLETOWERS, "key_leggings");
+            builder.applyTag(FABRIC_PICKAXES, Integrations.BATTLETOWERS, "key_pickaxe");
+            builder.applyTag(FABRIC_SHOVELS, Integrations.BATTLETOWERS, "key_shovel");
+            builder.applyTag(FABRIC_SWORDS, Integrations.BATTLETOWERS, "key_sword");
         }
 
         // Gilded Netherite
         if (ModIntegrations.isGildedNetheriteLoaded) {
-            builder.applyTag(FABRIC_AXES, GILDEDNETHERITE, "gilded_axe");
-            builder.applyTag(FABRIC_BOOTS, GILDEDNETHERITE, "gilded_boots");
-            builder.applyTag(FABRIC_CHESTPLATES, GILDEDNETHERITE, "gilded_chestplate");
-            builder.applyTag(FABRIC_HELMETS, GILDEDNETHERITE, "gilded_helmet");
-            builder.applyTag(FABRIC_HOES, GILDEDNETHERITE, "gilded_hoe");
-            builder.applyTag(FABRIC_LEGGINGS, GILDEDNETHERITE, "gilded_leggings");
-            builder.applyTag(FABRIC_PICKAXES, GILDEDNETHERITE, "gilded_pickaxe");
-            builder.applyTag(FABRIC_SHIELDS, GILDEDNETHERITE, "gilded_shield");
-            builder.applyTag(FABRIC_SHOVELS, GILDEDNETHERITE, "gilded_shovel");
-            builder.applyTag(FABRIC_SWORDS, GILDEDNETHERITE, "gilded_sword");
+            builder.applyTag(FABRIC_AXES, Integrations.GILDEDNETHERITE, "gilded_axe");
+            builder.applyTag(FABRIC_BOOTS, Integrations.GILDEDNETHERITE, "gilded_boots");
+            builder.applyTag(FABRIC_CHESTPLATES, Integrations.GILDEDNETHERITE, "gilded_chestplate");
+            builder.applyTag(FABRIC_HELMETS, Integrations.GILDEDNETHERITE, "gilded_helmet");
+            builder.applyTag(FABRIC_HOES, Integrations.GILDEDNETHERITE, "gilded_hoe");
+            builder.applyTag(FABRIC_LEGGINGS, Integrations.GILDEDNETHERITE, "gilded_leggings");
+            builder.applyTag(FABRIC_PICKAXES, Integrations.GILDEDNETHERITE, "gilded_pickaxe");
+            builder.applyTag(FABRIC_SHIELDS, Integrations.GILDEDNETHERITE, "gilded_shield");
+            builder.applyTag(FABRIC_SHOVELS, Integrations.GILDEDNETHERITE, "gilded_shovel");
+            builder.applyTag(FABRIC_SWORDS, Integrations.GILDEDNETHERITE, "gilded_sword");
         }
 
         // Expanded Storage
         if (ModIntegrations.isExpandedStorageLoaded) {
             for (String chestItem : Arrays.asList("wood_chest", "old_wood_chest", "christmas_chest", "pumpkin_chest")) {
-                builder.applyTag(C_WOODEN_CHESTS, EXPANDEDSTORAGE, chestItem);
-                builder.applyTag(C_CHESTS, EXPANDEDSTORAGE, chestItem);
+                builder.applyTag(C_WOODEN_CHESTS, Integrations.EXPANDEDSTORAGE, chestItem);
+                builder.applyTag(C_CHESTS, Integrations.EXPANDEDSTORAGE, chestItem);
             }
         }
 
         // Biomes You'll Go
         if (ModIntegrations.isBygLoaded) {
-            builder.applyTag(STONE_CRAFTING_MATERIALS, BYG, "rocky_stone");
+            builder.applyTag(STONE_CRAFTING_MATERIALS, Integrations.BYG, "rocky_stone");
         }
 
         // Tech Reborn
         if (ModIntegrations.isTechRebornLoaded) {
-            for (String bootItem : Arrays.asList("bronze_boots", "peridot_boots", "quantum_boots", "ruby_boots", "sapphire_boots")) {
-                builder.applyTag(FABRIC_BOOTS, TECH_REBORN, bootItem);
+            for (String bootItem : TechReborn.BOOTS) {
+                builder.applyTag(FABRIC_BOOTS, Integrations.TECH_REBORN, bootItem);
             }
-            for (String chestItem : Arrays.asList("bronze_chestplate", "peridot_chestplate", "quantum_chestplate", "ruby_chestplate", "sapphire_chestplate")) {
-                builder.applyTag(FABRIC_CHESTPLATES, TECH_REBORN, chestItem);
+            for (String chestItem : TechReborn.CHESTS) {
+                builder.applyTag(FABRIC_CHESTPLATES, Integrations.TECH_REBORN, chestItem);
             }
-            for (String helmetItem : Arrays.asList("bronze_helmet", "peridot_helmet", "quantum_helmet", "ruby_helmet", "sapphire_helmet")) {
-                builder.applyTag(FABRIC_HELMETS, TECH_REBORN, helmetItem);
+            for (String helmetItem : TechReborn.HELMS) {
+                builder.applyTag(FABRIC_HELMETS, Integrations.TECH_REBORN, helmetItem);
             }
-            for (String legItem : Arrays.asList("bronze_leggings", "peridot_leggings", "quantum_leggings", "ruby_leggings", "sapphire_leggings")) {
-                builder.applyTag(FABRIC_LEGGINGS, TECH_REBORN, legItem);
+            for (String legItem : TechReborn.LEGGINGS) {
+                builder.applyTag(FABRIC_LEGGINGS, Integrations.TECH_REBORN, legItem);
             }
         }
 
         // Croptopia
         if (ModIntegrations.isCroptopiaLoaded) {
-            builder.applyTag(C_VANILLAS, CROPTOPIA, "vanilla");
+            builder.applyTag(C_VANILLAS, Integrations.CROPTOPIA, "vanilla");
         }
 
         // Crimson Moon
         if (ModIntegrations.isCrimsonMoonLoaded) {
-            builder.applyTag(FABRIC_BOWS, CRIMSON_MOON, "bloodthirsty_bow");
+            builder.applyTag(FABRIC_BOWS, Integrations.CRIMSON_MOON, "bloodthirsty_bow");
 
-            for (String swordItem : Arrays.asList("carnage", "crimson_bone_blade", "crimson_crusher", "rib_destroyer")) {
-                builder.applyTag(FABRIC_SWORDS, CRIMSON_MOON, swordItem);
+            for (String swordItem : CrimsonMoon.SWORDS) {
+                builder.applyTag(FABRIC_SWORDS, Integrations.CRIMSON_MOON, swordItem);
             }
         }
 
@@ -216,13 +193,13 @@ public class FettlolTags {
         BLOCK_TAGS = builder.buildBlockTags();
     }
 
-    // called from worker threads
+    // Called from worker threads.
     public static void apply(String entry, Map<Identifier, Tag.Builder> tagsMap) {
         Map<Identifier, Set<Identifier>> fettlolTags = null;
 
-        if (entry.equals("block")) {
+        if (entry.equals("tags/blocks")) {
             fettlolTags = BLOCK_TAGS;
-        } else if (entry.equals("item")) {
+        } else if (entry.equals("tags/item")) {
             fettlolTags = ITEM_TAGS;
         }
 

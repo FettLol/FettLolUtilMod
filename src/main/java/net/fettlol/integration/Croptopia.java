@@ -3,6 +3,7 @@ package net.fettlol.integration;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fettlol.UtilMod;
 import net.fettlol.init.ModIntegrations;
+import net.fettlol.lists.Integrations;
 import net.fettlol.util.LootTableHelper;
 import net.minecraft.util.Identifier;
 
@@ -31,15 +32,15 @@ public class Croptopia {
     }
 
     private static Identifier croptopiaIdentifier(String crop) {
-        return new Identifier(ModIntegrations.CROPTOPIA, crop);
+        return new Identifier(Integrations.CROPTOPIA, crop);
     }
 
     public static Identifier croptopiaSeed(String crop) {
-        return new Identifier(ModIntegrations.CROPTOPIA, crop + "_seed");
+        return new Identifier(Integrations.CROPTOPIA, crop + "_seed");
     }
 
     private static String cropBlockLootTable(String crop) {
-        return ModIntegrations.CROPTOPIA + ":blocks/" + crop + "_crop";
+        return Integrations.CROPTOPIA + ":blocks/" + crop + "_crop";
     }
 
 }

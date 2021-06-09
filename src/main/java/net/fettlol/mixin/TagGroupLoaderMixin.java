@@ -18,17 +18,13 @@ import java.util.Map;
 @Mixin(TagGroupLoader.class)
 public class TagGroupLoaderMixin {
 
-    @Final @Shadow
-    private String entryType;
+    @Final
+    @Shadow
+    private String dataType;
 
-    @Inject(
-        method = "method_18243", // lambda inside prepareReload
-        at = @At("RETURN"),
-        locals = LocalCapture.CAPTURE_FAILHARD,
-        remap = false
-    )
-    public void prepareReload(ResourceManager rm, CallbackInfoReturnable<Map<Identifier, Tag.Builder>> ci, Map<Identifier, Tag.Builder> map) {
-        FettlolTags.apply(entryType, map);
+    @Inject(method = "loadTags", at = @At("RETURN"), locals = LocalCapture.CAPTURE_FAILHARD)
+    public void loadTags(ResourceManager rm, CallbackInfoReturnable<Map<Identifier, Tag.Builder>> ci, Map<Identifier, Tag.Builder> map) {
+        FettlolTags.apply(dataType, map);
     }
 
 }
