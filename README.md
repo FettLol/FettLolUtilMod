@@ -48,6 +48,11 @@ These integrations and tweaks require the mod in question to be loaded and will 
 ## Coming Soon
 
 - More options related to player-crafted mob spawners.
+- Auto-planting seeds and saplings if they're on the right surface.
+- Harvest crops and sugarcane with right-clicking.
+- Remove plant hitboxes
+- Double Doors
+- Snow falls through leaves
 - More gems, more ways of getting gems, more things to do with your gems.
 - A levelling system with unlockable skills, buff, bonuses and abilities.
 - An advancement for when you craft your first Waystone (if that mod is loaded), awarding you a second Waystone.

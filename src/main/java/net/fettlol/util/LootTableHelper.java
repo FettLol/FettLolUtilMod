@@ -2,162 +2,107 @@ package net.fettlol.util;
 
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.FabricLootSupplierBuilder;
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.loot.condition.LootCondition;
+import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.ApplyBonusLootFunction;
+import net.minecraft.loot.function.ConditionalLootFunction;
 import net.minecraft.loot.function.EnchantWithLevelsLootFunction;
+import net.minecraft.loot.function.LootFunction;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.predicate.NumberRange;
+import net.minecraft.predicate.item.EnchantmentPredicate;
+import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class LootTableHelper {
 
+    public static final LootCondition NOT_WITH_SILK_TOUCH = MatchToolLootCondition.builder(
+        ItemPredicate.Builder.create()
+            .tag(FabricToolTags.PICKAXES)
+            .enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, NumberRange.IntRange.atLeast(1)))
+    ).invert().build();
+
+    public static final ConditionalLootFunction.Builder<?> FORTUNE = ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE);
+
+    public static final LootFunction HIGH_LEVEL_TREASURE_ENCHANTMENT = EnchantWithLevelsLootFunction.builder(UniformLootNumberProvider.create(20.0f, 39.0f))
+        .allowTreasureEnchantments()
+        .build();
+
     // = Chests =
 
     public static boolean isVillageHouseChest(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "minecraft:chests/village/village_desert_house":
-            case "minecraft:chests/village/village_plains_house":
-            case "minecraft:chests/village/village_savanna_house":
-            case "minecraft:chests/village/village_snowy_house":
-            case "minecraft:chests/village/village_taiga_house":
-            case "repurposed_structures:chests/village/village_badlands_house":
-            case "repurposed_structures:chests/village/village_birch_house":
-            case "repurposed_structures:chests/village/village_crimson_house":
-            case "repurposed_structures:chests/village/village_dark_forest_house":
-            case "repurposed_structures:chests/village/village_giant_taiga_house":
-            case "repurposed_structures:chests/village/village_jungle_house":
-            case "repurposed_structures:chests/village/village_mountains_house":
-            case "repurposed_structures:chests/village/village_oak_house":
-            case "repurposed_structures:chests/village/village_swamp_house":
-                return true;
-
-            default:
-                return false;
-        }
+        return switch (identifier.toString()) {
+            case "minecraft:chests/village/village_desert_house", "minecraft:chests/village/village_plains_house", "minecraft:chests/village/village_savanna_house", "minecraft:chests/village/village_snowy_house", "minecraft:chests/village/village_taiga_house", "repurposed_structures:chests/village/village_badlands_house", "repurposed_structures:chests/village/village_birch_house", "repurposed_structures:chests/village/village_crimson_house", "repurposed_structures:chests/village/village_dark_forest_house", "repurposed_structures:chests/village/village_giant_taiga_house", "repurposed_structures:chests/village/village_jungle_house", "repurposed_structures:chests/village/village_mountains_house", "repurposed_structures:chests/village/village_oak_house", "repurposed_structures:chests/village/village_swamp_house" -> true;
+            default -> false;
+        };
     }
 
     public static boolean isNetherEndgame(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "minecraft:chests/bastion_bridge":
-            case "minecraft:chests/bastion_treasure":
-            case "minecraft:chests/bastion_hoglin_stable":
-            case "minecraft:chests/bastion_other":
-            case "minecraft:chests/nether_bridge":
-            case "byg:chest/nether_bridge":
-                return true;
-
-            default:
-                return false;
-        }
+        return switch (identifier.toString()) {
+            case "minecraft:chests/bastion_bridge", "minecraft:chests/bastion_treasure", "minecraft:chests/bastion_hoglin_stable", "minecraft:chests/bastion_other", "minecraft:chests/nether_bridge", "byg:chest/nether_bridge" -> true;
+            default -> false;
+        };
     }
 
     public static boolean isEndEndgame(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "minecraft:chests/end_city_treasure":
-            case "byg:chests/end_city_treasure":
-                return true;
-
-            default:
-                return false;
-        }
+        return switch (identifier.toString()) {
+            case "minecraft:chests/end_city_treasure", "byg:chests/end_city_treasure" -> true;
+            default -> false;
+        };
     }
 
     public static boolean isStronghold(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "minecraft:chests/stronghold_library":
-            case "minecraft:chests/stronghold_corridor":
-            case "minecraft:chests/stronghold_crossing":
-            case "byg:chests/stronghold_library":
-            case "byg:chests/stronghold_corridor":
-            case "byg:chests/stronghold_crossing":
-                return true;
-
-            default:
-                return false;
-        }
+        return switch (identifier.toString()) {
+            case "minecraft:chests/stronghold_library", "minecraft:chests/stronghold_corridor", "minecraft:chests/stronghold_crossing", "byg:chests/stronghold_library", "byg:chests/stronghold_corridor", "byg:chests/stronghold_crossing" -> true;
+            default -> false;
+        };
     }
 
     public static boolean isBuriedTreasure(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "minecraft:chests/buried_treasure":
-            case "byg:chests/buried_treasure":
-                return true;
-
-            default:
-                return false;
-        }
+        return switch (identifier.toString()) {
+            case "minecraft:chests/buried_treasure", "byg:chests/buried_treasure" -> true;
+            default -> false;
+        };
     }
 
     public static boolean isUnderwaterRuin(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "byg:chests/underwater_ruin_small":
-            case "byg:chests/underwater_ruin_big":
-                return true;
-
-            default:
-                return false;
-        }
+        return switch (identifier.toString()) {
+            case "byg:chests/underwater_ruin_small", "byg:chests/underwater_ruin_big" -> true;
+            default -> false;
+        };
     }
 
     public static boolean isAbandonedMineshaft(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "minecraft:chests/abandoned_mineshaft":
-            case "byg:chests/abandoned_mineshaft":
-            case "repurposed_structures:chests/mineshaft/birch":
-            case "repurposed_structures:chests/mineshaft/desert":
-            case "repurposed_structures:chests/mineshaft/icy":
-            case "repurposed_structures:chests/mineshaft/jungle":
-            case "repurposed_structures:chests/mineshaft/ocean":
-            case "repurposed_structures:chests/mineshaft/savanna":
-            case "repurposed_structures:chests/mineshaft/stone":
-            case "repurposed_structures:chests/mineshaft/swamp_dark_forest":
-            case "repurposed_structures:chests/mineshaft/taiga":
-                return true;
-
-            default:
-                return false;
-        }
+        return switch (identifier.toString()) {
+            case "minecraft:chests/abandoned_mineshaft", "byg:chests/abandoned_mineshaft", "repurposed_structures:chests/mineshaft/birch", "repurposed_structures:chests/mineshaft/desert", "repurposed_structures:chests/mineshaft/icy", "repurposed_structures:chests/mineshaft/jungle", "repurposed_structures:chests/mineshaft/ocean", "repurposed_structures:chests/mineshaft/savanna", "repurposed_structures:chests/mineshaft/stone", "repurposed_structures:chests/mineshaft/swamp_dark_forest", "repurposed_structures:chests/mineshaft/taiga" -> true;
+            default -> false;
+        };
     }
 
     public static boolean isShipwreckTreasure(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "minecraft:chests/shipwreck_treasure":
-            case "byg:chests/shipwreck_treasure":
-                return true;
-
-            default:
-                return false;
-        }
+        return switch (identifier.toString()) {
+            case "minecraft:chests/shipwreck_treasure", "byg:chests/shipwreck_treasure" -> true;
+            default -> false;
+        };
     }
 
     public static boolean isDesertPyramid(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "minecraft:chests/desert_pyramid":
-            case "byg:chests/desert_pyramid":
-                return true;
-
-            default:
-                return false;
-        }
+        return switch (identifier.toString()) {
+            case "minecraft:chests/desert_pyramid", "byg:chests/desert_pyramid" -> true;
+            default -> false;
+        };
     }
 
     public static boolean isSimpleDungeonChest(Identifier identifier) {
-        switch (identifier.toString()) {
-            case "minecraft:chests/simple_dungeon":
-            case "byg:chests/simple_dungeon":
-            case "repurposed_structures:chests/dungeon/badlands":
-            case "repurposed_structures:chests/dungeon/dark_forest":
-            case "repurposed_structures:chests/dungeon/desert":
-            case "repurposed_structures:chests/dungeon/jungle":
-            case "repurposed_structures:chests/dungeon/mushroom":
-            case "repurposed_structures:chests/dungeon/ocean":
-            case "repurposed_structures:chests/dungeon/snow":
-            case "repurposed_structures:chests/dungeon/swamp":
-                return true;
-
-            default:
-                return false;
-        }
+        return switch (identifier.toString()) {
+            case "minecraft:chests/simple_dungeon", "byg:chests/simple_dungeon", "repurposed_structures:chests/dungeon/badlands", "repurposed_structures:chests/dungeon/dark_forest", "repurposed_structures:chests/dungeon/desert", "repurposed_structures:chests/dungeon/jungle", "repurposed_structures:chests/dungeon/mushroom", "repurposed_structures:chests/dungeon/ocean", "repurposed_structures:chests/dungeon/snow", "repurposed_structures:chests/dungeon/swamp" -> true;
+            default -> false;
+        };
     }
 
     // = Blocks =
@@ -196,7 +141,6 @@ public class LootTableHelper {
 
     public static boolean isEnderDragon(Identifier identifier) {
         return identifier.toString().equals("minecraft:entities/ender_dragon");
-
     }
 
     public static boolean isGuardian(Identifier identifier) {
@@ -256,10 +200,20 @@ public class LootTableHelper {
         supplier.withPool(poolBuilder.build());
     }
 
+    public static void addToOreLootTable(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
+        FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
+            .rolls(BinomialLootNumberProvider.create(count, probability))
+            .apply(FORTUNE)
+            .withCondition(NOT_WITH_SILK_TOUCH)
+            .with(ItemEntry.builder(Registry.ITEM.get(identifier).asItem()));
+
+        supplier.withPool(poolBuilder.build());
+    }
+
     public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
         FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
             .rolls(BinomialLootNumberProvider.create(count, probability))
-            .withFunction(EnchantWithLevelsLootFunction.builder(UniformLootNumberProvider.create(20.0f, 39.0f)).allowTreasureEnchantments().build())
+            .withFunction(HIGH_LEVEL_TREASURE_ENCHANTMENT)
             .with(ItemEntry.builder(Registry.ITEM.get(identifier).asItem()));
         supplier.withPool(poolBuilder.build());
     }
@@ -268,12 +222,20 @@ public class LootTableHelper {
         addToLootTable(supplier, count, probability, new Identifier(namespace, item));
     }
 
+    public static void addToOreLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
+        addToOreLootTable(supplier, count, probability, new Identifier(namespace, item));
+    }
+
     public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
         addToLootTableWithRandomEnchantment(supplier, count, probability, new Identifier(namespace, item));
     }
 
     public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String item) {
         addToLootTable(supplier, count, probability, new Identifier(item));
+    }
+
+    public static void addToOreLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String item) {
+        addToOreLootTable(supplier, count, probability, new Identifier(item));
     }
 
     public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, String item) {

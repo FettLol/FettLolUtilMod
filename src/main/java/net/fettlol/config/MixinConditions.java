@@ -52,6 +52,8 @@ public class MixinConditions implements IMixinConfigPlugin {
             return true; // No config for this yet.
         } else if (mixinClassName.contains("BiomeFeaturesMixin")) {
             return true; // No config for this yet.
+        } else if (mixinClassName.contains("MinecraftClientMixin")) {
+            return true; // This feels like something we don't need a config option for.
         } else if (mixinClassName.contains("Manager")) {
             return true; // Always return true for PlayerManager and RecipeManager.
         } else {

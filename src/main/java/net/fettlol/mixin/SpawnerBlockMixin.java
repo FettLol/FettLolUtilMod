@@ -1,17 +1,14 @@
 package net.fettlol.mixin;
 
 import net.fettlol.api.SpawnerInterface;
-import net.fettlol.mixin.accessor.MobSpawnerLogicAccessor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SpawnerBlock;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.MobSpawnerBlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.MobSpawnerLogic;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,6 +20,9 @@ public class SpawnerBlockMixin extends Block {
         super(settings);
     }
 
+    /*
+     * Removing this entire section as it is covered by a third party mod now,
+     * and keeping this around is causing various conflicts.
     @SuppressWarnings("deprecation")
     @Override
     public void neighborUpdate(BlockState blockState, World world, BlockPos pos, Block blockIn, BlockPos blockOut, boolean bool) {
@@ -37,6 +37,7 @@ public class SpawnerBlockMixin extends Block {
 
         logic.setSpawnEntry(world, pos, accessor.getSpawnEntry());
     }
+    */
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
