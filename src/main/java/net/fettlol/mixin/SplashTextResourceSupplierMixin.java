@@ -19,8 +19,11 @@ abstract public class SplashTextResourceSupplierMixin {
 
     @Inject(at = @At("TAIL"), method = "apply(Ljava/util/List;Lnet/minecraft/resource/ResourceManager;Lnet/minecraft/util/profiler/Profiler;)V")
     private void apply(List<String> list, ResourceManager resourceManager, Profiler profiler, CallbackInfo ci) {
-        splashTexts.add("So fat! So lol!");
+        splashTexts.add("WOW! SUCH FETT! MUCH LOL! VERY MODPACK");
         splashTexts.add("Brought to you by Breki!");
+        splashTexts.add("Fett.lol is dairy-free!");
+        splashTexts.add("Fett.lol is grain-free!");
+        splashTexts.add("Fett.lol has no artificial additives or preservatives!");
         splashTexts.add("Who's a good boy?");
     }
 
