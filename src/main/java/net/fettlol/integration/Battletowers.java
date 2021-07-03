@@ -1,48 +1,48 @@
 package net.fettlol.integration;
 
 import net.fettlol.UtilMod;
-import net.fettlol.init.ModIntegrations;
-import net.fettlol.lists.Integrations;
+import net.fettlol.init.FettlolModIntegrations;
+import net.fettlol.lists.Mods;
 import net.fettlol.util.LootTableHelper;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 
 public class Battletowers {
 
     public static void init() {
-        if (ModIntegrations.isBattletowersLoaded) {
+        if (FettlolModIntegrations.isBattletowersLoaded) {
             UtilMod.LOGGER.info("Draylar's Battle Towers detected! Applying integrations.");
 
             LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
                 // Add some additional treasures to Battletower Chests
                 if (LootTableHelper.isTowerChest(identifier)) {
-                    if (ModIntegrations.isBetterEndLoaded) {
-                        LootTableHelper.addToLootTable(supplier, 1, 0.02F, Integrations.BETTER_END, "aeternium_ingot");
-                        LootTableHelper.addToLootTable(supplier, 5, 0.02F, Integrations.BETTER_END, "ender_dust");
+                    if (FettlolModIntegrations.isBetterEndLoaded) {
+                        LootTableHelper.addToLootTable(supplier, 1, 0.02F, Mods.BETTER_END, "aeternium_ingot");
+                        LootTableHelper.addToLootTable(supplier, 5, 0.02F, Mods.BETTER_END, "ender_dust");
                     }
 
-                    if (ModIntegrations.isDankStorageLoaded) {
-                        LootTableHelper.addToLootTable(supplier, 1, 0.05F, Integrations.DANKSTORAGE, "dank_3");
+                    if (FettlolModIntegrations.isDankStorageLoaded) {
+                        LootTableHelper.addToLootTable(supplier, 1, 0.05F, Mods.DANKSTORAGE, "dank_3");
                     }
 
-                    if (ModIntegrations.isMidasHungerLoaded) {
-                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Integrations.MIDAS_HUNGER, "baked_golden_potato");
-                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Integrations.MIDAS_HUNGER, "cooked_golden_beef");
-                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Integrations.MIDAS_HUNGER, "cooked_golden_mutton");
-                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Integrations.MIDAS_HUNGER, "cooked_golden_porkchop");
-                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Integrations.MIDAS_HUNGER, "cooked_golden_rabbit");
+                    if (FettlolModIntegrations.isMidasHungerLoaded) {
+                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Mods.MIDAS_HUNGER, "baked_golden_potato");
+                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Mods.MIDAS_HUNGER, "cooked_golden_beef");
+                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Mods.MIDAS_HUNGER, "cooked_golden_mutton");
+                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Mods.MIDAS_HUNGER, "cooked_golden_porkchop");
+                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Mods.MIDAS_HUNGER, "cooked_golden_rabbit");
                     }
 
-                    if (ModIntegrations.isBygLoaded) {
-                        LootTableHelper.addToLootTable(supplier, 2, 0.05F, Integrations.BYG, "pendorite_scraps");
-                        LootTableHelper.addToLootTable(supplier, 2, 0.05F, Integrations.BYG, "ametrine_gems");
+                    if (FettlolModIntegrations.isBygLoaded) {
+                        LootTableHelper.addToLootTable(supplier, 2, 0.05F, Mods.BYG, "pendorite_scraps");
+                        LootTableHelper.addToLootTable(supplier, 2, 0.05F, Mods.BYG, "ametrine_gems");
                     }
 
-                    if (ModIntegrations.isRingOfAttractionLoaded) {
-                        LootTableHelper.addToLootTable(supplier, 1, 0.03F, Integrations.RING_OF_ATTRACTION, "ring_of_attraction");
+                    if (FettlolModIntegrations.isRingOfAttractionLoaded) {
+                        LootTableHelper.addToLootTable(supplier, 1, 0.03F, Mods.RING_OF_ATTRACTION, "ring_of_attraction");
                     }
 
-                    if (ModIntegrations.isWingedLoaded) {
-                        LootTableHelper.addToLootTable(supplier, 1, 0.02F, Integrations.WINGED, "wing_random");
+                    if (FettlolModIntegrations.isWingedLoaded) {
+                        LootTableHelper.addToLootTable(supplier, 1, 0.02F, Mods.WINGED, "wing_random");
                     }
                 }
             });

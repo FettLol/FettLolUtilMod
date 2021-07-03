@@ -4,8 +4,8 @@ import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fettlol.UtilMod;
 import net.fettlol.init.FettlolRecipes;
-import net.fettlol.init.ModIntegrations;
-import net.fettlol.lists.Integrations;
+import net.fettlol.init.FettlolModIntegrations;
+import net.fettlol.lists.Mods;
 import net.fettlol.util.LootTableHelper;
 import net.fettlol.util.RecipeHelper;
 import net.minecraft.util.Identifier;
@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 public class BiomesYoullGo {
 
     public static void init() {
-        if (ModIntegrations.isBygLoaded) {
+        if (FettlolModIntegrations.isBygLoaded) {
             UtilMod.LOGGER.info("Biomes You'll Go detected! Applying integrations.");
 
             updateLootTablesForByg();
@@ -24,7 +24,7 @@ public class BiomesYoullGo {
     private static void defineRecipesForByg() {
         addTheriumCrystalRecipe();
 
-        if (ModIntegrations.isGildedNetheriteLoaded) {
+        if (FettlolModIntegrations.isGildedNetheriteLoaded) {
             addGildedToAmetrineUpgrade("boots");
             addGildedToAmetrineUpgrade("chestplate");
             addGildedToAmetrineUpgrade("helmet");
@@ -39,37 +39,37 @@ public class BiomesYoullGo {
 
     private static void addTheriumCrystalRecipe() {
         FettlolRecipes.CUSTOM_RECIPES.put(
-            Integrations.BYG + "/therium_shard",
+            Mods.BYG + "/therium_shard",
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('T'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BYG, "therium_shard")
+                    new Identifier(Mods.BYG, "therium_shard")
                 ),
                 Lists.newArrayList("item"),
                 Lists.newArrayList("TT ", "TT ", "   "),
-                new Identifier(Integrations.BYG, "therium_crystal")
+                new Identifier(Mods.BYG, "therium_crystal")
             )
         );
     }
 
     private static void addGildedToAmetrineUpgrade(String item) {
         FettlolRecipes.CUSTOM_RECIPES.put(
-            Integrations.BYG + "/ametrine_" + item + "_gilded",
+            Mods.BYG + "/ametrine_" + item + "_gilded",
             RecipeHelper.createSmithingRecipe(
-                Integrations.GILDEDNETHERITE + ":gilded_" + item,
-                Integrations.BYG + ":ametrine_gems",
-                Integrations.BYG + ":ametrine_" + item
+                Mods.GILDEDNETHERITE + ":gilded_" + item,
+                Mods.BYG + ":ametrine_gems",
+                Mods.BYG + ":ametrine_" + item
             )
         );
     }
 
     private static void addGildedToPendoriteUpgrade(String item) {
         FettlolRecipes.CUSTOM_RECIPES.put(
-            Integrations.BYG + "/pendorite_" + item + "_gilded",
+            Mods.BYG + "/pendorite_" + item + "_gilded",
             RecipeHelper.createSmithingRecipe(
-                Integrations.GILDEDNETHERITE + ":gilded_" + item,
-                Integrations.BYG + ":pendorite_scraps",
-                Integrations.BYG + ":pendorite_" + item
+                Mods.GILDEDNETHERITE + ":gilded_" + item,
+                Mods.BYG + ":pendorite_scraps",
+                Mods.BYG + ":pendorite_" + item
             )
         );
     }
@@ -83,22 +83,22 @@ public class BiomesYoullGo {
 
             // Ametrine gems can drop when mining Diamond Ore.
             if (LootTableHelper.isDiamondOre(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.02F, Integrations.BYG, "ametrine_gems");
+                LootTableHelper.addToLootTable(supplier, 1, 0.02F, Mods.BYG, "ametrine_gems");
             }
 
             // Ametrine gems have a 3% chance of appearing in normal dungeon chests.
             if (LootTableHelper.isSimpleDungeonChest(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.03F, Integrations.BYG, "ametrine_gems");
+                LootTableHelper.addToLootTable(supplier, 1, 0.03F, Mods.BYG, "ametrine_gems");
             }
 
             // Ametrine gems can be found in End Cities.
             if (LootTableHelper.isEndEndgame(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 2, 0.1F, Integrations.BYG, "ametrine_gems");
+                LootTableHelper.addToLootTable(supplier, 2, 0.1F, Mods.BYG, "ametrine_gems");
             }
 
             // Pendorite scraps can be found in various Nether chests (Bastions, mainly).
             if (LootTableHelper.isNetherEndgame(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 4, 0.02F, Integrations.BYG, "pendorite_scraps");
+                LootTableHelper.addToLootTable(supplier, 4, 0.02F, Mods.BYG, "pendorite_scraps");
             }
 
         });

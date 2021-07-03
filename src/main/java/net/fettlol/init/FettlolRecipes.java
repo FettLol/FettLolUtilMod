@@ -3,7 +3,7 @@ package net.fettlol.init;
 import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
 import net.fettlol.UtilMod;
-import net.fettlol.lists.Integrations;
+import net.fettlol.lists.Mods;
 import net.fettlol.util.RecipeHelper;
 import net.minecraft.util.Identifier;
 
@@ -30,7 +30,7 @@ public class FettlolRecipes {
     }
 
     private static void addTridentRecipe() {
-        if (ModIntegrations.isAdornLoaded) {
+        if (FettlolModIntegrations.isAdornLoaded) {
             CUSTOM_RECIPES.put(
                 "extras/trident",
                 RecipeHelper.createShapedRecipe(
@@ -39,7 +39,7 @@ public class FettlolRecipes {
                         new Identifier("minecraft", "prismarine_shard"),
                         new Identifier(UtilMod.MOD_ID, "aquamarine_gem"),
                         new Identifier("minecraft", "conduit"),
-                        new Identifier(Integrations.ADORN, "prismarine_brick_post")
+                        new Identifier(Mods.ADORN, "prismarine_brick_post")
                     ),
                     Lists.newArrayList("item", "item", "item", "item"),
                     Lists.newArrayList("SSS", "ACA", " P "),

@@ -43,7 +43,7 @@ public class WanderingHeadHunterSpawn {
             BlockPos blockPos3 = getLlamaSpawnPosition(serverWorld, blockPos2, 48);
 
             if (blockPos3 != null && wontSuffocateAt(serverWorld, blockPos3)) {
-                WanderingHeadHunterEntity traderEntity = FettlolEntities.WANDERING_HEAD_HUNTER.spawn(serverWorld, (NbtCompound) null, (Text) null, (PlayerEntity) null, blockPos3, SpawnReason.EVENT, false, false);
+                WanderingHeadHunterEntity traderEntity = FettlolEntities.WANDERING_HEAD_HUNTER.spawn(serverWorld, null, null, null, blockPos3, SpawnReason.EVENT, false, false);
 
                 if (traderEntity != null) {
                     serverWorldProperties.setWanderingTraderId(traderEntity.getUuid());

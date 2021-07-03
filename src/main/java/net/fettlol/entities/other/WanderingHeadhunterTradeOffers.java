@@ -165,7 +165,6 @@ public class WanderingHeadhunterTradeOffers {
 
             // Fettlol VIPs
             HeadHelper.playerHeadForSale("BrekiT"),
-            HeadHelper.playerHeadForSale("Elffairy"),
             HeadHelper.playerHeadForSale("Fourmisain"),
             HeadHelper.playerHeadForSale("GuardianMona"),
             HeadHelper.playerHeadForSale("fiws"),
@@ -176,6 +175,8 @@ public class WanderingHeadhunterTradeOffers {
             HeadHelper.playerHeadForSale("Docm77"),
             HeadHelper.playerHeadForSale("Etho"),
             HeadHelper.playerHeadForSale("Grian"),
+            HeadHelper.playerHeadForSale("GeminiTay"),
+            HeadHelper.playerHeadForSale("PearlescentMoon"),
             HeadHelper.playerHeadForSale("Keralis", "Keralis1"),
             HeadHelper.playerHeadForSale("Mumbo Jumbo", "Mumbo"),
             HeadHelper.playerHeadForSale("Rendog", "Renthedog"),

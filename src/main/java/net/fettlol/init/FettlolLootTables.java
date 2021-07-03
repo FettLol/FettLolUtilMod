@@ -2,7 +2,7 @@ package net.fettlol.init;
 
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fettlol.util.LootTableHelper;
-import net.fettlol.util.PlayerPlacedLootCondition;
+import net.fettlol.concerns.PlayerPlacedLootCondition;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;

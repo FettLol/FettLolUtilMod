@@ -10,6 +10,7 @@ import java.util.Set;
 
 @Mixin(VillagerEntity.class)
 public interface VillagerEntityAccessor {
+
     @Accessor("ITEM_FOOD_VALUES")
     static void setItemFoodValues(Map<Item, Integer> map) { throw new AssertionError(); }
 
@@ -18,4 +19,5 @@ public interface VillagerEntityAccessor {
 
     @Accessor("GATHERABLE_ITEMS")
     static void setGatherableItems(Set<Item> set) { throw new AssertionError(); }
+
 }

@@ -30,18 +30,15 @@
     "fettlol.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.10.6",
+    "fabricloader": ">=0.11.6",
     "fabric": "*",
-    "minecraft": "1.17"
+    "minecraft": "1.17",
+    "cotton-datapack": "^1.0.7",
+    "cotton-config": "^1.0.0",
+    "cotton-logging": "^1.0.0"
   },
   "suggests": {
-    "betterend": "*",
-    "byg": "*",
-    "cinderscapes": "*",
-    "croptopia": "*",
-    "gildednetherite": "*",
-    "midashunger": "*",
-    "ring_of_attraction": "*",
-    "winged": "*"
+    "modmenu": "^2.0.2",
+    "cloth_config": "5.0.34"
   }
 }

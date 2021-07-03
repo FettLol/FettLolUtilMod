@@ -1,6 +1,7 @@
 package net.fettlol.util;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import io.github.cottonmc.cotton.datapack.recipe.RecipeUtil;
 import net.minecraft.recipe.Recipe;
@@ -10,6 +11,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * These methods help us create various types of crafting recipes via code.
@@ -28,14 +30,13 @@ public class RecipeHelper {
         removeRecipe(namespace + ":" + recipe);
     }
 
-    public static void removeRecipe(Identifier recipe) {
-        RecipeUtil.removeRecipe(recipe);
-    }
-
     public static void unlockAllRecipes(ServerPlayerEntity serverPlayerEntity) {
         if (serverPlayerEntity != null) {
             RecipeManager recipeManager = serverPlayerEntity.world.getRecipeManager();
             Collection<Recipe<?>> allRecipes = recipeManager.values();
+
+            // allRecipes can be manipulated in case there are any recipes
+            // we do not want to unlock by default.
 
             serverPlayerEntity.unlockRecipes(allRecipes);
         }
@@ -136,4 +137,12 @@ public class RecipeHelper {
         return jsonObject;
     }
 
+    /**
+     * Add a recipe to a map. Used by RecipeManagerMixin.
+     */
+    public static void addCustomRecipe(Map<Identifier, JsonElement> map, String recipeName, JsonObject definition) {
+        if (definition != null) {
+            map.put(RegistryHelper.makeId(recipeName), definition);
+        }
+    }
 }

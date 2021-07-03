@@ -4,8 +4,8 @@ import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fettlol.UtilMod;
 import net.fettlol.init.FettlolRecipes;
-import net.fettlol.init.ModIntegrations;
-import net.fettlol.lists.Integrations;
+import net.fettlol.init.FettlolModIntegrations;
+import net.fettlol.lists.Mods;
 import net.fettlol.util.LootTableHelper;
 import net.fettlol.util.RecipeHelper;
 import net.minecraft.util.Identifier;
@@ -13,10 +13,10 @@ import net.minecraft.util.Identifier;
 public class BetterEnd {
 
     public static void init() {
-        if (ModIntegrations.isBetterEndLoaded) {
+        if (FettlolModIntegrations.isBetterEndLoaded) {
             UtilMod.LOGGER.info("Better End detected! Applying integrations.");
 
-            RecipeHelper.removeRecipe(Integrations.BETTER_END, "tag_rail");
+            RecipeHelper.removeRecipe(Mods.BETTER_END, "tag_rail");
 
             defineLootTablesForBetterEnd();
 
@@ -34,10 +34,10 @@ public class BetterEnd {
             "betterend/aeternium_boots",
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I'),
-                Lists.newArrayList(new Identifier(Integrations.BETTER_END, "aeternium_ingot")),
+                Lists.newArrayList(new Identifier(Mods.BETTER_END, "aeternium_ingot")),
                 Lists.newArrayList("item"),
                 Lists.newArrayList("   ", "I I", "I I"),
-                new Identifier(Integrations.BETTER_END, "aeternium_boots")
+                new Identifier(Mods.BETTER_END, "aeternium_boots")
             )
         );
 
@@ -45,10 +45,10 @@ public class BetterEnd {
             "betterend/aeternium_chestplate",
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I'),
-                Lists.newArrayList(new Identifier(Integrations.BETTER_END, "aeternium_ingot")),
+                Lists.newArrayList(new Identifier(Mods.BETTER_END, "aeternium_ingot")),
                 Lists.newArrayList("item"),
                 Lists.newArrayList("I I", "III", "III"),
-                new Identifier(Integrations.BETTER_END, "aeternium_chestplate")
+                new Identifier(Mods.BETTER_END, "aeternium_chestplate")
             )
         );
 
@@ -56,10 +56,10 @@ public class BetterEnd {
             "betterend/aeternium_helmet",
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I'),
-                Lists.newArrayList(new Identifier(Integrations.BETTER_END, "aeternium_ingot")),
+                Lists.newArrayList(new Identifier(Mods.BETTER_END, "aeternium_ingot")),
                 Lists.newArrayList("item"),
                 Lists.newArrayList("   ", "III", "I I"),
-                new Identifier(Integrations.BETTER_END, "aeternium_helmet")
+                new Identifier(Mods.BETTER_END, "aeternium_helmet")
             )
         );
 
@@ -67,10 +67,10 @@ public class BetterEnd {
             "betterend/aeternium_leggings",
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I'),
-                Lists.newArrayList(new Identifier(Integrations.BETTER_END, "aeternium_ingot")),
+                Lists.newArrayList(new Identifier(Mods.BETTER_END, "aeternium_ingot")),
                 Lists.newArrayList("item"),
                 Lists.newArrayList("III", "I I", "I I"),
-                new Identifier(Integrations.BETTER_END, "aeternium_leggings")
+                new Identifier(Mods.BETTER_END, "aeternium_leggings")
             )
         );
 
@@ -79,12 +79,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "aeternium_ingot"),
+                    new Identifier(Mods.BETTER_END, "aeternium_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" II", " SI", " S "),
-                new Identifier(Integrations.BETTER_END, "aeternium_axe")
+                new Identifier(Mods.BETTER_END, "aeternium_axe")
             )
         );
 
@@ -93,12 +93,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "aeternium_ingot"),
+                    new Identifier(Mods.BETTER_END, "aeternium_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" II", " S ", " S "),
-                new Identifier(Integrations.BETTER_END, "aeternium_hoe")
+                new Identifier(Mods.BETTER_END, "aeternium_hoe")
             )
         );
 
@@ -107,12 +107,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "aeternium_ingot"),
+                    new Identifier(Mods.BETTER_END, "aeternium_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList("III", " S ", " S "),
-                new Identifier(Integrations.BETTER_END, "aeternium_pickaxe")
+                new Identifier(Mods.BETTER_END, "aeternium_pickaxe")
             )
         );
 
@@ -121,12 +121,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "aeternium_ingot"),
+                    new Identifier(Mods.BETTER_END, "aeternium_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" I ", " S ", " S "),
-                new Identifier(Integrations.BETTER_END, "aeternium_shovel")
+                new Identifier(Mods.BETTER_END, "aeternium_shovel")
             )
         );
 
@@ -135,12 +135,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "aeternium_ingot"),
+                    new Identifier(Mods.BETTER_END, "aeternium_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" I ", " I ", " S "),
-                new Identifier(Integrations.BETTER_END, "aeternium_sword")
+                new Identifier(Mods.BETTER_END, "aeternium_sword")
             )
         );
 
@@ -149,12 +149,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "terminite_ingot"),
+                    new Identifier(Mods.BETTER_END, "terminite_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" II", " SI", " S "),
-                new Identifier(Integrations.BETTER_END, "terminite_axe")
+                new Identifier(Mods.BETTER_END, "terminite_axe")
             )
         );
 
@@ -163,12 +163,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "terminite_ingot"),
+                    new Identifier(Mods.BETTER_END, "terminite_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" II", " S ", " S "),
-                new Identifier(Integrations.BETTER_END, "terminite_hoe")
+                new Identifier(Mods.BETTER_END, "terminite_hoe")
             )
         );
 
@@ -177,12 +177,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "terminite_ingot"),
+                    new Identifier(Mods.BETTER_END, "terminite_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList("III", " S ", " S "),
-                new Identifier(Integrations.BETTER_END, "terminite_pickaxe")
+                new Identifier(Mods.BETTER_END, "terminite_pickaxe")
             )
         );
 
@@ -191,12 +191,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "terminite_ingot"),
+                    new Identifier(Mods.BETTER_END, "terminite_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" I ", " S ", " S "),
-                new Identifier(Integrations.BETTER_END, "terminite_shovel")
+                new Identifier(Mods.BETTER_END, "terminite_shovel")
             )
         );
 
@@ -205,12 +205,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "thallasium_ingot"),
+                    new Identifier(Mods.BETTER_END, "thallasium_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" II", " SI", " S "),
-                new Identifier(Integrations.BETTER_END, "thallasium_axe")
+                new Identifier(Mods.BETTER_END, "thallasium_axe")
             )
         );
 
@@ -219,12 +219,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "thallasium_ingot"),
+                    new Identifier(Mods.BETTER_END, "thallasium_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" II", " S ", " S "),
-                new Identifier(Integrations.BETTER_END, "thallasium_hoe")
+                new Identifier(Mods.BETTER_END, "thallasium_hoe")
             )
         );
 
@@ -233,12 +233,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "thallasium_ingot"),
+                    new Identifier(Mods.BETTER_END, "thallasium_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList("III", " S ", " S "),
-                new Identifier(Integrations.BETTER_END, "thallasium_pickaxe")
+                new Identifier(Mods.BETTER_END, "thallasium_pickaxe")
             )
         );
 
@@ -248,12 +248,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "thallasium_ingot"),
+                    new Identifier(Mods.BETTER_END, "thallasium_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" I ", " S ", " S "),
-                new Identifier(Integrations.BETTER_END, "thallasium_shovel")
+                new Identifier(Mods.BETTER_END, "thallasium_shovel")
             )
         );
 
@@ -262,12 +262,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "thallasium_ingot"),
+                    new Identifier(Mods.BETTER_END, "thallasium_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" I ", " I ", " S "),
-                new Identifier(Integrations.BETTER_END, "thallasium_sword")
+                new Identifier(Mods.BETTER_END, "thallasium_sword")
             )
         );
 
@@ -276,12 +276,12 @@ public class BetterEnd {
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "terminite_ingot"),
+                    new Identifier(Mods.BETTER_END, "terminite_ingot"),
                     new Identifier("minecraft", "stick")
                 ),
                 Lists.newArrayList("item", "item"),
                 Lists.newArrayList(" I ", " I ", " S "),
-                new Identifier(Integrations.BETTER_END, "terminite_sword")
+                new Identifier(Mods.BETTER_END, "terminite_sword")
             )
         );
 
@@ -289,11 +289,11 @@ public class BetterEnd {
             "betterend/aeternium_ingot",
             RecipeHelper.createShapelessRecipe(
                 Lists.newArrayList(
-                    new Identifier(Integrations.BETTER_END, "terminite_ingot"),
+                    new Identifier(Mods.BETTER_END, "terminite_ingot"),
                     new Identifier("minecraft", "netherite_ingot")
                 ),
                 Lists.newArrayList("item", "item"),
-                new Identifier(Integrations.BETTER_END, "aeternium_ingot")
+                new Identifier(Mods.BETTER_END, "aeternium_ingot")
             )
         );
 
@@ -305,7 +305,7 @@ public class BetterEnd {
                     new Identifier("minecraft", "iron_ingot")
                 ),
                 Lists.newArrayList("tag", "item"),
-                new Identifier(Integrations.BETTER_END, "terminite_ingot")
+                new Identifier(Mods.BETTER_END, "terminite_ingot")
             )
         );
     }
@@ -320,12 +320,12 @@ public class BetterEnd {
             // Endermen drop one Ender Dust 5% of the time.
             // TODO - Consider changing this to the Ender Dust from Applied Energistics?
             if (LootTableHelper.isEnderman(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.05F, Integrations.BETTER_END, "ender_dust");
+                LootTableHelper.addToLootTable(supplier, 1, 0.05F, Mods.BETTER_END, "ender_dust");
             }
 
             // Buried treasure has a 10% chance of containing one Raw Amber.
             if (LootTableHelper.isBuriedTreasure(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.1F, Integrations.BETTER_END, "raw_amber");
+                LootTableHelper.addToLootTable(supplier, 1, 0.1F, Mods.BETTER_END, "raw_amber");
             }
 
         });

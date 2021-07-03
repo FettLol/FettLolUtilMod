@@ -3,22 +3,6 @@ plugins {
     id 'maven-publish'
 }
 
-repositories {
-    maven {
-        name = "Cotton"
-        url  = "http://server.bbkr.space:8081/artifactory/libs-release"
-        allowInsecureProtocol = true
-    }
-    maven {
-        name = "TerraformersMC"
-        url  = "https://maven.terraformersmc.com/releases"
-    }
-    maven {
-        name = "Shedaniel"
-        url  = "https://maven.shedaniel.me/"
-    }
-}
-
 sourceCompatibility = JavaVersion.VERSION_16
 targetCompatibility = JavaVersion.VERSION_16
 
@@ -26,26 +10,55 @@ mod_id = project.mod_id
 version = "${project.mod_version}+${project.minecraft_version}"
 group = project.maven_group
 
+repositories {
+    maven {
+        name = "Cotton"
+        url = "https://server.bbkr.space/artifactory/libs-release"
+    }
+    maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/releases"
+    }
+    maven {
+        name = "Shedaniel"
+        url = "https://maven.shedaniel.me/"
+    }
+}
+
 loom {
     accessWidener "src/main/resources/fettlol.accesswidener"
 }
 
 dependencies {
-    // Minecraft and its related mappings.
+    // Minecraft and Fabric
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-
-    // Fabric API and Fabric Loader
     modImplementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}+${project.minecraft_version}"
 
-    // Dependencies etc.
-    include modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") { exclude(group: "net.fabricmc.fabric-api") }
-    modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") { exclude module: 'fabric-api' }
-    include modImplementation("io.github.cottonmc.cotton:cotton:${project.cotton_version}")
+    // Cotton (Included)
+    include modImplementation("io.github.cottonmc.cotton:cotton-datapack:${project.cotton_datapack_version}")
+    include modImplementation("io.github.cottonmc.cotton:cotton-config:${project.cotton_config_version}")
+    include modImplementation("io.github.cottonmc.cotton:cotton-logging:${project.cotton_logging_version}")
+    include "io.github.cottonmc:Jankson-Fabric:${project.jankson_version}"
+
+    // TOML (Included)
     include implementation("com.moandjiezana.toml:toml4j:${project.toml4j_version}")
+
+    // Config (Included)
     include implementation("com.electronwill.night-config:core:${project.tomlnc_version}")
     include implementation("com.electronwill.night-config:toml:${project.tomlnc_version}")
+
+    // Cloth-Config (Required dependency)
+    modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
+
+    // ModMenu (Required dependency)
+    modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
+        exclude module: 'fabric-api'
+    }
+
 }
 
 processResources {

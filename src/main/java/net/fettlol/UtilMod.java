@@ -40,7 +40,7 @@ public class UtilMod implements ModInitializer {
         FettlolTags.init();
 
         // Register our mod integrations!
-        ModIntegrations.init();
+        FettlolModIntegrations.init();
 
         // Register our commands!
         FettlolCommands.init();
@@ -52,7 +52,7 @@ public class UtilMod implements ModInitializer {
         FettlolRecipes.init();
 
         // And, finally, initialize any remaining tweaks and adjustments that don't fit the list above!
-        Tweaks.init();
+        FettlolTweaks.init();
 
     }
 }

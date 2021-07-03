@@ -42,24 +42,10 @@ public class MixinConditions implements IMixinConfigPlugin {
             return CONFIG.doBabyWitherSkeletonsSpawn();
         } else if (mixinClassName.contains("WitchMixin")) {
             return CONFIG.doWitchesKeepTheirDistance();
-        } else if (mixinClassName.contains("Spawner")) {
-            return true; // No config for this yet.
-        } else if (mixinClassName.contains("Accessor")) {
-            return true; // Always return true for Accessors.
-        } else if (mixinClassName.contains("TagGroupLoaderMixin")) {
-            return true; // Always return true for the TagGroupLoader.
-        } else if (mixinClassName.contains("ResourceSupplier")) {
-            return true; // No config for this yet.
-        } else if (mixinClassName.contains("BiomeFeaturesMixin")) {
-            return true; // No config for this yet.
-        } else if (mixinClassName.contains("MinecraftClientMixin")) {
-            return true; // This feels like something we don't need a config option for.
-        } else if (mixinClassName.contains("Manager")) {
-            return true; // Always return true for PlayerManager and RecipeManager.
-        } else {
-            return false;
         }
 
+        // Default to true for all mixins that do not have configuration.
+        return true;
     }
 
     @Override

@@ -102,7 +102,7 @@ public class HeadHelper {
         }
 
         public SellHeadFactory(Item item, int price, int experience) {
-            this((ItemStack) (new ItemStack(item)), price, 12, experience);
+            this(new ItemStack(item), price, 12, experience);
         }
 
         public SellHeadFactory(Item item, int price, int maxUses, int experience) {
