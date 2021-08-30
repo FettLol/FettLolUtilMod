@@ -4,11 +4,12 @@
 lockfileVersion = 1
 
 [fabric]
-  minecraft = "1.16.5"
-  fabricLoader = "0.11.3"
-  mapping = "1.16.5+build.8"
+  minecraft = "1.17"
+  fabricLoader = "0.11.6"
+  mapping = "1.17+build.13"
 
 [dependencies]
+
   [dependencies.cloth-config]
     name = "cloth-config"
     version = "4.11.9999-0.mpkg.1"
@@ -19,6 +20,7 @@ lockfileVersion = 1
     provider = "minepkg"
     dependend = "test-utils"
     isDev = true
+
   [dependencies.fabric]
     name = "fabric"
     version = "0.32.5"
@@ -28,6 +30,7 @@ lockfileVersion = 1
     url = "https://api.preview.minepkg.io/v1/releases/fabric/fabric@0.32.5/download"
     provider = "minepkg"
     dependend = "_root"
+
   [dependencies.i-am-very-smart]
     name = "i-am-very-smart"
     version = "2.1.0-0.mpkg.1"
@@ -38,6 +41,7 @@ lockfileVersion = 1
     provider = "minepkg"
     dependend = "test-mansion"
     isDev = true
+
   [dependencies.minepkg-companion]
     name = "minepkg-companion"
     version = "0.3.4"
@@ -47,6 +51,7 @@ lockfileVersion = 1
     url = "https://api.preview.minepkg.io/v1/releases/fabric/minepkg-companion@0.3.4/download"
     provider = "minepkg"
     dependend = "_root"
+
   [dependencies.modmenu]
     name = "modmenu"
     version = "1.16.8-0.mpkg.2"
@@ -57,6 +62,7 @@ lockfileVersion = 1
     provider = "minepkg"
     dependend = "i-am-very-smart"
     isDev = true
+
   [dependencies.roughlyenoughitems]
     name = "roughlyenoughitems"
     version = "5.11.218-0.mpkg.1"
@@ -67,6 +73,7 @@ lockfileVersion = 1
     provider = "minepkg"
     dependend = "modmenu"
     isDev = true
+
   [dependencies.test-mansion]
     name = "test-mansion"
     version = "1.11.3"
@@ -77,6 +84,7 @@ lockfileVersion = 1
     provider = "minepkg"
     dependend = "_root"
     isDev = true
+
   [dependencies.test-utils]
     name = "test-utils"
     version = "0.1.1"

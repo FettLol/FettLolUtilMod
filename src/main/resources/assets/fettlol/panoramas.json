@@ -1,10 +1,21 @@
 {
-  "default": {
-    "name": "fettlol:v13",
-    "panoramaId": "fettlol:textures/gui/panoramas/v13/panorama",
+  "v13": {
+    "weight": 1,
     "musicSound": {
       "sound": "music_disc.pigstep",
       "replace_current_music": true
-    }
+    },
+    "panoramas": [
+      {
+        "backgroundId": "fettlol:panoramas/v13/panorama",
+        "movementSettings": {
+          "frozen": false,
+          "addedX": 0.0,
+          "addedY": 0.0,
+          "speedMultiplier": 1.0,
+          "woozy": false
+        }
+      }
+    ]
   }
 }

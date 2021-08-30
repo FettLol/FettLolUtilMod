@@ -108,11 +108,13 @@ public class LootTableHelper {
     // = Blocks =
 
     public static boolean isDiamondOre(Identifier identifier) {
-        return identifier.toString().equals("minecraft:blocks/diamond_ore");
+        return identifier.toString().equals("minecraft:blocks/diamond_ore")
+            || identifier.toString().equals("minecraft:blocks/deepslate_diamond_ore");
     }
 
     public static boolean isLapisOre(Identifier identifier) {
-        return identifier.toString().equals("minecraft:blocks/lapis_ore");
+        return identifier.toString().equals("minecraft:blocks/lapis_ore")
+            || identifier.toString().equals("minecraft:blocks/deepslate_lapis_ore");
     }
 
     public static boolean isSpawner(Identifier identifier) {
@@ -182,23 +184,7 @@ public class LootTableHelper {
             || identifier.toString().equals("biomemakeover:entities/decayed");
     }
 
-    /**
-     * Helper method to add things to a loot table.
-     * <p>
-     * This should be called from within a LootTableLoadingCallback.EVENT.register callback method.
-     * Uses the Binomial Loot Table Range method, as this seems to be the most appropriate in most cases.
-     *
-     * @param supplier    The Supplier field from LootTableLoadingCallback.EVENT.register.
-     * @param count       How many times to try to add this item to the loot table.
-     * @param probability How large probability that the item is added per try.
-     * @param identifier  The Minecraft Registry Identifier of the item to add.
-     */
-    public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
-        FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
-            .rolls(BinomialLootNumberProvider.create(count, probability))
-            .with(ItemEntry.builder(Registry.ITEM.get(identifier).asItem()));
-        supplier.withPool(poolBuilder.build());
-    }
+    // == Add to Ore Loot table - affected by Fortune ==
 
     public static void addToOreLootTable(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
         FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
@@ -210,10 +196,19 @@ public class LootTableHelper {
         supplier.withPool(poolBuilder.build());
     }
 
-    public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
+    public static void addToOreLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
+        addToOreLootTable(supplier, count, probability, new Identifier(namespace, item));
+    }
+
+    public static void addToOreLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String item) {
+        addToOreLootTable(supplier, count, probability, new Identifier(item));
+    }
+
+    // == Add to Loot tables - of mobs, generally ==
+
+    public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
         FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
             .rolls(BinomialLootNumberProvider.create(count, probability))
-            .withFunction(HIGH_LEVEL_TREASURE_ENCHANTMENT)
             .with(ItemEntry.builder(Registry.ITEM.get(identifier).asItem()));
         supplier.withPool(poolBuilder.build());
     }
@@ -222,20 +217,22 @@ public class LootTableHelper {
         addToLootTable(supplier, count, probability, new Identifier(namespace, item));
     }
 
-    public static void addToOreLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
-        addToOreLootTable(supplier, count, probability, new Identifier(namespace, item));
-    }
-
-    public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
-        addToLootTableWithRandomEnchantment(supplier, count, probability, new Identifier(namespace, item));
-    }
-
     public static void addToLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String item) {
         addToLootTable(supplier, count, probability, new Identifier(item));
     }
 
-    public static void addToOreLootTable(FabricLootSupplierBuilder supplier, int count, float probability, String item) {
-        addToOreLootTable(supplier, count, probability, new Identifier(item));
+    // == Add to Loot tables and add a random enchantment - armor and weapons, generally ==
+
+    public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, Identifier identifier) {
+        FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
+            .rolls(BinomialLootNumberProvider.create(count, probability))
+            .withFunction(HIGH_LEVEL_TREASURE_ENCHANTMENT)
+            .with(ItemEntry.builder(Registry.ITEM.get(identifier).asItem()));
+        supplier.withPool(poolBuilder.build());
+    }
+
+    public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, String namespace, String item) {
+        addToLootTableWithRandomEnchantment(supplier, count, probability, new Identifier(namespace, item));
     }
 
     public static void addToLootTableWithRandomEnchantment(FabricLootSupplierBuilder supplier, int count, float probability, String item) {

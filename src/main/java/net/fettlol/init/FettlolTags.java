@@ -32,6 +32,7 @@ public class FettlolTags {
         // Fettlol Items
         builder.applyTag(FabricTags.FABRIC_SWORDS, FettlolItems.KNIGHTFALL);
         builder.applyTag(FabricTags.FABRIC_SWORDS, FettlolItems.PEACEKEEPER);
+        builder.applyTag(FabricTags.FABRIC_AXES, FettlolItems.VALHALLAS_AXE);
         builder.applyTag(GEMS, FettlolItems.AQUAMARINE_GEM);
         builder.applyTag(GEMS, FettlolItems.JADE_GEM);
         builder.applyTag(GEMS, FettlolItems.SOUL_GEM);
