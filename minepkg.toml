@@ -1,3 +1,5 @@
+
+# Preview of the minepkg.toml format! Could break anytime!
 manifestVersion = 0
 
 [package]
@@ -11,14 +13,16 @@ manifestVersion = 0
   homepage = "https://github.com/FettLol/FettLolUtilMod"
   author = "Breki Tomasson <breki.tomasson@gmail.com>"
 
+# These are global requirements
 [requirements]
   minecraft = ">=1.17"
-  fabric = ">=0.11.0"
+  fabricLoader = ">=0.11.0"
 
 [dependencies]
   fabric = "*"
 
 [dev]
   buildCommand = "./gradlew build"
+
   [dev.dependencies]
     test-mansion = "*"
