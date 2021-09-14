@@ -25,30 +25,17 @@ public class GrassSpreadMixin {
                         Block friend = world.getBlockState(pos.add(x, y, z)).getBlock();
                         if (friend instanceof FernBlock || friend instanceof TallPlantBlock) {
                             friends++;
-                            friends *= 1.25;
+                            friends *= 1.75;
                         }
                     }
                 }
             }
 
-            if (above == Blocks.AIR && random.nextFloat() < 0.0125D * (friends)) {
+            if (above == Blocks.AIR && random.nextFloat() < 0.001D * friends) {
                 world.setBlockState(pos.up(), Blocks.GRASS.getDefaultState());
                 ci.cancel();
             }
 
-            /*
-            // Commented out due to issues with placeAt, which changed in 1.17 by
-            // requiring a BlockState. Removing this makes grass spreading no longer
-            // generate tall grass, which we can live without for now...
-            else if (0.01F > 0.000001 && above == Blocks.GRASS) {
-                Random tallGrassRandom = new Random();
-                tallGrassRandom.setSeed(pos.asLong());
-                if (tallGrassRandom.nextFloat() < 0.01F && random.nextFloat() < 0.0125D) {
-                    ((TallPlantBlock) Blocks.TALL_GRASS).placeAt((WorldAccess) world, state, pos.up(), 2);
-                    ci.cancel();
-                }
-            }
-            */
         }
     }
 }
