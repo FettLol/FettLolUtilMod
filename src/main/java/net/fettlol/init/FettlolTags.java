@@ -122,6 +122,7 @@ public class FettlolTags {
         if (FettlolModIntegrations.isBygLoaded) {
             builder.applyTag(VanillaTags.STONE_CRAFTING_MATERIALS, Mods.BYG, "rocky_stone");
             builder.applyTag(RAINBOW_SAPLINGS, Mods.BYG, "rainbow_eucalyptus_sapling");
+            builder.applyTag(CommonTags.C_QUARTZ, Mods.BYG, "quartz_crystal");
         }
 
         // Tech Reborn

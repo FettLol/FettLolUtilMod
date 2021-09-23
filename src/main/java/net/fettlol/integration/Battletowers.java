@@ -25,11 +25,11 @@ public class Battletowers {
                     }
 
                     if (FettlolModIntegrations.isMidasHungerLoaded) {
-                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Mods.MIDAS_HUNGER, "baked_golden_potato");
-                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Mods.MIDAS_HUNGER, "cooked_golden_beef");
-                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Mods.MIDAS_HUNGER, "cooked_golden_mutton");
-                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Mods.MIDAS_HUNGER, "cooked_golden_porkchop");
-                        LootTableHelper.addToLootTable(supplier, 8, 0.03F, Mods.MIDAS_HUNGER, "cooked_golden_rabbit");
+                        LootTableHelper.addToLootTable(supplier, 8, 0.02F, Mods.MIDAS_HUNGER, "baked_golden_potato");
+                        LootTableHelper.addToLootTable(supplier, 8, 0.02F, Mods.MIDAS_HUNGER, "cooked_golden_beef");
+                        LootTableHelper.addToLootTable(supplier, 8, 0.02F, Mods.MIDAS_HUNGER, "cooked_golden_mutton");
+                        LootTableHelper.addToLootTable(supplier, 8, 0.02F, Mods.MIDAS_HUNGER, "cooked_golden_porkchop");
+                        LootTableHelper.addToLootTable(supplier, 8, 0.02F, Mods.MIDAS_HUNGER, "cooked_golden_rabbit");
                     }
 
                     if (FettlolModIntegrations.isBygLoaded) {
@@ -42,7 +42,14 @@ public class Battletowers {
                     }
 
                     if (FettlolModIntegrations.isWingedLoaded) {
-                        LootTableHelper.addToLootTable(supplier, 1, 0.02F, Mods.WINGED, "wing_random");
+                        // Low chance of finding a random wing in Battle Towers.
+                        LootTableHelper.addToLootTable(supplier, 1, 0.01F, Mods.WINGED, "wing_random");
+
+                        // 3% Chance of finding a broken core
+                        LootTableHelper.addToLootTable(supplier, 1, 0.03F, Mods.WINGED, "broken_core_of_flight_50");
+
+                        // 8% Chance of finding Shards of Zephyr
+                        LootTableHelper.addToLootTable(supplier, 1, 0.08F, Mods.WINGED, "shard_of_zephyr");
                     }
                 }
             });

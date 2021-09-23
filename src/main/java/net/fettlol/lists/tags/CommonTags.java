@@ -4,11 +4,7 @@ import net.fettlol.util.TagHelper;
 import net.minecraft.item.Item;
 import net.minecraft.tag.Tag;
 
-/**
- * This file contains definitions for tags in the Common ("c") namespace.
- */
 public class CommonTags {
-
     public static final Tag.Identified<Item> C_IRON_INGOTS = TagHelper.makeItemTag("c", "iron_ingots");
     public static final Tag.Identified<Item> C_SANDSTONE = TagHelper.makeItemTag("c", "sandstone");
     public static final Tag.Identified<Item> C_BOOKSHELVES = TagHelper.makeItemTag("c", "bookshelves");
@@ -17,5 +13,4 @@ public class CommonTags {
     public static final Tag.Identified<Item> C_WOODEN_CHESTS = TagHelper.makeItemTag("c", "wooden_chests");
     public static final Tag.Identified<Item> C_VANILLAS = TagHelper.makeItemTag("c", "vanillas");
     public static final Tag.Identified<Item> C_QUARTZ = TagHelper.makeItemTag("c", "quartz");
-
 }
