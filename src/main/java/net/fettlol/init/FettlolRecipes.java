@@ -14,19 +14,9 @@ public class FettlolRecipes {
     public static HashMap<String, JsonObject> CUSTOM_RECIPES = new HashMap<>();
 
     public static void init() {
-        // Simplified or alternate versions of existing recipes.
-        addSimplifiedDispenserRecipe();
-        addSimplifiedDropperRecipe();
-        addSimplifiedFurnaceRecipe();
-        addSimplifiedObserverRecipe();
-        addSimplifiedPistonRecipe();
-        addSimplifiedRepeaterRecipe();
-
-        // Bonus recipes for previously uncraftable things.
-        addEnchantedGoldenAppleRecipe();
-        addHopperRecipe();
         addTridentRecipe();
         addSaddleRecipe();
+        addEnchantedGoldenAppleRecipe();
     }
 
     private static void addTridentRecipe() {
@@ -66,22 +56,6 @@ public class FettlolRecipes {
         );
     }
 
-    private static void addHopperRecipe() {
-        CUSTOM_RECIPES.put(
-            "extras/hopper",
-            RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('I', 'C'),
-                Lists.newArrayList(
-                    new Identifier("c", "wooden_chests"),
-                    new Identifier("c", "iron_ingots")
-                ),
-                Lists.newArrayList("tag", "tag"),
-                Lists.newArrayList("I I", "ICI", " I "),
-                new Identifier("minecraft", "hopper")
-            )
-        );
-    }
-
     private static void addEnchantedGoldenAppleRecipe() {
         CUSTOM_RECIPES.put(
             "extras/egapple",
@@ -97,110 +71,5 @@ public class FettlolRecipes {
             )
         );
     }
-
-    private static void addSimplifiedDispenserRecipe() {
-        CUSTOM_RECIPES.put(
-            "cobblestone/dispenser",
-            RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('S', 'R', 'B'),
-                Lists.newArrayList(
-                    new Identifier("minecraft", "stone_crafting_materials"),
-                    new Identifier("minecraft", "redstone"),
-                    new Identifier("fabric", "bows")
-                ),
-                Lists.newArrayList("tag", "item", "tag"),
-                Lists.newArrayList("SSS", "SBS", "SRS"),
-                new Identifier("minecraft", "dispenser")
-            )
-        );
-    }
-
-    private static void addSimplifiedDropperRecipe() {
-        CUSTOM_RECIPES.put(
-            "cobblestone/dropper",
-            RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('S', 'R'),
-                Lists.newArrayList(
-                    new Identifier("minecraft", "stone_crafting_materials"),
-                    new Identifier("minecraft", "redstone")
-                ),
-                Lists.newArrayList("tag", "item"),
-                Lists.newArrayList("SSS", "S S", "SRS"),
-                new Identifier("minecraft", "dropper")
-            )
-        );
-    }
-
-    private static void addSimplifiedObserverRecipe() {
-        // c:quartz is defined in FettlolTags.java in case we're running in an environment
-        // that doesn't have this tag defined yet.
-        CUSTOM_RECIPES.put(
-            "cobblestone/observer",
-            RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('S', 'R', 'Q'),
-                Lists.newArrayList(
-                    new Identifier("minecraft", "stone_crafting_materials"),
-                    new Identifier("minecraft", "redstone"),
-                    new Identifier("c", "quartz")
-                ),
-                Lists.newArrayList("tag", "item", "tag"),
-                Lists.newArrayList("SSS", "RRQ", "SSS"),
-                new Identifier("minecraft", "observer")
-            )
-        );
-    }
-
-    private static void addSimplifiedFurnaceRecipe() {
-        CUSTOM_RECIPES.put(
-            "cobblestone/furnace",
-            RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('S'),
-                Lists.newArrayList(
-                    new Identifier("minecraft", "stone_crafting_materials")
-                ),
-                Lists.newArrayList("tag"),
-                Lists.newArrayList("SSS", "S S", "SSS"),
-                new Identifier("minecraft", "furnace")
-            )
-        );
-    }
-
-    private static void addSimplifiedPistonRecipe() {
-        // c:iron_ingots is defined in FettlolTags.java in case we're running in an environment
-        // that doesn't have this tag defined yet.
-        CUSTOM_RECIPES.put(
-            "cobblestone/piston",
-            RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('P', 'S', 'R', 'I'),
-                Lists.newArrayList(
-                    new Identifier("minecraft", "planks"),
-                    new Identifier("minecraft", "stone_crafting_materials"),
-                    new Identifier("minecraft", "redstone"),
-                    new Identifier("c", "iron_ingots")
-                ),
-                Lists.newArrayList("tag", "tag", "item", "tag"),
-                Lists.newArrayList("PPP", "SIS", "SRS"),
-                new Identifier("minecraft", "piston")
-            )
-        );
-    }
-
-    public static void addSimplifiedRepeaterRecipe() {
-        CUSTOM_RECIPES.put(
-            "simplified/repeater",
-            RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('S', 'R', 'T'),
-                Lists.newArrayList(
-                    new Identifier("minecraft", "stone_crafting_materials"),
-                    new Identifier("minecraft", "redstone"),
-                    new Identifier("minecraft", "stick")
-                ),
-                Lists.newArrayList("tag", "item", "item"),
-                Lists.newArrayList("R R", "TRT", "SSS"),
-                new Identifier("minecraft", "repeater")
-            )
-        );
-    }
-
 
 }
