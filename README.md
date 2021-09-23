@@ -4,7 +4,7 @@ This mod adds a number of minor tweaks that were desired on the `fett.lol` Minec
 
 ## The List of Implemented Tweaks
 
-- (Work in Progress) A new biome named "The Fettlands" with a number of new challenges and opportunities.
+- Amethyst Clusters now drop XP when mined without Silk Touch.
 - Two new swords, "Knightfall" and "Peacekeeper" exist, with drops in various Nether and End locations, respectively.
 - A new "Egg Collector" enchant for weapons gives a 3% chance for mobs to drop their spawn eggs when killed.
 - Villagers will follow players carrying an Emerald Block.

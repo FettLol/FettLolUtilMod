@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,7 +25,8 @@ public abstract class AutoPlantMixin extends Entity {
         super(type, world);
     }
 
-    @Shadow public abstract ItemStack getStack();
+    @Shadow
+    public abstract ItemStack getStack();
 
     private BlockPos triedToPlantAt;
 
@@ -37,20 +39,31 @@ public abstract class AutoPlantMixin extends Entity {
             BlockPos pos = this.getBlockPos();
             if (this.getBlockPos() != triedToPlantAt && world.getFluidState(pos).isEmpty()) {
                 if (ItemTags.SAPLINGS.contains(item)) {
-                    ((BlockItem) item).place(new ItemPlacementContext(world, null, null, stack, world.raycast(
-                        new RaycastContext(
-                            new Vec3d(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5),
-                            new Vec3d(pos.getX() + 0.5, pos.getY() - 0.5, pos.getZ() + 0.5),
-                            RaycastContext.ShapeType.COLLIDER,
-                            RaycastContext.FluidHandling.ANY,
-                            this
-                        )
-                    )));
+                    ((BlockItem) item).place(getItemPlacementContext(stack, pos));
 
                     triedToPlantAt = this.getBlockPos();
                 }
             }
         }
+    }
+
+    @NotNull
+    private ItemPlacementContext getItemPlacementContext(ItemStack stack, BlockPos pos) {
+        return new ItemPlacementContext(
+            world,
+            null,
+            null,
+            stack,
+            world.raycast(
+                new RaycastContext(
+                    new Vec3d(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5),
+                    new Vec3d(pos.getX() + 0.5, pos.getY() - 0.5, pos.getZ() + 0.5),
+                    RaycastContext.ShapeType.COLLIDER,
+                    RaycastContext.FluidHandling.ANY,
+                    this
+                )
+            )
+        );
     }
 
 }

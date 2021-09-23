@@ -1,6 +1,8 @@
 package net.fettlol.mixin.world;
 
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.SpreadableBlock;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,29 +15,26 @@ import java.util.Random;
 
 @Mixin(SpreadableBlock.class)
 public class GrassSpreadMixin {
-    @Inject(method = "randomTick", at = @At(value = "INVOKE", target = "net/minecraft/block/SpreadableBlock.getDefaultState()Lnet/minecraft/block/BlockState;"), cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
+
+    @Inject(
+        method = "randomTick",
+        at = @At(value = "INVOKE", target = "net/minecraft/block/SpreadableBlock.getDefaultState()Lnet/minecraft/block/BlockState;"),
+        cancellable = true,
+        locals = LocalCapture.CAPTURE_FAILHARD
+    )
     public void growGrass(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
         if (state.getBlock() == Blocks.GRASS_BLOCK) {
-            Block above = world.getBlockState(pos.up()).getBlock();
-            int friends = 1;
-
-            for (int x = -1; x <= 1; x++) {
-                for (int y = 0; y <= 1; y++) {
-                    for (int z = -1; z <= 1; z++) {
-                        Block friend = world.getBlockState(pos.add(x, y, z)).getBlock();
-                        if (friend instanceof FernBlock || friend instanceof TallPlantBlock) {
-                            friends++;
-                            friends *= 1.75;
-                        }
-                    }
-                }
-            }
-
-            if (above == Blocks.AIR && random.nextFloat() < 0.001D * friends) {
+            if (grassSpawnCriteriaAreMet(world, pos, random)) {
+                System.out.println("I'M A GROWING A GRASSIE");
                 world.setBlockState(pos.up(), Blocks.GRASS.getDefaultState());
                 ci.cancel();
             }
-
         }
     }
+
+    private boolean grassSpawnCriteriaAreMet(ServerWorld world, BlockPos pos, Random random) {
+        // Spawn criteria: Grass block has sky access and a random roll of one in ten thousand.
+        return world.isSkyVisible(pos.up()) && random.nextFloat() < 0.0001F;
+    }
+
 }

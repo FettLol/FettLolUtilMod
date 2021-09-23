@@ -29,7 +29,8 @@
     "world.AutoPlantMixin",
     "world.BiomeFeaturesMixin",
     "world.GrassSpreadMixin",
-    "world.SnowFallsThroughLeavesMixin"
+    "world.SnowFallsThroughLeavesMixin",
+    "world.AmethystClusterMixin"
   ],
   "injectors": {
     "defaultRequire": 1

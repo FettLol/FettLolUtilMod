@@ -30,6 +30,9 @@ public class MixinConditions implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+        // Exceptions for those mixins that have configuration tied to them, so that they're not loaded
+        // rather than loaded but then ignored using conditionals in the Mixin.
+
         if (mixinClassName.contains("InfinityBowArrow")) {
             return CONFIG.doesInfinityWorkWithoutArrows();
         } else if (mixinClassName.contains("InfinityBowMending")) {

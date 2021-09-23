@@ -6,6 +6,12 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 
+/**
+ * The Egg Collector enchantment is an enchantment that goes on Swords and/or Axes,
+ * giving the player a small chance to get a Spawn Egg whenever a mob is killed.
+ *
+ * @see net.fettlol.mixin.enchantments.EggCollectorMixin
+ */
 public class EggCollectorEnchantment extends Enchantment {
 
     public EggCollectorEnchantment(Rarity rarity, EquipmentSlot... equipmentSlot) {
