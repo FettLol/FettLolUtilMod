@@ -25,7 +25,6 @@ public class GrassSpreadMixin {
     public void growGrass(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
         if (state.getBlock() == Blocks.GRASS_BLOCK) {
             if (grassSpawnCriteriaAreMet(world, pos, random)) {
-                System.out.println("I'M A GROWING A GRASSIE");
                 world.setBlockState(pos.up(), Blocks.GRASS.getDefaultState());
                 ci.cancel();
             }
