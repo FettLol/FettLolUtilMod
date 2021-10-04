@@ -39,8 +39,6 @@ public class HeadHelper {
 
         playerHead.setCustomName(new LiteralText(playerName));
 
-        LogHelper.log(playerHead.getNbt().toString());
-
         return playerHead;
     }
 
@@ -53,8 +51,6 @@ public class HeadHelper {
         playerHead.writeNbt(tag);
 
         playerHead.setCustomName(new LiteralText(playerName));
-
-        LogHelper.log(playerHead.getNbt().toString());
 
         return playerHead;
     }
