@@ -25,7 +25,7 @@ public class BiomesYoullGo {
     private static void defineRecipesForByg() {
         // Add a recipe for Therium Crystals, which seems to be missing in BYG.
         FettlolRecipes.CUSTOM_RECIPES.put(
-            bygItem("/therium_shard"),
+            Mods.BYG + "/therium_shard",
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('T'),
                 Lists.newArrayList(
