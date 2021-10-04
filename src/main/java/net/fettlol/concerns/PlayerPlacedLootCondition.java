@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
-import net.fettlol.UtilMod;
+import net.fettlol.util.RegistryHelper;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
@@ -12,7 +12,6 @@ import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextParameter;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonSerializer;
 import net.minecraft.util.registry.Registry;
 
@@ -20,7 +19,7 @@ import java.util.Set;
 
 public class PlayerPlacedLootCondition implements LootCondition {
 	public static final LootConditionType PLAYER_PLACED = Registry.register(Registry.LOOT_CONDITION_TYPE,
-		new Identifier(UtilMod.MOD_ID, "playerplaced"),
+		RegistryHelper.fettlolId("playerplaced"),
 		new LootConditionType(new Serializer()));
 
 	@Override

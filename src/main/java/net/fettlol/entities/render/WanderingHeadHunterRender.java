@@ -3,10 +3,8 @@ package net.fettlol.entities.render;
 import net.fettlol.entities.WanderingHeadHunterEntity;
 import net.fettlol.entities.render.feature.WanderingHeadHunterFeatureRenderer;
 import net.fettlol.util.RegistryHelper;
-import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
-import net.minecraft.client.render.entity.feature.HeadFeatureRenderer;
 import net.minecraft.client.render.entity.feature.VillagerHeldItemFeatureRenderer;
 import net.minecraft.client.render.entity.model.EntityModelLayers;
 import net.minecraft.client.render.entity.model.VillagerResemblingModel;
@@ -16,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 
 public class WanderingHeadHunterRender extends MobEntityRenderer<WanderingHeadHunterEntity, VillagerResemblingModel<WanderingHeadHunterEntity>> {
 
-    private static final Identifier TEXTURE = RegistryHelper.makeId("textures/entity/headhunter.png");
+    private static final Identifier TEXTURE = RegistryHelper.fettlolId("textures/entity/headhunter.png");
 
     public WanderingHeadHunterRender(EntityRendererFactory.Context context) {
         super(context, new VillagerResemblingModel<>(context.getPart(EntityModelLayers.WANDERING_TRADER)), 0.5F);

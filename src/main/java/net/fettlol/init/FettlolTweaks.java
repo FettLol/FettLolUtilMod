@@ -2,11 +2,9 @@ package net.fettlol.init;
 
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fettlol.UtilMod;
-import net.fettlol.blocks.dispenser.BoneMealDispenserBehavior;
 import net.fettlol.util.BlockHelper;
 import net.fettlol.util.RegistryHelper;
 import net.minecraft.block.Block;
-import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BoneMealItem;
 import net.minecraft.item.ItemStack;
@@ -31,9 +29,6 @@ public class FettlolTweaks {
         if (UtilMod.CONFIG.doesPoisonousPotatoCompost()) {
             RegistryHelper.makeCompostable(Items.POISONOUS_POTATO, 0.85f);
         }
-
-        // Dispensers should be able to duplicate flowers with Bone Meal.
-        DispenserBlock.registerBehavior(Items.BONE_MEAL, new BoneMealDispenserBehavior());
 
         // Players should be able to duplicate flowers with Bone Meal.
         UseBlockCallback.EVENT.register(FettlolTweaks::growOnUseBlock);

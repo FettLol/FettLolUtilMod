@@ -10,6 +10,7 @@ public class FettlolModIntegrations {
         return FabricLoader.getInstance().isModLoaded(adorn);
     }
 
+    public static boolean isAdditionalAdditionsLoaded = isModLoaded(Mods.ADDITIONAL_ADDITIONS);
     public static boolean isAdornLoaded = isModLoaded(Mods.ADORN);
     public static boolean isAppliedEnergisticsLoaded = isModLoaded(Mods.APPLIED_ENERGISTICS);
     public static boolean isBattletowersLoaded = isModLoaded(Mods.BATTLETOWERS);
@@ -35,6 +36,7 @@ public class FettlolModIntegrations {
     public static boolean isWingedLoaded = isModLoaded(Mods.WINGED);
 
     public static void init() {
+        AdditionalAdditions.init();
         Battletowers.init();
         BetterEnd.init();
         BiomesYoullGo.init();

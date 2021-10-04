@@ -7,7 +7,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtIntArray;
 import net.minecraft.nbt.StringNbtReader;
 import net.minecraft.text.LiteralText;
 import net.minecraft.village.TradeOffer;
@@ -15,42 +14,47 @@ import net.minecraft.village.TradeOffers;
 
 import java.util.Random;
 
-import static net.fettlol.UtilMod.LOGGER;
-
 public class HeadHelper {
-
-    private static String getIntArray(int[] idArray) {
-        return new NbtIntArray(idArray).toString();
-    }
 
     public static ItemStack getPlayerHeadWithTexture(String playerName, int[] idArray, String texture) {
         ItemStack playerHead = new ItemStack(Items.PLAYER_HEAD, 1);
+        NbtCompound tag = playerHead.getOrCreateNbt();
 
-        NbtCompound tag = null;
+        NbtCompound value = new NbtCompound();
+        NbtCompound textures = new NbtCompound();
+        NbtCompound skullOwner = new NbtCompound();
 
         try {
-            tag = StringNbtReader.parse(
-                "{SkullOwner:{Id:" + getIntArray(idArray) + ",Properties:{textures:[{Value:\"" + texture + "\"}]}}}"
-            );
+            value.putString("Value", texture);
+            textures = StringNbtReader.parse("{textures:[" + value + "]}");
+            skullOwner.putIntArray("Id", idArray);
+            skullOwner.put("Properties", textures);
         } catch (CommandSyntaxException e) {
-            LOGGER.error(e);
+            e.printStackTrace();
         }
 
-        playerHead.setTag(tag);
+        tag.put("SkullOwner", skullOwner);
+
+        playerHead.writeNbt(tag);
 
         playerHead.setCustomName(new LiteralText(playerName));
+
+        LogHelper.log(playerHead.getNbt().toString());
 
         return playerHead;
     }
 
     public static ItemStack getPlayerHead(String playerName, String skullOwner) {
         ItemStack playerHead = new ItemStack(Items.PLAYER_HEAD, 1);
+        NbtCompound tag = playerHead.getOrCreateNbt();
 
-        NbtCompound tag = playerHead.getOrCreateTag();
         tag.putString("SkullOwner", skullOwner);
-        playerHead.setTag(tag);
+
+        playerHead.writeNbt(tag);
 
         playerHead.setCustomName(new LiteralText(playerName));
+
+        LogHelper.log(playerHead.getNbt().toString());
 
         return playerHead;
     }

@@ -20,7 +20,7 @@ public class FettlolEntities {
     public static final EntityType<WanderingHeadHunterEntity> WANDERING_HEAD_HUNTER =
         Registry.register(
             Registry.ENTITY_TYPE,
-            RegistryHelper.makeId("wandering_headhunter"),
+            RegistryHelper.fettlolId("wandering_headhunter"),
             FabricEntityTypeBuilder.create(SpawnGroup.AMBIENT, WanderingHeadHunterEntity::new)
                 .dimensions(EntityDimensions.fixed(0.6F, 1.95F))
                 .trackRangeBlocks(12)

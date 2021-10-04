@@ -16,9 +16,9 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import java.util.Map;
 
 /**
- * This file is required to make sure the various tags defined and used
- * all over the place are actually loaded/generated and applied to the
- * various blocks and items they should be applied to.
+ * This file is required to make sure the various tags defined and used all over the place are actually loaded and/or
+ * generated and applied to the various blocks and items they should be applied to. See net.fettlol.init.FettlolTags for
+ * more details.
  */
 @Mixin(TagGroupLoader.class)
 public class TagGroupLoaderMixin {

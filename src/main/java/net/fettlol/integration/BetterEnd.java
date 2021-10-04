@@ -2,10 +2,10 @@ package net.fettlol.integration;
 
 import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
-import net.fettlol.UtilMod;
-import net.fettlol.init.FettlolRecipes;
 import net.fettlol.init.FettlolModIntegrations;
+import net.fettlol.init.FettlolRecipes;
 import net.fettlol.lists.Mods;
+import net.fettlol.util.LogHelper;
 import net.fettlol.util.LootTableHelper;
 import net.fettlol.util.RecipeHelper;
 import net.minecraft.util.Identifier;
@@ -14,12 +14,11 @@ public class BetterEnd {
 
     public static void init() {
         if (FettlolModIntegrations.isBetterEndLoaded) {
-            UtilMod.LOGGER.info("Better End detected! Applying integrations.");
+            LogHelper.log("Better End detected! Applying integrations.");
 
             RecipeHelper.removeRecipe(Mods.BETTER_END, "tag_rail");
 
             defineLootTablesForBetterEnd();
-
             defineRecipesForBetterEnd();
         }
     }
@@ -317,13 +316,13 @@ public class BetterEnd {
     private static void defineLootTablesForBetterEnd() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
 
-            // Endermen drop one Ender Dust 5% of the time.
-            // TODO - Consider changing this to the Ender Dust from Applied Energistics?
+            // Endermen: Add Ender Dust (5%).
+            // @todo Change this to the Ender Dust from Applied Energistics?
             if (LootTableHelper.isEnderman(identifier)) {
                 LootTableHelper.addToLootTable(supplier, 1, 0.05F, Mods.BETTER_END, "ender_dust");
             }
 
-            // Buried treasure has a 10% chance of containing one Raw Amber.
+            // Buried Treasure: Add Raw Amber (10%).
             if (LootTableHelper.isBuriedTreasure(identifier)) {
                 LootTableHelper.addToLootTable(supplier, 1, 0.1F, Mods.BETTER_END, "raw_amber");
             }

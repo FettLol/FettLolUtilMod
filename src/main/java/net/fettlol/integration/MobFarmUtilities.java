@@ -5,6 +5,7 @@ import net.fettlol.UtilMod;
 import net.fettlol.init.FettlolRecipes;
 import net.fettlol.init.FettlolModIntegrations;
 import net.fettlol.lists.Mods;
+import net.fettlol.util.LogHelper;
 import net.fettlol.util.RecipeHelper;
 import net.minecraft.util.Identifier;
 
@@ -12,7 +13,7 @@ public class MobFarmUtilities {
 
     public static void init() {
         if (FettlolModIntegrations.isMobFarmUtilitiesLoaded) {
-            UtilMod.LOGGER.info("Mob Farm Utilities detected! Applying integrations!");
+            LogHelper.log("Mob Farm Utilities detected! Applying integrations!");
 
             if (FettlolModIntegrations.isTechRebornLoaded) {
                 replaceExperienceCollectorRecipe();

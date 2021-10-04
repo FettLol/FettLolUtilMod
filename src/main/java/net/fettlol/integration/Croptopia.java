@@ -1,9 +1,9 @@
 package net.fettlol.integration;
 
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
-import net.fettlol.UtilMod;
 import net.fettlol.init.FettlolModIntegrations;
 import net.fettlol.lists.Mods;
+import net.fettlol.util.LogHelper;
 import net.fettlol.util.LootTableHelper;
 import net.minecraft.util.Identifier;
 
@@ -11,7 +11,7 @@ public class Croptopia {
 
     public static void init() {
         if (FettlolModIntegrations.isCroptopiaLoaded) {
-            UtilMod.LOGGER.info("Croptopia detected! Applying integrations!");
+            LogHelper.log("Croptopia detected! Applying integrations!");
 
             updateLootTablesForCroptopia();
         }

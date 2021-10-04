@@ -1,15 +1,15 @@
 package net.fettlol.integration;
 
-import net.fettlol.UtilMod;
+import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fettlol.init.FettlolModIntegrations;
 import net.fettlol.lists.Mods;
+import net.fettlol.util.LogHelper;
 import net.fettlol.util.LootTableHelper;
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 
 public class MidasHunger {
     public static void init() {
         if (FettlolModIntegrations.isMidasHungerLoaded) {
-            UtilMod.LOGGER.info("Midas Hunger detected! Applying integrations!");
+            LogHelper.log("Midas Hunger detected! Applying integrations!");
 
             LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
 

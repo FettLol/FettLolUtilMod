@@ -6,6 +6,7 @@ import net.fettlol.UtilMod;
 import net.fettlol.init.FettlolRecipes;
 import net.fettlol.init.FettlolModIntegrations;
 import net.fettlol.lists.Mods;
+import net.fettlol.util.LogHelper;
 import net.fettlol.util.LootTableHelper;
 import net.fettlol.util.RecipeHelper;
 import net.minecraft.util.Identifier;
@@ -14,14 +15,14 @@ public class Winged {
 
     public static void init() {
         if (FettlolModIntegrations.isWingedLoaded) {
-            UtilMod.LOGGER.info("Winged detected! Applying integrations!");
+            LogHelper.log("Winged detected! Applying integrations!");
 
             removeRecipes();
 
             replaceCoreOfFlightRecipe();
 
             LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
-                // 1% Chance of finding a random set of Wings in End City chests
+                // "End" Endgame: Add Random Wings (1%).
                 if (LootTableHelper.isEndEndgame(identifier)) {
                     LootTableHelper.addToLootTable(supplier, 1, 0.01F, Mods.WINGED, "wing_random");
                 }

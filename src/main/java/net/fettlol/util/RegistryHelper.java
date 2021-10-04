@@ -1,7 +1,7 @@
 package net.fettlol.util;
 
-import net.fettlol.UtilMod;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.fettlol.UtilMod;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -11,9 +11,9 @@ import java.lang.reflect.Modifier;
 import java.util.Locale;
 import java.util.Optional;
 
-import static net.fettlol.UtilMod.LOGGER;
-
 public class RegistryHelper {
+
+    private RegistryHelper() {}
 
     @SafeVarargs
     @SuppressWarnings("unchecked")
@@ -25,9 +25,9 @@ public class RegistryHelper {
                         && Modifier.isStatic(field.getModifiers())
                         && Modifier.isFinal(field.getModifiers())
                 ) {
-                    T value = (T)field.get(from);
+                    T value = (T) field.get(from);
                     String registryName = field.getName().toLowerCase(Locale.ENGLISH);
-                    Identifier id = RegistryHelper.makeId(registryName);
+                    Identifier id = RegistryHelper.fettlolId(registryName);
 
                     Registry.register(registry, id, value);
 
@@ -37,29 +37,23 @@ public class RegistryHelper {
                 }
             }
         } catch (Exception e) {
-            LOGGER.error(e);
+            LogHelper.log("ERROR: " + e);
         }
     }
 
-    public static Identifier makeId(String name) {
-        return new Identifier(UtilMod.MOD_ID, name);
+    // Return an Identifier for an item/entity/whatever in a given namespace.
+    public static Identifier modId(String namespace, String name) {
+        return new Identifier(namespace, name);
     }
 
-    public static void makeCompostable(Item item, float value) {
-        CompostingChanceRegistry.INSTANCE.add(item, value);
+    // Returns an Identifier in the "fettlol" namespace.
+    public static Identifier fettlolId(String name) {
+        return modId(UtilMod.MOD_ID, name);
     }
 
-    public static void makeCompostable(Identifier identifier, float value) {
-        Optional<Item> maybeItem = Registry.ITEM.getOrEmpty(identifier);
-        if (!maybeItem.isPresent()) {
-            LOGGER.warn("couldn't make {} compostable", identifier);
-        } else {
-            makeCompostable(maybeItem.get(), value);
-        }
-    }
-
-    public static void makeCompostable(String namespace, String itemName, float value) {
-        makeCompostable(new Identifier(namespace, itemName), value);
+    // Returns an Identifier in the "minecraft" namespace
+    public static Identifier vanillaId(String name) {
+        return modId("minecraft", name);
     }
 
     public static Item getItemFromRegistry(String itemName) {
@@ -74,6 +68,22 @@ public class RegistryHelper {
         void callback(Registry<T> registry, T registryObject, Identifier identifier);
     }
 
-    private RegistryHelper() {}
+    // This method doesn't *really* belong here, but there's no better place for it right now.
+    public static void makeCompostable(Item item, float value) {
+        CompostingChanceRegistry.INSTANCE.add(item, value);
+    }
+
+    public static void makeCompostable(Identifier identifier, float value) {
+        Optional<Item> maybeItem = Registry.ITEM.getOrEmpty(identifier);
+        if (!maybeItem.isPresent()) {
+            LogHelper.log("couldn't make " + identifier.toString() + " compostable.");
+        } else {
+            makeCompostable(maybeItem.get(), value);
+        }
+    }
+
+    public static void makeCompostable(String namespace, String itemName, float value) {
+        makeCompostable(new Identifier(namespace, itemName), value);
+    }
 
 }

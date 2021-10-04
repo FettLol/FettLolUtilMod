@@ -4,11 +4,7 @@ import net.fettlol.util.TagHelper;
 import net.minecraft.item.Item;
 import net.minecraft.tag.Tag;
 
-/**
- * This file contains definitions for various tags in the "Fabric" namespace.
- */
 public class FabricTags {
-
     public static final Tag.Identified<Item> FABRIC_AXES = TagHelper.makeItemTag("fabric", "axes");
     public static final Tag.Identified<Item> FABRIC_BOOTS = TagHelper.makeItemTag("fabric", "boots");
     public static final Tag.Identified<Item> FABRIC_BOWS = TagHelper.makeItemTag("fabric", "bows");

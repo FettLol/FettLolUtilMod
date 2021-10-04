@@ -6,15 +6,19 @@ import net.fettlol.UtilMod;
 import net.fettlol.init.FettlolRecipes;
 import net.fettlol.init.FettlolModIntegrations;
 import net.fettlol.lists.Mods;
+import net.fettlol.util.LogHelper;
 import net.fettlol.util.LootTableHelper;
 import net.fettlol.util.RecipeHelper;
 import net.minecraft.util.Identifier;
 
+/**
+ * @todo Update these recipes to include tokens from the Tokenable Furnaces & Storage mod?
+ */
 public class DankStorage {
 
     public static void init() {
         if (FettlolModIntegrations.isDankStorageLoaded) {
-            UtilMod.LOGGER.info("Dank Storage detected! Applying integrations.");
+            LogHelper.log("Dank Storage detected! Applying integrations.");
 
             replaceDankRecipes();
 

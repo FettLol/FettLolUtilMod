@@ -142,7 +142,7 @@ public class RecipeHelper {
      */
     public static void addCustomRecipe(Map<Identifier, JsonElement> map, String recipeName, JsonObject definition) {
         if (definition != null) {
-            map.put(RegistryHelper.makeId(recipeName), definition);
+            map.put(RegistryHelper.fettlolId(recipeName), definition);
         }
     }
 }

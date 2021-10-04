@@ -2,19 +2,20 @@ package net.fettlol.integration;
 
 import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
-import net.fettlol.UtilMod;
-import net.fettlol.init.FettlolRecipes;
 import net.fettlol.init.FettlolModIntegrations;
+import net.fettlol.init.FettlolRecipes;
 import net.fettlol.lists.Mods;
+import net.fettlol.util.LogHelper;
 import net.fettlol.util.LootTableHelper;
 import net.fettlol.util.RecipeHelper;
-import net.minecraft.util.Identifier;
+import net.fettlol.util.RegistryHelper;
+import org.jetbrains.annotations.NotNull;
 
 public class BiomesYoullGo {
 
     public static void init() {
         if (FettlolModIntegrations.isBygLoaded) {
-            UtilMod.LOGGER.info("Biomes You'll Go detected! Applying integrations.");
+            LogHelper.log("Biomes You'll Go detected! Applying integrations.");
 
             updateLootTablesForByg();
             defineRecipesForByg();
@@ -22,13 +23,29 @@ public class BiomesYoullGo {
     }
 
     private static void defineRecipesForByg() {
-        addTheriumCrystalRecipe();
+        // Add a recipe for Therium Crystals, which seems to be missing in BYG.
+        FettlolRecipes.CUSTOM_RECIPES.put(
+            bygItem("/therium_shard"),
+            RecipeHelper.createShapedRecipe(
+                Lists.newArrayList('T'),
+                Lists.newArrayList(
+                    RegistryHelper.modId(Mods.BYG, "therium_shard")
+                ),
+                Lists.newArrayList("item"),
+                Lists.newArrayList("TT ", "TT ", "   "),
+                RegistryHelper.modId(Mods.BYG, "therium_crystal")
+            )
+        );
 
-        if (FettlolModIntegrations.isGildedNetheriteLoaded) {
+        // Gilded Netherite has been moved from its own dedicated mod to Additional Additions.
+        if (FettlolModIntegrations.isAdditionalAdditionsLoaded) {
+            // Gilded Netherite armor to Ametrine.
             addGildedToAmetrineUpgrade("boots");
             addGildedToAmetrineUpgrade("chestplate");
             addGildedToAmetrineUpgrade("helmet");
             addGildedToAmetrineUpgrade("leggings");
+
+            // Gilded Netherite tools to Pendorite.
             addGildedToPendoriteUpgrade("axe");
             addGildedToPendoriteUpgrade("hoe");
             addGildedToPendoriteUpgrade("pickaxe");
@@ -37,28 +54,13 @@ public class BiomesYoullGo {
         }
     }
 
-    private static void addTheriumCrystalRecipe() {
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            Mods.BYG + "/therium_shard",
-            RecipeHelper.createShapedRecipe(
-                Lists.newArrayList('T'),
-                Lists.newArrayList(
-                    new Identifier(Mods.BYG, "therium_shard")
-                ),
-                Lists.newArrayList("item"),
-                Lists.newArrayList("TT ", "TT ", "   "),
-                new Identifier(Mods.BYG, "therium_crystal")
-            )
-        );
-    }
-
     private static void addGildedToAmetrineUpgrade(String item) {
         FettlolRecipes.CUSTOM_RECIPES.put(
             Mods.BYG + "/ametrine_" + item + "_gilded",
             RecipeHelper.createSmithingRecipe(
-                Mods.GILDEDNETHERITE + ":gilded_" + item,
-                Mods.BYG + ":ametrine_gems",
-                Mods.BYG + ":ametrine_" + item
+                Mods.ADDITIONAL_ADDITIONS + ":gilded_netherite_" + item,
+                bygItem("ametrine_gems"),
+                bygItem("ametrine_" + item)
             )
         );
     }
@@ -67,9 +69,9 @@ public class BiomesYoullGo {
         FettlolRecipes.CUSTOM_RECIPES.put(
             Mods.BYG + "/pendorite_" + item + "_gilded",
             RecipeHelper.createSmithingRecipe(
-                Mods.GILDEDNETHERITE + ":gilded_" + item,
-                Mods.BYG + ":pendorite_scraps",
-                Mods.BYG + ":pendorite_" + item
+                Mods.ADDITIONAL_ADDITIONS + ":gilded_netherite_" + item,
+                bygItem("pendorite_scraps"),
+                bygItem("pendorite_" + item)
             )
         );
     }
@@ -81,26 +83,32 @@ public class BiomesYoullGo {
     private static void updateLootTablesForByg() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
 
-            // Ametrine gems can drop when mining Diamond Ore.
+            // Diamond Ore: Add Ametrine Gems (2%)
             if (LootTableHelper.isDiamondOre(identifier)) {
                 LootTableHelper.addToLootTable(supplier, 1, 0.02F, Mods.BYG, "ametrine_gems");
             }
 
-            // Ametrine gems have a 3% chance of appearing in normal dungeon chests.
+            // Dungeon Chests: Add Ametrine Gems (3%).
             if (LootTableHelper.isSimpleDungeonChest(identifier)) {
                 LootTableHelper.addToLootTable(supplier, 1, 0.03F, Mods.BYG, "ametrine_gems");
             }
 
-            // Ametrine gems can be found in End Cities.
+            // End Endgame: Add Ametrinie Gems (2 separate 1% rolls).
             if (LootTableHelper.isEndEndgame(identifier)) {
                 LootTableHelper.addToLootTable(supplier, 2, 0.1F, Mods.BYG, "ametrine_gems");
             }
 
-            // Pendorite scraps can be found in various Nether chests (Bastions, mainly).
+            // Nether Endgame: Add Pendorite scraps (4 separate 2% rolls).
             if (LootTableHelper.isNetherEndgame(identifier)) {
                 LootTableHelper.addToLootTable(supplier, 4, 0.02F, Mods.BYG, "pendorite_scraps");
             }
 
         });
     }
+
+    @NotNull
+    private static String bygItem(String item) {
+        return Mods.BYG + ":" + item;
+    }
+
 }
