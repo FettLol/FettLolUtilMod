@@ -17,13 +17,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fettlol.UtilMod"
+      "net.fettlol.utilmod.UtilMod"
     ],
     "client": [
-      "net.fettlol.UtilModClient"
+      "net.fettlol.utilmod.UtilModClient"
     ],
     "modmenu": [
-      "net.fettlol.config.UtilModModMenuIntegration"
+      "net.fettlol.utilmod.config.UtilModModMenuIntegration"
     ]
   },
   "mixins": [

@@ -38,7 +38,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
     // Fettlol Library
-    include modImplementation("net.fettlol:fettlol-lib:1.0.0")
+    include modImplementation("net.fettlol:fettlol-lib:${project.fettlol_lib}")
 
     // Cotton (Included)
     include modImplementation("io.github.cottonmc.cotton:cotton-datapack:${project.cotton_datapack_version}")
