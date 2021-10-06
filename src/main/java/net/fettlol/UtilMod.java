@@ -17,7 +17,7 @@ public class UtilMod implements ModInitializer {
     public static final String MOD_NAME = "Fettlol Utilmod";
 
     public static ItemGroup ITEMGROUP = FabricItemGroupBuilder.create(RegistryHelper.fettlolId(MOD_ID))
-        .icon(() -> new ItemStack(RegistryHelper.getItemFromRegistry("fettlol:peacekeeper")))
+        .icon(() -> new ItemStack(FettlolItems.PEACEKEEPER))
         .build();
 
     @Override

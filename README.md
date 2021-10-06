@@ -15,7 +15,6 @@ the sands of time as Minecraft continued to be updated while the mod did not.
   - This can be used together with our craftable Spawner blocks to create custom mob farms.
 - Villagers will follow players carrying an Emerald Block. Take note, however, that they are easilly distracted and
   **will** flee if mobs scare them while following you.
-- Mob Spawners can be disabled by powering them with Redstone.
 - When enchanted with *Infinity*, bows no longer require you to have an arrow in your inventory to fire.
 - Guardians have a (small) chance to spawn in all oceans, not just around Ocean Monuments.
 - The *Infinity* and *Mending* enchantments can coexist on bows.
@@ -39,8 +38,6 @@ the sands of time as Minecraft continued to be updated while the mod did not.
 - Witches will actively try to run away from players and maintain ranged distance.
 - The "Custom World" warning when creating singleplayer worlds is no longer displayed.
 - A handful of additional "Splash Texts" have been added to the list that the game selects from on the title screen.
-- The background image on the title screen has been changed to fit the modpack.
-  - This requires the `vistas` mod to be installed and has no effect otherwise.
 
 ## The List of Implemented Mod Integrations.
 
@@ -48,7 +45,7 @@ These integrations and tweaks require the mod in question to be loaded and will 
 
 - **Better End**: Custom recipes have been introduced to keep the "standard" way of building Tools rather than the custom way used in this mod.
 - **Biomes You'll Go**: Ametrine Gems and Pendorite Scraps were added to a number of loot tables.
-- **Biomes You'll Go**: If the `Gilded Netherite` mod is loaded, Gilded Netherite items can be upgraded with Pendorite and Ametrine.
+- **Biomes You'll Go**: If the `Additional Additions` mod is loaded, its Gilded Netherite items can be upgraded with Pendorite and Ametrine.
 - **Biomes You'll Go**: The missing Therium Shard => Therium Crystal recipe was added.
 - **Croptopia**: Croptopia crops will now also give a seed when harvested to make villager farming easier.
 - **Croptopia**: Croptopia crops will now be randomly distributed into villager chests as part of worldgen.

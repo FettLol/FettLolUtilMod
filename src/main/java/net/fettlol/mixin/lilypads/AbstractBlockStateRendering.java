@@ -12,12 +12,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-/**
- * Original code from "mixin/block/betterlilypads/Rendering" in TinyTweaks by hephaestus.
- *
- * This code makes tweaks to lily pads to make them better to work with.
- */
-
 @Mixin(AbstractBlock.AbstractBlockState.class)
 public abstract class AbstractBlockStateRendering {
     @Shadow public abstract Block getBlock();

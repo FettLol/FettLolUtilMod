@@ -33,7 +33,9 @@ public class FettlolLootTables {
 
     /**
      * Updates the loot tables of mined ores. These are always affected by the Fortune enchant and require the
-     * block to be broken with an item identified as a pickaxe.
+     * block to be broken with an item identified as a pickaxe. Unless otherwise stated, these changes apply to
+     * all types of this ore, for example Diamond Ore, Deepslate Diamond Ore and the modded "Dense" versions of
+     * each of the two.
      *
      * Changes made:
      *
@@ -150,6 +152,9 @@ public class FettlolLootTables {
      * - Dungeon Chests: Add Soul Shard (3 separate 5% rolls).
      * - End Endgame: Add Peacekeeper (4%). Includes randomly picked enchantment(s).
      * - Fishing Treasure: Add Aquamarine Gem and Jade Gem (5%).
+     * - Graveyard Chests: Add Aquamarine Gem (4%).
+     * - Graveyard Chests: Add Jade Gem (4%).
+     * - Graveyard Chests: Add Soul Shard (3 separate 8% rolls).
      * - Mansions: Add Jade Gen (2 separate 5% rolls).
      * - Mansions: Add Soul Shard (2 separate 5% rolls).
      * - Nether Endgame: Add Knightfall (3%). Includes randomly picked enchantment(s).
@@ -171,6 +176,12 @@ public class FettlolLootTables {
 
         if (LootTableHelper.isEndEndgame(identifier)) {
             LootTableHelper.addToLootTableWithRandomEnchantment(supplier, 1, 0.04F, "fettlol:peacekeeper");
+        }
+
+        if (LootTableHelper.isGraveyardLootChest(identifier)) {
+            LootTableHelper.addToLootTable(supplier, 1, 0.04F, "fettlol:aquamarine_gem");
+            LootTableHelper.addToLootTable(supplier, 1, 0.04F, "fettlol:jade_gem");
+            LootTableHelper.addToLootTable(supplier, 3, 0.08F, "fettlol:soul_shard");
         }
 
         if (LootTableHelper.isDesertPyramid(identifier)) {
