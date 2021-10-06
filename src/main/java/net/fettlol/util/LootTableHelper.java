@@ -58,6 +58,8 @@ public class LootTableHelper {
                 "minecraft:chests/village/village_savanna_house",
                 "minecraft:chests/village/village_snowy_house",
                 "minecraft:chests/village/village_taiga_house",
+                "byg:chests/village/village_tropics_house",
+                "byg:chests/village/village_skyris_house",
                 "stoneholm:bedroom",
                 "repurposed_structures:chests/villages/badlands_house",
                 "repurposed_structures:chests/villages/birch_house",
@@ -196,6 +198,16 @@ public class LootTableHelper {
                 "repurposed_structures:chests/shipwrecks/nether_bricks/treasure",
                 "repurposed_structures:chests/shipwrecks/warped/treasure",
                 "byg:chests/shipwreck_treasure" -> true;
+            default -> false;
+        };
+    }
+
+    // Graveyards (From the Graveyards mod)
+    public static boolean isGraveyardLootChest(Identifier identifier) {
+        return switch (identifier.toString()) {
+            case "graveyard:chests/small_loot",
+                "graveyard:chests/medium_loot",
+                "graveyard:chests/large_loot" -> true;
             default -> false;
         };
     }
