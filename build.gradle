@@ -11,6 +11,7 @@ version = "${project.mod_version}+${project.minecraft_version}"
 group = project.maven_group
 
 repositories {
+    mavenLocal()
     maven {
         name = "Cotton"
         url = "https://server.bbkr.space/artifactory/libs-release"
@@ -35,6 +36,9 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+    // Fettlol Library
+    include modImplementation("net.fettlol:fettlol-lib:1.0.0")
 
     // Cotton (Included)
     include modImplementation("io.github.cottonmc.cotton:cotton-datapack:${project.cotton_datapack_version}")

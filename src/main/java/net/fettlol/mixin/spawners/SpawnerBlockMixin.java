@@ -8,16 +8,28 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(SpawnerBlock.class)
 public class SpawnerBlockMixin extends Block {
 
     public SpawnerBlockMixin(Settings settings) {
         super(settings);
+    }
+
+    @Inject(method = "onStacksDropped", at = @At("HEAD"), cancellable = true)
+    public void onStacksDropped(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack, CallbackInfo ci) {
+        if (((SpawnerInterface) this).isPlayerPlaced()) {
+            super.onStacksDropped(state, world, pos, stack);
+            ci.cancel();
+        }
     }
 
     /**

@@ -27,6 +27,7 @@
     "spawners.MobSpawnerBlockEntityMixin",
     "spawners.SpawnerBlockMixin",
     "world.AutoPlantMixin",
+    "world.BlockMixin",
     "world.BiomeFeaturesMixin",
     "world.GrassSpreadMixin",
     "world.SnowFallsThroughLeavesMixin",
