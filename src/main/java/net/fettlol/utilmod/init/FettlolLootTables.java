@@ -2,8 +2,9 @@ package net.fettlol.utilmod.init;
 
 import net.fabricmc.fabric.api.loot.v1.FabricLootSupplierBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import net.fettlol.lib.helper.LootTableHelper;
+import net.fettlol.lib.registry.LootApi;
 import net.fettlol.utilmod.concerns.PlayerPlacedLootCondition;
-import net.fettlol.utilmod.util.LootTableHelper;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
@@ -46,11 +47,11 @@ public class FettlolLootTables {
      */
     private static void updateOreLootTables(Identifier identifier, FabricLootSupplierBuilder supplier) {
         if (LootTableHelper.isLapisOre(identifier)) {
-            LootTableHelper.addToOreLootTable(supplier, 1, 0.06F, "fettlol:aquamarine_gem");
+            LootApi.addToOreLootTable(supplier, 1, 0.06F, "fettlol:aquamarine_gem");
         }
 
         if (LootTableHelper.isDiamondOre(identifier)) {
-            LootTableHelper.addToOreLootTable(supplier, 2, 0.03F, "fettlol:soul_shard");
+            LootApi.addToOreLootTable(supplier, 2, 0.03F, "fettlol:soul_shard");
         }
     }
 
@@ -81,59 +82,59 @@ public class FettlolLootTables {
      */
     private static void updateMobLootTables(Identifier identifier, FabricLootSupplierBuilder supplier) {
         if (LootTableHelper.isEnderman(identifier)) {
-            LootTableHelper.addToMobLootTable(supplier, 1, 0.02F, "fettlol:soul_shard");
+            LootApi.addToMobLootTable(supplier, 1, 0.02F, "fettlol:soul_shard");
         }
 
         if (LootTableHelper.isPhantom(identifier)) {
-            LootTableHelper.addToMobLootTable(supplier, 1, 0.05F, "fettlol:soul_shard");
+            LootApi.addToMobLootTable(supplier, 1, 0.05F, "fettlol:soul_shard");
         }
 
         if (LootTableHelper.isShulker(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 1, 1, "minecraft:shulker_shell");
-            LootTableHelper.addToLootTable(supplier, 1, 0.02F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 1, 1, "minecraft:shulker_shell");
+            LootApi.addToLootTable(supplier, 1, 0.02F, "fettlol:jade_gem");
         }
 
         if (LootTableHelper.isEnderDragon(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 4, 0.5F, "fettlol:jade_gem");
-            LootTableHelper.addToLootTable(supplier, 4, 0.5F, "fettlol:aquamarine_gem");
-            LootTableHelper.addToLootTable(supplier, 1, 1, "minecraft:elytra");
-            LootTableHelper.addToLootTable(supplier, 1, 1, "minecraft:dragon_egg");
+            LootApi.addToLootTable(supplier, 4, 0.5F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 4, 0.5F, "fettlol:aquamarine_gem");
+            LootApi.addToLootTable(supplier, 1, 1, "minecraft:elytra");
+            LootApi.addToLootTable(supplier, 1, 1, "minecraft:dragon_egg");
         }
 
         if (LootTableHelper.isDrowned(identifier)) {
-            LootTableHelper.addToMobLootTable(supplier, 2, 0.10F, "minecraft:clay");
+            LootApi.addToMobLootTable(supplier, 2, 0.10F, "minecraft:clay");
         }
 
         if (LootTableHelper.isHusk(identifier)) {
-            LootTableHelper.addToMobLootTable(supplier, 2, 0.10F, "minecraft:sand");
+            LootApi.addToMobLootTable(supplier, 2, 0.10F, "minecraft:sand");
         }
 
         if (LootTableHelper.isStray(identifier)) {
-            LootTableHelper.addToMobLootTable(supplier, 2, 0.10F, "minecraft:blue_ice");
+            LootApi.addToMobLootTable(supplier, 2, 0.10F, "minecraft:blue_ice");
         }
 
         if (LootTableHelper.isZombie(identifier)) {
-            LootTableHelper.addToMobLootTable(supplier, 2, 0.10F, "minecraft:gravel");
+            LootApi.addToMobLootTable(supplier, 2, 0.10F, "minecraft:gravel");
         }
 
         if (LootTableHelper.isGuardian(identifier)) {
-            LootTableHelper.addToMobLootTable(supplier, 2, 0.06F, "minecraft:lapis_lazuli");
+            LootApi.addToMobLootTable(supplier, 2, 0.06F, "minecraft:lapis_lazuli");
         }
 
         if (LootTableHelper.isWitherSkeleton(identifier)) {
-            LootTableHelper.addToMobLootTable(supplier, 3, 0.1F, "fettlol:wither_bone");
+            LootApi.addToMobLootTable(supplier, 3, 0.1F, "fettlol:wither_bone");
         }
 
         if (LootTableHelper.isHostileWaterMob(identifier)) {
-            LootTableHelper.addToMobLootTable(supplier, 1, 0.03F, "fettlol:aquamarine_gem");
+            LootApi.addToMobLootTable(supplier, 1, 0.03F, "fettlol:aquamarine_gem");
         }
 
         if (LootTableHelper.isWitch(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 1, 0.1F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 1, 0.1F, "fettlol:jade_gem");
         }
 
         if (LootTableHelper.isEvoker(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 1, 0.25F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 1, 0.25F, "fettlol:jade_gem");
         }
     }
 
@@ -168,65 +169,65 @@ public class FettlolLootTables {
      * - Stronghold Chests: Add Soul Shard (3 separate 12% rolls).
      */
     private static void updateChestLootTables(Identifier identifier, FabricLootSupplierBuilder supplier) {
-        if (LootTableHelper.isNetherEndgame(identifier)) {
-            LootTableHelper.addToLootTableWithRandomEnchantment(supplier, 1, 0.03F, "fettlol:knightfall");
+        if (LootTableHelper.isNetherEndgameChest(identifier)) {
+            LootApi.addToLootTableWithRandomEnchantment(supplier, 1, 0.03F, "fettlol:knightfall");
         }
 
-        if (LootTableHelper.isNetherTemple(identifier)) {
-            LootTableHelper.addToLootTableWithRandomEnchantment(supplier, 1, 0.02F, "fettlol:knightfall");
+        if (LootTableHelper.isNetherTempleChest(identifier)) {
+            LootApi.addToLootTableWithRandomEnchantment(supplier, 1, 0.02F, "fettlol:knightfall");
         }
 
-        if (LootTableHelper.isEndEndgame(identifier)) {
-            LootTableHelper.addToLootTableWithRandomEnchantment(supplier, 1, 0.04F, "fettlol:peacekeeper");
+        if (LootTableHelper.isEndEndgameChest(identifier)) {
+            LootApi.addToLootTableWithRandomEnchantment(supplier, 1, 0.04F, "fettlol:peacekeeper");
         }
 
         if (LootTableHelper.isGraveyardLootChest(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 1, 0.04F, "fettlol:aquamarine_gem");
-            LootTableHelper.addToLootTable(supplier, 1, 0.04F, "fettlol:jade_gem");
-            LootTableHelper.addToLootTable(supplier, 3, 0.08F, "fettlol:soul_shard");
+            LootApi.addToLootTable(supplier, 1, 0.04F, "fettlol:aquamarine_gem");
+            LootApi.addToLootTable(supplier, 1, 0.04F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 3, 0.08F, "fettlol:soul_shard");
         }
 
         if (LootTableHelper.isDesertPyramid(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 2, 0.03F, "fettlol:soul_shard");
-            LootTableHelper.addToLootTable(supplier, 2, 0.03F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 2, 0.03F, "fettlol:soul_shard");
+            LootApi.addToLootTable(supplier, 2, 0.03F, "fettlol:jade_gem");
         }
 
         if (LootTableHelper.isShipwreckTreasure(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 2, 0.06F, "fettlol:aquamarine_gem");
-            LootTableHelper.addToLootTable(supplier, 2, 0.06F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 2, 0.06F, "fettlol:aquamarine_gem");
+            LootApi.addToLootTable(supplier, 2, 0.06F, "fettlol:jade_gem");
         }
 
-        if (LootTableHelper.isMansion(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 2, 0.05F, "fettlol:aquamarine_gem");
-            LootTableHelper.addToLootTable(supplier, 2, 0.05F, "fettlol:soul_shard");
+        if (LootTableHelper.isMansionChest(identifier)) {
+            LootApi.addToLootTable(supplier, 2, 0.05F, "fettlol:aquamarine_gem");
+            LootApi.addToLootTable(supplier, 2, 0.05F, "fettlol:soul_shard");
         }
 
         if (LootTableHelper.isFishingTreasure(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 1, 0.05F, "fettlol:aquamarine_gem");
-            LootTableHelper.addToLootTable(supplier, 1, 0.05F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 1, 0.05F, "fettlol:aquamarine_gem");
+            LootApi.addToLootTable(supplier, 1, 0.05F, "fettlol:jade_gem");
         }
 
-        if (LootTableHelper.isAbandonedMineshaft(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 1, 0.04F, "fettlol:aquamarine_gem");
-            LootTableHelper.addToLootTable(supplier, 1, 0.04F, "fettlol:jade_gem");
-            LootTableHelper.addToLootTable(supplier, 2, 0.03F, "fettlol:soul_shard");
+        if (LootTableHelper.isAbandonedMineshaftChest(identifier)) {
+            LootApi.addToLootTable(supplier, 1, 0.04F, "fettlol:aquamarine_gem");
+            LootApi.addToLootTable(supplier, 1, 0.04F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 2, 0.03F, "fettlol:soul_shard");
         }
 
         if (LootTableHelper.isSimpleDungeonChest(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 1, 0.08F, "fettlol:aquamarine_gem");
-            LootTableHelper.addToLootTable(supplier, 1, 0.08F, "fettlol:jade_gem");
-            LootTableHelper.addToLootTable(supplier, 3, 0.05F, "fettlol:soul_shard");
+            LootApi.addToLootTable(supplier, 1, 0.08F, "fettlol:aquamarine_gem");
+            LootApi.addToLootTable(supplier, 1, 0.08F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 3, 0.05F, "fettlol:soul_shard");
         }
 
-        if (LootTableHelper.isBuriedTreasure(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 2, 0.04F, "fettlol:aquamarine_gem");
-            LootTableHelper.addToLootTable(supplier, 2, 0.04F, "fettlol:jade_gem");
+        if (LootTableHelper.isBuriedTreasureChest(identifier)) {
+            LootApi.addToLootTable(supplier, 2, 0.04F, "fettlol:aquamarine_gem");
+            LootApi.addToLootTable(supplier, 2, 0.04F, "fettlol:jade_gem");
         }
 
-        if (LootTableHelper.isStronghold(identifier)) {
-            LootTableHelper.addToLootTable(supplier, 3, 0.12F, "fettlol:soul_shard");
-            LootTableHelper.addToLootTable(supplier, 2, 0.06F, "fettlol:jade_gem");
-            LootTableHelper.addToLootTable(supplier, 2, 0.06F, "fettlol:aquamarine_gem");
+        if (LootTableHelper.isStrongholdChest(identifier)) {
+            LootApi.addToLootTable(supplier, 3, 0.12F, "fettlol:soul_shard");
+            LootApi.addToLootTable(supplier, 2, 0.06F, "fettlol:jade_gem");
+            LootApi.addToLootTable(supplier, 2, 0.06F, "fettlol:aquamarine_gem");
         }
     }
 

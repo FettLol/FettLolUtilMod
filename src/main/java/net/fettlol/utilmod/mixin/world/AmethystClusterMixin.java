@@ -1,6 +1,6 @@
 package net.fettlol.utilmod.mixin.world;
 
-import net.fettlol.utilmod.lists.tags.FabricTags;
+import net.fettlol.lib.list.Tags;
 import net.minecraft.block.AmethystBlock;
 import net.minecraft.block.AmethystClusterBlock;
 import net.minecraft.block.BlockState;
@@ -47,7 +47,7 @@ public class AmethystClusterMixin extends AmethystBlock {
 
     private boolean heldItemIsPickaxe(ItemStack itemStack) {
         // Since not all modded pickaxes are in minecraft:cluster_max_harvestables.
-        return itemStack.isIn(ItemTags.CLUSTER_MAX_HARVESTABLES) || itemStack.isIn(FabricTags.FABRIC_PICKAXES);
+        return itemStack.isIn(ItemTags.CLUSTER_MAX_HARVESTABLES) || itemStack.isIn(Tags.FABRIC_PICKAXES);
     }
 
 }

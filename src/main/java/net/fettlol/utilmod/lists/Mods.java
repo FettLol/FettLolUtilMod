@@ -1,10 +1,5 @@
 package net.fettlol.utilmod.lists;
 
-/**
- * This file contains a list of the namespaces used by various other mods that we have some kind of interaction with or
- * make references to, so that if any of these mods were to change their namespace, we only need to make that change in
- * one place.
- */
 public class Mods {
     final public static String ADDITIONAL_ADDITIONS = "additionaladditions";
     final public static String ADORN = "adorn";
@@ -28,6 +23,5 @@ public class Mods {
     final public static String TECH_REBORN = "techreborn";
     final public static String TRAVERSE = "traverse";
     final public static String TERRESTRIA = "terrestria";
-    final public static String TINY_TWEAKS = "tinytweaks";
     final public static String WINGED = "winged";
 }

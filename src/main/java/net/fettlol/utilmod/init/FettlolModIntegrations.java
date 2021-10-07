@@ -32,11 +32,11 @@ public class FettlolModIntegrations {
     public static boolean isRingOfAttractionLoaded = isModLoaded(Mods.RING_OF_ATTRACTION);
     public static boolean isTechRebornLoaded = isModLoaded(Mods.TECH_REBORN);
     public static boolean isTerrestriaLoaded = isModLoaded(Mods.TERRESTRIA);
-    public static boolean isTinyTweaksLoaded = isModLoaded(Mods.TINY_TWEAKS);
     public static boolean isWingedLoaded = isModLoaded(Mods.WINGED);
 
     public static void init() {
         AdditionalAdditions.init();
+        Adorn.init();
         Battletowers.init();
         BetterEnd.init();
         BiomesYoullGo.init();

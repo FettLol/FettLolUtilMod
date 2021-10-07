@@ -2,13 +2,17 @@ package net.fettlol.utilmod.integration;
 
 import com.google.common.collect.Lists;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import net.fettlol.lib.helper.LootTableHelper;
+import net.fettlol.lib.registry.LootApi;
+import net.fettlol.lib.registry.RecipeApi;
 import net.fettlol.utilmod.init.FettlolModIntegrations;
-import net.fettlol.utilmod.init.FettlolRecipes;
 import net.fettlol.utilmod.lists.Mods;
 import net.fettlol.utilmod.util.LogHelper;
-import net.fettlol.utilmod.util.LootTableHelper;
 import net.fettlol.utilmod.util.RecipeHelper;
 import net.minecraft.util.Identifier;
+
+import static net.fettlol.utilmod.util.RecipeHelper.createShapelessRecipe;
+import static net.fettlol.utilmod.util.RegistryHelper.fettlolId;
 
 public class BetterEnd {
 
@@ -16,7 +20,7 @@ public class BetterEnd {
         if (FettlolModIntegrations.isBetterEndLoaded) {
             LogHelper.log("Better End detected! Applying integrations.");
 
-            RecipeHelper.removeRecipe(Mods.BETTER_END, "tag_rail");
+            RecipeApi.remove(Mods.BETTER_END, "tag_rail");
 
             defineLootTablesForBetterEnd();
             defineRecipesForBetterEnd();
@@ -29,8 +33,8 @@ public class BetterEnd {
      * add the "normal" way of crafting armor and tools back for Aeternium, Thallasium and Terminite.
      */
     public static void defineRecipesForBetterEnd() {
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/aeternium_boots",
+        RecipeApi.add(
+            fettlolId("betterend/aeternium_boots"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I'),
                 Lists.newArrayList(new Identifier(Mods.BETTER_END, "aeternium_ingot")),
@@ -40,8 +44,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/aeternium_chestplate",
+        RecipeApi.add(
+            fettlolId("betterend/aeternium_chestplate"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I'),
                 Lists.newArrayList(new Identifier(Mods.BETTER_END, "aeternium_ingot")),
@@ -51,8 +55,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/aeternium_helmet",
+        RecipeApi.add(
+            fettlolId("betterend/aeternium_helmet"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I'),
                 Lists.newArrayList(new Identifier(Mods.BETTER_END, "aeternium_ingot")),
@@ -62,8 +66,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/aeternium_leggings",
+        RecipeApi.add(
+            fettlolId("betterend/aeternium_leggings"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I'),
                 Lists.newArrayList(new Identifier(Mods.BETTER_END, "aeternium_ingot")),
@@ -73,8 +77,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/aeternium_axe",
+        RecipeApi.add(
+            fettlolId("betterend/aeternium_axe"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -87,8 +91,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/aeternium_hoe",
+        RecipeApi.add(
+            fettlolId("betterend/aeternium_hoe"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -101,8 +105,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/aeternium_pickaxe",
+        RecipeApi.add(
+            fettlolId("betterend/aeternium_pickaxe"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -115,8 +119,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/aeternium_shovel",
+        RecipeApi.add(
+            fettlolId("betterend/aeternium_shovel"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -129,8 +133,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/aeternium_sword",
+        RecipeApi.add(
+            fettlolId("betterend/aeternium_sword"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -143,8 +147,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/terminite_axe",
+        RecipeApi.add(
+            fettlolId("betterend/terminite_axe"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -157,8 +161,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/terminite_hoe",
+        RecipeApi.add(
+            fettlolId("betterend/terminite_hoe"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -171,8 +175,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/terminite_pickaxe",
+        RecipeApi.add(
+            fettlolId("betterend/terminite_pickaxe"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -185,8 +189,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/terminite_shovel",
+        RecipeApi.add(
+            fettlolId("betterend/terminite_shovel"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -199,8 +203,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/thallasium_axe",
+        RecipeApi.add(
+            fettlolId("betterend/thallasium_axe"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -213,8 +217,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/thallasium_hoe",
+        RecipeApi.add(
+            fettlolId("betterend/thallasium_hoe"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -227,8 +231,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/thallasium_pickaxe",
+        RecipeApi.add(
+            fettlolId("betterend/thallasium_pickaxe"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -242,8 +246,8 @@ public class BetterEnd {
         );
 
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/thallasium_shovel",
+        RecipeApi.add(
+            fettlolId("betterend/thallasium_shovel"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -256,8 +260,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/thallasium_sword",
+        RecipeApi.add(
+            fettlolId("betterend/thallasium_sword"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -270,8 +274,8 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/terminite_sword",
+        RecipeApi.add(
+            fettlolId("betterend/terminite_sword"),
             RecipeHelper.createShapedRecipe(
                 Lists.newArrayList('I', 'S'),
                 Lists.newArrayList(
@@ -284,9 +288,9 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/aeternium_ingot",
-            RecipeHelper.createShapelessRecipe(
+        RecipeApi.add(
+            fettlolId("betterend/aeternium_ingot"),
+            createShapelessRecipe(
                 Lists.newArrayList(
                     new Identifier(Mods.BETTER_END, "terminite_ingot"),
                     new Identifier("minecraft", "netherite_ingot")
@@ -296,9 +300,9 @@ public class BetterEnd {
             )
         );
 
-        FettlolRecipes.CUSTOM_RECIPES.put(
-            "betterend/terminite_ingot",
-            RecipeHelper.createShapelessRecipe(
+        RecipeApi.add(
+            fettlolId("betterend/terminite_ingot"),
+            createShapelessRecipe(
                 Lists.newArrayList(
                     new Identifier("c", "ender_pearl_dusts"),
                     new Identifier("minecraft", "iron_ingot")
@@ -319,12 +323,12 @@ public class BetterEnd {
             // Endermen: Add Ender Dust (5%).
             // @todo Change this to the Ender Dust from Applied Energistics?
             if (LootTableHelper.isEnderman(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.05F, Mods.BETTER_END, "ender_dust");
+                LootApi.addToLootTable(supplier, 1, 0.05F, Mods.BETTER_END, "ender_dust");
             }
 
             // Buried Treasure: Add Raw Amber (10%).
-            if (LootTableHelper.isBuriedTreasure(identifier)) {
-                LootTableHelper.addToLootTable(supplier, 1, 0.1F, Mods.BETTER_END, "raw_amber");
+            if (LootTableHelper.isBuriedTreasureChest(identifier)) {
+                LootApi.addToLootTable(supplier, 1, 0.1F, Mods.BETTER_END, "raw_amber");
             }
 
         });

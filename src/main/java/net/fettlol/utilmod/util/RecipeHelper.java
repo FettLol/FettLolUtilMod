@@ -1,9 +1,7 @@
 package net.fettlol.utilmod.util;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import io.github.cottonmc.cotton.datapack.recipe.RecipeUtil;
 import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeManager;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -11,24 +9,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Map;
 
-/**
- * These methods help us create various types of crafting recipes via code.
- * Down the line, this file will need to be expanded in multiple ways, including:
- *
- * - Allowing multiple outputs in recipes.
- * - Adding support for recipes for some of the specialized recipe types in the modpack.
- */
 public class RecipeHelper {
-
-    public static void removeRecipe(String recipe) {
-        RecipeUtil.removeRecipe(recipe);
-    }
-
-    public static void removeRecipe(String namespace, String recipe) {
-        removeRecipe(namespace + ":" + recipe);
-    }
 
     public static void unlockAllRecipes(ServerPlayerEntity serverPlayerEntity) {
         if (serverPlayerEntity != null) {
@@ -137,12 +119,4 @@ public class RecipeHelper {
         return jsonObject;
     }
 
-    /**
-     * Add a recipe to a map. Used by RecipeManagerMixin.
-     */
-    public static void addCustomRecipe(Map<Identifier, JsonElement> map, String recipeName, JsonObject definition) {
-        if (definition != null) {
-            map.put(RegistryHelper.fettlolId(recipeName), definition);
-        }
-    }
 }

@@ -1,9 +1,9 @@
 package net.fettlol.utilmod.init;
 
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fettlol.lib.helper.BlockHelper;
+import net.fettlol.lib.registry.CompostingApi;
 import net.fettlol.utilmod.UtilMod;
-import net.fettlol.utilmod.util.BlockHelper;
-import net.fettlol.utilmod.util.RegistryHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BoneMealItem;
@@ -27,7 +27,7 @@ public class FettlolTweaks {
 
         // Poisonous Potatoes should be compostable.
         if (UtilMod.CONFIG.doesPoisonousPotatoCompost()) {
-            RegistryHelper.makeCompostable(Items.POISONOUS_POTATO, 0.85f);
+            CompostingApi.makeCompostable(Items.POISONOUS_POTATO, 0.85f);
         }
 
         // Players should be able to duplicate flowers with Bone Meal.

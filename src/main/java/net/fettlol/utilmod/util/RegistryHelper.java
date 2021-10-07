@@ -1,6 +1,5 @@
 package net.fettlol.utilmod.util;
 
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fettlol.utilmod.UtilMod;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -9,7 +8,6 @@ import net.minecraft.util.registry.Registry;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Locale;
-import java.util.Optional;
 
 public class RegistryHelper {
 
@@ -66,24 +64,6 @@ public class RegistryHelper {
 
     public interface RegistryCallBack<T> {
         void callback(Registry<T> registry, T registryObject, Identifier identifier);
-    }
-
-    // This method doesn't *really* belong here, but there's no better place for it right now.
-    public static void makeCompostable(Item item, float value) {
-        CompostingChanceRegistry.INSTANCE.add(item, value);
-    }
-
-    public static void makeCompostable(Identifier identifier, float value) {
-        Optional<Item> maybeItem = Registry.ITEM.getOrEmpty(identifier);
-        if (!maybeItem.isPresent()) {
-            LogHelper.log("couldn't make " + identifier.toString() + " compostable.");
-        } else {
-            makeCompostable(maybeItem.get(), value);
-        }
-    }
-
-    public static void makeCompostable(String namespace, String itemName, float value) {
-        makeCompostable(new Identifier(namespace, itemName), value);
     }
 
 }
