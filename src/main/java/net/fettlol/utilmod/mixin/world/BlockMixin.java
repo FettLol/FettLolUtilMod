@@ -13,12 +13,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+/** Used to temporarily safe the IsPlayerPlaced attribute of spawners for use in SpawnerBlockMixin */
 @Mixin(Block.class)
 public class BlockMixin implements SpawnerInterface {
 
     @Unique
-    boolean fettlol$playerPlaced;
+    static boolean fettlol$playerPlaced;
 
+    // called just before SpawnerBlock.onStacksDropped() inside ServerPlayerInteractionManager.tryBreakBlock()
     @Inject(method = "onBreak", at = @At("HEAD"))
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player, CallbackInfo ci) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -27,7 +29,7 @@ public class BlockMixin implements SpawnerInterface {
 
     @Override
     public void setPlayerPlaced(boolean value) {
-        fettlol$playerPlaced = value;
+        throw new UnsupportedOperationException();
     }
 
     @Override

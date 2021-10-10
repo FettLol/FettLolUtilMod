@@ -25,7 +25,8 @@ public class SpawnerBlockMixin extends Block {
     }
 
     @Inject(method = "onStacksDropped", at = @At("HEAD"), cancellable = true)
-    public void onStacksDropped(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack, CallbackInfo ci) {
+    public void skipXpDropWhenPlayerPlaced(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack, CallbackInfo ci) {
+        // see BlockMixin, Block.isPlayerPlaced isn't well-defined anywhere else
         if (((SpawnerInterface) this).isPlayerPlaced()) {
             super.onStacksDropped(state, world, pos, stack);
             ci.cancel();
