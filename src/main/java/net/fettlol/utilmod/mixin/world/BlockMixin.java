@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class BlockMixin implements SpawnerInterface {
 
     @Unique
-    static boolean fettlol$playerPlaced;
+    static private boolean fettlol$playerPlaced;
 
     // called just before SpawnerBlock.onStacksDropped() inside ServerPlayerInteractionManager.tryBreakBlock()
     @Inject(method = "onBreak", at = @At("HEAD"))

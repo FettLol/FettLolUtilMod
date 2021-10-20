@@ -42,7 +42,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
     // Fettlol Library
-    // include modApi("net.fettlol:fettlol-lib:${project.fettlol_lib}")
+    // include modImplementation("net.fettlol:fettlol-lib:${project.fettlol_lib}")
     include modImplementation("com.github.Fettlol:fettlol-lib:${project.fettlol_lib}")
 
     // TOML (Included)
