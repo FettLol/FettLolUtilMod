@@ -1,34 +1,25 @@
-# gradle
-
+# Gradle
 .gradle/
 build/
 out/
 classes/
 
-# eclipse
-
+# IDE
 *.launch
-
-# idea
-
 .idea/
 *.iml
 *.ipr
 *.iws
-
-# vscode
-
 .settings/
 .vscode/
 bin/
 .classpath
 .project
 
-# macos
-
+# macOS
 *.DS_Store
 
-# fabric
-
+# Fabric, Minecraft & Minepkg
 run/
 minecraft/
+.minepkg-lock.toml
