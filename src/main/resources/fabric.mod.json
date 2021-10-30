@@ -30,7 +30,7 @@
     "fettlol.mixins.json"
   ],
   "depends": {
-    "cloth_config": "5.0.34",
+    "cloth-config": "5.0.34",
     "fabric": "*",
     "fabricloader": ">=0.11.7",
     "fettlol-lib": ">=1.0.7",
