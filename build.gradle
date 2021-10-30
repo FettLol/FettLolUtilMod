@@ -41,9 +41,9 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-    // Fettlol Library
+    // Fettlol Library (Required dependency)
     // include modImplementation("net.fettlol:fettlol-lib:${project.fettlol_lib}")
-    include modImplementation("com.github.Fettlol:fettlol-lib:${project.fettlol_lib}")
+    modImplementation("com.github.Fettlol:fettlol-lib:v${project.fettlol_lib}")
 
     // TOML (Included)
     include implementation("com.moandjiezana.toml:toml4j:${project.toml4j_version}")
@@ -57,7 +57,7 @@ dependencies {
         exclude(group: "net.fabricmc.fabric-api")
     }
 
-    // ModMenu (Required dependency)
+    // ModMenu (Suggested dependency)
     modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}") {
         exclude module: 'fabric-api'
     }
