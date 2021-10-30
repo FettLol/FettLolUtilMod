@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "fettlol-utilmod",
+  "id": "fettlol",
   "version": "${version}",
   "name": "Fettlol UtilMod",
   "description": "Tweaks minor details for use on the fett.lol server.",

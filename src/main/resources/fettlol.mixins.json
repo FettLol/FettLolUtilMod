@@ -8,7 +8,6 @@
     "accessor.MobSpawnerLogicAccessor",
     "accessor.SpawnEggItemAccessor",
     "accessor.VillagerEntityAccessor",
-    "client.MinecraftClientMixin",
     "client.SplashTextResourceSupplierMixin",
     "core.MinecraftServerMixin",
     "core.PlayerManagerMixin",
@@ -30,6 +29,9 @@
     "world.BlockMixin",
     "world.GrassSpreadMixin",
     "world.SnowFallsThroughLeavesMixin"
+  ],
+  "client": [
+    "client.MinecraftClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1
