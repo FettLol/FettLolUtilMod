@@ -19,6 +19,7 @@ manifestVersion = 0
   fabricLoader = ">=0.12.3"
 
 [dependencies]
+  cloth-config = "^5.0.34-0.mpkg.1"
   fabric = "*"
   fettlol-lib = "^1.0.7"
 
