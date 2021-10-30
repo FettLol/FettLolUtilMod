@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "fettlol",
+  "id": "fettlol-utilmod",
   "version": "${version}",
   "name": "Fettlol UtilMod",
   "description": "Tweaks minor details for use on the fett.lol server.",
@@ -30,13 +30,13 @@
     "fettlol.mixins.json"
   ],
   "depends": {
+    "cloth-config2": "5.0.34",
     "fabric": "*",
     "fabricloader": ">=0.11.7",
+    "fettlol-lib": ">=1.0.7",
     "minecraft": ">=1.17"
   },
   "suggests": {
-    "cloth-config": "5.0.34",
-    "fettlol-lib": ">=1.0.7",
     "modmenu": "^2.0.2"
   }
 }
