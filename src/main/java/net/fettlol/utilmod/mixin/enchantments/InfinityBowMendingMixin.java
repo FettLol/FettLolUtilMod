@@ -10,6 +10,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+/**
+ * Allow Mending and Infinity enchantment to coexist on a bow.
+ */
 @Mixin(InfinityEnchantment.class)
 public class InfinityBowMendingMixin extends Enchantment {
 

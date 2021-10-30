@@ -13,6 +13,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+/**
+ * Allow Infinity-enchanted bows to fire without an arrow in the inventory.
+ */
 @Mixin(BowItem.class)
 public class InfinityBowArrowMixin {
 
