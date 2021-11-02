@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  */
 
 @Mixin(Entity.class)
-public class SprintingParticlesMixin {
+public abstract class SprintingParticlesMixin {
     @Shadow public World world;
 
     @Redirect(method = "spawnSprintingParticles", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;getBlockState(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/BlockState;"))

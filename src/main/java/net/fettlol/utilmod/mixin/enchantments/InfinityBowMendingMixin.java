@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  * Allow Mending and Infinity enchantment to coexist on a bow.
  */
 @Mixin(InfinityEnchantment.class)
-public class InfinityBowMendingMixin extends Enchantment {
+public abstract class InfinityBowMendingMixin extends Enchantment {
 
     protected InfinityBowMendingMixin(Rarity rarity, EnchantmentTarget enchantmentTarget, EquipmentSlot[] equipmentSlot) {
         super(rarity, enchantmentTarget, equipmentSlot);

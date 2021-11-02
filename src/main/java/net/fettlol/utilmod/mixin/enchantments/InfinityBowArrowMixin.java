@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  * Allow Infinity-enchanted bows to fire without an arrow in the inventory.
  */
 @Mixin(BowItem.class)
-public class InfinityBowArrowMixin {
+public abstract class InfinityBowArrowMixin {
 
     @Inject(at = @At("HEAD"), cancellable = true, method = "use(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/TypedActionResult;")
     private void use(World world, PlayerEntity player, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> ci) {

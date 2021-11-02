@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(WitherSkeletonEntity.class)
-public class WitherSkeletonMixin extends HostileEntity {
+public abstract class WitherSkeletonMixin extends HostileEntity {
 
     private static final TrackedData<Boolean> BABY = DataTracker.registerData(SpiderEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 

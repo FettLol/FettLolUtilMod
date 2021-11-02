@@ -241,16 +241,16 @@ public class FettlolLootTables {
     private static void customSpawnerBlockHandling(Identifier identifier, LootTableLoadingCallback.LootTableSetter setter) {
         if (LootTableHelper.isSpawner(identifier)) {
             setter.set(LootTable.builder().pool(
-                    LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(PlayerPlacedLootCondition::new)
-                        .with(ItemEntry.builder(Items.SPAWNER)
-                            .apply(CopyNbtLootFunction.builder(ContextLootNbtProvider.BLOCK_ENTITY)
-                                .withOperation("SpawnPotentials", "SpawnPotentials")
-                                .withOperation("SpawnData", "SpawnData")
-                                .withOperation("IsPlayerPlaced", "IsPlayerPlaced")
-                            )
+                LootPool.builder()
+                    .rolls(ConstantLootNumberProvider.create(1))
+                    .conditionally(PlayerPlacedLootCondition::new)
+                    .with(ItemEntry.builder(Items.SPAWNER)
+                        .apply(CopyNbtLootFunction.builder(ContextLootNbtProvider.BLOCK_ENTITY)
+                            .withOperation("SpawnPotentials", "SpawnPotentials")
+                            .withOperation("SpawnData", "SpawnData")
+                            .withOperation("IsPlayerPlaced", "IsPlayerPlaced")
                         )
+                    )
                 ).build()
             );
         }

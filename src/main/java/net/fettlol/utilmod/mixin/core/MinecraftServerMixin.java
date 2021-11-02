@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  * of the game so that we can add things to them when the need arises.
  */
 @Mixin(MinecraftServer.class)
-public class MinecraftServerMixin {
+public abstract class MinecraftServerMixin {
 
     @Inject(method = "loadWorld", at = @At("HEAD"))
     protected void hookBeforeLoadWorld(CallbackInfo ci) {

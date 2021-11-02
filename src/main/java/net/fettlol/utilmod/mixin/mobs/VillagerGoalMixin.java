@@ -19,7 +19,7 @@ public abstract class VillagerGoalMixin extends MerchantEntity {
         super(entityType, world);
     }
 
-    @Inject(at = {@At("RETURN")}, method = {"setVillagerData"})
+    @Inject(at = @At("RETURN"), method = "setVillagerData")
     private void setVillagerData(CallbackInfo ci) {
         this.goalSelector.add(0, new TemptGoal(
             this,

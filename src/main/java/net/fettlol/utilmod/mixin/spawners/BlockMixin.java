@@ -1,4 +1,4 @@
-package net.fettlol.utilmod.mixin.world;
+package net.fettlol.utilmod.mixin.spawners;
 
 import net.fettlol.utilmod.api.SpawnerInterface;
 import net.minecraft.block.Block;
@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /** Used to temporarily safe the IsPlayerPlaced attribute of spawners for use in SpawnerBlockMixin */
 @Mixin(Block.class)
-public class BlockMixin implements SpawnerInterface {
+public abstract class BlockMixin implements SpawnerInterface {
 
     @Unique
     static private boolean fettlol$playerPlaced;

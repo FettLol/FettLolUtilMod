@@ -25,7 +25,7 @@ public class FettlolEntities {
                 .dimensions(EntityDimensions.fixed(0.6F, 1.95F))
                 .trackRangeBlocks(12)
                 .build()
-            );
+        );
 
 
     public static void init() {

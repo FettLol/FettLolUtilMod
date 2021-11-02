@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(LivingEntity.class)
 public abstract class EggCollectorMixin {
 
-    @Inject(at = @At("HEAD"), method = "onDeath", cancellable = true)
+    @Inject(at = @At("HEAD"), method = "onDeath")
     private void onEggCollectorKill(DamageSource source, CallbackInfo ci) {
         if (!(source.getAttacker() instanceof PlayerEntity)) {
             return;

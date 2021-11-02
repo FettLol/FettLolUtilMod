@@ -24,7 +24,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  * side things as well.
  */
 @Mixin(PlayerManager.class)
-public class PlayerManagerMixin {
+public abstract class PlayerManagerMixin {
     @Shadow
     @Final
     private WorldSaveHandler saveHandler;

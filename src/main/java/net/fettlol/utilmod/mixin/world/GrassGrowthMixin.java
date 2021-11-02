@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import java.util.Random;
 
 @Mixin(SpreadableBlock.class)
-public class GrassSpreadMixin {
+public abstract class GrassGrowthMixin {
 
     @Inject(
         method = "randomTick",

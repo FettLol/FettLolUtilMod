@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  */
 
 @Mixin(LilyPadBlock.class)
-public class LilyPadBlockMixin extends PlantBlock {
+public abstract class LilyPadBlockMixin extends PlantBlock {
     @Shadow @Final protected static VoxelShape SHAPE;
 
     protected LilyPadBlockMixin(Settings settings) {

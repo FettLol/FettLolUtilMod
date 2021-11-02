@@ -39,13 +39,6 @@ public class PlayerPlacedLootCondition implements LootCondition {
 		return nbt.getBoolean("IsPlayerPlaced");
 	}
 
-	public static class Builder implements LootCondition.Builder {
-		@Override
-		public LootCondition build() {
-			return new PlayerPlacedLootCondition();
-		}
-	}
-
 	public static class Serializer implements JsonSerializer<PlayerPlacedLootCondition> {
 		@Override
 		public void toJson(JsonObject json, PlayerPlacedLootCondition object, JsonSerializationContext context) {

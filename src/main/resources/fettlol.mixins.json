@@ -26,8 +26,8 @@
     "world.AmethystClusterMixin",
     "world.AutoPlantMixin",
     "world.BiomeFeaturesMixin",
-    "world.BlockMixin",
-    "world.GrassSpreadMixin",
+    "spawners.BlockMixin",
+    "world.GrassGrowthMixin",
     "world.SnowFallsThroughLeavesMixin"
   ],
   "client": [

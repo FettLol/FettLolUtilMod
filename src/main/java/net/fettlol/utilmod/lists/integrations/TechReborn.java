@@ -16,28 +16,28 @@ public class TechReborn {
         "sapphire_boots"
     );
 
-  public static List<String> CHESTS = Arrays.asList(
-      "bronze_chestplate",
-      "peridot_chestplate",
-      "quantum_chestplate",
-      "ruby_chestplate",
-      "sapphire_chestplate"
-  );
+    public static List<String> CHESTS = Arrays.asList(
+        "bronze_chestplate",
+        "peridot_chestplate",
+        "quantum_chestplate",
+        "ruby_chestplate",
+        "sapphire_chestplate"
+    );
 
-  public static List<String> HELMS = Arrays.asList(
-      "bronze_helmet",
-      "peridot_helmet",
-      "quantum_helmet",
-      "ruby_helmet",
-      "sapphire_helmet"
-  );
+    public static List<String> HELMS = Arrays.asList(
+        "bronze_helmet",
+        "peridot_helmet",
+        "quantum_helmet",
+        "ruby_helmet",
+        "sapphire_helmet"
+    );
 
-  public static List<String> LEGGINGS = Arrays.asList(
-      "bronze_leggings",
-      "peridot_leggings",
-      "quantum_leggings",
-      "ruby_leggings",
-      "sapphire_leggings"
-  );
+    public static List<String> LEGGINGS = Arrays.asList(
+        "bronze_leggings",
+        "peridot_leggings",
+        "quantum_leggings",
+        "ruby_leggings",
+        "sapphire_leggings"
+    );
 
 }

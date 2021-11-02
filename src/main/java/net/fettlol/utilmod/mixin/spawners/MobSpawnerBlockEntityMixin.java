@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MobSpawnerBlockEntity.class)
-public class MobSpawnerBlockEntityMixin implements SpawnerInterface {
+public abstract class MobSpawnerBlockEntityMixin implements SpawnerInterface {
 
     private boolean isPlayerPlaced = false;
 

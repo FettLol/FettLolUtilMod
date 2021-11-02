@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(AmethystClusterBlock.class)
-public class AmethystClusterMixin extends AmethystBlock {
+public abstract class AmethystClusterMixin extends AmethystBlock {
     public AmethystClusterMixin(Settings settings) {
         super(settings);
     }
@@ -34,7 +34,7 @@ public class AmethystClusterMixin extends AmethystBlock {
 
     private boolean passesCriteria(World world, BlockState blockState, ItemStack itemStack) {
         // Run on the server world, ensure the block is an Amethyst Cluster, and that it's not broken with Silk Touch
-        return world instanceof ServerWorld
+        return !world.isClient
             && blockState.isOf(Blocks.AMETHYST_CLUSTER)
             && EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, itemStack) == 0;
     }
