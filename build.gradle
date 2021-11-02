@@ -45,13 +45,6 @@ dependencies {
     // include modImplementation("net.fettlol:fettlol-lib:${project.fettlol_lib}")
     modImplementation("com.github.Fettlol:fettlol-lib:v${project.fettlol_lib}")
 
-    // TOML (Included)
-    include implementation("com.moandjiezana.toml:toml4j:${project.toml4j_version}")
-
-    // Config (Included)
-    include implementation("com.electronwill.night-config:core:${project.tomlnc_version}")
-    include implementation("com.electronwill.night-config:toml:${project.tomlnc_version}")
-
     // Cloth-Config (Required dependency)
     modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
         exclude(group: "net.fabricmc.fabric-api")
