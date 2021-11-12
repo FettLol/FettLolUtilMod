@@ -28,6 +28,7 @@
     "world.BiomeFeaturesMixin",
     "spawners.BlockMixin",
     "world.GrassGrowthMixin",
+    "world.ProjectileEntityMixin",
     "world.SnowFallsThroughLeavesMixin"
   ],
   "client": [
