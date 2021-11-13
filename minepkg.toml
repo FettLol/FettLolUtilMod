@@ -9,19 +9,19 @@ manifestVersion = 0
   version = "1.2.6"
   platform = "fabric"
   license = "MIT"
-  source = "https://github.com/FettLol/FettLolUtilMod"
-  homepage = "https://github.com/FettLol/FettLolUtilMod"
+  source = "https://github.com/FettLol/fettlol-utilmod"
+  homepage = "https://github.com/FettLol/fettlol-utilmod"
   author = "Breki Tomasson <breki.tomasson@gmail.com>"
 
 # These are global requirements
 [requirements]
   minecraft = ">=1.17.1"
-  fabricLoader = ">=0.12.3"
+  fabricLoader = ">=0.12.5"
 
 [dependencies]
-  cloth-config = "^5.0.34-0.mpkg.1"
+  cloth-config = "^5.1.40-0.mpkg.1"
   fabric = "*"
-  fettlol-lib = "^1.0.7"
+  fettlol-lib = "^1.0.10"
 
 [dev]
   buildCommand = "./gradlew build"
