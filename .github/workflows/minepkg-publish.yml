@@ -13,6 +13,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: 16
+          distribution: 'adopt'
       - name: Publish release on minepkg.io
         uses: minepkg/action-publish@main
         with:
