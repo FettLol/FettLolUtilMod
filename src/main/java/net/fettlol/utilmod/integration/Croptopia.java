@@ -23,10 +23,10 @@ public class Croptopia {
             // Randomly add a selection of Croptopia foods to villager chests.
             if (LootTableHelper.isVillageHouseChest(identifier)) {
                 net.fettlol.utilmod.lists.integrations.Croptopia.VILLAGER_FOOD.forEach(food -> LootApi.addToLootTable(
-                    supplier, 3, 0.02F, croptopiaIdentifier(food)
+                    supplier, 3, 0.015F, croptopiaIdentifier(food)
                 ));
                 net.fettlol.utilmod.lists.integrations.Croptopia.TOOLS.forEach(tool -> LootApi.addToLootTable(
-                    supplier, 1, 0.05F, croptopiaIdentifier(tool)
+                    supplier, 1, 0.01F, croptopiaIdentifier(tool)
                 ));
             }
         });

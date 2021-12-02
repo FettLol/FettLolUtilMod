@@ -17,7 +17,7 @@ public class AdditionalAdditions {
             LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
                 // Villager Houses: Add Rope (3%).
                 if (LootTableHelper.isVillageHouseChest(identifier)) {
-                    LootApi.addToLootTable(supplier, 1, 0.3F, Mods.ADDITIONAL_ADDITIONS, "rope");
+                    LootApi.addToLootTable(supplier, 1, 0.1F, Mods.ADDITIONAL_ADDITIONS, "rope");
                 }
 
                 // Ruined Portals: Add Rose Gold items (2%).

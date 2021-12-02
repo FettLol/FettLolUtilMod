@@ -37,7 +37,7 @@ public abstract class SnowFallsThroughLeavesMixin extends World {
 
     @Inject(method = "tickChunk", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/biome/Biome;canSetIce(Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z"), locals = LocalCapture.CAPTURE_FAILHARD)
     private void snowFalls(WorldChunk chunk, int randomTickSpeed, CallbackInfo ci, ChunkPos chunkPos, boolean raining, int i, int j, Profiler profiler, BlockPos blockPos2, BlockPos blockPos3, Biome biome) {
-        if (raining && biome.getTemperature(blockPos2) < 0.15F) {
+        if (raining && biome.isCold(blockPos2)) {
             BlockState state = this.getBlockState(blockPos2);
             int bottom = this.getTopPosition(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, blockPos2).getY() - 1;
 

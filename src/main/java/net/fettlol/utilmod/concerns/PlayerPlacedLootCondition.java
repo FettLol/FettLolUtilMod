@@ -34,7 +34,7 @@ public class PlayerPlacedLootCondition implements LootCondition {
 	@Override
 	public boolean test(LootContext lootContext) {
 		BlockEntity blockEntity = lootContext.get(LootContextParameters.BLOCK_ENTITY);
-		NbtCompound nbt = blockEntity.writeNbt(new NbtCompound());
+		NbtCompound nbt = blockEntity.createNbt();
 
 		return nbt.getBoolean("IsPlayerPlaced");
 	}

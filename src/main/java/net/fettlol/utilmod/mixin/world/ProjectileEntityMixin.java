@@ -46,7 +46,7 @@ public abstract class ProjectileEntityMixin extends Entity {
     private boolean scheduleFall(BlockPos pos, Block block, int delay) {
         if (!(block instanceof FallingBlock)) return false;
 
-        world.getBlockTickScheduler().schedule(pos, block, delay);
+        world.createAndScheduleBlockTick(pos, block, delay);
         return true;
     }
 }

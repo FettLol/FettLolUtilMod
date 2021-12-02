@@ -7,7 +7,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(MobSpawnerBlockEntity.class)
 public abstract class MobSpawnerBlockEntityMixin implements SpawnerInterface {
@@ -15,7 +14,7 @@ public abstract class MobSpawnerBlockEntityMixin implements SpawnerInterface {
     private boolean isPlayerPlaced = false;
 
     @Inject(method = "writeNbt", at = @At("HEAD"))
-    private void writeNbt(NbtCompound nbt, CallbackInfoReturnable<NbtCompound> cir) {
+    private void writeNbt(NbtCompound nbt, CallbackInfo ci) {
         nbt.putBoolean("IsPlayerPlaced", isPlayerPlaced);
     }
 

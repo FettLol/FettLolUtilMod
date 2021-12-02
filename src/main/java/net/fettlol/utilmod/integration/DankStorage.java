@@ -109,7 +109,6 @@ public class DankStorage {
     private static void replaceDank7() {
         if (
             FettlolModIntegrations.isEarth2JavaLoaded
-                && FettlolModIntegrations.isTerrestriaLoaded
                 && FettlolModIntegrations.isBygLoaded
                 && FettlolModIntegrations.isBetterEndLoaded
         ) {

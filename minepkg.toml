@@ -15,13 +15,13 @@ manifestVersion = 0
 
 # These are global requirements
 [requirements]
-  minecraft = ">=1.17.1"
-  fabricLoader = ">=0.12.5"
+  minecraft = ">=1.18"
+  fabricLoader = ">=0.12.6"
 
 [dependencies]
   cloth-config = "^5.1.40-0.mpkg.1"
   fabric = "*"
-  fettlol-lib = "^1.0.10"
+  fettlol-lib = "^1.1.1"
 
 [dev]
   buildCommand = "./gradlew build"
