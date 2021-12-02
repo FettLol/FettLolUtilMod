@@ -6,14 +6,16 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
-      - name: Set up JDK 16
+
+      - name: Set up JDK 17
         uses: actions/setup-java@v2
         with:
-          java-version: 16
+          java-version: 17
           distribution: 'temurin'
+
       - name: Publish release on minepkg.io
         uses: minepkg/action-publish@main
         with:
