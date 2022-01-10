@@ -19,12 +19,9 @@ manifestVersion = 0
   fabricLoader = ">=0.12.6"
 
 [dependencies]
-  cloth-config = "^5.1.40-0.mpkg.1"
+  cloth-config = "^6.1"
   fabric = "*"
   fettlol-lib = "^1.1.1"
 
 [dev]
   buildCommand = "./gradlew build"
-
-  [dev.dependencies]
-    test-mansion = "*"
