@@ -33,16 +33,13 @@ public abstract class AutoPlantMixin extends Entity {
     @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;tick()V"))
     public void plantSaplings(CallbackInfo ci) {
         ItemStack stack = this.getStack();
-        Item item = stack.getItem();
 
-        if (ItemTags.SAPLINGS.contains(item) && this.age >= 500) {
+        if (stack.isIn(ItemTags.SAPLINGS) && this.age >= 500) {
             BlockPos pos = this.getBlockPos();
             if (this.getBlockPos() != triedToPlantAt && world.getFluidState(pos).isEmpty()) {
-                if (ItemTags.SAPLINGS.contains(item)) {
-                    ((BlockItem) item).place(getItemPlacementContext(stack, pos));
+                ((BlockItem) stack.getItem()).place(getItemPlacementContext(stack, pos));
 
-                    triedToPlantAt = this.getBlockPos();
-                }
+                triedToPlantAt = this.getBlockPos();
             }
         }
     }

@@ -1,6 +1,5 @@
 package net.fettlol.utilmod.mixin.world;
 
-import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.AmethystBlock;
 import net.minecraft.block.AmethystClusterBlock;
 import net.minecraft.block.BlockState;
@@ -44,16 +43,12 @@ public abstract class AmethystClusterMixin extends AmethystBlock {
     }
 
     /**
-     * This method should probably be refactored into `fettlol-lib` and made part of a larger
-     * collection of methods that take an ItemStack as their argument and return a boolean.
-     * In this case, we're checking if an item is a Pickaxe in two different ways, since not
-     * all pickaxes added via mods are in minecraft:cluster_max_harvestables, but they should
-     * at least be in fabric:pickaxes. All things considered, there should probably be a check
-     * to see if the item is an instance of PickaxeItem, too.
+     * Removed FabricToolTags since this is no longer where it used to be.
+     * @todo Move this functionality to fettlol-lib once I figure out where this is supposed to go.
      */
     private boolean heldItemIsPickaxe(ItemStack itemStack) {
-        return itemStack.isIn(ItemTags.CLUSTER_MAX_HARVESTABLES)
-            || itemStack.isIn(FabricToolTags.PICKAXES);
+        return itemStack.isIn(ItemTags.CLUSTER_MAX_HARVESTABLES);
+            // || itemStack.isIn(FabricToolTags.PICKAXES);
     }
 
 }

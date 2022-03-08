@@ -32,7 +32,6 @@
     "world.SnowFallsThroughLeavesMixin"
   ],
   "client": [
-    "client.MinecraftClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -27,7 +27,7 @@ public class FettlolLootTables {
 
     public static void init() {
         LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
-            customSpawnerBlockHandling(identifier, setter);
+            // customSpawnerBlockHandling(identifier, setter);
             updateOreLootTables(identifier, supplier);
             updateChestLootTables(identifier, supplier);
             updateMobLootTables(identifier, supplier);

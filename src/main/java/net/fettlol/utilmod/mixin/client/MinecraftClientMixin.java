@@ -9,6 +9,8 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 /**
  * Disable the experimental settings warning.
+ *
+ * @todo reenable this for 1.18.2
  */
 @Environment(EnvType.CLIENT)
 @Mixin(MinecraftClient.class)
