@@ -9,15 +9,13 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 /**
  * Disable the experimental settings warning.
- *
- * @todo reenable this for 1.18.2
  */
 @Environment(EnvType.CLIENT)
 @Mixin(MinecraftClient.class)
 public abstract class MinecraftClientMixin {
 
     @ModifyVariable(
-        method = "startIntegratedServer(Ljava/lang/String;Lnet/minecraft/util/registry/DynamicRegistryManager$Impl;Ljava/util/function/Function;Lcom/mojang/datafixers/util/Function4;ZLnet/minecraft/client/MinecraftClient$WorldLoadAction;)V",
+        method = "startIntegratedServer(Ljava/lang/String;Ljava/util/function/Function;Ljava/util/function/Function;ZLnet/minecraft/client/MinecraftClient$WorldLoadAction;)V",
         at = @At("STORE"),
         ordinal = 2 // includes safeMode parameter
     )
