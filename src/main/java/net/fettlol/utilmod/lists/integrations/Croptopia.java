@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Croptopia {
 
-    // Maybe this should be broken down into sub-groups making up their own lists,
+    // Maybe this should be broken down into subgroups making up their own lists,
     // so that implementations can be built for individual aspects of the foods,
     // not just the full list?
     public static final List<String> VILLAGER_FOOD = Arrays.asList(
@@ -23,6 +23,7 @@ public class Croptopia {
         "artichoke_seed",
         "asparagus",
         "avocado",
+        "bacon",
         "baked_beans",
         "banana",
         "banana_cream_pie",
@@ -219,6 +220,7 @@ public class Croptopia {
         "tamales",
         "tea",
         "toast",
+        "toast_sandwich",
         "toast_with_jam",
         "tofu",
         "tofu_and_dumplings",
@@ -249,36 +251,37 @@ public class Croptopia {
 
     public static List<String> SAPLINGS = Arrays.asList(
         "apple_sapling",
+        "apricot_sapling",
+        "avocado_sapling",
         "banana_sapling",
-        "orange_sapling",
-        "persimmon_sapling",
-        "plum_sapling",
         "cherry_sapling",
-        "lemon_sapling",
+        "coconut_sapling",
+        "date_sapling",
+        "dragonfruit_sapling",
+        "fig_sapling",
         "grapefruit_sapling",
         "kumquat_sapling",
-        "peach_sapling",
-        "coconut_sapling",
-        "nutmeg_sapling",
-        "fig_sapling",
-        "nectarine_sapling",
-        "mango_sapling",
-        "dragonfruit_sapling",
-        "starfruit_sapling",
-        "avocado_sapling",
-        "apricot_sapling",
-        "pear_sapling",
+        "lemon_sapling",
         "lime_sapling",
-        "date_sapling"
+        "mango_sapling",
+        "nectarine_sapling",
+        "nutmeg_sapling",
+        "orange_sapling",
+        "peach_sapling",
+        "pear_sapling",
+        "persimmon_sapling",
+        "plum_sapling",
+        "starfruit_sapling"
     );
 
     public static List<String> TOOLS = Arrays.asList(
-        "milk_bottle",
-        "water_bottle",
+        "cooking_pot",
         "food_press",
         "frying_pan",
-        "cooking_pot",
-        "mortar_and_pestle"
+        "knife",
+        "milk_bottle",
+        "mortar_and_pestle",
+        "water_bottle"
     );
 
 }
