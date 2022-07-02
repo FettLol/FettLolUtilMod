@@ -4,7 +4,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tag.ItemTags;
@@ -34,7 +33,7 @@ public abstract class AutoPlantMixin extends Entity {
     public void plantSaplings(CallbackInfo ci) {
         ItemStack stack = this.getStack();
 
-        if (stack.isIn(ItemTags.SAPLINGS) && this.age >= 500) {
+        if ((stack.isIn(ItemTags.SAPLINGS) || stack.isIn(ItemTags.FLOWERS)) && this.age >= 666) {
             BlockPos pos = this.getBlockPos();
             if (this.getBlockPos() != triedToPlantAt && world.getFluidState(pos).isEmpty()) {
                 ((BlockItem) stack.getItem()).place(getItemPlacementContext(stack, pos));
