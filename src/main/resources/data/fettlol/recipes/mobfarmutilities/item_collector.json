@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "JRJ",
+    "HMH",
+    "   "
+  ],
+  "key": {
+    "J": { "item": "fettlol:jade_gem" },
+    "H": { "item": "minecraft:hopper" },
+    "M": { "item": "techreborn:industrial_machine_frame" },
+    "R": { "item": "ring_of_attraction:ring_of_attraction" }
+  },
+  "result": {
+    "item": "mobfarmutilities:item_collector"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "mobfarmutilities",
+        "ring_of_attraction",
+        "techreborn"
+      ]
+    }
+  ]
+}

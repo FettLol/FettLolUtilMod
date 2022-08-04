@@ -49,17 +49,9 @@ public class RegistryHelper {
         return modId(UtilMod.MOD_ID, name);
     }
 
-    // Returns an Identifier in the "minecraft" namespace
-    public static Identifier vanillaId(String name) {
-        return modId("minecraft", name);
-    }
 
     public static Item getItemFromRegistry(String itemName) {
         return Registry.ITEM.get(new Identifier(itemName)).asItem();
-    }
-
-    public static Item getItemFromRegistry(String namespace, String item) {
-        return getItemFromRegistry(namespace + ":" + item);
     }
 
     public interface RegistryCallBack<T> {

@@ -21,7 +21,6 @@ manifestVersion = 0
 [dependencies]
   cloth-config = "^6.1"
   fabric = "*"
-  fettlol-lib = "^1.1.6"
 
 [dev]
   buildCommand = "./gradlew build"

@@ -167,8 +167,9 @@ public class WanderingHeadhunterTradeOffers {
             HeadHelper.playerHeadForSale("BrekiT"),
             HeadHelper.playerHeadForSale("Fourmisain"),
             HeadHelper.playerHeadForSale("GuardianMona"),
-            HeadHelper.playerHeadForSale("fiws"),
+            HeadHelper.playerHeadForSale("Haverist1"),
             HeadHelper.playerHeadForSale("ciuryburie"),
+            HeadHelper.playerHeadForSale("fiws"),
 
             // Hermitcraft
             HeadHelper.playerHeadForSale("BdoubleO", "BdoubleO100"),

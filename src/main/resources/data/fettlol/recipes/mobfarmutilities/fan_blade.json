@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " S ",
+    "SBS",
+    " S "
+  ],
+  "key": {
+    "S": { "item": "techreborn:iron_plate" },
+    "B": { "item": "minecraft:iron_bars" }
+  },
+  "result": {
+    "item": "mobfarmutilities:fan_blade"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "mobfarmutilities",
+        "techreborn"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SBS",
+    "SRS",
+    "SCS"
+  ],
+  "key": {
+    "B": { "item": "mobfarmutilities:fan_blade" },
+    "C": { "item": "techreborn:advanced_machine_casing" },
+    "S": { "item": "techreborn:steel_plate" },
+    "R": { "item": "minecraft:redstone" }
+  },
+  "result": {
+    "item": "mobfarmutilities:fan"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "mobfarmutilities",
+        "techreborn"
+      ]
+    }
+  ]
+}

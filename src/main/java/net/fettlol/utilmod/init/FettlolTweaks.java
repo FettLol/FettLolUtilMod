@@ -1,9 +1,9 @@
 package net.fettlol.utilmod.init;
 
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
-import net.fettlol.lib.helper.BlockHelper;
-import net.fettlol.lib.registry.CompostingApi;
 import net.fettlol.utilmod.UtilMod;
+import net.fettlol.utilmod.registry.CompostingApi;
+import net.fettlol.utilmod.util.BlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BoneMealItem;
@@ -35,7 +35,6 @@ public class FettlolTweaks {
 
     }
 
-    // @TODO - Refactor this method and the next out of this file.
     public static ActionResult growOnUseBlock(PlayerEntity playerEntity, World world, Hand hand, BlockHitResult blockHitResult) {
         boolean success = growFlowerWithBoneMeal(playerEntity, hand, world, blockHitResult.getBlockPos());
 

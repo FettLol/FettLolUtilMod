@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PSP",
+    "EBE",
+    "ASA"
+  ],
+  "key": {
+    "A": { "item": "fettlol:aquamarine_gem" },
+    "B": { "item": "winged:broken_core_of_flight_25" },
+    "E": { "item": "minecraft:ender_eye" },
+    "S": { "item": "minecraft:shulker_shell" },
+    "P": { "item": "minecraft:phantom_membrane" }
+  },
+  "result": {
+    "item": "winged:core_of_flight"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "winged"
+      ]
+    }
+  ]
+}

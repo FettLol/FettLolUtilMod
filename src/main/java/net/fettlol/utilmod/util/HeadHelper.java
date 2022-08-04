@@ -55,41 +55,18 @@ public class HeadHelper {
         return playerHead;
     }
 
-    /**
-     * Get a head where the name and profile is the same.
-     *
-     * @param playerName String Name and Profile
-     * @return SellHeadFactory
-     */
     public static TradeOffers.Factory playerHeadForSale(String playerName) {
         return new SellHeadFactory(getPlayerHead(playerName, playerName), 1, 3, 10);
     }
 
-    /**
-     * Get a head where the name and profile are different.
-     *
-     * @param playerName String Name
-     * @param skullOwner String Profile
-     * @return SellHeadFactory
-     */
     public static TradeOffers.Factory playerHeadForSale(String playerName, String skullOwner) {
         return new SellHeadFactory(getPlayerHead(playerName, skullOwner), 1, 3, 10);
     }
 
-    /**
-     * @param playerName String The player's name.
-     * @param idArray    int[] The unique ID for this head.
-     * @param texture    String The Texture ID
-     * @return SellHeadFactory
-     */
     public static TradeOffers.Factory playerTextureForSale(String playerName, int[] idArray, String texture) {
         return new SellHeadFactory(getPlayerHeadWithTexture(playerName, idArray, texture), 1, 3, 10);
     }
 
-    /**
-     * Static Factory class extending the standard TradeOffers factory and tuned specifically
-     * for use when selling player heads using the "Wandering Headhunter" trader.
-     */
     public static class SellHeadFactory implements TradeOffers.Factory {
         private final ItemStack sell;
         private final int price;

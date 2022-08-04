@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item":  "fettlol:wither_bone"
+      "item": "fettlol:wither_bone"
     }
   ],
   "result": {

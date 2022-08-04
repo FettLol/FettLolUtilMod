@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "SMS",
+    "BBB"
+  ],
+  "key": {
+    "B": { "item": "minecraft:iron_bars" },
+    "S": { "item": "fettlol:soul_shard" },
+    "M": { "item": "techreborn:industrial_machine_frame" }
+  },
+  "result": {
+    "item": "mobfarmutilities:experience_collector"
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "mobfarmutilities",
+        "techreborn"
+      ]
+    }
+  ]
+}

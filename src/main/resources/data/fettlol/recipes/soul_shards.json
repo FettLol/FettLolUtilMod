@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item":  "fettlol:soul_gem"
+      "item": "fettlol:soul_gem"
     }
   ],
   "result": {

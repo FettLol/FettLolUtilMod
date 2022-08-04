@@ -1,8 +1,9 @@
 package net.fettlol.utilmod.mixin.core;
 
-import net.fettlol.utilmod.util.RecipeHelper;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.ClientConnection;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeManager;
 import net.minecraft.server.PlayerManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.world.WorldSaveHandler;
@@ -13,6 +14,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.Collection;
 
 /**
  * This file defines a number of hooks that can be used by code in
@@ -32,7 +35,15 @@ public abstract class PlayerManagerMixin {
     // Hooks to run when a player connects to a server (including singleplayer worlds).
     @Inject(method = "onPlayerConnect", at = @At("RETURN"))
     private void hookAfterPlayerConnect(ClientConnection connection, ServerPlayerEntity player, CallbackInfo ci) {
-        RecipeHelper.unlockAllRecipes(player);
+        if (player != null) {
+            RecipeManager recipeManager = player.world.getRecipeManager();
+            Collection<Recipe<?>> allRecipes = recipeManager.values();
+
+            // allRecipes can be manipulated in case there are any recipes
+            // we do not want to unlock by default.
+
+            player.unlockRecipes(allRecipes);
+        }
     }
 
     // Hooks to run when a player is removed from a world for any reason.

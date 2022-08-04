@@ -13,15 +13,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class BiomeFeaturesMixin {
 
     // Add Guardians in all Oceans.
-    @Inject(method = "addOceanMobs", at = @At("TAIL"))
-    private static void spawnGuardiansInOceans(
-        SpawnSettings.Builder builder,
-        int squidWeight,
-        int squidMaxGroupSize,
-        int codWeight,
-        CallbackInfo ci
-    ) {
-        builder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.GUARDIAN, 2, 1, 2));
+    @Inject(method = "addWarmOceanMobs", at = @At("TAIL"))
+    private static void spawnGuardiansInWarmOceans(SpawnSettings.Builder builder, int squidWeight, int squidMinGroupSize, CallbackInfo ci) {
+        builder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(EntityType.GUARDIAN, 1, 1, 1));
     }
 
 }

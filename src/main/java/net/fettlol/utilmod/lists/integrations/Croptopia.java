@@ -8,9 +8,9 @@ import java.util.List;
  */
 public class Croptopia {
 
-    // Maybe this should be broken down into subgroups making up their own lists,
-    // so that implementations can be built for individual aspects of the foods,
-    // not just the full list?
+    /**
+     * @todo Fetch this list from an appropriate tag instead.
+     */
     public static final List<String> VILLAGER_FOOD = Arrays.asList(
         "almond",
         "almond_brittle",
@@ -249,6 +249,9 @@ public class Croptopia {
         "zucchini"
     );
 
+    /**
+     * @todo Fetch this list from an appropriate tag instead.
+     */
     public static List<String> SAPLINGS = Arrays.asList(
         "apple_sapling",
         "apricot_sapling",
@@ -274,6 +277,9 @@ public class Croptopia {
         "starfruit_sapling"
     );
 
+    /**
+     * @todo Fetch this list from an appropriate tag instead.
+     */
     public static List<String> TOOLS = Arrays.asList(
         "cooking_pot",
         "food_press",

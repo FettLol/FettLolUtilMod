@@ -1,9 +1,9 @@
 package net.fettlol.utilmod.init;
 
-import net.fettlol.lib.list.Tags;
-import net.fettlol.lib.registry.TagApi;
 import net.fettlol.utilmod.lists.Mods;
+import net.fettlol.utilmod.lists.Tags;
 import net.fettlol.utilmod.lists.integrations.TechReborn;
+import net.fettlol.utilmod.registry.TagApi;
 import net.minecraft.item.Items;
 
 public class FettlolTags {

@@ -41,10 +41,6 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-    // Fettlol Library (Required dependency)
-    // include modImplementation("net.fettlol:fettlol-lib:${project.fettlol_lib}")
-    modImplementation("com.github.Fettlol:fettlol-lib:v${project.fettlol_lib}")
-
     // Cloth-Config (Required dependency)
     modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
         exclude(group: "net.fabricmc.fabric-api")

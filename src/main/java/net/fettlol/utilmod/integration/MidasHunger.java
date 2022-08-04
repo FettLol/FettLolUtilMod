@@ -1,11 +1,11 @@
 package net.fettlol.utilmod.integration;
 
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
-import net.fettlol.lib.helper.LootTableHelper;
-import net.fettlol.lib.registry.LootApi;
 import net.fettlol.utilmod.init.FettlolModIntegrations;
 import net.fettlol.utilmod.lists.Mods;
+import net.fettlol.utilmod.registry.LootApi;
 import net.fettlol.utilmod.util.LogHelper;
+import net.fettlol.utilmod.util.LootTableHelper;
 
 public class MidasHunger {
     public static void init() {
