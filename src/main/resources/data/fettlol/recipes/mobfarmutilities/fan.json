@@ -6,7 +6,7 @@
     "SCS"
   ],
   "key": {
-    "B": { "item": "mobfarmutilities:fan_blade" },
+    "B": { "item": "create:propeller" },
     "C": { "item": "techreborn:advanced_machine_casing" },
     "S": { "item": "techreborn:steel_plate" },
     "R": { "item": "minecraft:redstone" }
@@ -19,6 +19,7 @@
       "condition": "fabric:all_mods_loaded",
       "values": [
         "mobfarmutilities",
+        "create",
         "techreborn"
       ]
     }

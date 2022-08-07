@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#A#",
+    "#E#",
+    "#O#"
+  ],
+  "key": {
+    "#": {
+      "tag": "c:refined_blackstones"
+    },
+    "A": {
+      "item": "waystones:abyss_watcher"
+    },
+    "E": {
+      "item": "fettlol:jade_gem"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "waystones:blackstone_brick_waystone",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "waystones"
+      ]
+    }
+  ]
+}

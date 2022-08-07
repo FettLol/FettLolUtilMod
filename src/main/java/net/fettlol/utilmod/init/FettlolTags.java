@@ -1,6 +1,5 @@
 package net.fettlol.utilmod.init;
 
-import net.fettlol.utilmod.lists.Mods;
 import net.fettlol.utilmod.lists.Tags;
 import net.fettlol.utilmod.lists.integrations.TechReborn;
 import net.fettlol.utilmod.registry.TagApi;
@@ -41,22 +40,22 @@ public class FettlolTags {
         // Tech Reborn
         if (FettlolModIntegrations.isTechRebornLoaded) {
             for (String bootItem : TechReborn.BOOTS) {
-                TagApi.assignItemTag(Tags.FABRIC_BOOTS, Mods.TECH_REBORN, bootItem);
+                TagApi.assignItemTag(Tags.FABRIC_BOOTS, FettlolModIntegrations.TECH_REBORN, bootItem);
             }
             for (String chestItem : TechReborn.CHESTS) {
-                TagApi.assignItemTag(Tags.FABRIC_CHESTPLATES, Mods.TECH_REBORN, chestItem);
+                TagApi.assignItemTag(Tags.FABRIC_CHESTPLATES, FettlolModIntegrations.TECH_REBORN, chestItem);
             }
             for (String helmetItem : TechReborn.HELMS) {
-                TagApi.assignItemTag(Tags.FABRIC_HELMETS, Mods.TECH_REBORN, helmetItem);
+                TagApi.assignItemTag(Tags.FABRIC_HELMETS, FettlolModIntegrations.TECH_REBORN, helmetItem);
             }
             for (String legItem : TechReborn.LEGGINGS) {
-                TagApi.assignItemTag(Tags.FABRIC_LEGGINGS, Mods.TECH_REBORN, legItem);
+                TagApi.assignItemTag(Tags.FABRIC_LEGGINGS, FettlolModIntegrations.TECH_REBORN, legItem);
             }
         }
 
         // Croptopia
         if (FettlolModIntegrations.isCroptopiaLoaded) {
-            TagApi.assignItemTag(Tags.C_VANILLAS, Mods.CROPTOPIA, "vanilla");
+            TagApi.assignItemTag(Tags.C_VANILLAS, FettlolModIntegrations.CROPTOPIA, "vanilla");
         }
     }
 

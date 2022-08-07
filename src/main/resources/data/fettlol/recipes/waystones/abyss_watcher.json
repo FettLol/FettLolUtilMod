@@ -1,23 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " S ",
-    "SBS",
-    " S "
+    "   ",
+    "SES",
+    "   "
   ],
   "key": {
-    "S": { "item": "techreborn:iron_plate" },
-    "B": { "item": "minecraft:iron_bars" }
+    "S": { "item": "minecraft:flint" },
+    "E": { "item": "minecraft:ender_eye" }
   },
   "result": {
-    "item": "mobfarmutilities:fan_blade"
+    "item": "waystones:abyss_watcher"
   },
   "fabric:load_conditions": [
     {
       "condition": "fabric:all_mods_loaded",
       "values": [
-        "mobfarmutilities",
-        "techreborn"
+        "waystones"
       ]
     }
   ]

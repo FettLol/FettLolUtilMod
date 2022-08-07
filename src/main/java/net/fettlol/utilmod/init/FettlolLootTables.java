@@ -31,7 +31,7 @@ public class FettlolLootTables {
         }
 
         if (LootTableHelper.isDiamondOre(identifier)) {
-            LootApi.addToOreLootTable(supplier, 2, 0.03F, "fettlol:soul_shard");
+            LootApi.addToOreLootTable(supplier, 2, 0.04F, "fettlol:soul_shard");
         }
     }
 
@@ -52,7 +52,6 @@ public class FettlolLootTables {
         if (LootTableHelper.isEnderDragon(identifier)) {
             LootApi.addToLootTable(supplier, 4, 0.5F, "fettlol:jade_gem");
             LootApi.addToLootTable(supplier, 4, 0.5F, "fettlol:aquamarine_gem");
-            LootApi.addToLootTable(supplier, 1, 1, "minecraft:elytra");
             LootApi.addToLootTable(supplier, 1, 1, "minecraft:dragon_egg");
         }
 
@@ -77,8 +76,12 @@ public class FettlolLootTables {
         }
 
         if (LootTableHelper.isWitherSkeleton(identifier)) {
-            LootApi.addToMobLootTable(supplier, 3, 0.1F, "fettlol:wither_bone");
-            LootApi.addToMobLootTable(supplier,1, 0.05F, "fettlol:soul_shard");
+            LootApi.addToMobLootTable(supplier, 3, 0.15F, "fettlol:wither_bone");
+            LootApi.addToMobLootTable(supplier,2, 0.1F, "fettlol:soul_shard");
+        }
+
+        if (LootTableHelper.isWither(identifier)) {
+            LootApi.addToMobLootTable(supplier,1, 0.75F, "fettlol:soul_gem");
         }
 
         if (LootTableHelper.isHostileWaterMob(identifier)) {
@@ -106,12 +109,6 @@ public class FettlolLootTables {
 
         if (LootTableHelper.isEndEndgameChest(identifier)) {
             LootApi.addToLootTableWithRandomEnchantment(supplier, 1, 0.04F, "fettlol:peacekeeper");
-        }
-
-        if (LootTableHelper.isGraveyardLootChest(identifier)) {
-            LootApi.addToLootTable(supplier, 1, 0.04F, "fettlol:aquamarine_gem");
-            LootApi.addToLootTable(supplier, 1, 0.04F, "fettlol:jade_gem");
-            LootApi.addToLootTable(supplier, 3, 0.08F, "fettlol:soul_shard");
         }
 
         if (LootTableHelper.isDesertPyramid(identifier)) {

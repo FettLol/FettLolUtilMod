@@ -2,7 +2,6 @@ package net.fettlol.utilmod.integration;
 
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
 import net.fettlol.utilmod.init.FettlolModIntegrations;
-import net.fettlol.utilmod.lists.Mods;
 import net.fettlol.utilmod.registry.LootApi;
 import net.fettlol.utilmod.util.LogHelper;
 import net.fettlol.utilmod.util.LootTableHelper;
@@ -28,8 +27,8 @@ public class Croptopia {
         }
     }
 
-    private static Identifier croptopiaIdentifier(String crop) {
-        return new Identifier(Mods.CROPTOPIA, crop);
+    private static Identifier croptopiaIdentifier(String item) {
+        return new Identifier(FettlolModIntegrations.CROPTOPIA, item);
     }
 
 }
