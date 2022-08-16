@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "dankstorage:upgrade",
   "pattern": [
     "ADA",
     "DSD",
