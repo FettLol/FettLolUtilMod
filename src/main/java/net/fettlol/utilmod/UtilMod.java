@@ -28,6 +28,5 @@ public class UtilMod implements ModInitializer {
         FettlolTags.init();
         FettlolModIntegrations.init();
         FettlolLootTables.init();
-        FettlolTweaks.init();
     }
 }

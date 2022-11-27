@@ -29,6 +29,7 @@
     "world.AmethystClusterMixin",
     "world.AutoPlantMixin",
     "world.BiomeFeaturesMixin",
+    "world.FlowerBlockMixin",
     "world.GrassGrowthMixin",
     "world.ProjectileEntityMixin",
     "world.SnowFallsThroughLeavesMixin"
