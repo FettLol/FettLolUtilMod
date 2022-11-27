@@ -43,7 +43,6 @@ public class FettlolTweaks {
         if (!playerEntity.isCreative()) playerEntity.getStackInHand(hand).decrement(1);
 
         return ActionResult.SUCCESS;
-
     }
 
     private static boolean growFlowerWithBoneMeal(PlayerEntity playerEntity, Hand hand, World world, BlockPos blockPos) {
