@@ -2,9 +2,8 @@
 
 A list of things to do at some point, in no particular order other than just the order I thought of them.
 
-- [ ] Move the `winged:wingbench` fix from the `fettlol-datapack` into the mod.
-- [ ] Dispensers should be able to bone-meal duplicate flowers (but not Wither Roses) 
-  - BlockHelper.isFlower(block) already has the Wither Rose-specific check and could be reused.
-- [ ] Rewrite all the spawner logic and make the `spawner_key` required to pick up spawners, even world-gen spawners.
+- Move the `winged:wingbench` fix from the `fettlol-datapack` into the mod.
+- Rewrite all the spawner logic and make the `spawner_key` required to pick up spawners, even world-gen spawners.
   - Once this is in place, much of the other custom spawner logic in `utilmod` can be removed.
-- [ ] Netherite TreeAxe should be a Netherite Ingot upgrade from Diamond TreeAxe and the normal recipe removed.
+- Netherite TreeAxe should be a Netherite Ingot upgrade from Diamond TreeAxe and the normal recipe removed.
+- Check once Spectrum gets updated: Resonant Lily probably shouldn't be dupeable
