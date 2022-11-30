@@ -6,4 +6,3 @@ A list of things to do at some point, in no particular order other than just the
 - Rewrite all the spawner logic and make the `spawner_key` required to pick up spawners, even world-gen spawners.
   - Once this is in place, much of the other custom spawner logic in `utilmod` can be removed.
 - Netherite TreeAxe should be a Netherite Ingot upgrade from Diamond TreeAxe and the normal recipe removed.
-- Check once Spectrum gets updated: Resonant Lily probably shouldn't be dupeable
