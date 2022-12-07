@@ -20,6 +20,8 @@
     "lilypads.FallingParticlesMixin",
     "lilypads.LilyPadBlockMixin",
     "lilypads.SprintingParticlesMixin",
+    "mobs.CatEntityMixin",
+    "mobs.EscapeDangerGoalMixin",
     "mobs.VillagerGoalMixin",
     "mobs.WitchMixin",
     "mobs.WitherSkeletonMixin",
