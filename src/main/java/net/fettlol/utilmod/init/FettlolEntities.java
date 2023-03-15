@@ -1,10 +1,7 @@
 package net.fettlol.utilmod.init;
 
-import net.fettlol.utilmod.UtilMod;
 import net.fettlol.utilmod.entities.WanderingHeadHunterEntity;
-import net.fettlol.utilmod.entities.spawn.WanderingHeadHunterSpawn;
 import net.fettlol.utilmod.util.RegistryHelper;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
@@ -12,7 +9,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.registry.Registry;
 
 public class FettlolEntities {
@@ -30,12 +26,5 @@ public class FettlolEntities {
 
     public static void init() {
         FabricDefaultAttributeRegistry.register(WANDERING_HEAD_HUNTER, MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0D));
-
-        if (UtilMod.CONFIG.shouldWanderingHeadhunterExist()) {
-            ServerTickEvents.END_SERVER_TICK.register(server -> {
-                ServerWorld world = server.getOverworld();
-                WanderingHeadHunterSpawn.tick(world);
-            });
-        }
     }
 }

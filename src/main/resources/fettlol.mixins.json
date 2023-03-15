@@ -22,6 +22,7 @@
     "lilypads.SprintingParticlesMixin",
     "mobs.CatEntityMixin",
     "mobs.EscapeDangerGoalMixin",
+    "mobs.MinecraftServerMixin",
     "mobs.VillagerGoalMixin",
     "mobs.WitchMixin",
     "mobs.WitherSkeletonMixin",

@@ -18,7 +18,7 @@ public class WanderingHeadHunterRender extends MobEntityRenderer<WanderingHeadHu
 
     public WanderingHeadHunterRender(EntityRendererFactory.Context context) {
         super(context, new VillagerResemblingModel<>(context.getPart(EntityModelLayers.WANDERING_TRADER)), 0.5F);
-        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this));
+        this.addFeature(new VillagerHeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
         this.addFeature(new WanderingHeadHunterFeatureRenderer<>(this));
     }
 
@@ -32,7 +32,6 @@ public class WanderingHeadHunterRender extends MobEntityRenderer<WanderingHeadHu
     }
 
     protected void scale(WanderingHeadHunterEntity headHunter, MatrixStack matrixStack, float f) {
-        float g = 0.94F;
         matrixStack.scale(0.94F, 0.94F, 0.94F);
     }
 
