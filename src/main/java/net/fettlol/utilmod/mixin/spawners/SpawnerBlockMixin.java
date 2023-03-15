@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(SpawnerBlock.class)
@@ -24,13 +25,14 @@ public abstract class SpawnerBlockMixin extends Block {
         super(settings);
     }
 
-    @Inject(method = "onStacksDropped", at = @At("HEAD"), cancellable = true)
-    public void skipXpDropWhenPlayerPlaced(BlockState state, ServerWorld world, BlockPos pos, ItemStack stack, CallbackInfo ci) {
+    @ModifyVariable(method = "onStacksDropped", at = @At("HEAD"), argsOnly = true)
+    public boolean skipXpDropWhenPlayerPlaced(boolean dropExperience) {
         // see BlockMixin, Block.isPlayerPlaced isn't well-defined anywhere else
         if (((SpawnerInterface) this).isPlayerPlaced()) {
-            super.onStacksDropped(state, world, pos, stack);
-            ci.cancel();
+            return false;
         }
+
+        return dropExperience;
     }
 
     /**
