@@ -1,6 +1,6 @@
 package net.fettlol.utilmod.integration;
 
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fettlol.utilmod.init.FettlolModIntegrations;
 import net.fettlol.utilmod.registry.LootApi;
 import net.fettlol.utilmod.registry.RecipeApi;
@@ -24,19 +24,19 @@ public class Waystones {
             RecipeApi.remove(FettlolModIntegrations.WAYSTONES, "stone_brick_waystone");
             RecipeApi.remove(FettlolModIntegrations.WAYSTONES, "waystone");
 
-            LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
+            LootTableEvents.MODIFY.register((resourceManager, lootManager, identifier, tableBuilder, source) -> {
                 if (LootTableHelper.isEndEndgameChest(identifier)) {
-                    LootApi.addToLootTable(supplier, 1, 0.09F, FettlolModIntegrations.WAYSTONES, "end_stone_brick_waystone");
+                    LootApi.addToLootTable(tableBuilder, 1, 0.09F, FettlolModIntegrations.WAYSTONES, "end_stone_brick_waystone");
                 }
 
                 if (LootTableHelper.isNetherEndgameChest(identifier) || LootTableHelper.isNetherTempleChest(identifier)) {
-                    LootApi.addToLootTable(supplier, 1, 0.06F, FettlolModIntegrations.WAYSTONES, "nether_brick_waystone");
-                    LootApi.addToLootTable(supplier, 1, 0.06F, FettlolModIntegrations.WAYSTONES, "red_nether_brick_waystone");
+                    LootApi.addToLootTable(tableBuilder, 1, 0.06F, FettlolModIntegrations.WAYSTONES, "nether_brick_waystone");
+                    LootApi.addToLootTable(tableBuilder, 1, 0.06F, FettlolModIntegrations.WAYSTONES, "red_nether_brick_waystone");
                 }
 
                 if (LootTableHelper.isAbandonedMineshaftChest(identifier)) {
-                    LootApi.addToLootTable(supplier, 1, 0.06F, FettlolModIntegrations.WAYSTONES, "stone_brick_waystone");
-                    LootApi.addToLootTable(supplier, 1, 0.06F, FettlolModIntegrations.WAYSTONES, "waystone");
+                    LootApi.addToLootTable(tableBuilder, 1, 0.06F, FettlolModIntegrations.WAYSTONES, "stone_brick_waystone");
+                    LootApi.addToLootTable(tableBuilder, 1, 0.06F, FettlolModIntegrations.WAYSTONES, "waystone");
                 }
             });
         }

@@ -1,6 +1,6 @@
 package net.fettlol.utilmod.integration;
 
-import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
+import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fettlol.utilmod.init.FettlolModIntegrations;
 import net.fettlol.utilmod.registry.LootApi;
 import net.fettlol.utilmod.util.LogHelper;
@@ -13,14 +13,14 @@ public class Croptopia {
         if (FettlolModIntegrations.isCroptopiaLoaded) {
             LogHelper.log("Croptopia detected! Applying integrations!");
 
-            LootTableLoadingCallback.EVENT.register((resourceManager, lootManager, identifier, supplier, setter) -> {
+            LootTableEvents.MODIFY.register((resourceManager, lootManager, identifier, tableBuilder, source) -> {
                 // Randomly add a selection of Croptopia foods to villager chests.
                 if (LootTableHelper.isVillageHouseChest(identifier)) {
                     net.fettlol.utilmod.lists.integrations.Croptopia.VILLAGER_FOOD.forEach(food -> LootApi.addToLootTable(
-                        supplier, 2, 0.01F, croptopiaIdentifier(food)
+                        tableBuilder, 2, 0.01F, croptopiaIdentifier(food)
                     ));
                     net.fettlol.utilmod.lists.integrations.Croptopia.TOOLS.forEach(tool -> LootApi.addToLootTable(
-                        supplier, 1, 0.01F, croptopiaIdentifier(tool)
+                        tableBuilder, 1, 0.01F, croptopiaIdentifier(tool)
                     ));
                 }
             });
