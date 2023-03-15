@@ -8,11 +8,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.StringNbtReader;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradeOffers;
-
-import java.util.Random;
+import org.jetbrains.annotations.Nullable;
 
 public class HeadHelper {
 
@@ -37,7 +37,7 @@ public class HeadHelper {
 
         playerHead.writeNbt(tag);
 
-        playerHead.setCustomName(new LiteralText(playerName));
+        playerHead.setCustomName(Text.translatable(playerName));
 
         return playerHead;
     }
@@ -50,7 +50,7 @@ public class HeadHelper {
 
         playerHead.writeNbt(tag);
 
-        playerHead.setCustomName(new LiteralText(playerName));
+        playerHead.setCustomName(Text.translatable(playerName));
 
         return playerHead;
     }
@@ -98,6 +98,8 @@ public class HeadHelper {
             this.multiplier = multiplier;
         }
 
+        @Nullable
+        @Override
         public TradeOffer create(Entity entity, Random random) {
             return new TradeOffer(new ItemStack(Items.EMERALD, this.price), this.sell, this.maxUses, this.experience, this.multiplier);
         }

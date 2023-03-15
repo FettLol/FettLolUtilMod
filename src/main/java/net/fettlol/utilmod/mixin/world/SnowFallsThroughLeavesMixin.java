@@ -32,8 +32,8 @@ import java.util.function.Supplier;
 
 @Mixin(ServerWorld.class)
 public abstract class SnowFallsThroughLeavesMixin extends World {
-    protected SnowFallsThroughLeavesMixin(MutableWorldProperties properties, RegistryKey<World> registryRef, DimensionType dimensionType, Supplier<Profiler> profiler, boolean isClient, boolean debugWorld, long seed) {
-        super(properties, registryRef, RegistryEntry.of(dimensionType), profiler, isClient, debugWorld, seed);
+    protected SnowFallsThroughLeavesMixin(MutableWorldProperties properties, RegistryKey<World> registryRef, RegistryEntry<DimensionType> dimension, Supplier<Profiler> profiler, boolean isClient, boolean debugWorld, long seed, int maxChainedNeighborUpdates) {
+        super(properties, registryRef, dimension, profiler, isClient, debugWorld, seed, maxChainedNeighborUpdates);
     }
 
     @Inject(method = "tickChunk", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/biome/Biome;canSetIce(Lnet/minecraft/world/WorldView;Lnet/minecraft/util/math/BlockPos;)Z"), locals = LocalCapture.CAPTURE_FAILHARD)
