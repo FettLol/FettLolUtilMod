@@ -19,7 +19,7 @@ manifestVersion = 0
   fabricLoader = "^0.14.10"
 
 [dependencies]
-  cloth-config = "^9.0"
+  cloth-config = "^8.0"
   fabric = "*"
 
 [dev]
