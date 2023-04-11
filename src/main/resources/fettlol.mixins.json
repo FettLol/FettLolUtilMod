@@ -32,6 +32,7 @@
     "world.AmethystClusterMixin",
     "world.AutoPlantMixin",
     "world.BiomeFeaturesMixin",
+    "world.EndCityGeneratorPieceMixin",
     "world.FlowerBlockMixin",
     "world.GrassGrowthMixin",
     "world.ProjectileEntityMixin",
