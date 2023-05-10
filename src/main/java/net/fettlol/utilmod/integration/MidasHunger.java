@@ -1,15 +1,15 @@
 package net.fettlol.utilmod.integration;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fettlol.utilmod.UtilMod;
 import net.fettlol.utilmod.init.FettlolModIntegrations;
 import net.fettlol.utilmod.registry.LootApi;
-import net.fettlol.utilmod.util.LogHelper;
 import net.fettlol.utilmod.util.LootTableHelper;
 
 public class MidasHunger {
     public static void init() {
         if (FettlolModIntegrations.isMidasHungerLoaded) {
-            LogHelper.log("Midas Hunger detected! Applying integrations!");
+            UtilMod.LOGGER.info("Midas Hunger detected! Applying integrations!");
             LootTableEvents.MODIFY.register((resourceManager, lootManager, identifier, tableBuilder, source) -> {
 
                 // Golden food can appear in villager houses, but rarely.
