@@ -48,6 +48,7 @@ public abstract class SpawnerBlockMixin extends Block {
         NbtCompound blockTags = blockEntity.createNbt();
         NbtCompound itemTags = itemStack.writeNbt(new NbtCompound()).getCompound("tag");
         blockEntity.readNbt(blockTags.copyFrom(itemTags));
+        blockEntity.markDirty();
 
         // Ensure the "setPlayerPlaced" tag is set to true.
         ((SpawnerInterface) blockEntity).setPlayerPlaced(true);
