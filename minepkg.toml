@@ -15,7 +15,7 @@ manifestVersion = 0
 
 # These are global requirements
 [requirements]
-  minecraft = "^1.19"
+  minecraft = "1.19.2"
   fabricLoader = "^0.14.10"
 
 [dependencies]
