@@ -13,6 +13,8 @@
     "core.PlayerManagerMixin",
     "core.RecipeManagerMixin",
     "core.TagGroupLoaderMixin",
+    "debug.DecoderHandlerMixin",
+    "debug.NetworkStatePacketHandlerMixin",
     "enchantments.EggCollectorMixin",
     "enchantments.InfinityBowArrowMixin",
     "enchantments.InfinityBowMendingMixin",

@@ -1,16 +1,16 @@
 package net.fettlol.utilmod.integration;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fettlol.utilmod.UtilMod;
 import net.fettlol.utilmod.init.FettlolModIntegrations;
 import net.fettlol.utilmod.registry.LootApi;
 import net.fettlol.utilmod.registry.RecipeApi;
-import net.fettlol.utilmod.util.LogHelper;
 import net.fettlol.utilmod.util.LootTableHelper;
 
 public class Waystones {
     public static void init() {
         if (FettlolModIntegrations.isWaystonesLoaded) {
-            LogHelper.log("Waystones detected! Applying integrations!");
+            UtilMod.LOGGER.info("Waystones detected! Applying integrations!");
 
             // These recipe are being replaced.
             RecipeApi.remove(FettlolModIntegrations.WAYSTONES, "abyss_watcher");

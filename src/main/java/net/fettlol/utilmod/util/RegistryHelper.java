@@ -35,7 +35,7 @@ public class RegistryHelper {
                 }
             }
         } catch (Exception e) {
-            LogHelper.log("ERROR: " + e);
+            UtilMod.LOGGER.error("error registering {} from {}", typeClass, from, e);
         }
     }
 
