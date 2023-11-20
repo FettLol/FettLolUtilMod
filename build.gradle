@@ -51,6 +51,7 @@ dependencies {
         exclude module: 'fabric-api'
     }
 
+    include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:${project.mixinextras_version}")))
 }
 
 processResources {

@@ -9,6 +9,7 @@
     "accessor.SpawnEggItemAccessor",
     "accessor.VillagerEntityAccessor",
     "client.SplashTextResourceSupplierMixin",
+    "core.FunctionLoaderMixin",
     "core.MinecraftServerMixin",
     "core.PlayerManagerMixin",
     "core.RecipeManagerMixin",
