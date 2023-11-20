@@ -1,11 +1,11 @@
 package net.fettlol.utilmod.enchantments;
 
+import net.fettlol.utilmod.mixin.enchantments.EggCollectorMixin;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
-import net.fettlol.utilmod.mixin.enchantments.EggCollectorMixin;
 
 /**
  * The Egg Collector enchantment is an enchantment that goes on Swords and/or Axes,

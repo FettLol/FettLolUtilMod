@@ -1,7 +1,6 @@
 package net.fettlol.utilmod.mixin.mobs;
 
 import com.google.common.collect.ImmutableList;
-import net.fettlol.utilmod.config.Config;
 import net.fettlol.utilmod.entities.spawn.WanderingHeadHunterSpawner;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.spawner.Spawner;

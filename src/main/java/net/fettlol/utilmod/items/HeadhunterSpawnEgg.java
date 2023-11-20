@@ -1,7 +1,7 @@
 package net.fettlol.utilmod.items;
 
-import net.fettlol.utilmod.init.FettlolEntities;
 import net.fettlol.utilmod.UtilMod;
+import net.fettlol.utilmod.init.FettlolEntities;
 import net.minecraft.item.SpawnEggItem;
 
 public class HeadhunterSpawnEgg extends SpawnEggItem {

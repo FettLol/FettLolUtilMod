@@ -2,8 +2,8 @@ package net.fettlol.utilmod;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.fettlol.utilmod.init.FettlolEntities;
 import net.fettlol.utilmod.entities.render.WanderingHeadHunterRender;
+import net.fettlol.utilmod.init.FettlolEntities;
 
 public class UtilModClient implements ClientModInitializer {
 

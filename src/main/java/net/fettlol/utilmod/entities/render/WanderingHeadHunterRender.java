@@ -1,7 +1,7 @@
 package net.fettlol.utilmod.entities.render;
 
-import net.fettlol.utilmod.entities.render.feature.WanderingHeadHunterFeatureRenderer;
 import net.fettlol.utilmod.entities.WanderingHeadHunterEntity;
+import net.fettlol.utilmod.entities.render.feature.WanderingHeadHunterFeatureRenderer;
 import net.fettlol.utilmod.util.RegistryHelper;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;

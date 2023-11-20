@@ -1,9 +1,9 @@
 package net.fettlol.utilmod.init;
 
-import net.fettlol.utilmod.entities.WanderingHeadHunterEntity;
-import net.fettlol.utilmod.util.RegistryHelper;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.fettlol.utilmod.entities.WanderingHeadHunterEntity;
+import net.fettlol.utilmod.util.RegistryHelper;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
