@@ -5,12 +5,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-
-import java.util.Random;
 
 /** Make (most) small flowers dupeable as well */
 @Mixin(FlowerBlock.class)
@@ -23,14 +22,17 @@ public abstract class FlowerBlockMixin implements Fertilizable {
         return true;
     }
 
+    @Override
     public boolean isFertilizable(BlockView world, BlockPos pos, BlockState state, boolean isClient) {
         return isDupeable(state.getBlock());
     }
 
+    @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
         return isDupeable(state.getBlock());
     }
 
+    @Override
     public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
         Block.dropStack(world, pos, new ItemStack((FlowerBlock) (Object) this));
     }
