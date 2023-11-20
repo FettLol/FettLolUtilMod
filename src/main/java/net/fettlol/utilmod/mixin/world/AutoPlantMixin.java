@@ -40,6 +40,8 @@ public abstract class AutoPlantMixin extends Entity {
             if (player != null) {
                 fettlol$autoPlant = getPlayerConfig(player).autoPlant;
             }
+        } else {
+            fettlol$autoPlant = false;
         }
     }
 
