@@ -1,6 +1,5 @@
 package net.fettlol.utilmod.lists.integrations;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,7 +10,7 @@ public class Croptopia {
     /**
      * @todo Fetch this list from an appropriate tag instead.
      */
-    public static final List<String> VILLAGER_FOOD = Arrays.asList(
+    public static final List<String> VILLAGER_FOOD = List.of(
         "almond",
         "almond_brittle",
         "apple_juice",
@@ -252,7 +251,7 @@ public class Croptopia {
     /**
      * @todo Fetch this list from an appropriate tag instead.
      */
-    public static List<String> SAPLINGS = Arrays.asList(
+    public static List<String> SAPLINGS = List.of(
         "apple_sapling",
         "apricot_sapling",
         "avocado_sapling",
@@ -280,7 +279,7 @@ public class Croptopia {
     /**
      * @todo Fetch this list from an appropriate tag instead.
      */
-    public static final List<String> TOOLS = Arrays.asList(
+    public static final List<String> TOOLS = List.of(
         "cooking_pot",
         "food_press",
         "frying_pan",

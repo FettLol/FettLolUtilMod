@@ -1,6 +1,5 @@
 package net.fettlol.utilmod.lists.integrations;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -8,7 +7,7 @@ import java.util.List;
  */
 public class AdditionalAdditions {
 
-    public static final List<String> ROSE_GOLD_ITEMS = Arrays.asList(
+    public static final List<String> ROSE_GOLD_ITEMS = List.of(
         "rose_gold_axe",
         "rose_gold_boots",
         "rose_gold_chestplate",

@@ -3,7 +3,6 @@ package net.fettlol.utilmod.util;
 import net.minecraft.loot.LootTables;
 import net.minecraft.util.Identifier;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class LootTableHelper {
@@ -60,7 +59,7 @@ public class LootTableHelper {
     public static final List<String> ZOMBIE;
 
     static {
-        ABANDONED_MINESHAFT_CHESTS = Arrays.asList(
+        ABANDONED_MINESHAFT_CHESTS = List.of(
             LootTables.ABANDONED_MINESHAFT_CHEST.toString(),
             "repurposed_structures:chests/mineshafts/birch",
             "repurposed_structures:chests/mineshafts/crimson",
@@ -78,21 +77,21 @@ public class LootTableHelper {
             "repurposed_structures:chests/mineshafts/warped"
         );
 
-        BURIED_TREASURE_CHESTS = Arrays.asList(
+        BURIED_TREASURE_CHESTS = List.of(
             LootTables.BURIED_TREASURE_CHEST.toString(),
             "biomemakeover:mansion/dungeon_good"
         );
 
-        DESERT_PYRAMID_CHESTS = Arrays.asList(
+        DESERT_PYRAMID_CHESTS = List.of(
             LootTables.DESERT_PYRAMID_CHEST.toString()
         );
 
-        END_ENDGAME_CHESTS = Arrays.asList(
+        END_ENDGAME_CHESTS = List.of(
             LootTables.END_CITY_TREASURE_CHEST.toString(),
             "spectrum:ancient_ruins_main"
         );
 
-        MANSION_CHESTS = Arrays.asList(
+        MANSION_CHESTS = List.of(
             LootTables.WOODLAND_MANSION_CHEST.toString(),
             "repurposed_structures:chests/mansions/birch",
             "repurposed_structures:chests/mansions/desert",
@@ -103,7 +102,7 @@ public class LootTableHelper {
             "repurposed_structures:chests/mansions/taiga"
         );
 
-        NETHER_ENDGAME_CHESTS = Arrays.asList(
+        NETHER_ENDGAME_CHESTS = List.of(
             LootTables.BASTION_BRIDGE_CHEST.toString(),
             LootTables.BASTION_TREASURE_CHEST.toString(),
             LootTables.BASTION_HOGLIN_STABLE_CHEST.toString(),
@@ -116,7 +115,7 @@ public class LootTableHelper {
             "repurposed_structures:chests/cities/nether"
         );
 
-        NETHER_TEMPLE_CHESTS = Arrays.asList(
+        NETHER_TEMPLE_CHESTS = List.of(
             "repurposed_structures:chests/temples/nether_basalt",
             "repurposed_structures:chests/temples/nether_crimson",
             "repurposed_structures:chests/temples/nether_soul",
@@ -124,13 +123,13 @@ public class LootTableHelper {
             "repurposed_structures:chests/temples/nether_wasteland"
         );
 
-        RUINED_PORTAL_CHESTS = Arrays.asList(
+        RUINED_PORTAL_CHESTS = List.of(
             LootTables.RUINED_PORTAL_CHEST.toString(),
             "repurposed_structures:chests/ruined_portals/end/large_portal",
             "repurposed_structures:chests/ruined_portals/end/small_portal"
         );
 
-        SHIPWRECK_CHESTS = Arrays.asList(
+        SHIPWRECK_CHESTS = List.of(
             LootTables.SHIPWRECK_SUPPLY_CHEST.toString(),
             LootTables.SHIPWRECK_TREASURE_CHEST.toString(),
             "biomemakeover:sunken_ruin",
@@ -140,7 +139,7 @@ public class LootTableHelper {
             "repurposed_structures:chests/shipwrecks/warped/treasure"
         );
 
-        SIMPLE_DUNGEON_CHESTS = Arrays.asList(
+        SIMPLE_DUNGEON_CHESTS = List.of(
             LootTables.SIMPLE_DUNGEON_CHEST.toString(),
             "spectrum:chests/ancient_ruins_small",
             "repurposed_structures:chests/dungeons/badlands",
@@ -156,7 +155,7 @@ public class LootTableHelper {
             "repurposed_structures:chests/dungeons/swamp"
         );
 
-        STRONGHOLD_CHESTS = Arrays.asList(
+        STRONGHOLD_CHESTS = List.of(
             LootTables.STRONGHOLD_CORRIDOR_CHEST.toString(),
             LootTables.STRONGHOLD_CROSSING_CHEST.toString(),
             LootTables.STRONGHOLD_LIBRARY_CHEST.toString(),
@@ -166,12 +165,12 @@ public class LootTableHelper {
         );
 
 
-        UNDERWATER_RUIN_CHESTS = Arrays.asList(
+        UNDERWATER_RUIN_CHESTS = List.of(
             LootTables.UNDERWATER_RUIN_BIG_CHEST.toString(),
             LootTables.UNDERWATER_RUIN_SMALL_CHEST.toString()
         );
 
-        VILLAGE_HOUSE_CHESTS = Arrays.asList(
+        VILLAGE_HOUSE_CHESTS = List.of(
             LootTables.VILLAGE_DESERT_HOUSE_CHEST.toString(),
             LootTables.VILLAGE_PLAINS_CHEST.toString(),
             LootTables.VILLAGE_SAVANNA_HOUSE_CHEST.toString(),
@@ -189,69 +188,69 @@ public class LootTableHelper {
             "repurposed_structures:chests/villages/warped_house"
         );
 
-        CAT_MORNING_GIFT = Arrays.asList(LootTables.CAT_MORNING_GIFT_GAMEPLAY.toString());
-        FISHING_JUNK = Arrays.asList(LootTables.FISHING_JUNK_GAMEPLAY.toString());
-        FISHING_TREASURES = Arrays.asList(LootTables.FISHING_TREASURE_GAMEPLAY.toString());
-        PIGLIN_BARTERING = Arrays.asList(LootTables.PIGLIN_BARTERING_GAMEPLAY.toString());
-        VILLAGER_HERO_ARMORER_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_ARMORER_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_BUTCHER_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_BUTCHER_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_CARTOGRAPHER_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_CARTOGRAPHER_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_CLERIC_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_CLERIC_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_FARMER_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_FARMER_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_FISHERMAN_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_FISHERMAN_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_FLETCHER_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_FLETCHER_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_LEATHERWORKER_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_LEATHERWORKER_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_LIBRARIAN_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_LIBRARIAN_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_MASON_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_MASON_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_SHEPHERD_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_SHEPHERD_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_TOOLSMITH_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_TOOLSMITH_GIFT_GAMEPLAY.toString());
-        VILLAGER_HERO_WEAPONSMITH_GIFT = Arrays.asList(LootTables.HERO_OF_THE_VILLAGE_WEAPONSMITH_GIFT_GAMEPLAY.toString());
+        CAT_MORNING_GIFT = List.of(LootTables.CAT_MORNING_GIFT_GAMEPLAY.toString());
+        FISHING_JUNK = List.of(LootTables.FISHING_JUNK_GAMEPLAY.toString());
+        FISHING_TREASURES = List.of(LootTables.FISHING_TREASURE_GAMEPLAY.toString());
+        PIGLIN_BARTERING = List.of(LootTables.PIGLIN_BARTERING_GAMEPLAY.toString());
+        VILLAGER_HERO_ARMORER_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_ARMORER_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_BUTCHER_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_BUTCHER_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_CARTOGRAPHER_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_CARTOGRAPHER_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_CLERIC_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_CLERIC_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_FARMER_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_FARMER_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_FISHERMAN_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_FISHERMAN_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_FLETCHER_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_FLETCHER_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_LEATHERWORKER_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_LEATHERWORKER_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_LIBRARIAN_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_LIBRARIAN_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_MASON_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_MASON_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_SHEPHERD_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_SHEPHERD_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_TOOLSMITH_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_TOOLSMITH_GIFT_GAMEPLAY.toString());
+        VILLAGER_HERO_WEAPONSMITH_GIFT = List.of(LootTables.HERO_OF_THE_VILLAGE_WEAPONSMITH_GIFT_GAMEPLAY.toString());
 
-        DROWNED = Arrays.asList("minecraft:entities/drowned");
-        ENDERMAN = Arrays.asList("minecraft:entities/enderman");
-        SPAWNERS = Arrays.asList("minecraft:blocks/spawner");
-        ENDER_DRAGON = Arrays.asList("minecraft:entities/ender_dragon");
-        EVOKER = Arrays.asList("minecraft:entities/evoker");
-        GUARDIAN = Arrays.asList("minecraft:entities/guardian", "minecraft:entities/elder_guardian");
-        HUSK = Arrays.asList("minecraft:entities/husk");
-        PHANTOM = Arrays.asList("minecraft:entities/phantom");
-        SHULKER = Arrays.asList("minecraft:entities/shulker");
-        SKELETON = Arrays.asList("minecraft:entities/skeleton");
-        STRAY = Arrays.asList("minecraft:entities/stray");
-        WITCH = Arrays.asList("minecraft:entities/witch");
-        WITHER = Arrays.asList("minecraft:entities/wither");
-        WITHER_SKELETON = Arrays.asList("minecraft:entities/wither_skeleton");
-        ZOMBIE = Arrays.asList("minecraft:entities/zombie");
+        DROWNED = List.of("minecraft:entities/drowned");
+        ENDERMAN = List.of("minecraft:entities/enderman");
+        SPAWNERS = List.of("minecraft:blocks/spawner");
+        ENDER_DRAGON = List.of("minecraft:entities/ender_dragon");
+        EVOKER = List.of("minecraft:entities/evoker");
+        GUARDIAN = List.of("minecraft:entities/guardian", "minecraft:entities/elder_guardian");
+        HUSK = List.of("minecraft:entities/husk");
+        PHANTOM = List.of("minecraft:entities/phantom");
+        SHULKER = List.of("minecraft:entities/shulker");
+        SKELETON = List.of("minecraft:entities/skeleton");
+        STRAY = List.of("minecraft:entities/stray");
+        WITCH = List.of("minecraft:entities/witch");
+        WITHER = List.of("minecraft:entities/wither");
+        WITHER_SKELETON = List.of("minecraft:entities/wither_skeleton");
+        ZOMBIE = List.of("minecraft:entities/zombie");
 
-        IRON_ORES = Arrays.asList(
+        IRON_ORES = List.of(
             "minecraft:blocks/iron_ore",
             "minecraft:blocks/deepslate_iron_ore",
             "denseores:blocks/dense_deepslate_iron_ore",
             "denseores:blocks/dense_iron_ore"
         );
 
-        COPPER_ORES = Arrays.asList(
+        COPPER_ORES = List.of(
             "minecraft:blocks/copper_ore",
             "minecraft:blocks/deepslate_copper_ore",
             "denseores:blocks/dense_deepslate_copper_ore",
             "denseores:blocks/dense_copper_ore"
         );
 
-        GOLD_ORES = Arrays.asList(
+        GOLD_ORES = List.of(
             "minecraft:blocks/gold_ore",
             "minecraft:blocks/deepslate_gold_ore",
             "denseores:blocks/dense_deepslate_gold_ore",
             "denseores:blocks/dense_gold_ore"
         );
 
-        DIAMOND_ORES = Arrays.asList(
+        DIAMOND_ORES = List.of(
             "minecraft:blocks/diamond_ore",
             "minecraft:blocks/deepslate_diamond_ore",
             "denseores:blocks/dense_deepslate_diamond_ore",
             "denseores:blocks/dense_diamond_ore"
         );
 
-        LAPIS_ORES = Arrays.asList(
+        LAPIS_ORES = List.of(
             "minecraft:blocks/lapis_ore",
             "minecraft:blocks/deepslate_lapis_ore",
             "denseores:blocks/dense_deepslate_lapis_ore",

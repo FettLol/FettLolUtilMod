@@ -1,6 +1,5 @@
 package net.fettlol.utilmod.lists.integrations;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -8,7 +7,7 @@ import java.util.List;
  */
 public class TechReborn {
 
-    public static final List<String> BOOTS = Arrays.asList(
+    public static final List<String> BOOTS = List.of(
         "bronze_boots",
         "peridot_boots",
         "quantum_boots",
@@ -16,7 +15,7 @@ public class TechReborn {
         "sapphire_boots"
     );
 
-    public static final List<String> CHESTS = Arrays.asList(
+    public static final List<String> CHESTS = List.of(
         "bronze_chestplate",
         "peridot_chestplate",
         "quantum_chestplate",
@@ -24,7 +23,7 @@ public class TechReborn {
         "sapphire_chestplate"
     );
 
-    public static final List<String> HELMS = Arrays.asList(
+    public static final List<String> HELMS = List.of(
         "bronze_helmet",
         "peridot_helmet",
         "quantum_helmet",
@@ -32,7 +31,7 @@ public class TechReborn {
         "sapphire_helmet"
     );
 
-    public static final List<String> LEGGINGS = Arrays.asList(
+    public static final List<String> LEGGINGS = List.of(
         "bronze_leggings",
         "peridot_leggings",
         "quantum_leggings",
