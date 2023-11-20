@@ -30,7 +30,8 @@ public abstract class AutoPlantMixin extends Entity {
     @Shadow
     public abstract ItemStack getStack();
 
-    private boolean fettlol$autoPlant = true; // note: doesn't persist through server restarts
+    // note: doesn't persist through server restarts
+    private boolean fettlol$autoPlant = false;
     private BlockPos fettlol$triedToPlantAt;
 
     @Inject(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/item/ItemStack;)V", at = @At("RETURN"))
@@ -39,9 +40,9 @@ public abstract class AutoPlantMixin extends Entity {
             PlayerEntity player = getWorld().getClosestPlayer(this, -1);
             if (player != null) {
                 fettlol$autoPlant = getPlayerConfig(player).autoPlant;
+            } else {
+                fettlol$autoPlant = true;
             }
-        } else {
-            fettlol$autoPlant = false;
         }
     }
 
