@@ -1,7 +1,7 @@
 package net.fettlol.utilmod.items;
 
-import net.fettlol.utilmod.UtilMod;
 import net.fettlol.utilmod.init.FettlolEntities;
+import net.fettlol.utilmod.init.FettlolItems;
 import net.minecraft.item.SpawnEggItem;
 
 public class HeadhunterSpawnEgg extends SpawnEggItem {
@@ -10,7 +10,7 @@ public class HeadhunterSpawnEgg extends SpawnEggItem {
             FettlolEntities.WANDERING_HEAD_HUNTER,
             0xaa00ff,
             0x704040,
-            new Settings().group(UtilMod.ITEMGROUP)
+            new Settings().group(FettlolItems.ITEM_GROUP)
         );
     }
 }
