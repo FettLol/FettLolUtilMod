@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "net.fettlol.utilmod.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_${java_version}",
   "plugin": "net.fettlol.utilmod.config.MixinConditions",
   "mixins": [
     "accessor.MobSpawnerLogicAccessor",

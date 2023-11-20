@@ -5,7 +5,8 @@
   "name": "Fettlol UtilMod",
   "description": "Tweaks minor details for use on the fett.lol server.",
   "authors": [
-    "${author}"
+    "${author}",
+    "Fourmisain"
   ],
   "contact": {
     "homepage": "https://github.com/FettLol/FettLolUtilMod",
