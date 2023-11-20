@@ -3,6 +3,7 @@ package net.fettlol.utilmod.mixin.world;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
@@ -11,12 +12,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.NotNull;
+import org.apache.logging.log4j.LogManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import static net.fettlol.utilmod.config.Config.getPlayerConfig;
 
 @Mixin(ItemEntity.class)
 public abstract class AutoPlantMixin extends Entity {
@@ -27,24 +31,35 @@ public abstract class AutoPlantMixin extends Entity {
     @Shadow
     public abstract ItemStack getStack();
 
-    private BlockPos triedToPlantAt;
+    private boolean fettlol$autoPlant = true; // note: doesn't persist through server restarts
+    private BlockPos fettlol$triedToPlantAt;
 
-    @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;tick()V"))
-    public void plantSaplings(CallbackInfo ci) {
-        ItemStack stack = this.getStack();
-
-        if ((stack.isIn(ItemTags.SAPLINGS) || stack.isIn(ItemTags.FLOWERS)) && this.age >= 666) {
-            BlockPos pos = this.getBlockPos();
-            if (this.getBlockPos() != triedToPlantAt && world.getFluidState(pos).isEmpty()) {
-                ((BlockItem) stack.getItem()).place(getItemPlacementContext(stack, pos));
-
-                triedToPlantAt = this.getBlockPos();
+    @Inject(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/item/ItemStack;)V", at = @At("RETURN"))
+    public void decideFaith(CallbackInfo ci) {
+        if (getStack().isIn(ItemTags.SAPLINGS) || getStack().isIn(ItemTags.FLOWERS)) {
+            PlayerEntity player = getWorld().getClosestPlayer(this, -1);
+            if (player != null) {
+                fettlol$autoPlant = getPlayerConfig(player).autoPlant;
             }
         }
     }
 
-    @NotNull
-    private ItemPlacementContext getItemPlacementContext(ItemStack stack, BlockPos pos) {
+    @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;tick()V"))
+    public void plantSaplings(CallbackInfo ci) {
+        if (world.isClient) return;
+
+        if (fettlol$autoPlant && age >= 666) {
+            BlockPos pos = getBlockPos();
+            if (pos != fettlol$triedToPlantAt && world.getFluidState(pos).isEmpty()) {
+                ((BlockItem) getStack().getItem()).place(getGroundPlacement(getStack(), pos));
+
+                fettlol$triedToPlantAt = pos;
+            }
+        }
+    }
+
+    @Unique
+    private ItemPlacementContext getGroundPlacement(ItemStack stack, BlockPos pos) {
         return new ItemPlacementContext(
             world,
             null,

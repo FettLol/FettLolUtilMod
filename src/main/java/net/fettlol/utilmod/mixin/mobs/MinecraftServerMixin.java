@@ -1,7 +1,7 @@
 package net.fettlol.utilmod.mixin.mobs;
 
 import com.google.common.collect.ImmutableList;
-import net.fettlol.utilmod.UtilMod;
+import net.fettlol.utilmod.config.Config;
 import net.fettlol.utilmod.entities.spawn.WanderingHeadHunterSpawner;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.spawner.Spawner;
@@ -10,6 +10,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 import java.util.List;
+
+import static net.fettlol.utilmod.config.Config.CONFIG;
 
 // add Wandering Head Hunter spawner
 @Mixin(MinecraftServer.class)
@@ -24,7 +26,7 @@ public abstract class MinecraftServerMixin {
 		index = 9
 	)
 	public List<Spawner> addSpawners(List<Spawner> spawners) {
-		if (UtilMod.CONFIG.shouldWanderingHeadhunterExist()) {
+		if (CONFIG.shouldWanderingHeadhunterExist()) {
 			return ImmutableList.<Spawner>builder().addAll(spawners).add(new WanderingHeadHunterSpawner()).build();
 		}
 

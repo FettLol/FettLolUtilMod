@@ -1,7 +1,5 @@
 package net.fettlol.utilmod.config;
 
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -9,15 +7,9 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import java.util.List;
 import java.util.Set;
 
+import static net.fettlol.utilmod.config.Config.CONFIG;
+
 public class MixinConditions implements IMixinConfigPlugin {
-
-    public static final UtilModConfig CONFIG;
-
-    static {
-        AutoConfig.register(UtilModConfig.class, GsonConfigSerializer::new);
-        CONFIG = AutoConfig.getConfigHolder(UtilModConfig.class).getConfig();
-    }
-
     @Override
     public void onLoad(String mixinPackage) {
         // Nothing here right now.

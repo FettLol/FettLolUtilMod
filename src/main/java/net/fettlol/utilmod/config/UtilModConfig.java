@@ -3,6 +3,10 @@ package net.fettlol.utilmod.config;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 @Config(name = "fettlol")
 public class UtilModConfig implements ConfigData {
 
@@ -14,6 +18,8 @@ public class UtilModConfig implements ConfigData {
     boolean poisonousPotatoIsCompostable = true;
     boolean wanderingHeadHunter = true;
     boolean villagersFollowEmeraldBlocks = true;
+
+    Map<UUID, PlayerConfig> playerConfigs = new HashMap<>();
 
     // == Helper methods to check current config values from other parts of the codebase. ==
 
@@ -28,5 +34,14 @@ public class UtilModConfig implements ConfigData {
     // Other helpers, used where needed.
     public boolean shouldWanderingHeadhunterExist() { return wanderingHeadHunter; }
     public boolean doesPoisonousPotatoCompost() { return poisonousPotatoIsCompostable; }
+
+    public PlayerConfig getPlayerConfig(UUID playerUuid) {
+        return playerConfigs.computeIfAbsent(playerUuid, (uuid) -> new PlayerConfig());
+    }
+
+    /** Note: Does not save config, use UtilMod.updatePlayerConfig() instead. */
+    public void setPlayerConfig(UUID playerUuid, PlayerConfig config) {
+        playerConfigs.put(playerUuid, config);
+    }
 
 }
