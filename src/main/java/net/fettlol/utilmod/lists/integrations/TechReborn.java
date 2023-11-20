@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class TechReborn {
 
-    public static List<String> BOOTS = Arrays.asList(
+    public static final List<String> BOOTS = Arrays.asList(
         "bronze_boots",
         "peridot_boots",
         "quantum_boots",
@@ -16,7 +16,7 @@ public class TechReborn {
         "sapphire_boots"
     );
 
-    public static List<String> CHESTS = Arrays.asList(
+    public static final List<String> CHESTS = Arrays.asList(
         "bronze_chestplate",
         "peridot_chestplate",
         "quantum_chestplate",
@@ -24,7 +24,7 @@ public class TechReborn {
         "sapphire_chestplate"
     );
 
-    public static List<String> HELMS = Arrays.asList(
+    public static final List<String> HELMS = Arrays.asList(
         "bronze_helmet",
         "peridot_helmet",
         "quantum_helmet",
@@ -32,7 +32,7 @@ public class TechReborn {
         "sapphire_helmet"
     );
 
-    public static List<String> LEGGINGS = Arrays.asList(
+    public static final List<String> LEGGINGS = Arrays.asList(
         "bronze_leggings",
         "peridot_leggings",
         "quantum_leggings",

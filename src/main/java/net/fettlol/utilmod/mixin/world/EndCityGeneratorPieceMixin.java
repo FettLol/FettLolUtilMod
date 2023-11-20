@@ -20,7 +20,7 @@ import java.util.Optional;
 
 @Mixin(EndCityGenerator.Piece.class)
 public abstract class EndCityGeneratorPieceMixin {
-	ThreadLocal<Random> fettlol$random = ThreadLocal.withInitial(() -> null);
+	final ThreadLocal<Random> fettlol$random = ThreadLocal.withInitial(() -> null);
 
 	@Inject(
 		method = "handleMetadata(Ljava/lang/String;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/world/ServerWorldAccess;Lnet/minecraft/util/math/random/Random;Lnet/minecraft/util/math/BlockBox;)V",

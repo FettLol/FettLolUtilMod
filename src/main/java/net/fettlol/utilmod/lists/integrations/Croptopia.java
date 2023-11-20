@@ -280,7 +280,7 @@ public class Croptopia {
     /**
      * @todo Fetch this list from an appropriate tag instead.
      */
-    public static List<String> TOOLS = Arrays.asList(
+    public static final List<String> TOOLS = Arrays.asList(
         "cooking_pot",
         "food_press",
         "frying_pan",
